@@ -1,4 +1,4 @@
-package com.mindhub.duodanzaclub.model;
+package com.mindhub.duodanzaclub.models;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -13,7 +13,6 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-
     private String nombre;
     private String apellido;
     private String telefono;
@@ -22,19 +21,24 @@ public class Usuario {
     private LocalDate fechaNacimiento;
     private Nivel nivel;
     private Rol rol;
-    //private Abono abono;
+    private Abono abono;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Academia_Id")
     private Academia academia;
 
+//<<<<<<< HEAD:src/main/java/com/mindhub/duodanzaclub/model/Usuario.java
 
 
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Nivel nivel, Rol rol/*, AEliminar abono*/, Academia academia) {
+
+//=======
+
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Abono abono, Academia academia) {
+//>>>>>>> 763b920ff0ed6fd782f189fe3aad6612c9c9e149:src/main/java/com/mindhub/duodanzagit
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -43,12 +47,9 @@ public class Usuario {
         this.fechaNacimiento = fechaNacimiento;
         this.nivel = nivel;
         this.rol = rol;
-        //this.abono = abono;
+        this.abono = abono;
         this.academia = academia;
     }
-
-
-
 
     public long getId() {return id;}
 
@@ -76,8 +77,8 @@ public class Usuario {
     public Rol getRol() {return rol;}
     public void setRol(Rol rol) {this.rol = rol;}
 
-    /*public Abono getAbono() {return abono;}
-    public void setAbono(Abono abono) {this.abono = abono;}*/
+    public Abono getAbono() {return abono;}
+    public void setAbono(Abono abono) {this.abono = abono;}
 
     public Academia getAcademia() {return academia;}
     public void setAcademia(Academia academia) {this.academia = academia;}

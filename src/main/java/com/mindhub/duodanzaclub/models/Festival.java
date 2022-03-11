@@ -1,4 +1,4 @@
-package com.mindhub.duodanzaclub.model;
+package com.mindhub.duodanzaclub.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -32,18 +32,18 @@ public class Festival {
     private Set<SalaFestival> salaFestival = new HashSet<>();
 
 
+//<<<<<<< HEAD:src/main/java/com/mindhub/duodanzaclub/model/Festival.java
     public Festival() {
     }
 
     public Festival(String nombre, Estilos estilo, Double precio, List<Double> horarios) {
+
+//>>>>>>> 763b920ff0ed6fd782f189fe3aad6612c9c9e149:src/main/java/com/mindhub/duodanzaclub/models/Festival.java
         this.nombre = nombre;
         this.precio = precio;
         this.estilo = estilo;
         this.horarios = horarios;
     }
-
-
-
 
     @JsonIgnore
     public List<Sala> getSalas() {return  salaFestival.stream().map(salaFestival -> salaFestival.getSala()).collect(toList());}

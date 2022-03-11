@@ -1,4 +1,4 @@
-package com.mindhub.duodanzaclub.model;
+package com.mindhub.duodanzaclub.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,9 +18,7 @@ public class Sala {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-
     private String nombre;
-    private int numero;
     private int aforo;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -33,20 +31,12 @@ public class Sala {
     @OneToMany(mappedBy = "sala", fetch = FetchType.EAGER)
     private Set<SalaFestival> salaFestival = new HashSet<>();
 
-
-
-    public Sala() {
-    }
-
-    public Sala(String nombre, int numero, int aforo, Academia academia) {
+    public Sala() {}
+    public Sala(String nombre, int aforo, Academia academia) {
         this.nombre = nombre;
-        this.numero = numero;
         this.aforo = aforo;
         this.academia = academia;
     }
-
-
-
 
     @JsonIgnore
     public List<Clase> getClases() {return  salaClases.stream().map(salaClase -> salaClase.getClase()).collect(toList());}
@@ -58,9 +48,6 @@ public class Sala {
 
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
-
-    public int getNumero() {return numero;}
-    public void setNumero(int numero) {this.numero = numero;}
 
     public int getAforo() {return aforo;}
     public void setAforo(int aforo) {this.aforo = aforo;}

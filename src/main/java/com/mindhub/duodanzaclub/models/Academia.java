@@ -1,4 +1,4 @@
-package com.mindhub.duodanzaclub.model;
+package com.mindhub.duodanzaclub.models;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -14,7 +14,6 @@ public class Academia {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-
     private String nombre;
     private String ciudad;
 
@@ -27,9 +26,6 @@ public class Academia {
     @OneToMany(mappedBy = "academia", fetch = FetchType.EAGER)
     Set<Sala> salas = new HashSet<>();
 
-
-
-
     public Academia() {
     }
 
@@ -37,9 +33,6 @@ public class Academia {
         this.nombre = nombre;
         this.ciudad = ciudad;
     }
-
-
-
 
     public long getId() {return id;}
 
