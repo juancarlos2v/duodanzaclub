@@ -7,9 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
-public class Academia {
+public class Clase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -17,18 +18,21 @@ public class Academia {
     private long id;
 
     private String nombre;
-    private String ciudad;
+    private List<Double> horarios;
+    private String profesor; //PENDIENTE: tipo de dato
 
 
 
 
-    public Academia() {
+    public Clase() {
     }
 
-    public Academia(String nombre, String ciudad) {
+    public Clase(String nombre, List<Double> horarios, String profesor) {
         this.nombre = nombre;
-        this.ciudad = ciudad;
+        this.horarios = horarios;
+        this.profesor = profesor;
     }
+
 
 
 
@@ -37,7 +41,10 @@ public class Academia {
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
 
-    public String getCiudad() {return ciudad;}
-    public void setCiudad(String ciudad) {this.ciudad = ciudad;}
+    public List<Double> getHorarios() {return horarios;}
+    public void setHorarios(List<Double> horarios) {this.horarios = horarios;}
+
+    public String getProfesor() {return profesor;}
+    public void setProfesor(String profesor) {this.profesor = profesor;}
 
 }

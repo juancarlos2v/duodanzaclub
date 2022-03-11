@@ -7,9 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
-public class Academia {
+public class Festival {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -17,18 +18,21 @@ public class Academia {
     private long id;
 
     private String nombre;
-    private String ciudad;
+    private List<Double> horarios;
+    private Double precio;  //Se podría hacer una lista de precios
 
 
 
 
-    public Academia() {
+    public Festival() {
     }
 
-    public Academia(String nombre, String ciudad) {
+    public Festival(String nombre, List<Double> horarios, Double precio) {
         this.nombre = nombre;
-        this.ciudad = ciudad;
+        this.horarios = horarios;
+        this.precio = precio;
     }
+
 
 
 
@@ -37,7 +41,10 @@ public class Academia {
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
 
-    public String getCiudad() {return ciudad;}
-    public void setCiudad(String ciudad) {this.ciudad = ciudad;}
+    public List<Double> getHorarios() {return horarios;}
+    public void setHorarios(List<Double> horarios) {this.horarios = horarios;}
+
+    public Double getPrecio() {return precio;}
+    public void setPrecio(Double precio) {this.precio = precio;}
 
 }
