@@ -1,4 +1,4 @@
-package com.mindhub.duodanzaclub.model;
+package com.mindhub.duodanzaclub.models;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -13,7 +13,6 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-
     private String nombre;
     private String apellido;
     private String telefono;
@@ -25,12 +24,7 @@ public class Usuario {
     @JoinColumn(name="Academia_Id")
     private Academia academia;
 
-
-
-
-    public Usuario() {
-    }
-
+    public Usuario() {}
     public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Academia academia) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -40,9 +34,6 @@ public class Usuario {
         this.fechaNacimiento = fechaNacimiento;
         this.academia = academia;
     }
-
-
-
 
     public long getId() {return id;}
 

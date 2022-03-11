@@ -1,4 +1,4 @@
-package com.mindhub.duodanzaclub.model;
+package com.mindhub.duodanzaclub.models;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -14,26 +14,18 @@ public class SalaClase {
     private long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "Clase_Id")
+    @JoinColumn(name = "clase_id")
     private Clase clase;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "Sala_Id")
+    @JoinColumn(name = "sala_id")
     private Sala sala;
 
-
-
-
-    public SalaClase() {
-    }
-
+    public SalaClase() {}
     public SalaClase(Clase clase, Sala sala) {
-        this.clase = clase;
-        this.sala = sala;
+        setClase(clase);
+        setSala(sala);
     }
-
-
-
 
     public long getId() {return id;}
 
@@ -44,4 +36,3 @@ public class SalaClase {
     public void setSala(Sala sala) {this.sala = sala;}
 
 }
-//JOYA
