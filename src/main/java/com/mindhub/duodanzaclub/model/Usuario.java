@@ -3,10 +3,8 @@ package com.mindhub.duodanzaclub.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class Usuario {
@@ -21,19 +19,28 @@ public class Usuario {
     private String telefono;
     private String email;
     private String password;
+    private LocalDate fechaNacimiento;
 
-    //FECHA DE NACIMIENTO: LocalDate o Clase
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Academia_Id")
+    private Academia academia;
+
+
+
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido, String telefono, String email, String password) {
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Academia academia) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
         this.password = password;
+        this.fechaNacimiento = fechaNacimiento;
+        this.academia = academia;
     }
+
 
 
 
@@ -53,5 +60,11 @@ public class Usuario {
 
     public String getPassword() {return password;}
     public void setPassword(String password) {this.password = password;}
+
+    public LocalDate getFechaNacimiento() {return fechaNacimiento;}
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
+
+    public Academia getAcademia() {return academia;}
+    public void setAcademia(Academia academia) {this.academia = academia;}
 
 }

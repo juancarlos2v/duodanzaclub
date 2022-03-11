@@ -3,11 +3,11 @@ package com.mindhub.duodanzaclub.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Festival {
@@ -18,10 +18,14 @@ public class Festival {
     private long id;
 
     private String nombre;
-    private List<Double> horarios;
-    private Double precio;  //Se podría hacer una lista de precios
+    private Double precio;
 
+    @ElementCollection
+    @Column(name="horarios")
+    private List<Double> horarios = new ArrayList<>();
 
+    @OneToMany(mappedBy = "festival", fetch = FetchType.EAGER)
+    private Set<SalaFestival> salaFestival = new HashSet<>();
 
 
     public Festival() {
@@ -46,5 +50,8 @@ public class Festival {
 
     public Double getPrecio() {return precio;}
     public void setPrecio(Double precio) {this.precio = precio;}
+
+    public Set<SalaFestival> getSalaFestival() {return salaFestival;}
+    public void setSalaFestival(Set<SalaFestival> salaFestival) {this.salaFestival = salaFestival;}
 
 }
