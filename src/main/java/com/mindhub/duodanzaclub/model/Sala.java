@@ -53,6 +53,11 @@ public class Sala {
         return  salaClases.stream().map(salaClase -> salaClase.getClase()).collect(toList());
     }
 
+    @JsonIgnore
+    public List<Festival> getFestivales() {
+        return  salaFestival.stream().map(salaFestival -> salaFestival.getFestival()).collect(toList());
+    }
+
     public long getId() {return id;}
 
     public String getNombre() {return nombre;}

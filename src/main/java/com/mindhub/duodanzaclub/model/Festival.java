@@ -1,6 +1,7 @@
 package com.mindhub.duodanzaclub.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import static java.util.stream.Collectors.toList;
 
 @Entity
 public class Festival {
@@ -39,6 +42,11 @@ public class Festival {
 
 
 
+
+    @JsonIgnore
+    public List<Sala> getSalas() {
+        return  salaFestival.stream().map(salaFestival -> salaFestival.getSala()).collect(toList());
+    }
 
     public long getId() {return id;}
 
