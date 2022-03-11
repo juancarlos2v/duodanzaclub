@@ -49,14 +49,10 @@ public class Sala {
 
 
     @JsonIgnore
-    public List<Clase> getClases() {
-        return  salaClases.stream().map(salaClase -> salaClase.getClase()).collect(toList());
-    }
+    public List<Clase> getClases() {return  salaClases.stream().map(salaClase -> salaClase.getClase()).collect(toList());}
 
     @JsonIgnore
-    public List<Festival> getFestivales() {
-        return  salaFestival.stream().map(salaFestival -> salaFestival.getFestival()).collect(toList());
-    }
+    public List<Festival> getFestivales() {return  salaFestival.stream().map(salaFestival -> salaFestival.getFestival()).collect(toList());}
 
     public long getId() {return id;}
 
