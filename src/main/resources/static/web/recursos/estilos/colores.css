@@ -1,0 +1,13 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --header-color: #b8a697;
+    --footer-color: #5a7892;
+    --gray-color: #C4C4C4;
+}
+
+a {
+    text-decoration: none;
+}
