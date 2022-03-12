@@ -6,23 +6,24 @@ import com.mindhub.duodanzaclub.models.Sala;
 import com.mindhub.duodanzaclub.models.Usuario;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class AcademiaDTO {
     private long id;
     private String nombre;
     private String ciudad;
-    private Set<Usuario> usuarios;
-    private Set<Clase> clases;
-    private Set<Sala> salas;
+    private Set<UsuarioDTO> usuarios;
+    private Set<ClaseDTO> clases;
+    private Set<SalaDTO> salas;
 
     public AcademiaDTO() {}
     public AcademiaDTO(Academia academia) {
         setId(academia.getId());
         setNombre(academia.getNombre());
         setCiudad(academia.getCiudad());
-        setUsuarios(academia.getUsuarios());
-        setClases(academia.getClases());
-        setSalas(academia.getSalas());
+        setUsuarios(academia.getUsuarios().stream().map(UsuarioDTO::new).collect(Collectors.toSet()));
+        setClases(academia.getClases().stream().map(ClaseDTO::new).collect(Collectors.toSet()));
+        setSalas(academia.getSalas().stream().map(SalaDTO::new).collect(Collectors.toSet()));
     }
 
     public long getId() {
@@ -49,27 +50,27 @@ public class AcademiaDTO {
         this.ciudad = ciudad;
     }
 
-    public Set<Usuario> getUsuarios() {
+    public Set<UsuarioDTO> getUsuarios() {
         return usuarios;
     }
 
-    public void setUsuarios(Set<Usuario> usuarios) {
+    public void setUsuarios(Set<UsuarioDTO> usuarios) {
         this.usuarios = usuarios;
     }
 
-    public Set<Clase> getClases() {
+    public Set<ClaseDTO> getClases() {
         return clases;
     }
 
-    public void setClases(Set<Clase> clases) {
+    public void setClases(Set<ClaseDTO> clases) {
         this.clases = clases;
     }
 
-    public Set<Sala> getSalas() {
+    public Set<SalaDTO> getSalas() {
         return salas;
     }
 
-    public void setSalas(Set<Sala> salas) {
+    public void setSalas(Set<SalaDTO> salas) {
         this.salas = salas;
     }
 }
