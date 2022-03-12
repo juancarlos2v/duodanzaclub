@@ -22,6 +22,7 @@ public class Festival {
 
     private String nombre;
     private Double precio;
+    private Estilos estilo;
 
     @ElementCollection
     @Column(name="horarios")
@@ -31,28 +32,35 @@ public class Festival {
     private Set<SalaFestival> salaFestival = new HashSet<>();
 
 
-    public Festival() {}
-    public Festival(String nombre, List<Double> horarios, Double precio) {
+//<<<<<<< HEAD:src/main/java/com/mindhub/duodanzaclub/model/Festival.java
+    public Festival() {
+    }
+
+    public Festival(String nombre, Estilos estilo, Double precio, List<Double> horarios) {
+
+//>>>>>>> 763b920ff0ed6fd782f189fe3aad6612c9c9e149:src/main/java/com/mindhub/duodanzaclub/models/Festival.java
         this.nombre = nombre;
-        this.horarios = horarios;
         this.precio = precio;
+        this.estilo = estilo;
+        this.horarios = horarios;
     }
 
     @JsonIgnore
-    public List<Sala> getSalas() {
-        return  salaFestival.stream().map(salaFestival -> salaFestival.getSala()).collect(toList());
-    }
+    public List<Sala> getSalas() {return  salaFestival.stream().map(salaFestival -> salaFestival.getSala()).collect(toList());}
 
     public long getId() {return id;}
 
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
 
-    public List<Double> getHorarios() {return horarios;}
-    public void setHorarios(List<Double> horarios) {this.horarios = horarios;}
-
     public Double getPrecio() {return precio;}
     public void setPrecio(Double precio) {this.precio = precio;}
+
+    public Estilos getEstilo() {return estilo;}
+    public void setEstilo(Estilos estilo) {this.estilo = estilo;}
+
+    public List<Double> getHorarios() {return horarios;}
+    public void setHorarios(List<Double> horarios) {this.horarios = horarios;}
 
     public Set<SalaFestival> getSalaFestival() {return salaFestival;}
     public void setSalaFestival(Set<SalaFestival> salaFestival) {this.salaFestival = salaFestival;}

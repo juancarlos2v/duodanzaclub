@@ -19,20 +19,38 @@ public class Usuario {
     private String email;
     private String password;
     private LocalDate fechaNacimiento;
+    private Nivel nivel;
+    private Rol rol;
+    private Abono abono;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Academia_Id")
     private Academia academia;
 
     public Usuario() {}
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
+    public Usuario(String email, String password){
         this.email = email;
         this.password = password;
-        this.fechaNacimiento = fechaNacimiento;
-        //this.academia = academia;
+    }
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setTelefono(telefono);
+        setEmail(email);
+        setPassword(password);
+        setFechaNacimiento(fechaNacimiento);
+    }
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Nivel nivel, Rol rol, Abono abono, Academia academia) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setTelefono(telefono);
+        setEmail(email);
+        setPassword(password);
+        setFechaNacimiento(fechaNacimiento);
+        setNivel(nivel);
+        setRol(rol);
+        setAbono(abono);
+        setAcademia(academia);
     }
 
     public long getId() {return id;}
@@ -54,6 +72,15 @@ public class Usuario {
 
     public LocalDate getFechaNacimiento() {return fechaNacimiento;}
     public void setFechaNacimiento(LocalDate fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
+
+    public Nivel getNivel() {return nivel;}
+    public void setNivel(Nivel nivel) {this.nivel = nivel;}
+
+    public Rol getRol() {return rol;}
+    public void setRol(Rol rol) {this.rol = rol;}
+
+    public Abono getAbono() {return abono;}
+    public void setAbono(Abono abono) {this.abono = abono;}
 
     public Academia getAcademia() {return academia;}
     public void setAcademia(Academia academia) {this.academia = academia;}
