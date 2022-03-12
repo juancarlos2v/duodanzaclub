@@ -16,13 +16,13 @@ public class UsuarioDTO {
 
     public UsuarioDTO(){}
     public UsuarioDTO(Usuario usuario){
-        setId(id);
-        setNombre(nombre);
-        setApellido(apellido);
-        setTelefono(telefono);
-        setEmail(email);
-        setFechaNacimiento(fechaNacimiento);
-        setAcademia(academia);
+        setId(usuario.getId());
+        setNombre(usuario.getNombre());
+        setApellido(usuario.getApellido());
+        setTelefono(usuario.getTelefono());
+        setEmail(usuario.getEmail());
+        setFechaNacimiento(usuario.getFechaNacimiento());
+        setAcademia(usuario.getAcademia());
     }
 
     public long getId() {
