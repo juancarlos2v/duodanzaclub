@@ -24,7 +24,7 @@ public class SalaDTO {
         setClases(sala.getSalaClases().stream().map(SalaClaseDTO::new).collect(Collectors.toSet()));
         setFestivales(sala.getSalaFestival().stream().map(SalaFestivalDTO::new).collect(Collectors.toSet()));
     }
-
+ //JOYA
     public long getId() {
         return id;
     }
