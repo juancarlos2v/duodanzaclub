@@ -27,18 +27,18 @@ public class Usuario {
     @JoinColumn(name="Academia_Id")
     private Academia academia;
 
-//<<<<<<< HEAD:src/main/java/com/mindhub/duodanzaclub/model/Usuario.java
 
 
 
     public Usuario() {
     }
 
-
-//=======
+    public Usuario(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
 
     public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Abono abono, Academia academia) {
-//>>>>>>> 763b920ff0ed6fd782f189fe3aad6612c9c9e149:src/main/java/com/mindhub/duodanzagit
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -50,6 +50,9 @@ public class Usuario {
         this.abono = abono;
         this.academia = academia;
     }
+
+
+
 
     public long getId() {return id;}
 
