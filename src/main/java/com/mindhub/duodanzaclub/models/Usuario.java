@@ -28,32 +28,32 @@ public class Usuario {
     @JoinColumn(name="Academia_Id")
     private Academia academia;
 
-
-
-
-    public Usuario() {
-    }
-
+    public Usuario() {}
     public Usuario(String email, String password){
         this.email = email;
         this.password = password;
     }
 
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Nivel nivel, Rol rol, Abono abono, Academia academia) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.email = email;
-        this.password = password;
-        this.fechaNacimiento = fechaNacimiento;
-        this.nivel = nivel;
-        this.rol = rol;
-        this.abono = abono;
-        this.academia = academia;
+
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setTelefono(telefono);
+        setEmail(email);
+        setPassword(password);
+        setFechaNacimiento(fechaNacimiento);
     }
-
-
-
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Nivel nivel, Rol rol, Abono abono) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setTelefono(telefono);
+        setEmail(email);
+        setPassword(password);
+        setFechaNacimiento(fechaNacimiento);
+        setNivel(nivel);
+        setRol(rol);
+        setAbono(abono);
+    }
 
     public long getId() {return id;}
 

@@ -1,7 +1,6 @@
 package com.mindhub.duodanzaclub.dtos;
 
-import com.mindhub.duodanzaclub.models.Academia;
-import com.mindhub.duodanzaclub.models.Usuario;
+import com.mindhub.duodanzaclub.models.*;
 
 import java.time.LocalDate;
 
@@ -12,6 +11,9 @@ public class UsuarioDTO {
     private String telefono;
     private String email;
     private LocalDate fechaNacimiento;
+    private Nivel nivel;
+    private Rol rol;
+    private Abono abono;
     private Academia academia;
 
     public UsuarioDTO(){}
@@ -22,6 +24,9 @@ public class UsuarioDTO {
         setTelefono(usuario.getTelefono());
         setEmail(usuario.getEmail());
         setFechaNacimiento(usuario.getFechaNacimiento());
+        setNivel(usuario.getNivel());
+        setRol(usuario.getRol());
+        setAbono(usuario.getAbono());
         setAcademia(usuario.getAcademia());
     }
 
@@ -45,9 +50,7 @@ public class UsuarioDTO {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    public void setApellido(String apellido) {this.apellido = apellido;}
 
     public String getTelefono() {
         return telefono;
@@ -80,4 +83,16 @@ public class UsuarioDTO {
     public void setAcademia(Academia academia) {
         this.academia = academia;
     }
+
+    public Nivel getNivel() {return nivel;}
+
+    public void setNivel(Nivel nivel) {this.nivel = nivel;}
+
+    public Rol getRol() {return rol;}
+
+    public void setRol(Rol rol) {this.rol = rol;}
+
+    public Abono getAbono() {return abono;}
+
+    public void setAbono(Abono abono) {this.abono = abono;}
 }

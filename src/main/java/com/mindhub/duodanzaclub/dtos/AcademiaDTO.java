@@ -1,5 +1,6 @@
 package com.mindhub.duodanzaclub.dtos;
 
+import com.mindhub.duodanzaclub.models.Academia;
 import com.mindhub.duodanzaclub.models.Clase;
 import com.mindhub.duodanzaclub.models.Sala;
 import com.mindhub.duodanzaclub.models.Usuario;
@@ -14,16 +15,14 @@ public class AcademiaDTO {
     private Set<Clase> clases;
     private Set<Sala> salas;
 
-    public AcademiaDTO() {
-    }
-
-    public AcademiaDTO(long id, String nombre, String ciudad, Set<Usuario> usuarios, Set<Clase> clases, Set<Sala> salas) {
-        setId(id);
-        setNombre(nombre);
-        setCiudad(ciudad);
-        setUsuarios(usuarios);
-        setClases(clases);
-        setSalas(salas);
+    public AcademiaDTO() {}
+    public AcademiaDTO(Academia academia) {
+        setId(academia.getId());
+        setNombre(academia.getNombre());
+        setCiudad(academia.getCiudad());
+        setUsuarios(academia.getUsuarios());
+        setClases(academia.getClases());
+        setSalas(academia.getSalas());
     }
 
     public long getId() {
