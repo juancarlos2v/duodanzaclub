@@ -25,14 +25,14 @@ public class Usuario {
     private Academia academia;
 
     public Usuario() {}
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Academia academia) {
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
         this.password = password;
         this.fechaNacimiento = fechaNacimiento;
-        this.academia = academia;
+        //this.academia = academia;
     }
 
     public long getId() {return id;}
