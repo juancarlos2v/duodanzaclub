@@ -11,16 +11,24 @@ public class SalaDTO {
     private long id;
     private String nombre;
     private int aforo;
+    private long academia_id;
     private Academia academia;
     private Set<SalaClaseDTO> clases = new HashSet<>();
     private Set<SalaFestivalDTO> festivales = new HashSet<>();
 
     public SalaDTO(){}
+    public SalaDTO(String nombre, int aforo, long academia_id){
+
+        setNombre(nombre);
+        setAforo(aforo);
+        setAcademia_id(academia_id);
+
+    }
     public SalaDTO(Sala sala){
         setId(sala.getId());
         setNombre(sala.getNombre());
         setAforo(sala.getAforo());
-        setAcademia(sala.getAcademia());
+
         setClases(sala.getSalaClases().stream().map(SalaClaseDTO::new).collect(Collectors.toSet()));
         setFestivales(sala.getSalaFestival().stream().map(SalaFestivalDTO::new).collect(Collectors.toSet()));
     }
@@ -71,5 +79,13 @@ public class SalaDTO {
 
     public void setFestivales(Set<SalaFestivalDTO> festivales) {
         this.festivales = festivales;
+    }
+
+    public long getAcademia_id() {
+        return academia_id;
+    }
+
+    public void setAcademia_id(long academia_id) {
+        this.academia_id = academia_id;
     }
 }

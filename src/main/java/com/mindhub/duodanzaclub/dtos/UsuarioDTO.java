@@ -27,7 +27,7 @@ public class UsuarioDTO {
         setNivel(usuario.getNivel());
         setRol(usuario.getRol());
         setAbono(usuario.getAbono());
-        setAcademia(usuario.getAcademia());
+       // setAcademia(usuario.getAcademia());
     }
 
     public long getId() {

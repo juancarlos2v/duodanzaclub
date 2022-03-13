@@ -23,6 +23,7 @@ public class Usuario {
     private Rol rol;
     private Abono abono;
 
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Academia_Id")
     private Academia academia;
@@ -32,6 +33,8 @@ public class Usuario {
         this.email = email;
         this.password = password;
     }
+
+
     public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
         setNombre(nombre);
         setApellido(apellido);
@@ -40,7 +43,7 @@ public class Usuario {
         setPassword(password);
         setFechaNacimiento(fechaNacimiento);
     }
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Nivel nivel, Rol rol, Abono abono, Academia academia) {
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Nivel nivel, Rol rol, Abono abono) {
         setNombre(nombre);
         setApellido(apellido);
         setTelefono(telefono);
@@ -50,7 +53,6 @@ public class Usuario {
         setNivel(nivel);
         setRol(rol);
         setAbono(abono);
-        setAcademia(academia);
     }
 
     public long getId() {return id;}
