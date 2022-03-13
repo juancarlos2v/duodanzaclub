@@ -23,23 +23,15 @@ public class Productos {
     private Estilos estilo;
     private TipoProducto tipoProducto;
 
-
-
-
-    public Productos() {
-    }
-
+    public Productos() {}
     public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, TipoProducto tipoProducto) {
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.imagen = imagen;
-        this.estilo = estilo;
-        this.tipoProducto = tipoProducto;
+        setTitulo(titulo);
+        setDescripcion(descripcion);
+        setPrecio(precio);
+        setImagen(imagen);
+        setEstilo(estilo);
+        setTipoProducto(tipoProducto);
     }
-
-
-
 
     public long getId() {return id;}
 

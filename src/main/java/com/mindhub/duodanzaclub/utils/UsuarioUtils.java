@@ -25,4 +25,22 @@ public final class UsuarioUtils {
 
         return sonContactos;
     }
+
+    public static Boolean buscarEntreContactosPorID(Long usuario2, List<Long> usuarios){
+        Boolean sonContactos = false;
+        int i = 0;
+
+        do {
+            Long usuario = usuarios.get(i);
+
+            if(usuario == usuario2){
+                sonContactos = true;
+            }
+            i++;
+
+        }
+        while (sonContactos == false && i < usuarios.size());
+
+        return sonContactos;
+    }
 }

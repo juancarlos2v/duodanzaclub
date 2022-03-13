@@ -100,5 +100,45 @@ public class UsuarioController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PatchMapping("/usuarios/borrar")
+    public ResponseEntity<Object> borrarContacto(Authentication authentication, @RequestBody SolicitudDTO solicitudDTO){
+        Usuario usuario1 = usuarioService.findUsuarioByEmail(authentication.getName());
+        Usuario usuario2 = usuarioService.getUsuarioById(solicitudDTO.getUsuario2());
+        List<Usuario> following = new ArrayList<Usuario>(usuario1.getFollowing());
+        List<Long> contactos = usuario1.getContactos();
+
+
+        if(usuario1 == null || usuario2 == null){
+            return new ResponseEntity<>("Usuario invalido", HttpStatus.FORBIDDEN);
+        }
+        if(usuario1 == usuario2){
+            return new ResponseEntity<>("El usuario destino es el usuario autentificado", HttpStatus.FORBIDDEN);
+        }
+        //Borrar contacto si lo son
+        if(contactos.size() > 0){
+            Boolean existeContacto = UsuarioUtils.buscarEntreContactosPorID(usuario2.getId(), contactos);
+            if(existeContacto){
+                contactos.remove(usuario2.getId());
+                usuario2.getContactos().remove(usuario1.getId());
+            }
+        }
+        // Veo si el usuario sigue a otros usuarios
+        if(following.size() < 1){
+            return new ResponseEntity<>("No se sigue a ningún usuario", HttpStatus.FORBIDDEN);
+        }
+        else{
+            // Compruebo que el usuario siga al otro usuario
+            Boolean existeFollow = UsuarioUtils.buscarEntreContactos(usuario2, following);
+            if(!existeFollow){
+                return new ResponseEntity<>("No se sigue a ese usuario", HttpStatus.FORBIDDEN);
+            }
+        }
+
+        usuario1.getFollowing().remove(usuario2);
+        usuario2.getFollowers().remove(usuario1);
+        usuarioService.saveUsuario(usuario1);
+        usuarioService.saveUsuario(usuario2);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
 }

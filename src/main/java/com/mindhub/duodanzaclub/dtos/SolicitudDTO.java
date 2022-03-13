@@ -5,6 +5,9 @@ public class SolicitudDTO {
     private long usuario2;
 
     public SolicitudDTO(){}
+    public SolicitudDTO(long usuario2){
+        setUsuario2(usuario2);
+    }
     public SolicitudDTO(long usuario1, long usuario2){
         setUsuario1(usuario1);
         setUsuario2(usuario2);

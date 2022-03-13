@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@Embeddable
 public class Usuario {
 
     @Id
@@ -44,7 +45,7 @@ public class Usuario {
 
     @ElementCollection
     @Column(name = "contactos")
-    private Set<Long> contactos = new HashSet<Long>();
+    private List<Long> contactos = new ArrayList<Long>();
 
     public Usuario() {}
     public Usuario(String email, String password){
@@ -105,10 +106,6 @@ public class Usuario {
     public Academia getAcademia() {return academia;}
     public void setAcademia(Academia academia) {this.academia = academia;}
 
-    /*public Set<ContactoUsuario> getContactoUsuarios() {return contactoUsuarios;}
-
-    public void setContactoUsuarios(Set<ContactoUsuario> contactoUsuarios) {this.contactoUsuarios = contactoUsuarios;}*/
-
     @JsonIgnore
     public Set<Usuario> getFollowers() {return followers;}
 
@@ -120,7 +117,7 @@ public class Usuario {
     public void setFollowing(Set<Usuario> following) {this.following = following;}
 
     @JsonIgnore
-    public Set<Long> getContactos() {return contactos;}
+    public List<Long> getContactos() {return contactos;}
 
-    public void setContactos(Set<Long> contactos) {this.contactos = contactos;}
+    public void setContactos(List<Long> contactos) {this.contactos = contactos;}
 }

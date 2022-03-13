@@ -8,6 +8,7 @@ import com.mindhub.duodanzaclub.models.TipoProducto;
 import com.mindhub.duodanzaclub.models.Usuario;
 import com.mindhub.duodanzaclub.repositories.ProductoRepository;
 import com.mindhub.duodanzaclub.repositories.UsuarioRepository;
+import com.mindhub.duodanzaclub.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,18 +24,14 @@ public class ProductoController {
 
     @Autowired
     ProductoRepository productoRepository;
-
     @Autowired
-    UsuarioRepository usuarioRepository;
-
+    UsuarioService usuarioService;
 
     @GetMapping("/productos")
     public List<ProductoDTO> getProductos(){
         List<ProductoDTO> productoDTOS = productoRepository.findAll().stream().map(ProductoDTO::new).collect(Collectors.toList());
         return productoDTOS;
     }
-
-
 
     @GetMapping("/productos/{id}")
     public ProductoDTO getProducto(@PathVariable Long id){
@@ -43,12 +40,9 @@ public class ProductoController {
         return productoDTO;
     }
 
-
-
     @PatchMapping("/productos/{id}")
     public ResponseEntity<Object> actualizarPrecio(@PathVariable Long id,
                                                    @RequestParam Double precio){
-
         Productos producto = productoRepository.findById(id).orElse(null);
 
         if(producto == null) {
@@ -58,43 +52,25 @@ public class ProductoController {
             return new ResponseEntity<>("Agregue un precio", HttpStatus.FORBIDDEN);
         }
 
-        else {
-            producto.setPrecio(precio);
-            productoRepository.save(producto);
-            return new ResponseEntity<>("Precio actualizado", HttpStatus.FORBIDDEN);
-        }
-
-
+        producto.setPrecio(precio);
+        productoRepository.save(producto);
+        return new ResponseEntity<>("Precio actualizado", HttpStatus.FORBIDDEN);
     }
-
-
 
     @PostMapping("/productos")
     public ResponseEntity<Object> crearProducto(Authentication authentication,
                                                 @RequestBody Productos producto){
 
-
         if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null || producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null){
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
         }
-
         if(producto.getPrecio() <= 0) {
             return new ResponseEntity<>("Agregue un precio", HttpStatus.FORBIDDEN);
         }
 
+        Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(), producto.getImagen(), producto.getEstilo(), producto.getTipoProducto());
+        productoRepository.save(productoNuevo);
 
-        else {
-
-            Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(), producto.getImagen(), producto.getEstilo(), producto.getTipoProducto());
-            productoRepository.save(productoNuevo);
-
-            return new ResponseEntity<>("Producto creado", HttpStatus.FORBIDDEN);
-        }
-
+        return new ResponseEntity<>("Producto creado", HttpStatus.FORBIDDEN);
     }
-
-
-
-
-
 }

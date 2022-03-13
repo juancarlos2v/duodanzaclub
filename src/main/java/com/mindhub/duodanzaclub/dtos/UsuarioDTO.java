@@ -26,7 +26,7 @@ public class UsuarioDTO {
     private LocalDate fechaNacimiento;
     private Set<Usuario> followers = new HashSet<Usuario>();
     private Set<Usuario> following = new HashSet<Usuario>();
-    private Set<Long> contactos = new HashSet<Long>();
+    private List<Long> contactos = new ArrayList<Long>();
 
     public UsuarioDTO(){}
     public UsuarioDTO(String nombre, String apellido, String telefono, String email, String password, int dia, int mes, int anio){
@@ -70,59 +70,33 @@ public class UsuarioDTO {
         setContactos(usuario.getContactos());//.stream().map(UsuarioDTO::new).collect(Collectors.toList()));
     }
 
-    public long getId() {
-        return id;
-    }
+    public long getId() {return id;}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    public void setId(long id) {this.id = id;}
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() {return nombre;}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public void setNombre(String nombre) {this.nombre = nombre;}
 
-    public String getApellido() {
-        return apellido;
-    }
+    public String getApellido() {return apellido;}
 
     public void setApellido(String apellido) {this.apellido = apellido;}
 
-    public String getTelefono() {
-        return telefono;
-    }
+    public String getTelefono() {return telefono;}
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+    public void setTelefono(String telefono) {this.telefono = telefono;}
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() {return email;}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public void setEmail(String email) {this.email = email;}
 
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+    public LocalDate getFechaNacimiento() {return fechaNacimiento;}
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
 
-    public Academia getAcademia() {
-        return academia;
-    }
+    public Academia getAcademia() {return academia;}
 
-    public void setAcademia(Academia academia) {
-        this.academia = academia;
-    }
+    public void setAcademia(Academia academia) {this.academia = academia;}
 
     public Nivel getNivel() {return nivel;}
 
@@ -160,7 +134,7 @@ public class UsuarioDTO {
 
     public void setFollowing(Set<Usuario> following) {this.following = following;}
 
-    public Set<Long> getContactos() {return contactos;}
+    public List<Long> getContactos() {return contactos;}
 
-    public void setContactos(Set<Long> contactos) {this.contactos = contactos;}
+    public void setContactos(List<Long> contactos) {this.contactos = contactos;}
 }
