@@ -1,0 +1,158 @@
+.contenedor-logo-nav nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin-top: 7vw;
+    padding-bottom: 1vw;
+}
+
+nav div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
+
+nav a {
+    color: var(--footer-color);
+    text-transform: uppercase;
+}
+
+.linea-nav {
+    background-color: var(--header-color);
+    width: 100%;
+    height: 5vw;
+}
+
+.contenedor-logo-nav img {
+    width: 30%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    position: absolute;
+    padding-bottom: 28rem;
+}
+
+.contenedor-reel {
+    background-image: url("/recursos/imagenes/home/frame_video_3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0rem -6rem;
+    width: 100%;
+    height: 29vw;
+    z-index: 9;
+}
+
+.contenedor-texto {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin: auto;
+    width: 60vw;
+    text-align: center;
+    background-color: var(--header-color);
+    padding-bottom: 1vw;
+    z-index: 3;
+}
+
+.contenedor-banner-clases {
+    margin: auto;
+    margin-top: 2vw;
+    width: 80vw;
+    height: 20vh;
+}
+
+.manos {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--gray-color);
+}
+
+.logo-clases {
+    background-image: url("/recursos/imagenes/home/clases_titulo_azul_y_beige.png");
+    height: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-content: center;
+    background-position: 50%;
+}
+
+.mano-izquierda {
+    background-image: url("/recursos/imagenes/home/mano_1.png");
+    height: 100%;
+    width: 22%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mano-derecha {
+    background-image: url("/recursos/imagenes/home/mano_2.png");
+    height: 100%;
+    width: 22%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100%;
+}
+
+.contenedor-estilos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30vh;
+}
+
+.contenedor-estilos div {
+    background-color: var(--footer-color);
+    height: 3rem;
+    width: 14rem;
+    margin-bottom: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 2rem;
+}
+
+.contenedor-estilos div {
+    background-image: url("/recursos/imagenes/home/bachata_titulo.png");
+}
+
+.contenedor-estilos div+div {
+    background-image: url("/recursos/imagenes/home/salsa_titulo.png");
+}
+
+.contenedor-estilos div+div+div {
+    background-image: url("/recursos/imagenes/home/tango_titulo.png");
+}
+
+.contenedor-profesores h3 {
+    text-align: center;
+}
+
+.contenedor-profesores>div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-profesores>div div {
+    height: 10rem;
+    width: 20rem;
+    margin-bottom: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.contenedor-profesores>div div {
+    background-image: url("/recursos/imagenes/home/Anderson_y_Brenda.png");
+}
+
+.contenedor-profesores>div div+div {
+    background-image: url("/recursos/imagenes/home/fernando_y_leonela.png");
+}
