@@ -35,7 +35,7 @@ nav a {
     margin: auto;
     justify-content: center;
     position: absolute;
-    padding-bottom: 18vw;
+    padding-bottom: 28rem;
 }
 
 .contenedor-reel {
@@ -65,11 +65,11 @@ nav a {
     margin: auto;
     margin-top: 2vw;
     width: 80vw;
-    height: 70vh;
+    height: 20vh;
 }
 
-.contenedor-banner-clases>div+div {
-    height: 60%;
+.manos {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,7 +78,7 @@ nav a {
 
 .logo-clases {
     background-image: url("/recursos/imagenes/home/clases_titulo_azul_y_beige.png");
-    height: 50%;
+    height: 90%;
     background-repeat: no-repeat;
     background-size: contain;
     justify-content: center;
@@ -88,7 +88,7 @@ nav a {
 .mano-izquierda {
     background-image: url("/recursos/imagenes/home/mano_1.png");
     height: 100%;
-    width: 50%;
+    width: 22%;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -96,7 +96,7 @@ nav a {
 .mano-derecha {
     background-image: url("/recursos/imagenes/home/mano_2.png");
     height: 100%;
-    width: 50%;
+    width: 22%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100%;
@@ -105,18 +105,54 @@ nav a {
 .contenedor-estilos {
     display: flex;
     justify-content: space-around;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    margin-top: 30vh;
 }
 
 .contenedor-estilos div {
     background-color: var(--footer-color);
-    height: 7rem;
-    width: 15rem;
+    height: 3rem;
+    width: 14rem;
+    margin-bottom: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 2rem;
 }
 
+.contenedor-estilos div {
+    background-image: url("/recursos/imagenes/home/bachata_titulo.png");
+}
 
-/* .contenedor-radio {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-} */
+.contenedor-estilos div+div {
+    background-image: url("/recursos/imagenes/home/salsa_titulo.png");
+}
+
+.contenedor-estilos div+div+div {
+    background-image: url("/recursos/imagenes/home/tango_titulo.png");
+}
+
+.contenedor-profesores h3 {
+    text-align: center;
+}
+
+.contenedor-profesores>div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-profesores>div div {
+    height: 10rem;
+    width: 20rem;
+    margin-bottom: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.contenedor-profesores>div div {
+    background-image: url("/recursos/imagenes/home/Anderson_y_Brenda.png");
+}
+
+.contenedor-profesores>div div+div {
+    background-image: url("/recursos/imagenes/home/fernando_y_leonela.png");
+}
