@@ -1,0 +1,21 @@
+body,
+html {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --header-color: #b8a697;
+    --footer-color: #5a7892;
+    --gray-color: #C4C4C4;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
