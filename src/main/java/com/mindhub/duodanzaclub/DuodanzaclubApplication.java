@@ -27,7 +27,10 @@ public class DuodanzaclubApplication {
 	public CommandLineRunner initData(UsuarioRepository usuarioRepository, AcademiaRepository academiaRepository){
 
 		return (args) -> {
-			Usuario nacho = usuarioRepository.save(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", "123456", LocalDate.now()));
+			Usuario nacho = usuarioRepository.save(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
+			Usuario mati = usuarioRepository.save(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
+			Usuario tomi = usuarioRepository.save(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
+			Usuario lauti = usuarioRepository.save(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
 			Academia academia1 = academiaRepository.save(new Academia("La academia del chona", "Buenos cyphers"));
 			Academia academia2 = academiaRepository.save(new Academia("Racing club", "Mar del plata"));
 		};
