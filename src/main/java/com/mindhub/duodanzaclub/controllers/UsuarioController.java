@@ -34,4 +34,7 @@ public class UsuarioController {
         UsuarioDTO usuarioDTO = new UsuarioDTO(usuario);
         return usuarioDTO;
     }
+
+
+
 }

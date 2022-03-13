@@ -3,6 +3,7 @@ package com.mindhub.duodanzaclub;
 import com.mindhub.duodanzaclub.models.*;
 import com.mindhub.duodanzaclub.repositories.AcademiaRepository;
 import com.mindhub.duodanzaclub.repositories.ProductoRepository;
+import com.mindhub.duodanzaclub.repositories.SalaFestivalRepository;
 import com.mindhub.duodanzaclub.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -24,7 +25,7 @@ public class DuodanzaclubApplication {
 	}
 
 	@Bean
-	public CommandLineRunner initData(UsuarioRepository usuarioRepository, AcademiaRepository academiaRepository, ProductoRepository productoRepository){
+	public CommandLineRunner initData(UsuarioRepository usuarioRepository, AcademiaRepository academiaRepository, ProductoRepository productoRepository, SalaFestivalRepository salaFestivalRepository){
 
 		return (args) -> {
 			Usuario nacho = usuarioRepository.save(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", "123456", LocalDate.now()));
@@ -35,6 +36,8 @@ public class DuodanzaclubApplication {
 
 			Productos producto1 = new Productos("Zapatos de Salsa", "Zapatos de cuero", 12000.0, "Insert path", Estilos.BACHATA, TipoProducto.CALZADOS);
 			productoRepository.save(producto1);
+
+
 		};
 	}
 }
