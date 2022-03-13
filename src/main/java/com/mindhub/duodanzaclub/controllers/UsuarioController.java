@@ -24,8 +24,6 @@ public class UsuarioController {
     PasswordEncoder passwordEncoder;
     @Autowired
     UsuarioService usuarioService;
-    @Autowired
-    ContactoUsuarioRepository contactoUsuarioRepository;
 
     @GetMapping("/usuarios")
     public List<UsuarioDTO> getUsuarios(){
