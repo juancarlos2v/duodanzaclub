@@ -1,310 +1,444 @@
-a {
-    text-decoration: none;
-}
-
-button {
-    border: none;
-    background-color: transparent;
-}
-
-
-/***HEADER******/
-
-.contenedor-logo-nav {
-    margin-top: 6rem;
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-}
-
-.contenedor-logo-nav img {
-    width: 30%;
-    z-index: 2;
-    position: absolute;
-    padding-bottom: 1vw;
-}
-
-nav {
-    background-color: var(--header-color);
-    width: 100%;
-    height: 4vw;
-    padding-left: 15rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding-top: 0.5vw;
-    padding-bottom: 1vw;
-    z-index: 0;
-    text-transform: uppercase;
-    padding-left: 30vw;
-}
-
-nav a {
-    color: white;
-    font-size: large;
-}
-
-
-/****MAIN*****/
-
-.contenedor-banner {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5rem;
-    padding-left: 2vw;
-    padding-right: 10vw;
-    height: 30rem;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.pareja-img img {
-    width: 33vw;
-}
-
-.contenedor-descripcion {
-    background-color: var(--header-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    height: auto;
-    margin: auto;
-    z-index: 99;
-    padding: 1rem;
-}
-
-.contenedor-banner-negro {
-    /* background-image: url("/recursos/imagenes/banner_negro.png");
+        a {
+            text-decoration: none;
+        }
+        
+        button {
+            border: none;
+            background-color: transparent;
+        }
+        /***HEADER******/
+        
+        .contenedor-logo-nav {
+            margin-top: 6rem;
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+        }
+        
+        .contenedor-logo-nav img {
+            width: 30%;
+            z-index: 2;
+            position: absolute;
+            padding-bottom: 1vw;
+        }
+        
+        nav {
+            background-color: var(--header-color);
+            width: 100%;
+            height: 4vw;
+            padding-left: 15rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding-top: 0.5vw;
+            padding-bottom: 1vw;
+            z-index: 0;
+            text-transform: uppercase;
+            padding-left: 30vw;
+        }
+        
+        nav a {
+            color: white;
+            font-size: large;
+        }
+        /****MAIN*****/
+        
+        .contenedor-banner {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3%;
+            height: 30vw;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .logo-tienda {
+            background-image: url("/recursos/imagenes/Tienda.png");
+            width: 190%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .pareja-img {
+            background-image: url("/recursos/imagenes/pareja_baile_recorte.png");
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .contenedor-descripcion {
+            background-color: var(--header-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80vw;
+            height: auto;
+            margin: auto;
+            z-index: 99;
+            padding: 1rem;
+        }
+        
+        .contenedor-banner-negro {
+            /* background-image: url("/recursos/imagenes/banner_negro.png");
     background-position: center; */
-    height: 20rem;
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    z-index: 0;
-}
-
-.contenedor-estilos {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4rem;
-}
-
-.contenedor-estilos>div {
-    border: solid 0.1rem black;
-    border-radius: 0.3rem;
-    width: 18rem;
-    height: 9rem;
-}
-
-.estilo-salsa {
-    background-image: url("/recursos/imagenes/salsa.png");
-    background-size: cover;
-    background-position: 0rem -0.4rem;
-}
-
-.estilo-bachata {
-    background-image: url("/recursos/imagenes/bachata.png");
-    background-size: cover;
-    background-position: -1rem -0.1rem;
-}
-
-.estilo-tango {
-    background-image: url("/recursos/imagenes/tnago.png");
-    background-size: cover;
-    background-position: 0rem -6rem;
-}
-
-.boton-estilo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    color: white;
-    height: 100%;
-    padding-right: 1rem;
-    padding-top: 2rem;
-}
-
-.contenedor-estilos button {
-    background-color: #b5c7cb;
-    padding: 0.5rem;
-    width: 4rem;
-}
-
-.contenedor-tipo {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-.contenedor-info {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    width: 100%;
-}
-
-.contenedor-info h1,
-.contenedor-info h3,
-.contenedor-info p {
-    color: white;
-}
-
-.envios {
-    background-color: var(--header-color);
-    height: 16rem;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2rem;
-}
-
-.promociones-ayuda-news {
-    display: flex;
-    margin-top: 1.5rem;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.promociones-ayuda-news div {
-    background-color: var(--header-color);
-}
-
-.promociones-ayuda-news p,
-h3 {
-    margin: 0;
-    color: white;
-}
-
-.mas-info {
-    width: 20%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.mas-info img {
-    width: 30%;
-    margin-bottom: 0.5rem;
-}
-
-.input-news {
-    width: 30rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2vw;
-    padding-left: 3vw;
-}
-
-.input-news input {
-    width: 18rem;
-    padding: 0.5rem;
-}
-
-.input-news button {
-    background-color: black;
-    color: white;
-    padding: 0.5rem;
-}
-
-.news {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
-
-
-/***MODAL*****/
-
-.modal {
-    /* position: fixed; */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    /* overflow: hidden; */
-}
-
-.contenedor-modal {
-    margin: auto;
-    width: 90%;
-    max-width: 50vw;
-    max-height: 90%;
-    background-color: #fef8f8;
-    border-radius: 0.5rem 1rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.26);
-}
-
-.modal p,
-.moda h3 {
-    color: black
-}
-
-.modal-producto {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-.img-producto {
-    /* background-image: url("/recursos/imagenes/calzado-1.jpg");
+            width: 100%;
+            z-index: 0;
+        }
+        
+        .contenedor-banner-negro div {
+            display: flex;
+            background-color: black;
+            width: 100%;
+        }
+        
+        .contenedor-banner-negro img {
+            padding-left: 2vw;
+            width: 40%;
+        }
+        
+        .cuerpo {
+            padding: 6vw;
+            padding-top: 0vw;
+        }
+        
+        .contenedor-estilos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 4%;
+        }
+        
+        .contenedor-estilos>div {
+            border: solid 0.1rem black;
+            border-radius: 0.3rem;
+            width: 18rem;
+            height: 9rem;
+        }
+        
+        .estilo-salsa {
+            background-image: url("/recursos/imagenes/salsa.png");
+            background-size: cover;
+            background-position: 0rem -0.4rem;
+        }
+        
+        .estilo-bachata {
+            background-image: url("/recursos/imagenes/bachata.png");
+            background-size: cover;
+            background-position: -1rem -0.1rem;
+        }
+        
+        .estilo-tango {
+            background-image: url("/recursos/imagenes/tnago.png");
+            background-size: cover;
+            background-position: 0rem -6rem;
+        }
+        
+        .boton-estilo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            color: white;
+            height: 100%;
+            padding-right: 1rem;
+            padding-top: 2rem;
+        }
+        
+        .contenedor-estilos button {
+            background-color: #b5c7cb;
+            padding: 0.5rem;
+            width: 4rem;
+        }
+        
+        .contenedor-tipo {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .contenedor-info {
+            display: flex;
+            flex-direction: column;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+        
+        .contenedor-info h1,
+        .contenedor-info h5,
+        .contenedor-info p {
+            color: white;
+            margin: 0;
+        }
+        
+        .envios {
+            background-color: var(--header-color);
+            height: 16rem;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 14%;
+            padding-left: 5%;
+        }
+        
+        .envios div {
+            width: 40%;
+        }
+        
+        .envios div+div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 3vw;
+            width: 60%;
+            font-size: 5rem;
+        }
+        
+        .envios div+div>h1 {
+            font-size: 15vh;
+            margin: 0;
+        }
+        
+        .promociones-ayuda-news {
+            display: flex;
+            margin-top: 1.5rem;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .promociones-ayuda-news div {
+            background-color: var(--header-color);
+        }
+        
+        .promociones-ayuda-news p,
+        h3 {
+            margin: 0;
+            color: white;
+        }
+        
+        .mas-info {
+            width: 20%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .mas-info img {
+            width: 30%;
+            margin-bottom: 0.5rem;
+        }
+        
+        .input-news {
+            width: 30rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2vw;
+            padding-left: 3vw;
+        }
+        
+        .input-news input {
+            width: 18rem;
+            padding: 0.5rem;
+        }
+        
+        .input-news button {
+            background-color: black;
+            color: white;
+            padding: 0.5rem;
+        }
+        
+        .news {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+        /***MODAL*****/
+        
+        .modal {
+            /* position: fixed; */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            /* overflow: hidden; */
+        }
+        
+        .contenedor-modal {
+            margin: auto;
+            width: 90%;
+            max-width: 50vw;
+            max-height: 90%;
+            background-color: #fef8f8;
+            border-radius: 0.5rem 1rem;
+            border: 0.1rem solid rgba(0, 0, 0, 0.26);
+        }
+        
+        .modal p,
+        .modal h3 {
+            color: black
+        }
+        
+        .modal-producto {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .img-producto {
+            /* background-image: url("/recursos/imagenes/calzado-1.jpg");
     background-size: contain;
     background-repeat: no-repeat; */
-    width: 30%;
-}
-
-.img-producto img {
-    width: 100%;
-}
-
-.detalles {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    padding-left: 2rem;
-}
-
-.datos-compra {
-    display: flex;
-    width: 100vw;
-}
-
-.input-unidad,
-.input-talle,
-.select-color {
-    display: flex;
-    flex-direction: column;
-    margin-right: 1rem;
-}
-
-.input-unidad input,
-.input-talle input {
-    width: 3rem;
-}
-
-.select-color {
-    width: 8rem;
-}
-
-.datos-compra button {
-    background-color: #c6aeaf;
-    color: white;
-}
-
-
-/***OCULTAR ESTILO INPUT NUMBER****/
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
+            width: 30%;
+        }
+        
+        .img-producto img {
+            width: 100%;
+        }
+        
+        .detalles {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            padding-left: 2rem;
+        }
+        
+        .datos-compra {
+            display: flex;
+            width: 100vw;
+        }
+        
+        .input-unidad,
+        .input-talle,
+        .select-color {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1rem;
+        }
+        
+        .input-unidad input,
+        .input-talle input {
+            width: 3rem;
+        }
+        
+        .select-color {
+            width: 8rem;
+        }
+        
+        .datos-compra button {
+            background-color: #c6aeaf;
+            color: white;
+        }
+        /***OCULTAR ESTILO INPUT NUMBER****/
+        
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /***MEDIA QUERY***/
+        
+        @media only screen and (max-width: 800px) {
+            .contenedor-logo-nav {
+                margin-top: 6vh;
+                width: 100vw;
+            }
+            .contenedor-logo-nav nav {
+                width: 100vw;
+                height: 2vh;
+            }
+            nav a {
+                font-size: small;
+            }
+            .contenedor-banner {
+                width: 100%;
+                height: 9rem;
+                padding: 0;
+                margin-top: 2rem;
+            }
+            .pareja-img {
+                background-image: url("/recursos/imagenes/pareja_baile_recorte.png");
+                width: 90%;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .logo-tienda {
+                background-image: url("/recursos/imagenes/Tienda.png");
+                width: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .contenedor-descripcion {
+                padding: 0.6rem;
+            }
+            .contenedor-descripcion p {
+                font-size: 5vw;
+                text-align: center;
+            }
+            .contenedor-banner-negro {
+                width: 100vw;
+                overflow: hidden;
+                height: auto;
+            }
+            .contenedor-banner-negro img {
+                width: 40%;
+            }
+            .contenedor-estilos {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                margin-top: 1rem;
+            }
+            .contenedor-estilos div {
+                margin-bottom: 1.5rem;
+            }
+            .contenedor-info {
+                flex-direction: column;
+                flex-wrap: wrap;
+                width: 100%;
+                margin: 0 !important;
+            }
+            .envios {
+                height: 5rem;
+            }
+            .envios div+div>h1 {
+                font-size: 2.5vh;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .promociones-ayuda-news {
+                flex-direction: column;
+                margin-top: 0.6rem;
+                margin: auto !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                font-size: small;
+            }
+            .promociones-ayuda-news div {
+                width: 100vw;
+                padding: 0.5rem;
+            }
+            footer {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+                padding: 0 !important;
+                font-size: small;
+                width: 100vw;
+            }
+            footer .enlaces {
+                align-items: center !important;
+                width: 100%;
+                text-align: center;
+            }
+            .enlaces a {
+                text-align: center;
+            }
+        }

@@ -20,7 +20,7 @@ a {
     color: white;
 }
 
-footer .enlaces {
+.enlaces {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -31,6 +31,7 @@ footer .enlaces {
 }
 
 .enlaces a {
+    margin: auto;
     margin-bottom: 1rem;
 }
 

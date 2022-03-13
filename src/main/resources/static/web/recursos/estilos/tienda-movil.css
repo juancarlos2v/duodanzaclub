@@ -1,0 +1,9 @@
+@media only screen and (min-width: 800px) {
+    .contenedor-banner-negro {
+        width: 100%;
+        height: 10vh;
+    }
+    .contenedor-banner-negro img {
+        width: 10%;
+    }
+}
