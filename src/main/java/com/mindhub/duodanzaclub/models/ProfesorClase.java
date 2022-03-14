@@ -29,11 +29,11 @@ public class ProfesorClase {
         return id;
     }
 
-    public Profesor getProfesor() {
+    public com.mindhub.duodanzaclub.models.Profesor getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(Profesor profesor) {
+    public void setProfesor(com.mindhub.duodanzaclub.models.Profesor profesor) {
         this.profesor = profesor;
     }
 
