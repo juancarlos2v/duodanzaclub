@@ -1,5 +1,5 @@
 .contenedor-reel {
-    background-image: url("/recursos/imagenes/home/frame_video_3.png");
+    background-image: url("../imagenes/home/frame_video_3.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0rem -6rem;
@@ -37,7 +37,7 @@
 }
 
 .logo-clases {
-    background-image: url("/recursos/imagenes/home/clases_titulo_azul_y_beige.png");
+    background-image: url("../imagenes/home/clases_titulo_azul_y_beige.png");
     height: 90%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -46,7 +46,7 @@
 }
 
 .mano-izquierda {
-    background-image: url("/recursos/imagenes/home/mano_1.png");
+    background-image: url("../imagenes/home/mano_1.png");
     height: 100%;
     width: 22%;
     background-size: contain;
@@ -54,7 +54,7 @@
 }
 
 .mano-derecha {
-    background-image: url("/recursos/imagenes/home/mano_2.png");
+    background-image: url("../imagenes/home/mano_2.png");
     height: 100%;
     width: 22%;
     background-size: contain;
@@ -81,15 +81,15 @@
 }
 
 .contenedor-estilos div {
-    background-image: url("/recursos/imagenes/home/bachata_titulo.png");
+    background-image: url("../imagenes/home/bachata_titulo.png");
 }
 
 .contenedor-estilos div+div {
-    background-image: url("/recursos/imagenes/home/salsa_titulo.png");
+    background-image: url("../imagenes/home/salsa_titulo.png");
 }
 
 .contenedor-estilos div+div+div {
-    background-image: url("/recursos/imagenes/home/tango_titulo.png");
+    background-image: url("../imagenes/home/tango_titulo.png");
 }
 
 .contenedor-profesores h3 {
@@ -112,19 +112,19 @@
 }
 
 .contenedor-profesores>div div {
-    background-image: url("/recursos/imagenes/home/Anderson_y_Brenda.png");
+    background-image: url("../imagenes/home/Anderson_y_Brenda.png");
 }
 
 .contenedor-profesores>div div+div {
-    background-image: url("/recursos/imagenes/home/fernando_y_leonela.png");
+    background-image: url("../imagenes/home/fernando_y_leonela.png");
 }
 
 .contenedor-profesores>div div+div+div {
-    background-image: url("/recursos/imagenes/home/maria_y_facu.png");
+    background-image: url("../imagenes/home/maria_y_facu.png");
 }
 
 .contenedor-profesores>div div+div+div+div {
-    background-image: url("/recursos/imagenes/home/kizomba.png");
+    background-image: url("../imagenes/home/kizomba.png");
 }
 
 .seccion-tienda {
@@ -137,7 +137,7 @@
 }
 
 .seccion-tienda div {
-    background-image: url("/recursos/imagenes/home/Tienda.png");
+    background-image: url("../imagenes/home/Tienda.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50%;
@@ -160,7 +160,7 @@
 }
 
 .tienda-info>div div {
-    background-image: url("/recursos/imagenes/home/piernas_shop.png");
+    background-image: url("../imagenes/home/piernas_shop.png");
     background-repeat: no-repeat;
     background-size: contain;
     height: 100%;
@@ -189,19 +189,19 @@
 }
 
 .productos-destacados div {
-    background-image: url("/recursos/imagenes/home/zapato_1.png");
+    background-image: url("../imagenes/home/zapato_1.png");
 }
 
 .productos-destacados div+div {
-    background-image: url("/recursos/imagenes/home/ropa_2.png");
+    background-image: url("../imagenes/home/ropa_2.png");
 }
 
 .productos-destacados div+div+div {
-    background-image: url("/recursos/imagenes/home/zapato_2.png");
+    background-image: url("../imagenes/home/zapato_2.png");
 }
 
 .productos-destacados div+div+div+div {
-    background-image: url("/recursos/imagenes/home/ropa_1.png");
+    background-image: url("../imagenes/home/ropa_1.png");
 }
 
 .seccion-festival {
@@ -249,7 +249,7 @@
 }
 
 .seccion-milongas {
-    background-image: url("/recursos/imagenes/home/club-gricel.jpg");
+    background-image: url("../imagenes/home/club-gricel.jpg");
     height: 40rem;
     width: 100%;
     background-size: cover;
@@ -309,7 +309,7 @@ form>div div+div {
 }
 
 .logo-form {
-    background-image: url("/recursos/imagenes/logo_light.png");
+    background-image: url("../imagenes/logo_light.png");
     height: 10rem;
     width: 30%;
     background-repeat: no-repeat;
@@ -340,11 +340,11 @@ form>div div+div {
 }
 
 .sponsors div {
-    background-image: url("/recursos/imagenes/home/Minculturaarg.png");
+    background-image: url("../imagenes/home/Minculturaarg.png");
 }
 
 .sponsors>div+div {
-    background-image: url("/recursos/imagenes/home/pngegg\ \(1\).png");
+    background-image: url("../imagenes/home/pngegg\ \(1\).png");
 }
 
 .sponsors div+div+div {

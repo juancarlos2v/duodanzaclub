@@ -104,17 +104,17 @@ div>h3 {
 }
 
 .contenedor-profesores>div div {
-    background-image: url("/recursos/imagenes/home/Anderson_y_Brenda.png");
+    background-image: url("../imagenes/home/Anderson_y_Brenda.png");
 }
 
 .contenedor-profesores>div div+div {
-    background-image: url("/recursos/imagenes/home/fernando_y_leonela.png");
+    background-image: url("../imagenes/home/fernando_y_leonela.png");
 }
 
 .contenedor-profesores>div div+div+div {
-    background-image: url("/recursos/imagenes/home/maria_y_facu.png");
+    background-image: url("../imagenes/home/maria_y_facu.png");
 }
 
 .contenedor-profesores>div div+div+div+div {
-    background-image: url("/recursos/imagenes/home/kizomba.png");
+    background-image: url("../imagenes/home/kizomba.png");
 }
