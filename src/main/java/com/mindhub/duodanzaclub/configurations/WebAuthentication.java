@@ -2,6 +2,7 @@ package com.mindhub.duodanzaclub.configurations;
 
 import com.mindhub.duodanzaclub.models.Usuario;
 import com.mindhub.duodanzaclub.repositories.UsuarioRepository;
+import com.mindhub.duodanzaclub.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,14 +18,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
-    UsuarioRepository usuarioRepository;
+    UsuarioService usuarioService;
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(email->{
-            Usuario usuario = usuarioRepository.findByEmail(email);
+            Usuario usuario = usuarioService.findUsuarioByEmail(email);
             if(usuario != null){
-                if (email.equals("admin@admin.com")) {
+                if(email.equals("admin@admin.com")) {
                     return new User(usuario.getEmail(), usuario.getPassword(),
                             AuthorityUtils.createAuthorityList("ADMIN"));
                 }

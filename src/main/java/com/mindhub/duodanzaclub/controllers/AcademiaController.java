@@ -2,36 +2,55 @@ package com.mindhub.duodanzaclub.controllers;
 
 import com.mindhub.duodanzaclub.dtos.AcademiaDTO;
 import com.mindhub.duodanzaclub.models.Academia;
-import com.mindhub.duodanzaclub.repositories.AcademiaRepository;
-import com.mindhub.duodanzaclub.repositories.UsuarioRepository;
+import com.mindhub.duodanzaclub.services.AcademiaService;
+import com.mindhub.duodanzaclub.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
 public class AcademiaController {
 
     @Autowired
-    AcademiaRepository academiaRepository;
-    @Autowired
-    UsuarioRepository usuarioRepository;
+    AcademiaService academiaService;
+
 
     @GetMapping("/academias")
     public List<AcademiaDTO> getAcademias(){
-        List<AcademiaDTO> academiaDTOS = academiaRepository.findAll().stream().map(AcademiaDTO::new).collect(Collectors.toList());
+        List<AcademiaDTO> academiaDTOS = academiaService.getAcademias();
         return academiaDTOS;
     }
 
     @GetMapping("/academias/{id}")
     public AcademiaDTO getAcademia(@PathVariable long id){
-        Academia academia = academiaRepository.findById(id).orElse(null);
-        AcademiaDTO academiaDTO = new AcademiaDTO(academia);
+        AcademiaDTO academiaDTO = academiaService.getAcademia(id);
         return academiaDTO;
+    }
+
+
+
+    @PostMapping("/academias")
+    public ResponseEntity<Object> crearAcademia(Authentication authentication,
+                                                @RequestBody Academia academia){
+
+
+
+
+        if(academia.getNombre().isEmpty() || academia.getCiudad().isEmpty()) {
+            return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
+        }
+
+
+
+            Academia academiaNueva = new Academia(academia.getNombre(), academia.getCiudad());
+            academiaService.guardarAcademia(academiaNueva);
+
+            return new ResponseEntity<>("Academia creada", HttpStatus.CREATED);
+
     }
 }

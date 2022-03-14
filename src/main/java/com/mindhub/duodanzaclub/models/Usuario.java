@@ -1,10 +1,14 @@
 package com.mindhub.duodanzaclub.models;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Usuario {
@@ -27,6 +31,20 @@ public class Usuario {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Academia_Id")
     private Academia academia;
+
+    /*@OneToMany(mappedBy = "usuario1", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<ContactoUsuario> contactoUsuarios = new HashSet<>();*/
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "UserRel", joinColumns = {@JoinColumn(name = "followers")}, inverseJoinColumns = {@JoinColumn(name = "following")})
+    private Set<Usuario> followers = new HashSet<Usuario>();
+
+    @ManyToMany(mappedBy = "followers", cascade = CascadeType.ALL)
+    private Set<Usuario> following = new HashSet<Usuario>();
+
+    @ElementCollection
+    @Column(name = "contactos")
+    private Set<Long> contactos = new HashSet<Long>();
 
     public Usuario() {}
     public Usuario(String email, String password){
@@ -87,4 +105,22 @@ public class Usuario {
     public Academia getAcademia() {return academia;}
     public void setAcademia(Academia academia) {this.academia = academia;}
 
+    /*public Set<ContactoUsuario> getContactoUsuarios() {return contactoUsuarios;}
+
+    public void setContactoUsuarios(Set<ContactoUsuario> contactoUsuarios) {this.contactoUsuarios = contactoUsuarios;}*/
+
+    @JsonIgnore
+    public Set<Usuario> getFollowers() {return followers;}
+
+    public void setFollowers(Set<Usuario> followers) {this.followers = followers;}
+
+    @JsonIgnore
+    public Set<Usuario> getFollowing() {return following;}
+
+    public void setFollowing(Set<Usuario> following) {this.following = following;}
+
+    @JsonIgnore
+    public Set<Long> getContactos() {return contactos;}
+
+    public void setContactos(Set<Long> contactos) {this.contactos = contactos;}
 }

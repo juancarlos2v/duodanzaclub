@@ -7,6 +7,8 @@ import com.mindhub.duodanzaclub.models.PrecioClase;
 import com.mindhub.duodanzaclub.models.Usuario;
 import com.mindhub.duodanzaclub.repositories.AcademiaRepository;
 import com.mindhub.duodanzaclub.repositories.ClaseRepository;
+import com.mindhub.duodanzaclub.services.AcademiaService;
+import com.mindhub.duodanzaclub.services.ClaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,17 +21,19 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class ClaseController {
 
-    @Autowired
-    ClaseRepository claseRepository;
 
     @Autowired
-    AcademiaRepository academiaRepository;
+    ClaseService claseService;
+
+    @Autowired
+    AcademiaService academiaService;
+
 
 
 
     @GetMapping("/clases")
     public List<ClaseDTO> getClases(){
-        List<ClaseDTO> clases = claseRepository.findAll().stream().map(ClaseDTO::new).collect(Collectors.toList());
+        List<ClaseDTO> clases = claseService.traerClases();
         return clases;
     }
 
@@ -37,7 +41,7 @@ public class ClaseController {
 
     @GetMapping("/clases/{id}")
     public ClaseDTO getClase(@PathVariable Long id){
-        Clase clase = claseRepository.findById(id).orElse(null);
+        Clase clase = claseService.traerClasePorId(id);
         ClaseDTO claseDTO = new ClaseDTO(clase);
         return claseDTO;
     }
@@ -45,7 +49,7 @@ public class ClaseController {
     @PatchMapping("clases/{id}")
     public ResponseEntity<Object> cambiarPrecio(@PathVariable Long id,
                                @PathVariable List<Double> horarios){
-        Clase clase = claseRepository.findById(id).orElse(null);
+        Clase clase = claseService.traerClasePorId(id);
 
 
         if(clase == null) {
@@ -54,7 +58,7 @@ public class ClaseController {
 
         else {
             clase.setHorarios(horarios);
-
+            claseService.guardarClase(clase);
 
             return  new ResponseEntity<>("Clase creada", HttpStatus.CREATED);
         }
@@ -64,7 +68,7 @@ public class ClaseController {
     public ResponseEntity<Object> crearClase(@RequestBody ClaseDTO clase){
 
 
-        Academia academia = academiaRepository.findById(clase.getAcademiaId()).orElse(null);
+        Academia academia = academiaService.getAcademiaClass(clase.getId());
 
         if(clase.getNombre().isEmpty() || clase.getEstilo() == null || clase.getHorarios().isEmpty() ){
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
@@ -76,7 +80,7 @@ public class ClaseController {
 
         else {
             Clase claseNueva = new Clase(clase.getNombre(), clase.getEstilo(), clase.getHorarios(), clase.getPrecioClase(), academia);
-            claseRepository.save(claseNueva);
+            claseService.guardarClase(claseNueva);
 
             return  new ResponseEntity<>("Clase creada", HttpStatus.CREATED);
         }
