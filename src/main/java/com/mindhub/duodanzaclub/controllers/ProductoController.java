@@ -8,6 +8,7 @@ import com.mindhub.duodanzaclub.models.TipoProducto;
 import com.mindhub.duodanzaclub.models.Usuario;
 import com.mindhub.duodanzaclub.repositories.ProductoRepository;
 import com.mindhub.duodanzaclub.repositories.UsuarioRepository;
+import com.mindhub.duodanzaclub.services.ProductoService;
 import com.mindhub.duodanzaclub.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,20 +23,21 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class ProductoController {
 
+
     @Autowired
-    ProductoRepository productoRepository;
+    ProductoService productoService;
     @Autowired
     UsuarioService usuarioService;
 
     @GetMapping("/productos")
     public List<ProductoDTO> getProductos(){
-        List<ProductoDTO> productoDTOS = productoRepository.findAll().stream().map(ProductoDTO::new).collect(Collectors.toList());
+        List<ProductoDTO> productoDTOS = productoService.getProductsDTO();
         return productoDTOS;
     }
 
     @GetMapping("/productos/{id}")
     public ProductoDTO getProducto(@PathVariable Long id){
-        Productos producto = productoRepository.findById(id).orElse(null);
+        Productos producto = productoService.productoById(id);
         ProductoDTO productoDTO = new ProductoDTO(producto);
         return productoDTO;
     }
@@ -43,7 +45,7 @@ public class ProductoController {
     @PatchMapping("/productos/{id}")
     public ResponseEntity<Object> actualizarPrecio(@PathVariable Long id,
                                                    @RequestParam Double precio){
-        Productos producto = productoRepository.findById(id).orElse(null);
+        Productos producto = productoService.productoById(id);
 
         if(producto == null) {
             return new ResponseEntity<>("El producto seleccionado no existe", HttpStatus.FORBIDDEN);
@@ -53,15 +55,15 @@ public class ProductoController {
         }
 
         producto.setPrecio(precio);
-        productoRepository.save(producto);
-        return new ResponseEntity<>("Precio actualizado", HttpStatus.FORBIDDEN);
+        productoService.guardarProducto(producto);
+        return new ResponseEntity<>("Precio actualizado", HttpStatus.CREATED);
     }
 
     @PostMapping("/productos")
     public ResponseEntity<Object> crearProducto(Authentication authentication,
                                                 @RequestBody Productos producto){
 
-        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null || producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null){
+        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null || producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null || producto.getStock() <= 0){
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
         }
         if(producto.getPrecio() <= 0) {
@@ -70,6 +72,9 @@ public class ProductoController {
 
         Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(), producto.getImagen(), producto.getEstilo(), producto.getTipoProducto());
         productoRepository.save(productoNuevo);
+
+        Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(), producto.getImagen(), producto.getEstilo(), producto.getTipoProducto(), producto.getStock());
+        productoService.guardarProducto(productoNuevo);
 
         return new ResponseEntity<>("Producto creado", HttpStatus.FORBIDDEN);
     }

@@ -4,6 +4,7 @@ import com.mindhub.duodanzaclub.models.*;
 import com.mindhub.duodanzaclub.repositories.AcademiaRepository;
 import com.mindhub.duodanzaclub.repositories.ClaseRepository;
 import com.mindhub.duodanzaclub.repositories.ProductoRepository;
+import com.mindhub.duodanzaclub.repositories.SalaFestivalRepository;
 import com.mindhub.duodanzaclub.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,9 +26,8 @@ public class DuodanzaclubApplication {
 		SpringApplication.run(DuodanzaclubApplication.class, args);
 	}
 
-	@Bean
 	public CommandLineRunner initData(UsuarioRepository usuarioRepository, AcademiaRepository academiaRepository,
-									  ProductoRepository productoRepository, ClaseRepository claseRepository){
+									  ProductoRepository productoRepository, SalaFestivalRepository salaFestivalRepository, ClaseRepository claseRepository){
 
 		return (args) -> {
 			Usuario nacho = usuarioRepository.save(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));

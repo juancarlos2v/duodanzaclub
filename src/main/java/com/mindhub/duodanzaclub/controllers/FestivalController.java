@@ -3,6 +3,7 @@ package com.mindhub.duodanzaclub.controllers;
 import com.mindhub.duodanzaclub.dtos.FestivalDTO;
 import com.mindhub.duodanzaclub.models.Festival;
 import com.mindhub.duodanzaclub.repositories.FestivalRepository;
+import com.mindhub.duodanzaclub.services.FestivalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,15 +17,13 @@ import java.util.stream.Collectors;
 public class FestivalController {
 
     @Autowired
-    FestivalRepository festivalRepository;
-
+    FestivalService festivalService;
 
 
 
     @GetMapping("/festivales")
     public List<FestivalDTO> getFestivales(){
-        List<Festival> festivales = festivalRepository.findAll();
-        List<FestivalDTO> festivalesDTO = festivales.stream().map(FestivalDTO::new).collect(Collectors.toList());
+        List<FestivalDTO> festivalesDTO = festivalService.traerFestivales();
 
         return festivalesDTO;
     }
@@ -32,8 +31,7 @@ public class FestivalController {
 
     @GetMapping("/festivales/{id}")
     public FestivalDTO getFestivales(@PathVariable Long id){
-        Festival festival = festivalRepository.findById(id).orElse(null);
-        FestivalDTO festivalDTO = new FestivalDTO(festival);
+        FestivalDTO festivalDTO = new FestivalDTO(festivalService.traerFestival(id));
 
         return festivalDTO;
     }
@@ -48,11 +46,11 @@ public class FestivalController {
             return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
         }
 
-        else {
+
             Festival festivalNuevo = new Festival(festival.getNombre(), festival.getEstilo(), festival.getPrecio(), festival.getHorarios());
-            festivalRepository.save(festivalNuevo);
+            festivalService.guardarFestival(festivalNuevo);
             return new ResponseEntity<>("Festival creado", HttpStatus.CREATED);
-        }
+
     }
 
 }

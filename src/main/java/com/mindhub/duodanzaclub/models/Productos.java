@@ -22,15 +22,17 @@ public class Productos {
     private String imagen;
     private Estilos estilo;
     private TipoProducto tipoProducto;
+    private int stock;
 
     public Productos() {}
-    public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, TipoProducto tipoProducto) {
+    public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, TipoProducto tipoProducto, int stock) {
         setTitulo(titulo);
         setDescripcion(descripcion);
         setPrecio(precio);
         setImagen(imagen);
         setEstilo(estilo);
         setTipoProducto(tipoProducto);
+        setStock(stock)
     }
 
     public long getId() {return id;}
@@ -52,5 +54,8 @@ public class Productos {
 
     public TipoProducto getTipoProducto() {return tipoProducto;}
     public void setTipoProducto(TipoProducto tipoProducto) {this.tipoProducto = tipoProducto;}
+
+    public int getStock() {return stock;}
+    public void setStock(int stock) {this.stock = stock;}
 
 }

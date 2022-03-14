@@ -46,6 +46,7 @@ public class UsuarioController {
         return usuarioDTO;
     }
 
+
     @GetMapping("/usuarios/current")
     public UsuarioDTO getCurrentUsuario(Authentication authentication){
         UsuarioDTO usuarioDTO = usuarioService.findByEmail(authentication.getName());

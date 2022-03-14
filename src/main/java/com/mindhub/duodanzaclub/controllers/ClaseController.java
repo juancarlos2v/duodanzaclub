@@ -5,6 +5,8 @@ import com.mindhub.duodanzaclub.dtos.SolicitudDTO;
 import com.mindhub.duodanzaclub.models.*;
 import com.mindhub.duodanzaclub.repositories.AcademiaRepository;
 import com.mindhub.duodanzaclub.repositories.ClaseRepository;
+import com.mindhub.duodanzaclub.services.AcademiaService;
+import com.mindhub.duodanzaclub.services.ClaseService;
 import com.mindhub.duodanzaclub.repositories.UsuarioClaseRepository;
 import com.mindhub.duodanzaclub.services.UsuarioService;
 import com.mindhub.duodanzaclub.utils.UsuarioClaseUtils;
@@ -21,10 +23,11 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class ClaseController {
 
+
     @Autowired
-    ClaseRepository claseRepository;
+    ClaseService claseService;
     @Autowired
-    AcademiaRepository academiaRepository;
+    AcademiaService academiaService;
     @Autowired
     UsuarioService usuarioService;
     @Autowired
@@ -32,13 +35,13 @@ public class ClaseController {
 
     @GetMapping("/clases")
     public List<ClaseDTO> getClases(){
-        List<ClaseDTO> clases = claseRepository.findAll().stream().map(ClaseDTO::new).collect(Collectors.toList());
+        List<ClaseDTO> clases = claseService.traerClases();
         return clases;
     }
 
     @GetMapping("/clases/{id}")
     public ClaseDTO getClase(@PathVariable Long id){
-        Clase clase = claseRepository.findById(id).orElse(null);
+        Clase clase = claseService.traerClasePorId(id);
         ClaseDTO claseDTO = new ClaseDTO(clase);
         return claseDTO;
     }
@@ -46,7 +49,7 @@ public class ClaseController {
     @PatchMapping("clases/{id}")
     public ResponseEntity<Object> cambiarPrecio(@PathVariable Long id,
                                @PathVariable List<Double> horarios){
-        Clase clase = claseRepository.findById(id).orElse(null);
+        Clase clase = claseService.traerClasePorId(id);
 
 
         if(clase == null) {
@@ -54,12 +57,14 @@ public class ClaseController {
         }
 
         clase.setHorarios(horarios);
+        claseService.guardarClase(clase);
+
         return  new ResponseEntity<>("Clase creada", HttpStatus.CREATED);
     }
 
     @PostMapping("/clases")
     public ResponseEntity<Object> crearClase(@RequestBody ClaseDTO clase){
-        Academia academia = academiaRepository.findById(clase.getAcademiaId()).orElse(null);
+        Academia academia = academiaService.getAcademiaClass(clase.getId());
 
         if(clase.getNombre().isEmpty() || clase.getEstilo() == null || clase.getHorarios().isEmpty() ){
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
@@ -69,7 +74,8 @@ public class ClaseController {
         }
 
         Clase claseNueva = new Clase(clase.getNombre(), clase.getEstilo(), clase.getHorarios(), clase.getPrecioClase(), academia);
-        claseRepository.save(claseNueva);
+        claseService.guardarClase(claseNueva);
+
         return  new ResponseEntity<>("Clase creada", HttpStatus.CREATED);
     }
 

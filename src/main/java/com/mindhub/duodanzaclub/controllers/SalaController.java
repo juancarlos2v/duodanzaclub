@@ -5,6 +5,8 @@ import com.mindhub.duodanzaclub.models.Academia;
 import com.mindhub.duodanzaclub.models.Sala;
 import com.mindhub.duodanzaclub.repositories.AcademiaRepository;
 import com.mindhub.duodanzaclub.repositories.SalaRepository;
+import com.mindhub.duodanzaclub.services.AcademiaService;
+import com.mindhub.duodanzaclub.services.SalaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,25 +19,23 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class SalaController {
 
-    @Autowired
-    SalaRepository salaRepository;
 
     @Autowired
-    AcademiaRepository academiaRepository;
+    SalaService salaService;
+
+    @Autowired
+    AcademiaService academiaService;
 
     @GetMapping("/salas")
     public List<SalaDTO> getSalas(){
-        List<Sala> salas = salaRepository.findAll();
-        List<SalaDTO> salasDTO = salas.stream().map(SalaDTO::new).collect(Collectors.toList());
-
+        List<SalaDTO> salasDTO = salaService.obtenerSalasDTO();
         return salasDTO;
     }
 
 
     @GetMapping("/salas/{id}")
     public SalaDTO getSala(@PathVariable Long id){
-        Sala sala = salaRepository.findById(id).orElse(null);
-        SalaDTO salaDTO = new SalaDTO(sala);
+        SalaDTO salaDTO = new SalaDTO(salaService.obtenerSala(id));
 
         return salaDTO;
     }
@@ -45,7 +45,7 @@ public class SalaController {
     @PostMapping("/salas")
     public ResponseEntity<Object> crearSala(@RequestBody SalaDTO sala){
 
-        Academia academia = academiaRepository.findById(sala.getAcademia_id()).orElse(null);
+        Academia academia = academiaService.getAcademiaClass(sala.getAcademia_id());
 
         if(sala.getNombre().isEmpty() || academia == null) {
             return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
@@ -57,7 +57,7 @@ public class SalaController {
 
         else {
             Sala salaNueva = new Sala(sala.getNombre(), sala.getAforo(), academia);
-            salaRepository.save(salaNueva);
+            salaService.guardarSala(salaNueva);
 
             return new ResponseEntity<>("Sala creada", HttpStatus.CREATED);
         }
