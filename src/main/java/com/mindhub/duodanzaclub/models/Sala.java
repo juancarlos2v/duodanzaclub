@@ -18,6 +18,7 @@ public class Sala {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+
     private String nombre;
     private int aforo;
 
@@ -31,6 +32,8 @@ public class Sala {
     @OneToMany(mappedBy = "sala", fetch = FetchType.EAGER)
     private Set<SalaFestival> salaFestival = new HashSet<>();
 
+
+
     public Sala() {}
     public Sala(String nombre, int aforo, Academia academia) {
         this.nombre = nombre;
@@ -38,11 +41,13 @@ public class Sala {
         this.academia = academia;
     }
 
-    @JsonIgnore
-    public List<Clase> getClases() {return  salaClases.stream().map(salaClase -> salaClase.getClase()).collect(toList());}
+
 
     @JsonIgnore
-    public List<Festival> getFestivales() {return  salaFestival.stream().map(salaFestival -> salaFestival.getFestival()).collect(toList());}
+    public List<Clase> getClases() {return  salaClases.stream().map(SalaClase::getClase).collect(toList());}
+
+    @JsonIgnore
+    public List<Festival> getFestivales() {return  salaFestival.stream().map(SalaFestival::getFestival).collect(toList());}
 
     public long getId() {return id;}
 

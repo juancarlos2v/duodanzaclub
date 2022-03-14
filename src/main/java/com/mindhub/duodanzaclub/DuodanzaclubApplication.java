@@ -38,7 +38,7 @@ public class DuodanzaclubApplication {
 			Academia academia1 = academiaRepository.save(new Academia("La academia del chona", "Buenos cyphers"));
 			Academia academia2 = academiaRepository.save(new Academia("Racing club", "Mar del plata"));
 			Usuario admin = usuarioService.saveUsuario(new Usuario("admin@admin.com", passwordEncoder.encode("123456")));
-			Productos producto1 = productoRepository.save(new Productos("Zapatos de Salsa", "Zapatos de cuero", 12000.0, "Insert path", Estilos.BACHATA, TipoProducto.CALZADOS, 5));
+			Productos producto1 = productoRepository.save(new Productos("Zapatos de Salsa", "Zapatos de cuero", 12000.0, "Insert path", Estilos.BACHATA, "39", TipoProducto.CALZADOS, 5));
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", new ArrayList<Double>(), academia1));
 			Clase clase2 = claseRepository.save(new Clase("Clase de tango", new ArrayList<Double>(), academia1));
 		};

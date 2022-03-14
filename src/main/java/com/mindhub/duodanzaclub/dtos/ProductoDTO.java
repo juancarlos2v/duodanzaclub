@@ -12,6 +12,7 @@ public class ProductoDTO {
     private Double precio;
     private String imagen;
     private Estilos estilo;
+    private String talle;
     private TipoProducto tipoProducto;
     private int stock;
 
@@ -27,6 +28,7 @@ public class ProductoDTO {
         this.precio = productos.getPrecio();
         this.imagen = productos.getImagen();
         this.estilo = productos.getEstilo();
+        this.talle = productos.getTalle();
         this.tipoProducto = productos.getTipoProducto();
         this.stock = productos.getStock();
     }
@@ -50,6 +52,9 @@ public class ProductoDTO {
 
     public Estilos getEstilo() {return estilo;}
     public void setEstilo(Estilos estilo) {this.estilo = estilo;}
+
+    public String getTalle() {return talle;}
+    public void setTalle(String talle) {this.talle = talle;}
 
     public TipoProducto getTipoProducto() {return tipoProducto;}
     public void setTipoProducto(TipoProducto tipoProducto) {this.tipoProducto = tipoProducto;}

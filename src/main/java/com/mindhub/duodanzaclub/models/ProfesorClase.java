@@ -19,6 +19,8 @@ public class ProfesorClase {
     @JoinColumn(name = "clase_id")
     private Clase clase;
 
+
+
     public ProfesorClase(){}
     public ProfesorClase(Profesor profesor, Clase clase){
         setProfesor(profesor);
@@ -26,10 +28,11 @@ public class ProfesorClase {
 
     }
 
+
+
     public long getId() {
         return id;
     }
-
 
     public Profesor getProfesor() {return profesor;}
     public void setProfesor(Profesor profesor) {this.profesor = profesor;}

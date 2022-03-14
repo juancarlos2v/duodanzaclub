@@ -37,13 +37,13 @@ public class Festival {
     }
 
     public Festival(String nombre, Estilos estilo, Double precio, List<Double> horarios) {
-
-
         this.nombre = nombre;
         this.precio = precio;
         this.estilo = estilo;
         this.horarios = horarios;
     }
+
+
 
     @JsonIgnore
     public List<Sala> getSalas() {return  salaFestival.stream().map(salaFestival -> salaFestival.getSala()).collect(toList());}

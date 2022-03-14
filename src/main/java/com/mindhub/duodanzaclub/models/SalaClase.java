@@ -21,11 +21,15 @@ public class SalaClase {
     @JoinColumn(name = "sala_id")
     private Sala sala;
 
+
+
     public SalaClase() {}
     public SalaClase(Clase clase, Sala sala) {
         setClase(clase);
         setSala(sala);
     }
+
+
 
     public long getId() {return id;}
 

@@ -21,6 +21,8 @@ public class UsuarioClase {
 
     private Rol rol;
 
+
+
     public UsuarioClase(){}
     public UsuarioClase(Usuario usuario, Clase clase){
         setUsuario(usuario);
@@ -28,17 +30,16 @@ public class UsuarioClase {
         setRol(usuario.getRol());
     }
 
+
+
     public long getId() {return id;}
 
     public Usuario getUsuario() {return usuario;}
-
     public void setUsuario(Usuario usuario) {this.usuario = usuario;}
 
     public Clase getClase() {return clase;}
-
     public void setClase(Clase clase) {this.clase = clase;}
 
     public Rol getRol() {return rol;}
-
     public void setRol(Rol rol) {this.rol = rol;}
 }
