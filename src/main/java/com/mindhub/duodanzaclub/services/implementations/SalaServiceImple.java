@@ -16,7 +16,6 @@ public class SalaServiceImple implements SalaService {
     @Autowired
     SalaRepository salaRepository;
 
-
     @Override
     public List<SalaDTO> obtenerSalasDTO() {
         return salaRepository.findAll().stream().map(SalaDTO::new).collect(Collectors.toList());
@@ -31,4 +30,6 @@ public class SalaServiceImple implements SalaService {
     public void guardarSala(Sala sala) {
         salaRepository.save(sala);
     }
+
+
 }

@@ -23,25 +23,22 @@ public class ProfesorClase {
     public ProfesorClase(Profesor profesor, Clase clase){
         setProfesor(profesor);
         setClase(clase);
+
     }
 
     public long getId() {
         return id;
     }
 
-    public com.mindhub.duodanzaclub.models.Profesor getProfesor() {
-        return profesor;
-    }
 
-    public void setProfesor(com.mindhub.duodanzaclub.models.Profesor profesor) {
-        this.profesor = profesor;
-    }
+    public Profesor getProfesor() {return profesor;}
+    public void setProfesor(Profesor profesor) {this.profesor = profesor;}
 
     public Clase getClase() {
         return clase;
     }
-
     public void setClase(Clase clase) {
         this.clase = clase;
     }
+
 }

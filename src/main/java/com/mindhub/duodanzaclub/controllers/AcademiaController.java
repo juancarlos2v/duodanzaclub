@@ -19,7 +19,6 @@ public class AcademiaController {
     @Autowired
     AcademiaService academiaService;
 
-
     @GetMapping("/academias")
     public List<AcademiaDTO> getAcademias(){
         List<AcademiaDTO> academiaDTOS = academiaService.getAcademias();
@@ -32,25 +31,17 @@ public class AcademiaController {
         return academiaDTO;
     }
 
-
-
     @PostMapping("/academias")
     public ResponseEntity<Object> crearAcademia(Authentication authentication,
                                                 @RequestBody Academia academia){
-
-
-
 
         if(academia.getNombre().isEmpty() || academia.getCiudad().isEmpty()) {
             return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
         }
 
+        Academia academiaNueva = new Academia(academia.getNombre(), academia.getCiudad());
+        academiaService.guardarAcademia(academiaNueva);
 
-
-            Academia academiaNueva = new Academia(academia.getNombre(), academia.getCiudad());
-            academiaService.guardarAcademia(academiaNueva);
-
-            return new ResponseEntity<>("Academia creada", HttpStatus.CREATED);
-
+        return new ResponseEntity<>("Academia creada", HttpStatus.CREATED);
     }
 }

@@ -10,7 +10,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static java.util.stream.Collectors.toList;
+
 @Entity
+@Embeddable
 public class Usuario {
 
     @Id
@@ -35,6 +38,9 @@ public class Usuario {
     /*@OneToMany(mappedBy = "usuario1", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<ContactoUsuario> contactoUsuarios = new HashSet<>();*/
 
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    private Set<UsuarioClase> usuarioClases = new HashSet<UsuarioClase>();
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "UserRel", joinColumns = {@JoinColumn(name = "followers")}, inverseJoinColumns = {@JoinColumn(name = "following")})
     private Set<Usuario> followers = new HashSet<Usuario>();
@@ -44,15 +50,13 @@ public class Usuario {
 
     @ElementCollection
     @Column(name = "contactos")
-    private Set<Long> contactos = new HashSet<Long>();
+    private List<Long> contactos = new ArrayList<Long>();
 
     public Usuario() {}
     public Usuario(String email, String password){
         this.email = email;
         this.password = password;
     }
-
-
     public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
         setNombre(nombre);
         setApellido(apellido);
@@ -105,10 +109,6 @@ public class Usuario {
     public Academia getAcademia() {return academia;}
     public void setAcademia(Academia academia) {this.academia = academia;}
 
-    /*public Set<ContactoUsuario> getContactoUsuarios() {return contactoUsuarios;}
-
-    public void setContactoUsuarios(Set<ContactoUsuario> contactoUsuarios) {this.contactoUsuarios = contactoUsuarios;}*/
-
     @JsonIgnore
     public Set<Usuario> getFollowers() {return followers;}
 
@@ -120,7 +120,16 @@ public class Usuario {
     public void setFollowing(Set<Usuario> following) {this.following = following;}
 
     @JsonIgnore
-    public Set<Long> getContactos() {return contactos;}
+    public List<Long> getContactos() {return contactos;}
 
-    public void setContactos(Set<Long> contactos) {this.contactos = contactos;}
+    public void setContactos(List<Long> contactos) {this.contactos = contactos;}
+
+    public Set<UsuarioClase> getUsuarioClases() {return usuarioClases;}
+
+    public void setUsuarioClases(Set<UsuarioClase> usuarioClases) {this.usuarioClases = usuarioClases;}
+
+    @JsonIgnore
+    public List<Clase> getClases(){
+        return usuarioClases.stream().map(usuarioClase -> usuarioClase.getClase()).collect(toList());
+    }
 }

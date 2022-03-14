@@ -1,9 +1,6 @@
 package com.mindhub.duodanzaclub.dtos;
 
-import com.mindhub.duodanzaclub.models.Academia;
-import com.mindhub.duodanzaclub.models.Clase;
-import com.mindhub.duodanzaclub.models.Estilos;
-import com.mindhub.duodanzaclub.models.PrecioClase;
+import com.mindhub.duodanzaclub.models.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -21,28 +18,26 @@ public class ClaseDTO {
     private PrecioClase precioClase;
     private Set<SalaClaseDTO> salas = new HashSet<>();
     private Set<ProfesorClaseDTO> profesores = new HashSet<>();
+    private List<UsuarioDTO> usuarios = new ArrayList<>();
 
     public ClaseDTO(){}
-    public ClaseDTO(String nombre, Estilos estilo, long academiaId, List<Double> horarios, PrecioClase precioClase  ){
-
+    public ClaseDTO(String nombre, Estilos estilo, long academiaId, List<Double> horarios, PrecioClase precioClase){
         setNombre(nombre);
         setEstilo(estilo);
         setAcademiaId(academiaId);
         setHorarios(horarios);
         setPrecioClase(precioClase);
     }
-
     public ClaseDTO(Clase clase){
         setId(clase.getId());
         setNombre(clase.getNombre());
-
         setHorarios(clase.getHorarios());
         setPrecioClase(clase.getPrecioClase());
         setHorarios(clase.getHorarios());
         setSalas(clase.getSalaClases().stream().map(SalaClaseDTO::new).collect(Collectors.toSet()));
         setProfesores(clase.getProfesorClases().stream().map(ProfesorClaseDTO::new).collect(Collectors.toSet()));
+        setUsuarios(clase.getUsuarios().stream().map(UsuarioDTO::new).collect(Collectors.toList()));
     }
-
 
     public long getId() {
         return id;
@@ -115,4 +110,8 @@ public class ClaseDTO {
     public void setPrecioClase(PrecioClase precioClase) {
         this.precioClase = precioClase;
     }
+
+    public List<UsuarioDTO> getUsuarios() {return usuarios;}
+
+    public void setUsuarios(List<UsuarioDTO> usuarios) {this.usuarios = usuarios;}
 }
