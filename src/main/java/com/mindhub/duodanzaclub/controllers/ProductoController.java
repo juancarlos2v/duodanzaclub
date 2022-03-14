@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class ProductoController {
 
-
     @Autowired
     ProductoService productoService;
     @Autowired
@@ -69,9 +68,6 @@ public class ProductoController {
         if(producto.getPrecio() <= 0) {
             return new ResponseEntity<>("Agregue un precio", HttpStatus.FORBIDDEN);
         }
-
-        Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(), producto.getImagen(), producto.getEstilo(), producto.getTipoProducto());
-        productoRepository.save(productoNuevo);
 
         Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(), producto.getImagen(), producto.getEstilo(), producto.getTipoProducto(), producto.getStock());
         productoService.guardarProducto(productoNuevo);

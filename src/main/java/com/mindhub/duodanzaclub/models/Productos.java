@@ -32,7 +32,7 @@ public class Productos {
         setImagen(imagen);
         setEstilo(estilo);
         setTipoProducto(tipoProducto);
-        setStock(stock)
+        setStock(stock);
     }
 
     public long getId() {return id;}

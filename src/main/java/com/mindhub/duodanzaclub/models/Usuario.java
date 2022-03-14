@@ -57,8 +57,6 @@ public class Usuario {
         this.email = email;
         this.password = password;
     }
-
-
     public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
         setNombre(nombre);
         setApellido(apellido);

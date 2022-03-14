@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class ClaseController {
 
-
     @Autowired
     ClaseService claseService;
     @Autowired
@@ -48,9 +47,8 @@ public class ClaseController {
 
     @PatchMapping("clases/{id}")
     public ResponseEntity<Object> cambiarPrecio(@PathVariable Long id,
-                               @PathVariable List<Double> horarios){
+                                                @RequestParam List<Double> horarios){
         Clase clase = claseService.traerClasePorId(id);
-
 
         if(clase == null) {
             return new ResponseEntity<>("La clase no existe", HttpStatus.FORBIDDEN);
@@ -58,8 +56,7 @@ public class ClaseController {
 
         clase.setHorarios(horarios);
         claseService.guardarClase(clase);
-
-        return  new ResponseEntity<>("Clase creada", HttpStatus.CREATED);
+        return new ResponseEntity<>("Clase creada", HttpStatus.CREATED);
     }
 
     @PostMapping("/clases")
@@ -82,7 +79,7 @@ public class ClaseController {
     @PostMapping("/usuarios/clases")
     public ResponseEntity<Object> anotarEnClase(Authentication authentication, @RequestBody SolicitudDTO solicitudDTO){
         Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
-        Clase clase = claseRepository.getById(solicitudDTO.getUsuario());
+        Clase clase = claseService.traerClasePorId(solicitudDTO.getUsuario());
         List<UsuarioClase> usuarioClases = usuarioClaseRepository.findAll();
 
         if(usuario == null){
@@ -105,7 +102,7 @@ public class ClaseController {
     @DeleteMapping("/usuarios/clases/desanotar")
     public ResponseEntity<Object> desanotarDeClase(Authentication authentication, @RequestBody SolicitudDTO solicitudDTO){
         Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
-        Clase clase = claseRepository.getById(solicitudDTO.getUsuario());
+        Clase clase = claseService.traerClasePorId(solicitudDTO.getUsuario());
         List<UsuarioClase> usuarioClases = usuarioClaseRepository.findAll();
 
         if(usuario == null){

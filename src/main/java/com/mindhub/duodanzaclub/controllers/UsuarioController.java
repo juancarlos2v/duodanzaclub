@@ -29,10 +29,6 @@ public class UsuarioController {
     PasswordEncoder passwordEncoder;
     @Autowired
     UsuarioService usuarioService;
-    @Autowired
-    ClaseRepository claseRepository;
-    @Autowired
-    UsuarioClaseRepository usuarioClaseRepository;
 
     @GetMapping("/usuarios")
     public List<UsuarioDTO> getUsuarios(){
@@ -45,7 +41,6 @@ public class UsuarioController {
         UsuarioDTO usuarioDTO = usuarioService.getById(id);
         return usuarioDTO;
     }
-
 
     @GetMapping("/usuarios/current")
     public UsuarioDTO getCurrentUsuario(Authentication authentication){
@@ -74,7 +69,7 @@ public class UsuarioController {
 
         Usuario nuevoUsuario = new Usuario(usuarioDTO.getNombre(), usuarioDTO.getApellido(), usuarioDTO.getTelefono(),
                 usuarioDTO.getEmail(), passwordEncoder.encode(usuarioDTO.getPassword()), fechaNacimiento);
-        usuarioService.saveUsuario(usuario);
+        usuarioService.saveUsuario(nuevoUsuario);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

@@ -19,10 +19,8 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class SalaController {
 
-
     @Autowired
     SalaService salaService;
-
     @Autowired
     AcademiaService academiaService;
 
@@ -32,35 +30,26 @@ public class SalaController {
         return salasDTO;
     }
 
-
     @GetMapping("/salas/{id}")
     public SalaDTO getSala(@PathVariable Long id){
         SalaDTO salaDTO = new SalaDTO(salaService.obtenerSala(id));
-
         return salaDTO;
     }
 
-
-
     @PostMapping("/salas")
     public ResponseEntity<Object> crearSala(@RequestBody SalaDTO sala){
-
         Academia academia = academiaService.getAcademiaClass(sala.getAcademia_id());
 
         if(sala.getNombre().isEmpty() || academia == null) {
             return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
         }
-
         if(sala.getAforo() <= 0) {
             return new ResponseEntity<>("Ingrese aforo", HttpStatus.FORBIDDEN);
         }
 
-        else {
-            Sala salaNueva = new Sala(sala.getNombre(), sala.getAforo(), academia);
-            salaService.guardarSala(salaNueva);
+        Sala salaNueva = new Sala(sala.getNombre(), sala.getAforo(), academia);
+        salaService.guardarSala(salaNueva);
 
-            return new ResponseEntity<>("Sala creada", HttpStatus.CREATED);
-        }
-
+        return new ResponseEntity<>("Sala creada", HttpStatus.CREATED);
     }
 }
