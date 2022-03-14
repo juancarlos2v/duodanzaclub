@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static java.util.stream.Collectors.toList;
+
 @Entity
 @Embeddable
 public class Usuario {
@@ -35,6 +37,9 @@ public class Usuario {
 
     /*@OneToMany(mappedBy = "usuario1", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<ContactoUsuario> contactoUsuarios = new HashSet<>();*/
+
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    private Set<UsuarioClase> usuarioClases = new HashSet<UsuarioClase>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "UserRel", joinColumns = {@JoinColumn(name = "followers")}, inverseJoinColumns = {@JoinColumn(name = "following")})
@@ -120,4 +125,13 @@ public class Usuario {
     public List<Long> getContactos() {return contactos;}
 
     public void setContactos(List<Long> contactos) {this.contactos = contactos;}
+
+    public Set<UsuarioClase> getUsuarioClases() {return usuarioClases;}
+
+    public void setUsuarioClases(Set<UsuarioClase> usuarioClases) {this.usuarioClases = usuarioClases;}
+
+    @JsonIgnore
+    public List<Clase> getClases(){
+        return usuarioClases.stream().map(usuarioClase -> usuarioClase.getClase()).collect(toList());
+    }
 }

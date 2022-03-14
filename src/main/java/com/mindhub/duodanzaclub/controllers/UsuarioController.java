@@ -2,8 +2,13 @@ package com.mindhub.duodanzaclub.controllers;
 
 import com.mindhub.duodanzaclub.dtos.SolicitudDTO;
 import com.mindhub.duodanzaclub.dtos.UsuarioDTO;
+import com.mindhub.duodanzaclub.models.Clase;
 import com.mindhub.duodanzaclub.models.Usuario;
+import com.mindhub.duodanzaclub.models.UsuarioClase;
+import com.mindhub.duodanzaclub.repositories.ClaseRepository;
+import com.mindhub.duodanzaclub.repositories.UsuarioClaseRepository;
 import com.mindhub.duodanzaclub.services.UsuarioService;
+import com.mindhub.duodanzaclub.utils.UsuarioClaseUtils;
 import com.mindhub.duodanzaclub.utils.UsuarioUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +29,10 @@ public class UsuarioController {
     PasswordEncoder passwordEncoder;
     @Autowired
     UsuarioService usuarioService;
+    @Autowired
+    ClaseRepository claseRepository;
+    @Autowired
+    UsuarioClaseRepository usuarioClaseRepository;
 
     @GetMapping("/usuarios")
     public List<UsuarioDTO> getUsuarios(){
@@ -70,9 +79,9 @@ public class UsuarioController {
     }
 
     @PostMapping("/usuarios/agregar")
-    public ResponseEntity<Object> agregarContacto(@RequestBody SolicitudDTO solicitudDTO){
-        Usuario usuario1 = usuarioService.getUsuarioById(solicitudDTO.getUsuario1());
-        Usuario usuario2 = usuarioService.getUsuarioById(solicitudDTO.getUsuario2());
+    public ResponseEntity<Object> agregarContacto(Authentication authentication, @RequestBody SolicitudDTO solicitudDTO){
+        Usuario usuario1 = usuarioService.findUsuarioByEmail(authentication.getName());
+        Usuario usuario2 = usuarioService.getUsuarioById(solicitudDTO.getUsuario());
         List<Usuario> usuarios = new ArrayList<>(usuario1.getFollowing());
 
         if(usuario1 == null || usuario2 == null){
@@ -103,7 +112,7 @@ public class UsuarioController {
     @PatchMapping("/usuarios/borrar")
     public ResponseEntity<Object> borrarContacto(Authentication authentication, @RequestBody SolicitudDTO solicitudDTO){
         Usuario usuario1 = usuarioService.findUsuarioByEmail(authentication.getName());
-        Usuario usuario2 = usuarioService.getUsuarioById(solicitudDTO.getUsuario2());
+        Usuario usuario2 = usuarioService.getUsuarioById(solicitudDTO.getUsuario());
         List<Usuario> following = new ArrayList<Usuario>(usuario1.getFollowing());
         List<Long> contactos = usuario1.getContactos();
 
@@ -113,14 +122,6 @@ public class UsuarioController {
         }
         if(usuario1 == usuario2){
             return new ResponseEntity<>("El usuario destino es el usuario autentificado", HttpStatus.FORBIDDEN);
-        }
-        //Borrar contacto si lo son
-        if(contactos.size() > 0){
-            Boolean existeContacto = UsuarioUtils.buscarEntreContactosPorID(usuario2.getId(), contactos);
-            if(existeContacto){
-                contactos.remove(usuario2.getId());
-                usuario2.getContactos().remove(usuario1.getId());
-            }
         }
         // Veo si el usuario sigue a otros usuarios
         if(following.size() < 1){
@@ -133,6 +134,14 @@ public class UsuarioController {
                 return new ResponseEntity<>("No se sigue a ese usuario", HttpStatus.FORBIDDEN);
             }
         }
+        //Borrar contacto si lo son
+        if(contactos.size() > 0){
+            Boolean existeContacto = UsuarioUtils.buscarEntreContactosPorID(usuario2.getId(), contactos);
+            if(existeContacto){
+                contactos.remove(usuario2.getId());
+                usuario2.getContactos().remove(usuario1.getId());
+            }
+        }
 
         usuario1.getFollowing().remove(usuario2);
         usuario2.getFollowers().remove(usuario1);
@@ -140,5 +149,4 @@ public class UsuarioController {
         usuarioService.saveUsuario(usuario2);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
 }

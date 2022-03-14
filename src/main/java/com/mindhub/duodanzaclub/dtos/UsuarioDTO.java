@@ -27,6 +27,7 @@ public class UsuarioDTO {
     private Set<Usuario> followers = new HashSet<Usuario>();
     private Set<Usuario> following = new HashSet<Usuario>();
     private List<Long> contactos = new ArrayList<Long>();
+    public List<UsuarioClaseDTO> clases = new ArrayList<>();
 
     public UsuarioDTO(){}
     public UsuarioDTO(String nombre, String apellido, String telefono, String email, String password, int dia, int mes, int anio){
@@ -68,6 +69,7 @@ public class UsuarioDTO {
         setFollowers(usuario.getFollowers());//.stream().map(UsuarioDTO::new).collect(Collectors.toSet()));
         setFollowing(usuario.getFollowing());//.stream().map(UsuarioDTO::new).collect(Collectors.toSet()));
         setContactos(usuario.getContactos());//.stream().map(UsuarioDTO::new).collect(Collectors.toList()));
+        setClases(usuario.getUsuarioClases().stream().map(UsuarioClaseDTO::new).collect(Collectors.toList()));
     }
 
     public long getId() {return id;}
@@ -137,4 +139,8 @@ public class UsuarioDTO {
     public List<Long> getContactos() {return contactos;}
 
     public void setContactos(List<Long> contactos) {this.contactos = contactos;}
+
+    public List<UsuarioClaseDTO> getClases() {return clases;}
+
+    public void setClases(List<UsuarioClaseDTO> clases) {this.clases = clases;}
 }
