@@ -19,7 +19,6 @@ public class Clase {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-
     private String nombre;
     private Estilos estilo;
     private PrecioClase precioClase;
@@ -33,16 +32,15 @@ public class Clase {
     private Academia academia;
 
     @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
+    private Set<UsuarioClase> usuarioClases = new HashSet<>();
+
+    @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
     private Set<SalaClase> salaClases = new HashSet<>();
 
     @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
     private Set<ProfesorClase> profesorClases = new HashSet<>();
 
-
-
-
     public Clase() {}
-
     public Clase(String nombre, List<Double> horarios, Academia academia) {
         setNombre(nombre);
         setHorarios(horarios);
@@ -57,10 +55,6 @@ public class Clase {
         this.academia = academia;
     }
 
-
-
-
-
     @JsonIgnore
     public List<Sala> getSalas() {
         return  salaClases.stream().map(salaClase -> salaClase.getSala()).collect(toList());
@@ -69,6 +63,11 @@ public class Clase {
     @JsonIgnore
     public List<Profesor> getProfesores(){
         return profesorClases.stream().map(profesorClase -> profesorClase.getProfesor()).collect(toList());
+    }
+
+    @JsonIgnore
+    public List<Usuario> getUsuarios(){
+        return usuarioClases.stream().map(usuarioClase -> usuarioClase.getUsuario()).collect(toList());
     }
 
     public long getId() {return id;}
@@ -94,4 +93,6 @@ public class Clase {
     public Set<ProfesorClase> getProfesorClases() {return profesorClases;}
     public void setProfesorClases(Set<ProfesorClase> profesorClases) {this.profesorClases = profesorClases;}
 
+    public Set<UsuarioClase> getUsuarioClases() {return usuarioClases;}
+    public void setUsuarioClases(Set<UsuarioClase> usuarioClases) {this.usuarioClases = usuarioClases;}
 }

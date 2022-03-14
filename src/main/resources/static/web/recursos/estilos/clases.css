@@ -1,0 +1,120 @@
+.banner-titulo {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+.texto-informativo {
+    background-color: var(--header-color);
+    padding: 1rem;
+    color: white;
+}
+
+div>h3 {
+    text-align: center;
+    color: var(--footer-color);
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.contenedor-opciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--footer-color);
+    height: 9rem;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.contenedor-opciones>div+div {
+    display: flex;
+    width: 90%;
+}
+
+.inputs>div,
+.contenedor-opciones>div+div div {
+    display: flex;
+    flex-direction: column;
+}
+
+#personas {
+    width: 6rem;
+    margin-right: 2rem;
+}
+
+#acompañante {
+    width: 16rem;
+}
+
+#buscar-clase {
+    color: white;
+    background-color: var(--header-color);
+    padding: 0.5rem;
+    width: 9rem;
+}
+
+.info-abonos {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    background-color: var(--gray-color);
+    width: 60%;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.info-abonos div {
+    width: 70%;
+    text-align: center;
+}
+
+.info-abonos>div+div {
+    padding-left: 9rem;
+}
+
+.contenedor-profesores h3 {
+    text-align: center;
+}
+
+.contenedor-profesores>div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contenedor-profesores>div div {
+    height: 10rem;
+    width: 20rem;
+    margin-bottom: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.contenedor-profesores>div div {
+    background-image: url("/recursos/imagenes/home/Anderson_y_Brenda.png");
+}
+
+.contenedor-profesores>div div+div {
+    background-image: url("/recursos/imagenes/home/fernando_y_leonela.png");
+}
+
+.contenedor-profesores>div div+div+div {
+    background-image: url("/recursos/imagenes/home/maria_y_facu.png");
+}
+
+.contenedor-profesores>div div+div+div+div {
+    background-image: url("/recursos/imagenes/home/kizomba.png");
+}
