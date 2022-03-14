@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class AcademiaServiceImpl implements AcademiaSer {
+public class AcademiaServiceImpl implements AcademiaService {
 
     @Autowired
     AcademiaRepository academiaRepository;

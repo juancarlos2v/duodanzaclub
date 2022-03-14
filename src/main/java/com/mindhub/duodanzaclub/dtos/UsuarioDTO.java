@@ -66,9 +66,9 @@ public class UsuarioDTO {
         setRol(usuario.getRol());
         setAbono(usuario.getAbono());
         setAcademia(usuario.getAcademia());
-        setFollowers(usuario.getFollowers());//.stream().map(UsuarioDTO::new).collect(Collectors.toSet()));
-        setFollowing(usuario.getFollowing());//.stream().map(UsuarioDTO::new).collect(Collectors.toSet()));
-        setContactos(usuario.getContactos());//.stream().map(UsuarioDTO::new).collect(Collectors.toList()));
+        setFollowers(usuario.getFollowers());
+        setFollowing(usuario.getFollowing());
+        setContactos(usuario.getContactos());
         setClases(usuario.getUsuarioClases().stream().map(UsuarioClaseDTO::new).collect(Collectors.toList()));
     }
 
