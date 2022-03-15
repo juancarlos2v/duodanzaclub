@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface ProductoService {
     public List<ProductoDTO> getProductsDTO();
-    public Productos productoById(@PathVariable Long id);
-    public void guardarProducto(Productos producto);
+    public Producto productoById(@PathVariable Long id);
+    public void guardarProducto(Producto producto);
 }

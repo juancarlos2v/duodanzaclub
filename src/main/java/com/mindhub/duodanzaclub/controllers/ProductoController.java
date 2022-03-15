@@ -64,7 +64,7 @@ public class ProductoController {
         }
 
         Producto productoNuevo = new Producto(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(),
-                producto.getImagen(), producto.getEstilo(), producto.getTipoProducto(), producto.getStock());
+                producto.getImagen(), producto.getEstilo(), producto.getTalle(), producto.getTipoProducto(), producto.getStock());
         productoService.guardarProducto(productoNuevo);
 
         return new ResponseEntity<>("Producto creado", HttpStatus.FORBIDDEN);

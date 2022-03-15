@@ -32,7 +32,7 @@ public class Producto {
     private List<TransaccionProducto> transaccionProductos = new ArrayList<>();
 
     public Producto() {}
-    public Producto(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, TipoProducto tipoProducto, int stock) {
+    public Producto(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, String talle, TipoProducto tipoProducto, int stock) {
         setTitulo(titulo);
         setDescripcion(descripcion);
         setPrecio(precio);
@@ -42,8 +42,6 @@ public class Producto {
         setTipoProducto(tipoProducto);
         setStock(stock);
     }
-
-
 
     public long getId() {return id;}
 
