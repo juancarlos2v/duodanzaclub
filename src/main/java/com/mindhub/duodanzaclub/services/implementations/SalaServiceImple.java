@@ -27,5 +27,8 @@ public class SalaServiceImple implements SalaService {
     }
 
     @Override
-    public void guardarSala(Sala sala){ salaRepository.save(sala); }
+    public void guardarSala(Sala sala) {
+        salaRepository.save(sala);
+    }
+
 }

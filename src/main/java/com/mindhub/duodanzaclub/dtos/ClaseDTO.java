@@ -20,6 +20,8 @@ public class ClaseDTO {
     private Set<ProfesorClaseDTO> profesores = new HashSet<>();
     private List<UsuarioDTO> usuarios = new ArrayList<>();
 
+
+
     public ClaseDTO(){}
     public ClaseDTO(String nombre, Estilos estilo, long academiaId, List<Double> horarios, PrecioClase precioClase){
         setNombre(nombre);
@@ -39,10 +41,11 @@ public class ClaseDTO {
         setUsuarios(clase.getUsuarios().stream().map(UsuarioDTO::new).collect(Collectors.toList()));
     }
 
+
+
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -50,7 +53,6 @@ public class ClaseDTO {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -58,7 +60,6 @@ public class ClaseDTO {
     public Academia getAcademia() {
         return academia;
     }
-
     public void setAcademia(Academia academia) {
         this.academia = academia;
     }
@@ -66,7 +67,6 @@ public class ClaseDTO {
     public List<Double> getHorarios() {
         return horarios;
     }
-
     public void setHorarios(List<Double> horarios) {
         this.horarios = horarios;
     }
@@ -74,7 +74,6 @@ public class ClaseDTO {
     public Set<SalaClaseDTO> getSalas() {
         return salas;
     }
-
     public void setSalas(Set<SalaClaseDTO> salas) {
         this.salas = salas;
     }
@@ -82,7 +81,6 @@ public class ClaseDTO {
     public Set<ProfesorClaseDTO> getProfesores() {
         return profesores;
     }
-
     public void setProfesores(Set<ProfesorClaseDTO> profesores) {
         this.profesores = profesores;
     }
@@ -90,7 +88,6 @@ public class ClaseDTO {
     public long getAcademiaId() {
         return academiaId;
     }
-
     public void setAcademiaId(long academiaId) {
         this.academiaId = academiaId;
     }
@@ -98,7 +95,6 @@ public class ClaseDTO {
     public Estilos getEstilo() {
         return estilo;
     }
-
     public void setEstilo(Estilos estilo) {
         this.estilo = estilo;
     }
@@ -106,12 +102,10 @@ public class ClaseDTO {
     public PrecioClase getPrecioClase() {
         return precioClase;
     }
-
     public void setPrecioClase(PrecioClase precioClase) {
         this.precioClase = precioClase;
     }
 
     public List<UsuarioDTO> getUsuarios() {return usuarios;}
-
     public void setUsuarios(List<UsuarioDTO> usuarios) {this.usuarios = usuarios;}
 }

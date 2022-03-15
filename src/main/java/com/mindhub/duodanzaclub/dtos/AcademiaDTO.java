@@ -29,7 +29,6 @@ public class AcademiaDTO {
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -37,7 +36,6 @@ public class AcademiaDTO {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -45,7 +43,6 @@ public class AcademiaDTO {
     public String getCiudad() {
         return ciudad;
     }
-
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
@@ -53,7 +50,6 @@ public class AcademiaDTO {
     public Set<UsuarioDTO> getUsuarios() {
         return usuarios;
     }
-
     public void setUsuarios(Set<UsuarioDTO> usuarios) {
         this.usuarios = usuarios;
     }
@@ -61,7 +57,6 @@ public class AcademiaDTO {
     public Set<ClaseDTO> getClases() {
         return clases;
     }
-
     public void setClases(Set<ClaseDTO> clases) {
         this.clases = clases;
     }
@@ -69,7 +64,6 @@ public class AcademiaDTO {
     public Set<SalaDTO> getSalas() {
         return salas;
     }
-
     public void setSalas(Set<SalaDTO> salas) {
         this.salas = salas;
     }

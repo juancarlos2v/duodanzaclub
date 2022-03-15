@@ -19,6 +19,7 @@ public class Clase {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+
     private String nombre;
     private Estilos estilo;
     private PrecioClase precioClase;
@@ -40,6 +41,8 @@ public class Clase {
     @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
     private Set<ProfesorClase> profesorClases = new HashSet<>();
 
+
+
     public Clase() {}
     public Clase(String nombre, List<Double> horarios, Academia academia) {
         setNombre(nombre);
@@ -54,6 +57,8 @@ public class Clase {
         this.precioClase = precioClase;
         this.academia = academia;
     }
+
+
 
     @JsonIgnore
     public List<Sala> getSalas() {

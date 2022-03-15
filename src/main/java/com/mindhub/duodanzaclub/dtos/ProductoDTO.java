@@ -1,7 +1,7 @@
 package com.mindhub.duodanzaclub.dtos;
 
 import com.mindhub.duodanzaclub.models.Estilos;
-import com.mindhub.duodanzaclub.models.Productos;
+import com.mindhub.duodanzaclub.models.Producto;
 import com.mindhub.duodanzaclub.models.TipoProducto;
 
 public class ProductoDTO {
@@ -12,27 +12,21 @@ public class ProductoDTO {
     private Double precio;
     private String imagen;
     private Estilos estilo;
+    private String talle;
     private TipoProducto tipoProducto;
     private int stock;
 
-
-
-    public ProductoDTO() {
+    public ProductoDTO() {}
+    public ProductoDTO(Producto producto) {
+        this.id = producto.getId();
+        this.titulo = producto.getTitulo();
+        this.descripcion = producto.getDescripcion();
+        this.precio = producto.getPrecio();
+        this.imagen = producto.getImagen();
+        this.estilo = producto.getEstilo();
+        this.tipoProducto = producto.getTipoProducto();
+        this.stock = producto.getStock();
     }
-
-    public ProductoDTO(Productos productos) {
-        this.id = productos.getId();
-        this.titulo = productos.getTitulo();
-        this.descripcion = productos.getDescripcion();
-        this.precio = productos.getPrecio();
-        this.imagen = productos.getImagen();
-        this.estilo = productos.getEstilo();
-        this.tipoProducto = productos.getTipoProducto();
-        this.stock = productos.getStock();
-    }
-
-
-
 
     public long getId() {return id;}
 
@@ -51,10 +45,14 @@ public class ProductoDTO {
     public Estilos getEstilo() {return estilo;}
     public void setEstilo(Estilos estilo) {this.estilo = estilo;}
 
+    public String getTalle() {return talle;}
+    public void setTalle(String talle) {this.talle = talle;}
+
     public TipoProducto getTipoProducto() {return tipoProducto;}
     public void setTipoProducto(TipoProducto tipoProducto) {this.tipoProducto = tipoProducto;}
 
     public int getStock() {return stock;}
     public void setStock(int stock) {this.stock = stock;}
+
 
 }

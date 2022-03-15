@@ -9,6 +9,8 @@ public class SalaFestivalDTO {
     private Sala sala;
     private Festival festival;
 
+
+
     public SalaFestivalDTO(){}
     public SalaFestivalDTO(SalaFestival salaFestival){
         setId(salaFestival.getId());
@@ -16,10 +18,11 @@ public class SalaFestivalDTO {
         setFestival(salaFestival.getFestival());
     }
 
+
+
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -27,7 +30,6 @@ public class SalaFestivalDTO {
     public Sala getSala() {
         return sala;
     }
-
     public void setSala(Sala sala) {
         this.sala = sala;
     }
@@ -35,7 +37,6 @@ public class SalaFestivalDTO {
     public Festival getFestival() {
         return festival;
     }
-
     public void setFestival(Festival festival) {
         this.festival = festival;
     }

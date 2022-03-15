@@ -9,6 +9,8 @@ public class SalaClaseDTO {
     private Sala sala;
     private Clase clase;
 
+
+
     public SalaClaseDTO(){}
     public SalaClaseDTO(SalaClase salaClase){
         setId(salaClase.getId());
@@ -16,10 +18,11 @@ public class SalaClaseDTO {
         setClase(salaClase.getClase());
     }
 
+
+
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -27,7 +30,6 @@ public class SalaClaseDTO {
     public Sala getSala() {
         return sala;
     }
-
     public void setSala(Sala sala) {
         this.sala = sala;
     }
@@ -35,7 +37,6 @@ public class SalaClaseDTO {
     public Clase getClase() {
         return clase;
     }
-
     public void setClase(Clase clase) {
         this.clase = clase;
     }
