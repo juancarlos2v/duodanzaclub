@@ -13,11 +13,7 @@ import java.util.stream.Collectors;
 
 
 public interface ProductoService {
-
-
     public List<ProductoDTO> getProductsDTO();
-
     public Productos productoById(@PathVariable Long id);
-
     public void guardarProducto(Productos producto);
 }

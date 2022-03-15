@@ -31,5 +31,4 @@ public class SalaServiceImple implements SalaService {
         salaRepository.save(sala);
     }
 
-
 }

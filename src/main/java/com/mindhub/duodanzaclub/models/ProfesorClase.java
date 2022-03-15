@@ -19,16 +19,12 @@ public class ProfesorClase {
     @JoinColumn(name = "clase_id")
     private Clase clase;
 
-
-
     public ProfesorClase(){}
     public ProfesorClase(Profesor profesor, Clase clase){
         setProfesor(profesor);
         setClase(clase);
 
     }
-
-
 
     public long getId() {
         return id;
