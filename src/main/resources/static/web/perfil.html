@@ -16,7 +16,7 @@
 
 <body>
     <div id="app">
-        <div class="contenedor-total">
+        <div class="contenedor-total desenfocar">
             <header>
                 <div class="contenedor-logo-nav">
                     <img src="./recursos/imagenes/logo_light.png">
@@ -51,18 +51,7 @@
                         </div>
                         <div class="formulario">
 
-                            <!-- <form>
 
-                                <input type="text" placeholder="Nombre">
-                                <input type="text" placeholder="Apellido">
-                                <input type="text" placeholder="Fecha de nacimiento">
-
-                                <input type="text" placeholder="e-mail">
-                                <input type="text" placeholder="Ciudad">
-                                <input type="number" placeholder="Telefono">
-
-                                <input type="password" placeholder="Contraseña">
-                            </form> -->
 
                             <div class="foto-perfil">
 
@@ -147,16 +136,35 @@
                 </div>
             </footer>
         </div>
-        <!-- <section class="modal">
-            <div class="contenedor-modal">
-                <div class="modal-editar-perfil">
-                    <div class="contenedor-manos">
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="editarPerfil==false">
+                    <div class="contenedor-manos manos-modal">
                         <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
                         <img class="mano-derecha img-fluid" src="./recursos/imagenes/home/mano_2.png">
                     </div>
-                    <div class="formulario-edit">
+                    <div class="contenedor-modal">
+                        <div class="modal-editar ">
+                            <form>
+                                <input type="text" placeholder="Nombre">
+                                <input type="text" placeholder="Apellido">
+                                <input type="text" placeholder="Fecha de nacimiento">
 
-                        <form>
+                                <input type="text" placeholder="e-mail">
+                                <input type="text" placeholder="Ciudad">
+                                <input type="number" placeholder="Telefono">
+
+                                <input type="password" placeholder="Contraseña">
+                            </form>
+                        </div>
+
+                    </div>
+                </section>
+            </transition>
+        </template>
+    </div>
+
+    <!-- <form>
 
                             <input type="text" placeholder="Nombre">
                             <input type="text" placeholder="Apellido">
@@ -167,18 +175,7 @@
                             <input type="number" placeholder="Telefono">
 
                             <input type="password" placeholder="Contraseña">
-                        </form>
-
-                        <div class="foto-perfil">
-
-                        </div>
-                        <button type="button">ACTUALIZAR</button>
-                    </div>
-                </div>
-
-            </div>
-        </section> -->
-    </div>
+                        </form> -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>

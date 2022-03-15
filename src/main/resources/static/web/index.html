@@ -11,42 +11,61 @@
     <link rel="stylesheet" href="./recursos/estilos/index.css">
     <link rel="stylesheet" href="./recursos/estilos/nav-home.css">
     <link rel="stylesheet" href="./recursos/estilos/footer.css">
+    <link rel="stylesheet" href="./recursos/estilos/video.css">
     <title>Inicio | Danza Duo Club</title>
 </head>
 
 <body>
     <div id="app">
         <div class="contenedor-total">
+
             <header>
                 <div class="contenedor-logo-nav">
                     <nav>
                         <div>
-                            <a href="./clases.html">Clases</a>
+                            <a href="./clases.html">Clase</a>
                             <a href="#">Festivales</a>
                         </div>
                         <div>
-                            <a href="#">Contacto</a>
+                            <a href="#">Contactos</a>
                             <a href="./tienda-online.html">Tienda</a>
-                            <button type="button" @click="abrirModal"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <circle cx="12" cy="12" r="9" />
-                                <circle cx="12" cy="10" r="3" />
-                                <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-                              </svg></button>
+                            <button type="button" @click="abrirModal"><svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-user-circle" width="32" height="32"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="12" cy="12" r="9" />
+                                    <circle cx="12" cy="10" r="3" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+                                </svg></button>
                         </div>
                     </nav>
+                    <img src="./recursos/imagenes/logoOKlight.png">
                     <div class="linea-nav">
 
                     </div>
-                    <img src="./recursos/imagenes/logo_light.png">
+
 
                 </div>
             </header>
-            <main>
-                <div>
-                    <div class="contenedor-reel">
 
+            <main>
+                <div class="cajita-banner">
+                    <!--  <div class="contenedor-reel">
+                    </div> -->
+                    <div class="div-Video contain">
+                        <section class="showcase">
+                            <div class="video-container">
+                                <video src="https://res.cloudinary.com/dim0xnpqb/video/upload/v1647356055/prueba/VIDEOOK_aigmx5.mp4" autoplay muted loop></video>
+                            </div>
+                            <!--  <div class="content">
+                            <h1>Shoot For The Stars</h1>
+                            <h3>Full screen video landing page</h3>
+                        </div> -->
+                        </section>
                     </div>
+
+
                     <div class="contenedor-texto">
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, temporibus! Sapiente laudantium enim commodi sunt quia amet minus obcaecati, explicabo, non error, deleniti molestias beatae. Similique nisi recusandae repudiandae?
                             Facilis.
@@ -55,10 +74,15 @@
                 </div>
 
                 <div class="contenedor-banner-clases">
-                    <div class="logo-clases"></div>
+                    <img class="clasesLogo" src="./recursos/imagenes/home/clasesOKblanco.png">
+                    <!-- <div class="logo-clases"></div> -->
                     <div class="manos">
                         <div class="mano-izquierda"></div>
-
+                        <div class="contenedor-texto2">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores neque optio itaque vero, voluptatibus mollitia dolorem, harum quos minima numquam doloremque qui veritatis doloribus totam, molestias inventore iure consequuntur
+                                aliquam!
+                            </p>
+                        </div>
                         <div class="mano-derecha"></div>
                     </div>
                 </div>
@@ -73,17 +97,22 @@
                 </div>
 
                 <div class="contenedor-profesores">
-                    <h3>PROFESORES</h3>
-                    <div>
+
+                    <div class="seccion-profesores">
+                        <h3>PROFESORES</h3>
                         <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
                 </div>
+                <div class="contenedor-tienda">
 
-                <div class="seccion-tienda">
-                    <div></div>
+                    <img class="tiendaLogo" src="./recursos/imagenes/home/tiendaOK1.png">
+                    <!-- <div class="seccion-tienda">
+
+                        <div class="contenedor-tienda"></div> 
+                    </div> -->
                 </div>
 
                 <div class="tienda-info">
@@ -92,20 +121,26 @@
 
                         </div>
                     </div>
-                    <div>
+                    <div class="tienda-texto">
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum repellat vero ad dignissimos incidunt sequi voluptate maiores asperiores commodi eum! Voluptatibus ipsa odit iusto adipisci ut cumque ex temporibus minus? dignissimos?</p>
                     </div>
                 </div>
 
+                <div class="titulo-productos">
+                    <h3>PRODUCTOS DESTACADOS</h3>
+                </div>
                 <div class="productos-destacados">
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
+
+
+
                 <div class="seccion-festival">
                     <div class="contenido-festival">
-                        <img src="./recursos/imagenes/home/Festivales_1.png" alt="">
+                        <img src="./recursos/imagenes/home/Festivales1.png" alt="">
 
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolorum unde, incidunt doloremque assumenda fuga velit atque rerum et accusantium vitae beatae? Corrupti incidunt illo nemo ea nesciunt veritatis rem.</p>
 
@@ -114,15 +149,18 @@
                             <img src="./recursos/imagenes/home/salseras.png">
                         </div>
                     </div>
-                    <div>
+                    <div class="contenedor-bachata">
                         <img src="./recursos/imagenes/home/bachata_recorte.png">
                     </div>
                 </div>
+
                 <div class="seccion-milongas">
-                    <p>MILONGAS</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At a iusto consequatur dignissimos quibusdam. Voluptatem veritatis possimus perspiciatis et fuga reiciendis culpa dolorum mollitia assumenda amet earum, exercitationem, quos
-                        necessitatibus?
-                    </p>
+                    <div class="contenedor-texto-milongas">
+                        <h2>MILONGAS</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At a iusto consequatur dignissimos quibusdam. Voluptatem veritatis possimus perspiciatis et fuga reiciendis culpa dolorum mollitia assumenda amet earum, exercitationem, quos
+                            necessitatibus?
+                        </p>
+                    </div>
                 </div>
 
                 <div class="contenedor-contacto">
@@ -152,9 +190,7 @@
                 <div class="sponsors">
                     <div></div>
                     <div></div>
-                    <div>
-                        <img src="./recursos/imagenes/home/logo_blanco.d4a91367.jpg">
-                    </div>
+                    <div></div>
                 </div>
             </main>
             <footer>
@@ -164,7 +200,7 @@
                     <a href="# ">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer ">
-                    <img src="./recursos/imagenes/logo_NEUTRO_light.png ">
+                    <img src="./recursos/imagenes/logoFOOTER .png ">
                 </div>
                 <div class="redes-correo ">
                     <div class="contenedor-redes ">
@@ -178,12 +214,12 @@
         </div>
 
         <template>
-            <transition name="fade"> 
+            <transition name="fade">
                 <section class="modal" v-show="modalIngreso==true">
                     <div class="contenedor-modal">
                         <div class="modal-ingreso">
                             <div>
-                                <img class="img-fluid" src="./recursos/imagenes/logo_NEUTRO_light.png" alt="">
+                                <img class="img-fluid" src="./recursos/imagenes/logo_NEUTRO_light.png" >
                             </div>
                             <div>
                                 <form>

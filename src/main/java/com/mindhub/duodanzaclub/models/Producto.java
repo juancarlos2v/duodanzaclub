@@ -3,13 +3,12 @@ package com.mindhub.duodanzaclub.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class Productos {
+public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -21,16 +20,25 @@ public class Productos {
     private Double precio;
     private String imagen;
     private Estilos estilo;
+    private String talle;
     private TipoProducto tipoProducto;
     private int stock;
 
-    public Productos() {}
-    public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, TipoProducto tipoProducto, int stock) {
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "producto_id")
+    private Transaccion transaccion;
+
+    @OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
+    private List<TransaccionProducto> transaccionProductos = new ArrayList<>();
+
+    public Producto() {}
+    public Producto(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, String talle, TipoProducto tipoProducto, int stock) {
         setTitulo(titulo);
         setDescripcion(descripcion);
         setPrecio(precio);
         setImagen(imagen);
         setEstilo(estilo);
+        setTalle(talle);
         setTipoProducto(tipoProducto);
         setStock(stock);
     }
@@ -52,10 +60,15 @@ public class Productos {
     public Estilos getEstilo() {return estilo;}
     public void setEstilo(Estilos estilo) {this.estilo = estilo;}
 
+    public String getTalle() {return talle;}
+    public void setTalle(String talle) {this.talle = talle;}
+
     public TipoProducto getTipoProducto() {return tipoProducto;}
     public void setTipoProducto(TipoProducto tipoProducto) {this.tipoProducto = tipoProducto;}
 
     public int getStock() {return stock;}
     public void setStock(int stock) {this.stock = stock;}
 
+    public Transaccion getTransaccion() {return transaccion;}
+    public void setTransaccion(Transaccion transaccion) {this.transaccion = transaccion;}
 }

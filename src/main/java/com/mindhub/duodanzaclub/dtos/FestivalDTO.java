@@ -15,6 +15,8 @@ public class FestivalDTO {
     private List<Double> horarios = new ArrayList<>();
     private Set<SalaFestivalDTO> salas = new HashSet<>();
 
+
+
     public FestivalDTO(){}
     public FestivalDTO(Festival festival){
         setId(festival.getId());
@@ -24,10 +26,11 @@ public class FestivalDTO {
         setSalas(festival.getSalaFestival().stream().map(SalaFestivalDTO::new).collect(Collectors.toSet()));
     }
 
+
+
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -35,7 +38,6 @@ public class FestivalDTO {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -43,7 +45,6 @@ public class FestivalDTO {
     public Double getPrecio() {
         return precio;
     }
-
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
@@ -51,7 +52,6 @@ public class FestivalDTO {
     public List<Double> getHorarios() {
         return horarios;
     }
-
     public void setHorarios(List<Double> horarios) {
         this.horarios = horarios;
     }
@@ -59,7 +59,6 @@ public class FestivalDTO {
     public Set<SalaFestivalDTO> getSalas() {
         return salas;
     }
-
     public void setSalas(Set<SalaFestivalDTO> salas) {
         this.salas = salas;
     }

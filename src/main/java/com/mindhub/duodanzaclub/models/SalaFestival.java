@@ -21,11 +21,15 @@ public class SalaFestival {
     @JoinColumn(name = "festival_id")
     private Festival festival;
 
+
+
     public SalaFestival() {}
     public SalaFestival(Sala sala, Festival festival) {
         setSala(sala);
         setFestival(festival);
     }
+
+
 
     public long getId() {return id;}
 

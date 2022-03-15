@@ -5,7 +5,8 @@ let app = new Vue({
             cantidadClases: null,
             modoPago: null,
             precioFinal: 0,
-        }
+        },
+        editarPerfil: false,
     },
     mounted() {
         s = document.querySelector(".suelta");
@@ -31,5 +32,10 @@ let app = new Vue({
             t.classList.add("abono-activo");
             console.log('entro trimestral');
         },
+        clickEditar() {
+            if (editarPerfil) {
+
+            }
+        }
     },
 })

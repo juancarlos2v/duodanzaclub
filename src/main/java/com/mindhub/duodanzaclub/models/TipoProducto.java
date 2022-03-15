@@ -1,7 +1,7 @@
 package com.mindhub.duodanzaclub.models;
 
 public enum TipoProducto {
-    INDUMENTARIA,
+    PRENDAS,
     CALZADOS,
     ACCESORIOS
 }

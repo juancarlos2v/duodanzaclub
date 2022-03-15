@@ -8,6 +8,8 @@ public class UsuarioClaseDTO {
     private long clase_id;
     private Rol rol;
 
+
+
     public UsuarioClaseDTO(){}
     public UsuarioClaseDTO(UsuarioClase usuarioClase){
         setId(usuarioClase.getId());
@@ -15,15 +17,14 @@ public class UsuarioClaseDTO {
         setRol(usuarioClase.getRol());
     }
 
-    public long getId() {return id;}
 
+
+    public long getId() {return id;}
     public void setId(long id) {this.id = id;}
 
     public long getClase_id() {return clase_id;}
-
     public void setClase_id(Long id) {this.clase_id = id;}
 
     public Rol getRol() {return rol;}
-
     public void setRol(Rol rol) {this.rol = rol;}
 }

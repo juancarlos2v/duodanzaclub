@@ -6,7 +6,7 @@ html {
 }
 
 :root {
-    --header-color: #b8a697;
+    --header-color: #dbc6b1;
     --footer-color: #5a7892;
     --gray-color: #C4C4C4;
     --rosa-suave: #fef8f8;
@@ -40,7 +40,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     margin: auto;
     justify-content: center;
-    /* overflow: hidden; */
+    /* overflow    : hidden; */
 }
 
 .contenedor-modal {

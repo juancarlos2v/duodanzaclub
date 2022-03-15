@@ -13,30 +13,27 @@ import java.util.Set;
 import static java.util.stream.Collectors.toList;
 
 @Entity
-@Embeddable
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+
     private String nombre;
     private String apellido;
     private String telefono;
     private String email;
     private String password;
     private LocalDate fechaNacimiento;
+    private String ciudad;
     private Nivel nivel;
     private Rol rol;
     private Abono abono;
 
-
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Academia_Id")
+    @JoinColumn(name="academia_id")
     private Academia academia;
-
-    /*@OneToMany(mappedBy = "usuario1", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<ContactoUsuario> contactoUsuarios = new HashSet<>();*/
 
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
     private Set<UsuarioClase> usuarioClases = new HashSet<UsuarioClase>();
@@ -48,9 +45,14 @@ public class Usuario {
     @ManyToMany(mappedBy = "followers", cascade = CascadeType.ALL)
     private Set<Usuario> following = new HashSet<Usuario>();
 
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    private List<Transaccion> transacciones = new ArrayList<>();
+
     @ElementCollection
     @Column(name = "contactos")
     private List<Long> contactos = new ArrayList<Long>();
+
+
 
     public Usuario() {}
     public Usuario(String email, String password){
@@ -65,17 +67,20 @@ public class Usuario {
         setPassword(password);
         setFechaNacimiento(fechaNacimiento);
     }
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Nivel nivel, Rol rol, Abono abono) {
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, String ciudad, Nivel nivel, Rol rol, Abono abono) {
         setNombre(nombre);
         setApellido(apellido);
         setTelefono(telefono);
         setEmail(email);
         setPassword(password);
         setFechaNacimiento(fechaNacimiento);
+        setCiudad(ciudad);
         setNivel(nivel);
         setRol(rol);
         setAbono(abono);
     }
+
+
 
     public long getId() {return id;}
 
@@ -96,6 +101,9 @@ public class Usuario {
 
     public LocalDate getFechaNacimiento() {return fechaNacimiento;}
     public void setFechaNacimiento(LocalDate fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
+
+    public String getCiudad() {return ciudad;}
+    public void setCiudad(String ciudad) {this.ciudad = ciudad;}
 
     public Nivel getNivel() {return nivel;}
     public void setNivel(Nivel nivel) {this.nivel = nivel;}
@@ -131,5 +139,14 @@ public class Usuario {
     @JsonIgnore
     public List<Clase> getClases(){
         return usuarioClases.stream().map(usuarioClase -> usuarioClase.getClase()).collect(toList());
+    }
+
+    @JsonIgnore
+    public List<Transaccion> getTransacciones() {return transacciones;}
+    public void setTransacciones(List<Transaccion> transaccions) {this.transacciones = transaccions;}
+
+    public void addTransaccion(Transaccion transaccion){
+        transaccion.setUsuario(this);
+        transacciones.add(transaccion);
     }
 }
