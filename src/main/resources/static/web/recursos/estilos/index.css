@@ -187,7 +187,7 @@
     flex-wrap      : wrap;
     justify-content: center;
     width          : 95%;
-    height         : 20vh;
+    height         : 5rem;
 }
 
 .seccion-tienda {
@@ -230,7 +230,6 @@
     height          : 18rem;
     width           : 80%;
     margin          : auto;
-    margin-bottom   : 3rem;
     display         : flex;
     justify-content : center;
     padding-top     : 3rem;
@@ -262,13 +261,26 @@
 }
 
 .productos-destacados {
+    display           : flex;
+    justify-content   : space-around;
+    flex-wrap         : wrap;
+    width             : 100%;
+    /* margin         : 2rem; */
+
+    padding-bottom: 3rem;
+}
+
+.titulo-productos {
     display        : flex;
-    justify-content: space-around;
-    flex-wrap      : wrap;
-    width          : 100%;
-    margin         : 2rem;
+    justify-content: center;
+    color          : var(--footer-color);
     padding-top    : 3rem;
-    padding-bottom : 3rem;
+
+
+}
+
+.titulo-productos h3 {
+    font-weight: 500;
 }
 
 .productos-destacados div {
@@ -277,6 +289,8 @@
     background-size    : contain;
     height             : 10rem;
     width              : 20rem;
+    margin-bottom      : 3rem;
+    margin-top         : 3rem;
 }
 
 .productos-destacados div {
@@ -295,9 +309,47 @@
     background-image: url("../imagenes/home/ropa_1.png");
 }
 
+.info-abonos {
+    display        : flex;
+    justify-content: space-between;
+    width          : 100%;
+    height         : 22rem;
+    overflow       : hidden;
+    z-index        : 0;
+}
+
+.parrafo-bonos {
+    text-align      : center;
+    position        : relative;
+    z-index         : 0;
+    height          : 10rem;
+    margin-top      : 7rem;
+    background-color: var(--gray-color);
+}
+
+.parrafo-bonos p {
+    width       : 55%;
+    padding-left: 2rem;
+    padding-top : 2rem;
+}
+
+.info-abonos>div+div {
+    position       : absolute;
+    display        : flex;
+    justify-content: flex-end;
+    width          : 100%;
+    margin-left    : 18%;
+}
+
+.info-abonos img {
+    width   : 45%;
+    z-index : 10;
+    overflow: hidden;
+}
+
 .seccion-festival {
     display         : flex;
-    justify-content : space-around;
+    justify-content : space-between;
     background-color: black;
     height          : 35rem;
     width           : 100%;
@@ -309,10 +361,14 @@
     display       : flex;
     flex-direction: column;
     color         : white;
+    align-items   : center;
     width         : 60%;
     height        : 10rem;
-    padding       : 2rem;
+    padding       : 1rem;
+    margin-left   : 10rem;
 }
+
+
 
 .contenido-festival>img {
     width : 50%;
@@ -321,9 +377,10 @@
 }
 
 .logos-tango {
-    display: flex;
-    height : 100%;
-    width  : 60%;
+    display        : flex;
+    justify-content: space-between;
+    height         : 100%;
+    width          : 60%;
 }
 
 
@@ -333,11 +390,19 @@
     overflow: hidden;
 }
 
+.contenedor-bachata {
+
+    justify-content: end;
+
+
+}
+
 .seccion-festival div+div>img {
     height     : 100%;
     overflow   : hidden;
     align-items: flex-end;
-    z
+    margin-left: 10rem;
+
 }
 
 .seccion-milongas {
@@ -348,22 +413,31 @@
     background-repeat  : no-repeat;
     background-position: 50%;
     overflow           : hidden;
+    display            : flex;
+    align-items        : center;
 }
 
-.seccion-milongas>p:first-child {
-    color        : white;
-    font-size    : 10vh;
-    text-align   : center;
-    padding-right: 5rem;
-    padding-left : 40rem;
+.contenedor-texto-milongas {
+    text-align  : start;
+    color       : white;
+    width       : 50%;
+    padding-left: 10%;
 }
 
-.seccion-milongas p+p {
-    color        : white;
-    text-align   : center;
-    padding-left : 40rem;
-    padding-right: 3rem;
+.contenedor-texto-milongas h2 {
+
+    font-size      : 6rem;
+    /*text-align   : center;
+    padding-right  : 5rem;
+    padding-left   : 40rem; */
 }
+
+/*.seccion-milongas p {
+   
+    text-align   : center;
+     padding-left : 40rem;
+    padding-right: 3rem; 
+}*/
 
 .contenedor-contacto {
     height       : 10rem;
@@ -426,10 +500,12 @@ form>div div+div {
 }
 
 .sponsors div {
-    background-repeat: no-repeat;
-    background-size  : contain;
-    height           : 60%;
-    width            : 30%;
+    background-repeat  : no-repeat;
+    background-size    : contain;
+    height             : 60%;
+    width              : 30%;
+    background-position: 50%;
+
 }
 
 .sponsors div {
@@ -437,6 +513,10 @@ form>div div+div {
 }
 
 .sponsors>div+div {
+    background-image: url("../imagenes/home/logo_blanco.d4a91367.jpg");
+}
+
+.sponsors>div+div+div {
     background-image: url("../imagenes/home/hsbcblanco.png");
 }
 
