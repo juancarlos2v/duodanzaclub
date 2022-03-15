@@ -11,7 +11,6 @@ public class SolicitudDTO {
     public long getUsuario() {
         return usuario;
     }
-
     public void setUsuario(long usuario) {
         this.usuario = usuario;
     }

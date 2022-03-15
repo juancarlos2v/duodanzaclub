@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 public interface ProductoService {
-
     public List<ProductoDTO> getProductsDTO();
-
-    public Producto productoById(@PathVariable Long id);
-
-    public void guardarProducto(Producto producto);
+    public Productos productoById(@PathVariable Long id);
+    public void guardarProducto(Productos producto);
 }

@@ -9,6 +9,8 @@ public class ProfesorClaseDTO {
     private Profesor profesor;
     private Clase clase;
 
+
+
     public ProfesorClaseDTO(){}
     public ProfesorClaseDTO(ProfesorClase profesorClase){
         setId(profesorClase.getId());
@@ -16,16 +18,16 @@ public class ProfesorClaseDTO {
         setClase(profesorClase.getClase());
     }
 
+
+
     public long getId() {
         return id;
     }
-
     public void setId(long id) {this.id = id;}
 
     public Profesor getProfesor() {
         return profesor;
     }
-
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
@@ -33,7 +35,6 @@ public class ProfesorClaseDTO {
     public Clase getClase() {
         return clase;
     }
-
     public void setClase(Clase clase) {
         this.clase = clase;
     }

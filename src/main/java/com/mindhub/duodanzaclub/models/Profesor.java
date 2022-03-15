@@ -15,22 +15,27 @@ public class Profesor {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+
     private String nombre;
     private String apellido;
 
     @OneToMany(mappedBy = "profesor", fetch = FetchType.EAGER)
     private Set<ProfesorClase> profesorClases = new HashSet<>();
 
+
+
     public Profesor(){}
-    public Profesor(String nombre, String apellido, Set<ProfesorClase> profesorClases) {
+    public Profesor(String nombre, String apellido) {
         setNombre(nombre);
         setApellido(apellido);
-        setProfesorClases(profesorClases);
+
     }
+
+
 
     @JsonIgnore
     public List<Clase> getClases(){
-        return profesorClases.stream().map(profesorClase -> profesorClase.getClase()).collect(Collectors.toList());
+        return profesorClases.stream().map(ProfesorClase::getClase).collect(Collectors.toList());
     }
 
     public long getId() {
@@ -40,7 +45,6 @@ public class Profesor {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -48,7 +52,6 @@ public class Profesor {
     public String getApellido() {
         return apellido;
     }
-
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
@@ -56,8 +59,8 @@ public class Profesor {
     public Set<ProfesorClase> getProfesorClases() {
         return profesorClases;
     }
-
     public void setProfesorClases(Set<ProfesorClase> profesorClases) {
         this.profesorClases = profesorClases;
     }
+
 }

@@ -55,9 +55,8 @@ public class ProductoController {
     public ResponseEntity<Object> crearProducto(Authentication authentication,
                                                 @RequestBody Producto producto){
 
-        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null ||
-                producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null ||
-                producto.getStock() <= 0){
+        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null
+                || producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null || producto.getStock() <= 0 || producto.getTalle().isEmpty()){
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
         }
         if(producto.getPrecio() <= 0) {

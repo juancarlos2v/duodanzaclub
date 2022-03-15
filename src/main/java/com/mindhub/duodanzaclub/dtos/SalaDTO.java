@@ -16,9 +16,10 @@ public class SalaDTO {
     private Set<SalaClaseDTO> clases = new HashSet<>();
     private Set<SalaFestivalDTO> festivales = new HashSet<>();
 
+
+
     public SalaDTO(){}
     public SalaDTO(String nombre, int aforo, long academia_id){
-
         setNombre(nombre);
         setAforo(aforo);
         setAcademia_id(academia_id);
@@ -32,11 +33,12 @@ public class SalaDTO {
         setClases(sala.getSalaClases().stream().map(SalaClaseDTO::new).collect(Collectors.toSet()));
         setFestivales(sala.getSalaFestival().stream().map(SalaFestivalDTO::new).collect(Collectors.toSet()));
     }
- //JOYA
+
+
+
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -44,7 +46,6 @@ public class SalaDTO {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -52,7 +53,6 @@ public class SalaDTO {
     public int getAforo() {
         return aforo;
     }
-
     public void setAforo(int aforo) {
         this.aforo = aforo;
     }
@@ -60,7 +60,6 @@ public class SalaDTO {
     public Academia getAcademia() {
         return academia;
     }
-
     public void setAcademia(Academia academia) {
         this.academia = academia;
     }
@@ -68,7 +67,6 @@ public class SalaDTO {
     public Set<SalaClaseDTO> getClases() {
         return clases;
     }
-
     public void setClases(Set<SalaClaseDTO> clases) {
         this.clases = clases;
     }
@@ -76,7 +74,6 @@ public class SalaDTO {
     public Set<SalaFestivalDTO> getFestivales() {
         return festivales;
     }
-
     public void setFestivales(Set<SalaFestivalDTO> festivales) {
         this.festivales = festivales;
     }
@@ -84,7 +81,6 @@ public class SalaDTO {
     public long getAcademia_id() {
         return academia_id;
     }
-
     public void setAcademia_id(long academia_id) {
         this.academia_id = academia_id;
     }

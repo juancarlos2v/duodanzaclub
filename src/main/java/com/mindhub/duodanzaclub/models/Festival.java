@@ -31,14 +31,8 @@ public class Festival {
     @OneToMany(mappedBy = "festival", fetch = FetchType.EAGER)
     private Set<SalaFestival> salaFestival = new HashSet<>();
 
-
-//<<<<<<< HEAD:src/main/java/com/mindhub/duodanzaclub/model/Festival.java
-    public Festival() {
-    }
-
+    public Festival() {}
     public Festival(String nombre, Estilos estilo, Double precio, List<Double> horarios) {
-
-//>>>>>>> 763b920ff0ed6fd782f189fe3aad6612c9c9e149:src/main/java/com/mindhub/duodanzaclub/models/Festival.java
         this.nombre = nombre;
         this.precio = precio;
         this.estilo = estilo;
