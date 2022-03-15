@@ -40,7 +40,7 @@
                         <img class="img-fluid" src="./recursos/imagenes/home/mano_1.png">
                     </div>
                     <div>
-                        <img src="./recursos/imagenes/home/clases_titulo_azul_y_beige.png">
+                        <img class="img-fluid" src="./recursos/imagenes/home/clases_titulo_azul_y_beige.png">
                     </div>
                     <div>
                         <img class="img-fluid" src="./recursos/imagenes/home/mano_2.png">
@@ -65,9 +65,9 @@
                             <div>
                                 <label for="rol">ROL</label>
                                 <select id="rol">
-                                <option value="Lider">Lider</option>
-                                <option value="-"">-</option>
-                                <option value="-">-</option>
+                                <option value="lider">Lider</option>
+                                <option value="follower"">Follower</option>
+                                <option value="ambos">Ambos</option>
                             </select>
                             </div>
                             <div>
@@ -89,41 +89,59 @@
                             <div>
                                 <label for="dia">DIA</label>
                                 <select id="dia">
-                                <option value="lunes">Rosario</option>
-                                <option value="martes"">Cordoba</option>
-                                <option value="miercoles">Buenos Aires</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <select id="personas">
-                                <option value="1">1</option>
-                                <option value="2"">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            </div>
-                            <div>
-                                <select id="acompañante">
-                                <option value="-">AAAAAAA</option>
-                                <option value="-"">BBBBBBB</option>
-                                <option value="-">CCCCCCC</option>
-                            </select>
-
+                                <option value="lunes">Lunes</option>
+                                <option value="martes"">Martes</option>
+                                <option value="miercoles">Miercoles</option>
+                                <option value="jueves">Jueves</option>
+                                <option value="viernes">Viernes</option>
+                                <option value="sabado">Sabado</option>
+                                <option value="domingo">Domingo</option>
+                                </select>
                             </div>
                         </div>
                         <button type="button" id="buscar-clase">Buscar</button>
                     </div>
 
-                    <div class="info-abonos">
-                        <div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis debitis ut corrupti saepe consequatur reprehenderit assumenda tempora rem, eaque sint harum optio vel ducimus dolore maiores nostrum magnam id neque.</p>
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="./recursos/imagenes/home/bachata_recorte.png">
-                        </div>
-                    </div>
                 </div>
+                <template>
+                    <div class="contenedor-tabla">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CODIGO</th>
+                                    <th>CLASE</th>
+                                    <th>PROFESOR</th>
+                                    <th>HORARIO</th>
+                                    <th>CUPO</th>
+                                    <th>Ordenar por</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{codigo}}</td>
+                                    <td>{{clase}} </td>
+                                    <td>{{profesor}} </td>
+                                    <td> {{horario}} </td>
+                                    <td>{{cupo}} </td>
+                                    <td><button type="button">+</button> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+                <!-- 
+                <div class="info-abonos ">
+                    <div class="parrafo-bonos">
+                        <div>
+                            <img src="./recursos/imagenes/">
+                        </div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis debitis ut corrupti saepe consequatur reprehenderit assumenda tempora rem, eaque sint harum optio vel ducimus dolore maiores nostrum magnam id neque.</p>
+                    </div>
+                    <div class="contain">
+                        <img src="./recursos/imagenes/home/bachata_recorte.png">
+                    </div>
+                </div> -->
+
                 <div class="contenedor-profesores">
                     <h3>PROFESORES</h3>
                     <div>
@@ -133,6 +151,9 @@
                         <div></div>
                     </div>
                 </div>
+
+
+
             </main>
             <footer>
                 <div class="enlaces ">

@@ -1,16 +1,16 @@
 body,
 html {
     font-family: 'Montserrat', sans-serif;
-    height     : 100%;
-    width      : 100%;
+    height: 100%;
+    width: 100%;
 }
 
 :root {
     --header-color: #dbc6b1;
     --footer-color: #5a7892;
-    --gray-color  : #C4C4C4;
-    --rosa-suave  : #fef8f8;
-    --light       : #ffffff;
+    --gray-color: #C4C4C4;
+    --rosa-suave: #fef8f8;
+    --light: #ffffff;
 }
 
 a {
@@ -19,37 +19,46 @@ a {
 
 button {
     background: transparent;
-    border    : none;
+    border: none;
+}
+
+
+/***OCULTAR ESTILO INPUT NUMBER****/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .modal {
     /* position: fixed; */
-    top            : 0;
-    left           : 0;
-    right          : 0;
-    bottom         : 0;
-    display        : flex;
-    margin         : auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin: auto;
     justify-content: center;
     /* overflow    : hidden; */
 }
 
 .contenedor-modal {
-    margin          : auto;
-    width           : 90%;
-    max-width       : 50vw;
-    max-height      : 90%;
+    margin: auto;
+    width: 90%;
+    max-width: 50vw;
+    max-height: 90%;
     background-color: #fef8f8;
-    border-radius   : 0.5rem 1rem;
-    border          : 0.1rem solid rgba(0, 0, 0, 0.26);
+    border-radius: 0.5rem 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.26);
 }
 
 .desenfocar {
     -webkit-filter: blur(2px);
-    -moz-filter   : blur(2px);
-    -o-filter     : blur(2px);
-    -ms-filter    : blur(2px);
-    filter        : blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
 }
 
 
@@ -64,7 +73,7 @@ button {
 .fade-leave-to
 /* .fade-leave-active below version 2.1.8 */
 
-    {
+{
     transition: opacity .4s;
-    opacity   : 0
+    opacity: 0
 }
