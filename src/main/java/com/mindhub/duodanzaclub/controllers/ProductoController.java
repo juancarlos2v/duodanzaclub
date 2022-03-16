@@ -1,9 +1,10 @@
 package com.mindhub.duodanzaclub.controllers;
 
-
 import com.mindhub.duodanzaclub.dtos.ProductoDTO;
 
+
 import com.mindhub.duodanzaclub.models.Productos;
+
 
 import com.mindhub.duodanzaclub.services.ProductoService;
 import com.mindhub.duodanzaclub.services.UsuarioService;
@@ -59,17 +60,26 @@ public class ProductoController {
     public ResponseEntity<Object> crearProducto(Authentication authentication,
                                                 @RequestBody Productos producto){
 
-        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null
-                || producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null || producto.getStock() <= 0 || producto.getTalle().isEmpty()){
+
+
+        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null ||
+                producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null ||
+                producto.getStock() <= 0){
+
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
         }
         if(producto.getPrecio() <= 0) {
             return new ResponseEntity<>("Agregue un precio", HttpStatus.FORBIDDEN);
         }
 
-        Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(), producto.getImagen(), producto.getEstilo(), producto.getTalle(), producto.getTipoProducto(), producto.getStock());
+
+
+        Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(),
+                producto.getImagen(), producto.getEstilo(), producto.getTalle(), producto.getTipoProducto(), producto.getStock());
+
         productoService.guardarProducto(productoNuevo);
 
         return new ResponseEntity<>("Producto creado", HttpStatus.FORBIDDEN);
     }
+
 }

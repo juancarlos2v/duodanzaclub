@@ -16,10 +16,9 @@ public class ProductoDTO {
     private TipoProducto tipoProducto;
     private int stock;
 
+    public ProductoDTO() {}
 
 
-    public ProductoDTO() {
-    }
 
     public ProductoDTO(Productos productos) {
         this.id = productos.getId();

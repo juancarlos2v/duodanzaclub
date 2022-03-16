@@ -3,10 +3,9 @@ package com.mindhub.duodanzaclub.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Productos {
@@ -27,8 +26,17 @@ public class Productos {
 
 
 
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "producto_id")
+    private Transaccion transaccion;
+
+    @OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
+    private List<TransaccionProducto> transaccionProductos = new ArrayList<>();
+
     public Productos() {}
     public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, String talle, TipoProducto tipoProducto, int stock) {
+
         setTitulo(titulo);
         setDescripcion(descripcion);
         setPrecio(precio);
@@ -67,5 +75,9 @@ public class Productos {
     public int getStock() {return stock;}
     public void setStock(int stock) {this.stock = stock;}
 
+    public Transaccion getTransaccion() {return transaccion;}
+    public void setTransaccion(Transaccion transaccion) {this.transaccion = transaccion;}
 
 }
+
+
