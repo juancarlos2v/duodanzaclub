@@ -7,6 +7,7 @@ import com.mindhub.duodanzaclub.models.TransaccionProducto;
 import com.mindhub.duodanzaclub.models.Usuario;
 import com.mindhub.duodanzaclub.repositories.TransaccionProductoRepository;
 import com.mindhub.duodanzaclub.repositories.TransaccionRepository;
+import com.mindhub.duodanzaclub.services.EmailService;
 import com.mindhub.duodanzaclub.services.ProductoService;
 import com.mindhub.duodanzaclub.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@ public class TransaccionController {
     ProductoService productoService;
     @Autowired
     TransaccionProductoRepository transaccionProductoRepository;
+    @Autowired
+    EmailService emailService;
 
     @GetMapping("/transacciones")
     public List<TransaccionDTO> getTransacciones(){
@@ -60,6 +63,7 @@ public class TransaccionController {
             TransaccionProducto transaccionProducto = transaccionProductoRepository.save(new TransaccionProducto(transaccion, producto));
         });
 
+        emailService.sendEmail("ignaciomolina.95@hotmail.com", "Gracias por tu compra", "El contenido de tu compra es:");
         usuario.addTransaccion(transaccion);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
