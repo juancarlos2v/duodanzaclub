@@ -18,12 +18,11 @@
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.formulario {
+.info-usuario {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     background-color: var(--header-color);
-    height: 19rem;
+    height: 20rem;
     width: 80%;
     margin: auto;
     padding: 5%;
@@ -33,25 +32,29 @@
     border-radius: 0.5rem 0 0.5rem 0.5rem;
 }
 
-.formulario input {
-    margin-left: 1rem;
-    height: fit-content;
-    width: 30%;
-}
-
 .foto-perfil {
     width: 10rem;
     height: 10rem;
-    margin-top: 5%;
     background-color: black;
 }
 
-.formulario>form {
+.info-usuario>div:first-child {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
-    width: 39rem;
+    width: 100%;
     padding-top: 9%;
+}
+
+.info-usuario>div+div {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.datos-usuario {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-usuario {
@@ -87,13 +90,6 @@
     transform: translateY(-5rem);
 }
 
-.contenedor-manos {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    width: 100%;
-}
-
 .mano-izquierda,
 .mano-derecha {
     width: 20%;
@@ -101,16 +97,14 @@
 }
 
 .mano-derecha {
-    padding-top: 10rem;
+    margin-top: 10rem;
 }
 
 .mano-izquierda {
     padding-bottom: 10rem;
 }
 
-.formulario button {
-    align-self: flex-end;
-    margin-right: 20%;
+.info-usuario button {
     background-color: var(--gray-color);
     color: white;
     padding: 0.5rem;
@@ -142,7 +136,7 @@
     position: relative;
     display: flex;
     height: 18rem;
-    margin-bottom: 12rem;
+    margin-bottom: 17rem;
 }
 
 .piernas {
@@ -182,15 +176,18 @@
 
 .contenedor-match {
     width: 100%;
-    height: 17rem;
+    height: 20rem;
     position: relative;
     background-color: var(--gray-color);
 }
 
 .match-info {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
+    padding-left: 5%;
 }
 
 .match-info p {
@@ -204,20 +201,20 @@
 }
 
 .logo-match {
-    height: 150%;
+    transform: translateY(3rem);
 }
 
 .texto-bachata {
     position: relative;
-    display: flex;
+    margin-right: 10%;
+    width: 80%;
 }
 
 .pareja {
-    width: 90%;
-    justify-content: end;
+    height: 100%;
     margin-right: 0;
     position: absolute;
-    transform: translateX(34rem);
+    transform: translateX(67rem);
 }
 
 
@@ -232,6 +229,8 @@
 }
 
 .modal-editar {
+    display: flex;
+    flex-direction: column;
     height: 25rem;
     width: 100%;
     background-color: var(--rosa-suave);
@@ -241,6 +240,27 @@
     justify-content: center;
 }
 
+.modal-editar form {
+    position: relative;
+}
+
 .modal-editar input {
     margin: 0.4em;
+}
+
+.contenedor-botones {
+    margin-top: 3rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5rem;
+    padding-top: 2rem;
+}
+
+.contenedor-botones button {
+    background-color: var(--footer-color);
+    padding: 0.5rem;
+    margin-left: 1.5rem;
+    color: var(--light);
 }
