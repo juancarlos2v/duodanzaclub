@@ -1,3 +1,11 @@
+.izquierda-banner {
+    margin-bottom: 3rem;
+}
+
+.derecha-banner {
+    padding-top: 8rem;
+}
+
 .banner-titulo {
     display: flex;
     justify-content: space-between;
@@ -193,4 +201,29 @@ div>h3 {
 
 .contenedor-profesores>div div+div+div+div {
     background-image: url("../imagenes/home/kizomba.png");
+}
+
+
+/*****MODAL****/
+
+.contenedor-modal {
+    max-width: 90% !important;
+    background: transparent;
+    border: none;
+}
+
+.izquierda-contacto {
+    margin-top: 10rem;
+}
+
+.derecha-contacto {
+    margin-top: 20rem;
+}
+
+.botones {
+    display: flex;
+}
+
+.botones button {
+    margin-right: 1rem;
 }
