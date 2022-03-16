@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
     <link rel="stylesheet" href="./recursos/estilos/index.css">
+    <link rel="stylesheet" href="./recursos/estilos/index-movil.css">
     <link rel="stylesheet" href="./recursos/estilos/nav-home.css">
     <link rel="stylesheet" href="./recursos/estilos/footer.css">
     <link rel="stylesheet" href="./recursos/estilos/video.css">
@@ -24,7 +25,7 @@
                     <nav>
                         <div>
                             <a href="./clases.html">Clases</a>
-                            <a href="#">Festivales</a>
+                            <a href="./festivales.html">Festivales</a>
                         </div>
                         <div>
                             <a href="#contacto">Contacto</a>
@@ -74,8 +75,7 @@
                 </div>
 
                 <div class="contenedor-banner-clases">
-                    <img class="clasesLogo" src="./recursos/imagenes/home/clasesOKblanco.png">
-                    <!-- <div class="logo-clases"></div> -->
+                    <img class="clasesLogo img-fluid" src="./recursos/imagenes/home/clasesOKblanco.png">
                     <div class="manos">
                         <div class="mano-izquierda"></div>
                         <div class="contenedor-texto2">
@@ -108,7 +108,7 @@
                 </div>
                 <div class="contenedor-tienda">
 
-                    <img class="tiendaLogo" src="./recursos/imagenes/home/tiendaOK1.png">
+                    <img class="tiendaLogo img-fluid" src="./recursos/imagenes/home/tiendaOK1.png">
                     <!-- <div class="seccion-tienda">
 
                         <div class="contenedor-tienda"></div> 
@@ -140,13 +140,13 @@
 
                 <div class="seccion-festival">
                     <div class="contenido-festival">
-                        <img src="./recursos/imagenes/home/Festivales1.png" alt="">
+                        <img class="img-fluid" src="./recursos/imagenes/home/Festivales1.png">
 
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolorum unde, incidunt doloremque assumenda fuga velit atque rerum et accusantium vitae beatae? Corrupti incidunt illo nemo ea nesciunt veritatis rem.</p>
 
                         <div class="logos-tango">
-                            <img src="./recursos/imagenes/home/milongas.png">
-                            <img src="./recursos/imagenes/home/salseras.png">
+                            <img class="img-fluid" src="./recursos/imagenes/home/milongas.png">
+                            <img class="img-fluid" src="./recursos/imagenes/home/salseras.png">
                         </div>
                     </div>
                     <div class="contenedor-bachata">
@@ -154,7 +154,7 @@
                     </div>
                 </div>
 
-                <div class="seccion-milongas">
+                <div class="seccion-milongas container-fluid">
                     <div class="contenedor-texto-milongas">
                         <h2>MILONGAS</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At a iusto consequatur dignissimos quibusdam. Voluptatem veritatis possimus perspiciatis et fuga reiciendis culpa dolorum mollitia assumenda amet earum, exercitationem, quos
@@ -215,39 +215,38 @@
                 </div>
             </footer>
         </div>
-
         <template>
             <transition name="fade">
-                <div class="modal" v-show="modalContacto==true">
-                    <div class="contenedor-manos">
-                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
-                        <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
-                    </div>
-                        <div class="contenedor-modal">
-                            <form>
-                                <div>
-                                    <p>CONTACTO</p>
-                                </div>
-                                <div class="contenedor-form">
-                                    <div class="logo-form"></div>
+                <section class="modal" v-show="modalIngreso==true">
+                    <div class="contenedor-modal">
+                        <div class="modal-ingreso">
+                            <div>
+                                <img class="img-fluid" src="./recursos/imagenes/logo_NEUTRO_light.png" >
+                            </div>
+                            <div>
+                                <form>
                                     <div>
-                                        <div>
-                                            <input type="text" placeholder="nombre">
-                                            <input type="text" placeholder="e-mail">
-                                        </div>
-                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                        <div class="botones">
-                                            <button type="button">ENVIAR</button>
-                                            <button type="button" @click="abrirContacto">VOLVER</button>
-                                        </div>
+                                        <label for="usuario">Usuario</label>
+                                        <input v-model="ingreso.usuario" type="text" id="usuario">
                                     </div>
-                                </div>
-
-                            </form>
+                                    <div>
+                                        <label for="contraseña">Contraseña</label>
+                                        <input v-model="ingreso.contraseña" type="password" id="contraseña">
+                                    </div>
+                                    <button type="button">No tengo usuario</button>
+                                    <button type="button">Olvide mi contraseña</button>
+                                    <button type="button" @click="ingresar">Ingresar</button>
+                                    <button type="button" @click="abrirModal">Volver</button>
+                                </form>
+                            </div>
                         </div>
-                </div>
+
+                    </div>
+                </section>
             </transition>
         </template>
+
+
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

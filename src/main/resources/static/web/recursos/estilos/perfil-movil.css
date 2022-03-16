@@ -1,0 +1,57 @@
+@media(max-width: 800px) {
+    .contenedor-usuario {
+        margin-top: 2rem;
+    }
+    .logo-usuario {
+        transform: translateY(0.3rem);
+    }
+    .info-usuario {
+        height: auto;
+    }
+    .tipos-clases {
+        align-items: center;
+        justify-content: center;
+    }
+    .tipos-clases button {
+        margin-top: 1rem;
+    }
+    .contenedor-seleccion-clases {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        padding-right: 5rem;
+    }
+    .selector-clases select {
+        width: auto;
+        height: fit-content;
+    }
+    .selector-clases p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .selector-clases div {
+        font-size: 3vh;
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+    .precio-abonos {
+        height: 13rem;
+        margin-bottom: 8rem;
+    }
+    .telas {
+        width: 70%;
+        transform: translateY(-7rem);
+    }
+    .contenedor-match {
+        height: auto;
+    }
+    .match-info {
+        flex-direction: column;
+    }
+    .texto-bachata p {
+        text-align: center;
+        margin: 0;
+        padding-bottom: 3rem;
+        padding-left: 2.5rem;
+    }
+}

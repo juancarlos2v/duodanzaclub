@@ -189,3 +189,23 @@ form>div div+div {
     transition: opacity .4s;
     opacity: 0
 }
+
+@media(max-width: 800px) {
+    p {
+        font-size: 1.6vh !important;
+    }
+    h2 {
+        font-size: 5vh !important;
+    }
+    h5 {
+        font-size: 3vh !important;
+    }
+    th {
+        font-size: 1.5vh;
+        text-align: center;
+    }
+    td {
+        font-size: 2vh;
+        text-align: center;
+    }
+}
