@@ -1,7 +1,8 @@
 package com.mindhub.duodanzaclub.controllers;
 
+
 import com.mindhub.duodanzaclub.dtos.TransaccionDTO;
-import com.mindhub.duodanzaclub.models.Producto;
+import com.mindhub.duodanzaclub.models.Productos;
 import com.mindhub.duodanzaclub.models.Transaccion;
 import com.mindhub.duodanzaclub.models.TransaccionProducto;
 import com.mindhub.duodanzaclub.models.Usuario;
@@ -43,7 +44,7 @@ public class TransaccionController {
     @PostMapping("/comprar")
     public ResponseEntity<Object> nuevaTransaccion(Authentication authentication, @RequestBody TransaccionDTO transaccionDTO){
         Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
-        List<Producto> productos = new ArrayList<>();
+        List<Productos> productos = new ArrayList<>();
 
         if(transaccionDTO.getAmount() <= 0 || transaccionDTO.getProductosTransaccion().size() <= 0){
             return new ResponseEntity<>("No ha seleccionado ningún producto", HttpStatus.FORBIDDEN);
@@ -53,7 +54,7 @@ public class TransaccionController {
         transaccionRepository.save(transaccion);
 
         transaccionDTO.getProductosTransaccion().stream().forEach(productoTransaccion -> {
-            Producto producto = productoService.productoById(productoTransaccion);
+            Productos producto = productoService.productoById(productoTransaccion);
             productos.add(producto);
             producto.setStock(producto.getStock() - 1);
             productoService.guardarProducto(producto);
