@@ -1,42 +1,20 @@
 @media(max-width: 800px) {
-    p {
-        font-size: 1.6vh;
-    }
-    h2 {
-        font-size: 5vh !important;
-    }
-    .contenedor-logo-nav nav {
-        display: flex;
-        flex-direction: column;
-        padding-top: 2rem;
-    }
-    .contenedor-logo-nav nav>div {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        align-items: center;
-    }
-    .contenedor-logo-nav img {
-        margin: 0 !important;
-        margin: auto;
-        transform: translateX(35vw) !important;
-    }
-    .linea-nav {
-        position: absolute;
-        transform: translateY(-3.8rem);
+    .div-Video {
+        height: 15rem !important;
     }
     .contenedor-texto {
         padding: 0;
         width: 90%;
         align-items: center;
         height: auto;
+        transform: translateY(2rem);
     }
     .contenedor-texto p {
         text-align: center;
         margin: 0;
     }
     .contenedor-banner-clases {
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
     .clasesLogo {
         height: 5rem;

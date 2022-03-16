@@ -1,27 +1,26 @@
 .contenedor-logo-nav {
     align-items: center;
-    position   : relative;
-    display    : flex;
-    flex-wrap  : wrap;
-    
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .contenedor-logo-nav nav {
-    display        : flex;
-    align-items    : center;
+    display: flex;
+    align-items: center;
     justify-content: space-around;
-    margin-top     : 7vw;
-    padding-bottom : 1vw;
+    margin-top: 7vw;
+    padding-bottom: 1vw;
     width: 100%;
 }
 
 nav div {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
-    width          : 100%;
-    margin-left    : 6vw;
-    margin-right   : 6vw;
-    align-items    : center;
+    width: 100%;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    align-items: center;
 }
 
 nav>div+div {
@@ -29,29 +28,52 @@ nav>div+div {
 }
 
 nav a {
-    color         : var(--footer-color);
+    color: var(--footer-color);
     text-transform: uppercase;
-    font-weight   : 500;
+    font-weight: 500;
 }
 
 .linea-nav {
     background-color: var(--header-color);
-    width           : 100%;
-    height          : 5vw;
+    width: 100%;
+    height: 5vw;
 }
 
 .contenedor-logo-nav img {
-    width           : 30%;
-    top             : 0;
-    left            : 0;
-    right           : 0;
-    bottom          : 0;
-    z-index         : 1;
+    width: 30%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
     /* display      : flex; */
-    margin-bottom   : -5rem;
+    margin-bottom: -5rem;
     margin-left: 35%;
     transform: translateY(20%);
-    justify-content : center;
-    position        : absolute;
+    justify-content: center;
+    position: absolute;
     /*padding-bottom: 23rem; */
+}
+
+@media(max-width: 800px) {
+    .contenedor-logo-nav nav {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+    .contenedor-logo-nav nav>div {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+    }
+    .contenedor-logo-nav img {
+        margin: 0 !important;
+        margin: auto;
+        transform: translateX(35vw) !important;
+    }
+    .linea-nav {
+        position: absolute;
+        transform: translateY(-3.8rem);
+    }
 }
