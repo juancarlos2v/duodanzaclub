@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -32,20 +33,18 @@ public class UsuarioController {
 
     @GetMapping("/usuarios")
     public List<UsuarioDTO> getUsuarios(){
-        List<UsuarioDTO> usuarioDTOS = usuarioService.getUsuarios();
+        List<UsuarioDTO> usuarioDTOS = usuarioService.getUsuarios().stream().map(UsuarioDTO::new).collect(Collectors.toList());
         return usuarioDTOS;
     }
 
     @GetMapping("/usuarios/{id}")
     public UsuarioDTO getUsuario(@PathVariable long id){
-        UsuarioDTO usuarioDTO = usuarioService.getById(id);
-        return usuarioDTO;
+        return usuarioService.getById(id);
     }
 
     @GetMapping("/usuarios/current")
     public UsuarioDTO getCurrentUsuario(Authentication authentication){
-        UsuarioDTO usuarioDTO = usuarioService.findByEmail(authentication.getName());
-        return usuarioDTO;
+        return usuarioService.findByEmail(authentication.getName());
     }
 
     @PostMapping("/usuarios")
@@ -69,7 +68,7 @@ public class UsuarioController {
 
         Usuario nuevoUsuario = new Usuario(usuarioDTO.getNombre(), usuarioDTO.getApellido(), usuarioDTO.getTelefono(),
                 usuarioDTO.getEmail(), passwordEncoder.encode(usuarioDTO.getPassword()), fechaNacimiento);
-        usuarioService.saveUsuario(nuevoUsuario);
+        usuarioService.guardarUsuario(usuario);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -99,8 +98,8 @@ public class UsuarioController {
             usuario1.getContactos().add(usuario2.getId());
             usuario2.getContactos().add(usuario1.getId());
         }
-        usuarioService.saveUsuario(usuario1);
-        usuarioService.saveUsuario(usuario2);
+        usuarioService.guardarUsuario(usuario1);
+        usuarioService.guardarUsuario(usuario2);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

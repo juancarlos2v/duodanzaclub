@@ -1,13 +1,3 @@
-/* .contenedor-reel {
-    background-image: url("../imagenes/home/frame_video_3.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0rem -6rem;
-    width: 100%;
-    height: 29vw;
-    z-index: 9;
-} */
-
 .cajita-banner {
     display: flex;
     justify-content: center;
@@ -41,18 +31,6 @@
     width: 95%;
     height: 20vh;
 }
-
-
-/* .logo-clases {
-    background-image : url("../imagenes/home/clasesOKbeige.png");
-    height           : 100%;
-    background-repeat: no-repeat;
-    background-size  : contain;
-
-    z-index            : 1 !important;
-    background-position: 50%;
-    margin-bottom      : -2%;
-} */
 
 .clasesLogo {
     height: 10rem;

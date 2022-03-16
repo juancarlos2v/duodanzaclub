@@ -17,14 +17,16 @@ public class UsuarioServiceImpl implements UsuarioService {
     UsuarioRepository usuarioRepository;
 
     @Override
-    public List<UsuarioDTO> getUsuarios(){
-        return usuarioRepository.findAll().stream().map(UsuarioDTO::new).collect(Collectors.toList());
+    public List<Usuario> getUsuarios(){
+        return usuarioRepository.findAll();
     }
 
     @Override
     public Usuario saveUsuario(Usuario usuario){
         return usuarioRepository.save(usuario);
     }
+
+
 
     @Override
     public UsuarioDTO getById(long id){
@@ -49,5 +51,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Usuario findUsuarioByEmail(String email){
         Usuario usuario = usuarioRepository.findByEmail(email);
         return usuario;
+    }
+
+    @Override
+    public void guardarUsuario(Usuario usuario) {
+        usuarioRepository.save(usuario);
     }
 }

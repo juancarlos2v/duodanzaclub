@@ -100,3 +100,18 @@ a {
 .sponsors img {
     width: 90%;
 }
+
+@media(max-width: 800px) {
+    .sponsors {
+        height: 5rem;
+    }
+    footer {
+        flex-direction: column;
+        padding: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    footer>div {
+        width: 100%;
+    }
+}

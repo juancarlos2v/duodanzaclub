@@ -12,7 +12,7 @@ let app = new Vue({
     },
     methods: {
         abrirModal() {
-            if (!this.modalIngreso) {
+            if (this.modalIngreso == false) {
                 this.modalIngreso = true;
                 pagina.classList.add('desenfocar');
             } else {
