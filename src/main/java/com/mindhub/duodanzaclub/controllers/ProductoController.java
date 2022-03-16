@@ -1,7 +1,13 @@
 package com.mindhub.duodanzaclub.controllers;
 
 import com.mindhub.duodanzaclub.dtos.ProductoDTO;
-import com.mindhub.duodanzaclub.models.Producto;
+
+
+
+import com.mindhub.duodanzaclub.models.Productos;
+
+
+
 import com.mindhub.duodanzaclub.services.ProductoService;
 import com.mindhub.duodanzaclub.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/api")
@@ -29,7 +36,7 @@ public class ProductoController {
 
     @GetMapping("/productos/{id}")
     public ProductoDTO getProducto(@PathVariable Long id){
-        Producto producto = productoService.productoById(id);
+        Productos producto = productoService.productoById(id);
         ProductoDTO productoDTO = new ProductoDTO(producto);
         return productoDTO;
     }
@@ -37,7 +44,7 @@ public class ProductoController {
     @PatchMapping("/productos/{id}")
     public ResponseEntity<Object> actualizarPrecio(@PathVariable Long id,
                                                    @RequestParam Double precio){
-        Producto producto = productoService.productoById(id);
+        Productos producto = productoService.productoById(id);
 
         if(producto == null) {
             return new ResponseEntity<>("El producto seleccionado no existe", HttpStatus.FORBIDDEN);
@@ -53,18 +60,30 @@ public class ProductoController {
 
     @PostMapping("/productos")
     public ResponseEntity<Object> crearProducto(Authentication authentication,
-                                                @RequestBody Producto producto){
+                                                @RequestBody Productos producto){
+
+
+
+
+
 
         if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null
                 || producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null || producto.getStock() <= 0 || producto.getTalle().isEmpty()){
+
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
         }
         if(producto.getPrecio() <= 0) {
             return new ResponseEntity<>("Agregue un precio", HttpStatus.FORBIDDEN);
         }
 
-        Producto productoNuevo = new Producto(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(),
+
+
+
+        Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(),
                 producto.getImagen(), producto.getEstilo(), producto.getTalle(), producto.getTipoProducto(), producto.getStock());
+
+
+
         productoService.guardarProducto(productoNuevo);
 
         return new ResponseEntity<>("Producto creado", HttpStatus.FORBIDDEN);

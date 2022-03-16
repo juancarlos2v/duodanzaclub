@@ -1,8 +1,6 @@
 package com.mindhub.duodanzaclub.dtos;
 
-import com.mindhub.duodanzaclub.models.Producto;
 import com.mindhub.duodanzaclub.models.Transaccion;
-import com.mindhub.duodanzaclub.models.TransaccionProducto;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -49,8 +49,9 @@
     z-index: 0;
 }
 
-.contenedor-banner-negro div {
+.contenedor-banner-negro>div {
     display: flex;
+    justify-content: space-around;
     background-color: black;
     width: 100%;
 }
@@ -58,6 +59,11 @@
 .contenedor-banner-negro img {
     padding-left: 2vw;
     width: 40%;
+}
+
+.texto-negro {
+    height: 30%;
+    align-self: center;
 }
 
 .cuerpo {
@@ -146,6 +152,10 @@
 
 .envios div {
     width: 40%;
+}
+
+.envios>div:first-child {
+    align-self: center;
 }
 
 .envios div+div {
@@ -313,102 +323,3 @@ h3 {
 
 
 /***MEDIA QUERY***/
-
-@media only screen and (max-width: 800px) {
-    .contenedor-logo-nav {
-        margin-top: 6vh;
-        width: 100vw;
-    }
-    .contenedor-logo-nav nav {
-        width: 100vw;
-        height: 2vh;
-    }
-    nav a {
-        font-size: small;
-    }
-    .contenedor-banner {
-        width: 100%;
-        height: 9rem;
-        padding: 0;
-        margin-top: 2rem;
-    }
-    .pareja-img {
-        background-image: url("../imagenes/pareja_baile_recorte.png");
-        width: 90%;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .logo-tienda {
-        background-image: url("../imagenes/Tienda.png");
-        width: 100%;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .contenedor-descripcion {
-        padding: 0.6rem;
-    }
-    .contenedor-descripcion p {
-        font-size: 5vw;
-        text-align: center;
-    }
-    .contenedor-banner-negro {
-        width: 100vw;
-        overflow: hidden;
-        height: auto;
-    }
-    .contenedor-banner-negro img {
-        width: 40%;
-    }
-    .contenedor-estilos {
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        margin-top: 1rem;
-    }
-    .contenedor-estilos div {
-        margin-bottom: 1.5rem;
-    }
-    .contenedor-info {
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 100%;
-        margin: 0 !important;
-    }
-    .envios {
-        height: 5rem;
-    }
-    .envios div+div>h1 {
-        font-size: 2.5vh;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    .promociones-ayuda-news {
-        flex-direction: column;
-        margin-top: 0.6rem;
-        margin: auto !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        font-size: small;
-    }
-    .promociones-ayuda-news div {
-        width: 100vw;
-        padding: 0.5rem;
-    }
-    footer {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        padding: 0 !important;
-        font-size: small;
-        width: 100vw;
-    }
-    footer .enlaces {
-        align-items: center !important;
-        width: 100%;
-        text-align: center;
-    }
-    .enlaces a {
-        text-align: center;
-    }
-}

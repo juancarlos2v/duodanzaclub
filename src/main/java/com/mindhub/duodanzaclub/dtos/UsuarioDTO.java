@@ -1,5 +1,6 @@
 package com.mindhub.duodanzaclub.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mindhub.duodanzaclub.models.*;
 
 import java.time.LocalDate;
@@ -30,6 +31,8 @@ public class UsuarioDTO {
     private List<Long> contactos = new ArrayList<Long>();
     public List<UsuarioClaseDTO> clases = new ArrayList<>();
     private List<TransaccionDTO> transacciones = new ArrayList<>();
+    private Suscripcion suscripcion;
+
 
     public UsuarioDTO(){}
     public UsuarioDTO(String nombre, String apellido, String telefono, String email, String password, int dia, int mes, int anio){
@@ -74,6 +77,8 @@ public class UsuarioDTO {
         setContactos(usuario.getContactos());
         setClases(usuario.getUsuarioClases().stream().map(UsuarioClaseDTO::new).collect(Collectors.toList()));
         setTransacciones(usuario.getTransacciones().stream().map(TransaccionDTO::new).collect(Collectors.toList()));
+        setSuscripcion(usuario.getSuscripcion());
+
     }
 
     public long getId() {return id;}
@@ -135,4 +140,11 @@ public class UsuarioDTO {
 
     public List<TransaccionDTO> getTransacciones() {return transacciones;}
     public void setTransacciones(List<TransaccionDTO> tickets) {this.transacciones = tickets;}
+
+    //@JsonIgnore
+    public Suscripcion getSuscripcion() {return suscripcion;}
+    public void setSuscripcion(Suscripcion suscripcion) {this.suscripcion = suscripcion;}
+
+
+
 }
