@@ -27,7 +27,7 @@
                             <a href="#">Festivales</a>
                         </div>
                         <div>
-                            <a href="#">Contacto</a>
+                            <a href="#contacto">Contacto</a>
                             <a href="./tienda-online.html">Tienda</a>
                             <button type="button" @click="abrirModal"><svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-user-circle" width="32" height="32"
@@ -163,7 +163,7 @@
                     </div>
                 </div>
 
-                <div class="contenedor-contacto">
+                <a class="contenedor-contacto" name="contacto">
                     <div class="formulario-contacto">
                         <div class="contenedor-manos">
                             <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
@@ -188,7 +188,7 @@
 
                         </form>
                     </div>
-                </div>
+                </a>
 
                 <div class="sponsors">
                     <div></div>
@@ -198,7 +198,7 @@
             </main>
             <footer>
                 <div class="enlaces ">
-                    <a href="# ">CONTACTO</a>
+                    <a href="#contacto">CONTACTO</a>
                     <a href="# ">PREGUNTAS FRECUENTES</a>
                     <a href="# ">BASES Y CONDICIONES</a>
                 </div>
@@ -218,32 +218,34 @@
 
         <template>
             <transition name="fade">
-                <section class="modal" v-show="modalIngreso==true">
-                    <div class="contenedor-modal">
-                        <div class="modal-ingreso">
-                            <div>
-                                <img class="img-fluid" src="./recursos/imagenes/logo_NEUTRO_light.png" >
-                            </div>
-                            <div>
-                                <form>
-                                    <div>
-                                        <label for="usuario">Usuario</label>
-                                        <input v-model="ingreso.usuario" type="text" id="usuario">
-                                    </div>
-                                    <div>
-                                        <label for="contraseña">Contraseña</label>
-                                        <input v-model="ingreso.contraseña" type="password" id="contraseña">
-                                    </div>
-                                    <button type="button">No tengo usuario</button>
-                                    <button type="button">Olvide mi contraseña</button>
-                                    <button type="button" @click="ingresar">Ingresar</button>
-                                    <button type="button" @click="abrirModal">Volver</button>
-                                </form>
-                            </div>
-                        </div>
-
+                <div class="modal" v-show="modalContacto==true">
+                    <div class="contenedor-manos">
+                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
                     </div>
-                </section>
+                        <div class="contenedor-modal">
+                            <form>
+                                <div>
+                                    <p>CONTACTO</p>
+                                </div>
+                                <div class="contenedor-form">
+                                    <div class="logo-form"></div>
+                                    <div>
+                                        <div>
+                                            <input type="text" placeholder="nombre">
+                                            <input type="text" placeholder="e-mail">
+                                        </div>
+                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                        <div class="botones">
+                                            <button type="button">ENVIAR</button>
+                                            <button type="button" @click="abrirContacto">VOLVER</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                </div>
             </transition>
         </template>
     </div>

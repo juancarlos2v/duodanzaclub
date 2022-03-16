@@ -282,6 +282,36 @@ h3 {
 }
 
 
+/****MODAL CONTACTO* */
+
+.modal {
+    position: absolute;
+    position: fixed;
+}
+
+.contenedor-modal {
+    max-width: 90% !important;
+    background: transparent;
+    border: none;
+}
+
+.izquierda-contacto {
+    margin-top: 10rem;
+}
+
+.derecha-contacto {
+    margin-top: 20rem;
+}
+
+.botones {
+    display: flex;
+}
+
+.botones button {
+    margin-right: 1rem;
+}
+
+
 /***MEDIA QUERY***/
 
 @media only screen and (max-width: 800px) {
