@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./recursos/estilos/normalize.css">
+    <link rel="stylesheet" href="./recursos/estilos/general.css">
+    <link rel="stylesheet" href="./recursos/estilos/festivales.css">
+    <link rel="stylesheet" href="./recursos/estilos/nav-home.css">
+    <link rel="stylesheet" href="./recursos/estilos/footer.css">
+    <link rel="stylesheet" href="./recursos/estilos/video.css">
+    <title>Festivales | Danza Duo Club</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="contenedor-total">
+
+            <header>
+                <div class="contenedor-logo-nav">
+                    <nav>
+                        <div>
+                            <a href="./clases.html">Home</a>
+                            <a href="#">Clases</a>
+                        </div>
+                        <div>
+                            <a href="#">Contacto</a>
+                            <a href="./tienda-online.html">Tienda</a>
+                            <button type="button" @click="abrirModal"><svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-user-circle" width="32" height="32"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="12" cy="12" r="9" />
+                                    <circle cx="12" cy="10" r="3" />
+                                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+                                </svg></button>
+                        </div>
+                    </nav>
+                    <img src="./recursos/imagenes/logoOKlight.png">
+                    <div class="linea-nav">
+
+                    </div>
+
+
+                </div>
+            </header>
+
+            <main>
+                <div class="cajita-banner">
+                    <div class="seccion-festivales-banner">
+                        <div class="contenedor-texto-festivales"><img
+                                src="./recursos/imagenes/festivales/FestivalesBlanco.png" alt=""></div>
+
+                    </div>
+                </div>
+
+                <!-- <div class="mano-derecha"></div> -->
+                <div class="contenedor-manos-festivales">
+                    <!-- <img class="clasesLogo" src="./recursos/imagenes/home/mano_2.png"> -->
+                    <!-- <div class="logo-clases"></div> -->
+                    <div class="manos">
+
+                        <div class="contenedor-texto3">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores neque optio itaque vero,
+                                voluptatibus mollitia dolorem, harum quos minima numquam doloremque qui veritatis
+                                doloribus totam, molestias inventore iure consequuntur
+                                aliquam!
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <div class="mano-izquierda"></div> -->
+                <div class="seccion-milongas">
+                    <div class="contenedor-texto-milongas">
+                        <h2>MILONGAS</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At a iusto consequatur dignissimos
+                            quibusdam. Voluptatem veritatis possimus perspiciatis et fuga reiciendis culpa dolorum
+                            mollitia assumenda amet earum, exercitationem, quos
+                            necessitatibus?
+                        </p>
+                    </div>
+                </div>
+                <div class="contenedor-botones-festivales">
+                    <!-- <img class="clasesLogo" src="./recursos/imagenes/home/mano_2.png"> -->
+                    <!-- <div class="logo-clases"></div> -->
+                    <div class="botones-festivales">
+
+                        <div class="fila-botones">
+                            <div class="productos-destacados">
+                                <button>ESTILO</button>
+                                <button>PROVINCIA</button>
+                                <button>CIUDAD</button>
+                                <button>BUSCAR</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="contenedor-evento">
+                    <div class="circulo-imagen">
+                        <img src="./recursos/imagenes/festivales/festi1.png" alt="">
+                    </div>
+                    <div class="texto-evento">
+                        <h2>CLUB GRICEL</h2>
+                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
+                            ofrece lecciones.
+                        </p>
+
+                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
+                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
+                        </p>
+                        <div class="botones-evento">
+                            <button> <a href="">1</a></button>
+                            <button><a href="">SELECCIONAR</a></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contenedor-evento-gris">
+
+                    <div class="texto-evento-gris">
+                        <h2>CLUB GRICEL</h2>
+                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
+                            ofrece lecciones.
+                        </p>
+
+                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
+                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
+                        </p>
+                        <div class="botones-evento-gris">
+                            <button> <a href="">1</a></button>
+                            <button><a href="">SELECCIONAR</a></button>
+                        </div>
+                    </div>
+                    <div class="circulo-imagen">
+                        <img src="./recursos/imagenes/festivales/festi1.png" alt="">
+                    </div>
+
+                </div>
+
+                <div class="contenedor-evento">
+                    <div class="circulo-imagen">
+                        <img src="./recursos/imagenes/festivales/festi1.png" alt="">
+                    </div>
+                    <div class="texto-evento">
+                        <h2>CLUB GRICEL</h2>
+                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
+                            ofrece lecciones.
+                        </p>
+
+                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
+                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
+                        </p>
+                        <div class="botones-evento">
+                            <button> <a href="">1</a></button>
+                            <button><a href="">SELECCIONAR</a></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contenedor-evento-gris">
+
+                    <div class="texto-evento-gris">
+                        <h2>CLUB GRICEL</h2>
+                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
+                            ofrece lecciones.
+                        </p>
+
+                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
+                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
+                        </p>
+                        <div class="botones-evento-gris">
+                            <button> <a href="">1</a></button>
+                            <button><a href="">SELECCIONAR</a></button>
+                        </div>
+                    </div>
+                    <div class="circulo-imagen">
+                        <img src="./recursos/imagenes/festivales/festi1.png" alt="">
+                    </div>
+
+                </div>
+
+
+
+                <div class="contenedor-contacto">
+                    <!-- <div class="manos">
+                        <div class="mano-izquierda"></div>
+                        <div class="mano-derecha"></div>
+                    </div> -->
+                    <div class="formulario-contacto">
+
+                        <form>
+                            <div class="contenedor-form">
+                                <div class="logo-form"></div>
+                                <div>
+                                    <div>
+                                        <input type="text" placeholder="nombre">
+                                        <input type="text" placeholder="e-mail">
+                                    </div>
+                                    <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                    <button type="button ">Enviar</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="sponsors">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </main>
+            <footer>
+                <div class="enlaces ">
+                    <a href="# ">CONTACTO</a>
+                    <a href="# ">PREGUNTAS FRECUENTES</a>
+                    <a href="# ">BASES Y CONDICIONES</a>
+                </div>
+                <div class="logo-footer ">
+                    <img src="./recursos/imagenes/logoFOOTER .png ">
+                </div>
+                <div class="redes-correo ">
+                    <div class="contenedor-redes ">
+                        <a href="https://www.facebook.com "><img src="./recursos/imagenes/facebook.png "></a>
+                        <a href="https://www.instagram.com "> <img src="./recursos/imagenes/instagram.png "></a>
+                        <a href="https://twitter.com "> <img src="./recursos/imagenes/twitter.png "></a>
+                    </div>
+                    <a href="# ">duodanza@club.com</a>
+                </div>
+            </footer>
+        </div>
+
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="modalIngreso==true">
+                    <div class="contenedor-modal">
+                        <div class="modal-ingreso">
+                            <div>
+                                <img class="img-fluid" src="./recursos/imagenes/logo_NEUTRO_light.png">
+                            </div>
+                            <div>
+                                <form>
+                                    <div>
+                                        <label for="usuario">Usuario</label>
+                                        <input v-model="ingreso.usuario" type="text" id="usuario">
+                                    </div>
+                                    <div>
+                                        <label for="contraseña">Contraseña</label>
+                                        <input v-model="ingreso.contraseña" type="password" id="contraseña">
+                                    </div>
+                                    <button type="button">No tengo usuario</button>
+                                    <button type="button">Olvide mi contraseña</button>
+                                    <button type="button" @click="ingresar">Ingresar</button>
+                                    <button type="button" @click="abrirModal">Volver</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </transition>
+        </template>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./recursos/scripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -3,7 +3,9 @@ package com.mindhub.duodanzaclub.controllers;
 import com.mindhub.duodanzaclub.dtos.ProductoDTO;
 
 
+
 import com.mindhub.duodanzaclub.models.Productos;
+
 
 
 import com.mindhub.duodanzaclub.services.ProductoService;
@@ -62,9 +64,11 @@ public class ProductoController {
 
 
 
-        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null ||
-                producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null ||
-                producto.getStock() <= 0){
+
+
+
+        if(producto.getTitulo().isEmpty() || producto.getDescripcion().isEmpty() || producto.getPrecio() == null
+                || producto.getImagen().isEmpty() || producto.getEstilo() == null || producto.getTipoProducto() == null || producto.getStock() <= 0 || producto.getTalle().isEmpty()){
 
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
         }
@@ -74,8 +78,11 @@ public class ProductoController {
 
 
 
+
         Productos productoNuevo = new Productos(producto.getTitulo(), producto.getDescripcion(), producto.getPrecio(),
                 producto.getImagen(), producto.getEstilo(), producto.getTalle(), producto.getTipoProducto(), producto.getStock());
+
+
 
         productoService.guardarProducto(productoNuevo);
 

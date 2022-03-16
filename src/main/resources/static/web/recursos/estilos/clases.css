@@ -1,6 +1,14 @@
+.izquierda-banner {
+    margin-bottom: 3rem;
+}
+
+.derecha-banner {
+    padding-top: 8rem;
+}
+
 .banner-titulo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     padding-top: 2rem;
 }
@@ -27,12 +35,13 @@ div>h3 {
     width: 80%;
     margin: auto;
     align-items: center;
-    margin-bottom: 3rem;
     color: white;
+    z-index: 10;
 }
 
 .inputs {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
@@ -49,6 +58,14 @@ div>h3 {
     flex-direction: column;
 }
 
+.contenedor-opciones select {
+    height: fit-content;
+    background-color: var(--light);
+    border: 0.1rem solid var(--light);
+    border-radius: 0.3rem;
+    width: 9rem;
+}
+
 #personas {
     width: 6rem;
     margin-right: 2rem;
@@ -62,26 +79,93 @@ div>h3 {
     color: white;
     background-color: var(--header-color);
     padding: 0.5rem;
-    width: 9rem;
+    width: 12rem;
+    border-radius: 1rem;
+    position: absolute;
+    transform: translateY(4.5rem);
 }
 
 .info-abonos {
     display: flex;
     justify-content: space-between;
-    margin: auto;
-    background-color: var(--gray-color);
-    width: 60%;
-    height: 10rem;
+    width: 100%;
+    height: 22rem;
     overflow: hidden;
+    z-index: 0;
 }
 
-.info-abonos div {
-    width: 70%;
+.parrafo-bonos {
     text-align: center;
+    position: relative;
+    z-index: 0;
+    height: 10rem;
+    margin-top: 7rem;
+    background-color: var(--gray-color);
+}
+
+.parrafo-bonos p {
+    width: 55%;
+    padding-left: 2rem;
+    padding-top: 2rem;
 }
 
 .info-abonos>div+div {
-    padding-left: 9rem;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 18%;
+}
+
+.info-abonos img {
+    width: 45%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.contenedor-tabla {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 2%;
+    width: 100%;
+    background-color: var(--rosa-suave);
+}
+
+.contenedor-tabla table {
+    width: 90%;
+    margin: auto;
+}
+
+.contenedor-tabla tbody>tr {
+    border: 0.1rem solid var(--gray-color);
+}
+
+.contenedor-tabla button {
+    width: 2rem;
+    height: 2rem;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: var(--footer-color);
+    color: var(--light);
+    margin: auto;
+    margin-left: 2rem;
+}
+
+.ultimo {
+    margin-left: 2.5rem;
+}
+
+.info-clase {
+    width: 100%;
+}
+
+.info-clase table {
+    width: 90%;
+    margin: auto;
 }
 
 .contenedor-profesores h3 {
@@ -117,4 +201,29 @@ div>h3 {
 
 .contenedor-profesores>div div+div+div+div {
     background-image: url("../imagenes/home/kizomba.png");
+}
+
+
+/*****MODAL****/
+
+.contenedor-modal {
+    max-width: 90% !important;
+    background: transparent;
+    border: none;
+}
+
+.izquierda-contacto {
+    margin-top: 10rem;
+}
+
+.derecha-contacto {
+    margin-top: 20rem;
+}
+
+.botones {
+    display: flex;
+}
+
+.botones button {
+    margin-right: 1rem;
 }

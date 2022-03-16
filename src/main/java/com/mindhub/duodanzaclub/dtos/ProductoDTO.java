@@ -20,6 +20,7 @@ public class ProductoDTO {
 
 
 
+
     public ProductoDTO(Productos productos) {
         this.id = productos.getId();
         this.titulo = productos.getTitulo();
@@ -31,6 +32,7 @@ public class ProductoDTO {
         this.tipoProducto = productos.getTipoProducto();
         this.stock = productos.getStock();
     }
+
 
 
 

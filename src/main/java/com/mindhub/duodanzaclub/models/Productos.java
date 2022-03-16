@@ -27,6 +27,7 @@ public class Productos {
 
 
 
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "producto_id")
     private Transaccion transaccion;
@@ -34,9 +35,9 @@ public class Productos {
     @OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
     private List<TransaccionProducto> transaccionProductos = new ArrayList<>();
 
+
     public Productos() {}
     public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, String talle, TipoProducto tipoProducto, int stock) {
-
         setTitulo(titulo);
         setDescripcion(descripcion);
         setPrecio(precio);
@@ -46,8 +47,6 @@ public class Productos {
         setTipoProducto(tipoProducto);
         setStock(stock);
     }
-
-
 
     public long getId() {return id;}
 

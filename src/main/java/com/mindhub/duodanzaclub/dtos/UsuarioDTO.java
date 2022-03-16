@@ -146,4 +146,5 @@ public class UsuarioDTO {
     public void setSuscripcion(Suscripcion suscripcion) {this.suscripcion = suscripcion;}
 
 
+
 }
