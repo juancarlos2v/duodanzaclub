@@ -1,14 +1,25 @@
 let app = new Vue({
     el: '#app',
     data: {
+        usuario: [],
+        cambio: {
+            nombre: "",
+            apellido: "",
+            nacimiento: "",
+            email: "",
+            ciudad: "",
+            telefono: "",
+            contraseña: ""
+        },
         clase: {
-            cantidadClases: null,
-            modoPago: null,
+            cantidadClases: 0,
+            modoPago: "",
             precioFinal: 0,
         },
         editarPerfil: false,
     },
     mounted() {
+        pagina = document.querySelector(".contenedor-total");
         s = document.querySelector(".suelta");
         m = document.querySelector(".mensual");
         t = document.querySelector(".trimestral");
@@ -33,9 +44,16 @@ let app = new Vue({
             console.log('entro trimestral');
         },
         clickEditar() {
-            if (editarPerfil) {
-
+            if (this.editarPerfil == false) {
+                this.editarPerfil = true;
+                pagina.classList.add('desenfocar');
+            } else {
+                this.editarPerfil = false;
+                pagina.classList.remove('desenfocar');
             }
+        },
+        confirmarCambios() {
+
         }
     },
 })

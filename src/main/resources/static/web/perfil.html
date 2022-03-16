@@ -16,7 +16,7 @@
 
 <body>
     <div id="app">
-        <div class="contenedor-total desenfocar">
+        <div class="contenedor-total">
             <header>
                 <div class="contenedor-logo-nav">
                     <img src="./recursos/imagenes/logo_light.png">
@@ -49,15 +49,23 @@
                             <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
                             <img class="mano-derecha img-fluid" src="./recursos/imagenes/home/mano_2.png">
                         </div>
-                        <div class="formulario">
+                        <div class="info-usuario">
+                            <div>
+                                <div class="datos-usuario">
+                                    <p>Nombre: {{nombre}} </p>
+                                    <p>Apellido/s: {{apellido}} </p>
+                                    <p>Fecha de nacimiento: {{fecha}} </p>
+                                    <p> Descripcion: {{descripcion}} </p>
+                                </div>
+                                <div class="foto-perfil">
 
-
-
-                            <div class="foto-perfil">
-
+                                </div>
                             </div>
-                            <button type="button">EDITAR</button>
+                            <div>
+                                <button type="button" @click="clickEditar">EDITAR</button>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="contenedor-abonos">
@@ -74,7 +82,7 @@
                     <div class="contenedor-seleccion-clases ">
                         <div class="selector-clases">
                             <div>
-                                <select v-model="cantidadClases ">
+                                <select v-model="clase.cantidadClases ">
                                 <option value="1 ">1 Clases</option>
                                 <option value="2 ">2 Clases</option>
                                 <option value="3 ">3 Clases</option>
@@ -86,7 +94,7 @@
                             </div>
                             <div>
                                 <p>modo de pago</p>
-                                <select v-model="modoPago ">
+                                <select v-model="clase.modoPago ">
                                     <option value="debito ">DEBITO</option>
                                     <option value="credito ">CREDITO</option>
                                 </select>
@@ -109,11 +117,14 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus cupiditate ab neque eius mollitia perferendis dolorem, corrupti excepturi, sint temporibus, exercitationem labore deleniti. Et alias in incidunt impedit fugiat
                                 vitae?
                             </p>
-
-                            <img class="pareja img-fluid " src="./recursos/imagenes/home/bachata_recorte.png ">
-
                         </div>
+                        <img class="pareja img-fluid " src="./recursos/imagenes/home/bachata_recorte.png">
                     </div>
+                </div>
+                <div class="sponsors">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </main>
 
@@ -138,44 +149,36 @@
         </div>
         <template>
             <transition name="fade">
-                <section class="modal" v-show="editarPerfil==false">
+                <section class="modal" v-show="editarPerfil==true">
                     <div class="contenedor-manos manos-modal">
                         <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
                         <img class="mano-derecha img-fluid" src="./recursos/imagenes/home/mano_2.png">
                     </div>
                     <div class="contenedor-modal">
                         <div class="modal-editar ">
+                            <h2>EDITAR PERFIL</h2>
                             <form>
-                                <input type="text" placeholder="Nombre">
-                                <input type="text" placeholder="Apellido">
-                                <input type="text" placeholder="Fecha de nacimiento">
+                                <input v-model="cambio.nombre" type="text" placeholder="Nombre">
+                                <input v-model="cambio.apellido" type="text" placeholder="Apellido">
+                                <input v-model="cambio.nacimiento" type="text" placeholder="Fecha de nacimiento">
 
-                                <input type="text" placeholder="e-mail">
-                                <input type="text" placeholder="Ciudad">
-                                <input type="number" placeholder="Telefono">
+                                <input v-model="cambio.email" type="text" placeholder="e-mail">
+                                <input v-model="cambio.ciudad" type="text" placeholder="Ciudad">
+                                <input v-model="cambio.telefono" type="number" placeholder="Telefono">
 
-                                <input type="password" placeholder="Contraseña">
+                                <input v-model="cambio.contraseña" type="password" placeholder="Contraseña">
                             </form>
+                            <div class="contenedor-botones">
+                                <button type="button" @click="clickEditar">VOLVER</button>
+                                <button type="button" @click="confirmarCambios" >CONFIRMAR</button>
+                            </div>
                         </div>
-
+                        
                     </div>
                 </section>
             </transition>
         </template>
     </div>
-
-    <!-- <form>
-
-                            <input type="text" placeholder="Nombre">
-                            <input type="text" placeholder="Apellido">
-                            <input type="text" placeholder="Fecha de nacimiento">
-
-                            <input type="text" placeholder="e-mail">
-                            <input type="text" placeholder="Ciudad">
-                            <input type="number" placeholder="Telefono">
-
-                            <input type="password" placeholder="Contraseña">
-                        </form> -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>

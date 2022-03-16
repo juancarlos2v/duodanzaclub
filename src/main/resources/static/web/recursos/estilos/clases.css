@@ -50,6 +50,14 @@ div>h3 {
     flex-direction: column;
 }
 
+.contenedor-opciones select {
+    height: fit-content;
+    background-color: var(--light);
+    border: 0.1rem solid var(--light);
+    border-radius: 0.3rem;
+    width: 9rem;
+}
+
 #personas {
     width: 6rem;
     margin-right: 2rem;
@@ -63,7 +71,10 @@ div>h3 {
     color: white;
     background-color: var(--header-color);
     padding: 0.5rem;
-    width: 9rem;
+    width: 12rem;
+    border-radius: 1rem;
+    position: absolute;
+    transform: translateY(4.5rem);
 }
 
 .info-abonos {
@@ -116,7 +127,36 @@ div>h3 {
 }
 
 .contenedor-tabla table {
+    width: 90%;
+    margin: auto;
+}
+
+.contenedor-tabla tbody>tr {
+    border: 0.1rem solid var(--gray-color);
+}
+
+.contenedor-tabla button {
+    width: 2rem;
+    height: 2rem;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: var(--footer-color);
+    color: var(--light);
+    margin: auto;
+    margin-left: 2rem;
+}
+
+.ultimo {
+    margin-left: 2.5rem;
+}
+
+.info-clase {
     width: 100%;
+}
+
+.info-clase table {
+    width: 90%;
     margin: auto;
 }
 
