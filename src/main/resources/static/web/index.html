@@ -210,7 +210,7 @@
                         <a href="https://www.instagram.com "> <img src="./recursos/imagenes/instagram.png "></a>
                         <a href="https://twitter.com "> <img src="./recursos/imagenes/twitter.png "></a>
                     </div>
-                    <a href="# ">duodanza@club.com</a>
+                    <a href="#/">duodanza@club.com</a>
                 </div>
             </footer>
         </div>
@@ -232,7 +232,7 @@
                                         <label for="contraseña">Contraseña</label>
                                         <input v-model="ingreso.contraseña" type="password" id="contraseña">
                                     </div>
-                                    <button type="button">No tengo usuario</button>
+                                    <button type="button" @click="abrirRegistro">No tengo usuario</button>
                                     <button type="button">Olvide mi contraseña</button>
                                     <button type="button" @click="ingresar">Ingresar</button>
                                     <button type="button" @click="abrirModal">Volver</button>
@@ -240,6 +240,67 @@
                             </div>
                         </div>
 
+                    </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="modalRegistro==true">
+                    <div class="modal-registro">
+                        <img class="logo-registro" src="./recursos/imagenes/logo_light.png">
+                        <h2>NUEVO USUARIO</h2>
+                        <div class="campos-registro">
+                            <div class="campos1">
+                                <div>
+                                <label for="nombre">Nombre</label>
+                                <input id="nombre" v-model="registro.nombre" type="text" >
+                                </div>
+                                <div>
+                                <label for="apellido">Apellido</label>
+                                <input id="apellido" v-model="registro.apellido" type="text" >
+                                </div>
+                                <div>
+                                <label for="fecha"> Fecha de nacimiento</label>
+                                <input id="fecha" v-model="registro.fecha" type="date" >
+                                </div>
+                                <div>
+                                <label for="fecha">Telefono</label>
+                                <input id="fecha" v-model="registro.telefono" type="text">
+                                </div>
+                                <div>
+                                <label for="fecha">Ciudad</label>
+                                <input id="fecha" v-model="registro.ciudad" type="text">
+                                </div>
+                            </div>
+
+                            <div class="campos2">                       
+                                <div>
+                                <label for="nivel">Nivel</label>
+                                <select id="nivel" v-model="registro.nivel"> 
+                                <option value="principiante">Principiante </option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzado">Avanzado</option></select>
+                                </div>
+                                <div>
+                                <label for="rol" v-model="registro.rol">Rol</label>
+                                <select id="rol"> 
+                                <option value="lider">Lider</option>
+                                <option value="follower">Follower</option>
+                                <option value="ambos">Ambos</option></select>
+                                </div>
+                                <div>
+                                <label for="email" >E-mail</label>
+                                <input v-model="registro.email" type="text" id="email">
+                                <label for="contraseña">Crea una contraseña</label>
+                                <input v-model="registro.contraseña" type="password" id="contraseña">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="botones-registro">
+                            <button type="button">Registrarme</button>
+                            <button type="button" @click="abrirRegistro">Volver</button>
+                        </div>
                     </div>
                 </section>
             </transition>
