@@ -7,12 +7,15 @@ let app = new Vue({
         productoId: 0,
         filtroProductos: [],
         carrito: [],
+        stock: 0,
+        total: 0,
         abrirProducto: false,
         modalCarrito: false,
         modalContacto: false,
         datosPago: false,
+        descripcion: "",
         pago: {
-            tarjeta: 0,
+            tarjeta: "",
             cvv: 0
         }
     },
@@ -28,6 +31,12 @@ let app = new Vue({
         loadProductos(){
             axios.get("/api/productos")
             .then(response => this.productos = response.data)
+        },
+        formatoPrecio(number){
+            if(number != undefined){
+                let balance = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return balance;
+            }
         },
         elegirEstilo(estilo) {
             this.estilo = estilo;
@@ -79,7 +88,14 @@ let app = new Vue({
             }
         },
         agregarProducto() {
-
+            if(app.stock <= app.productoId.stock){
+                for(let i = 0; i < app.stock ; i++){
+                    app.carrito.push(app.productoId);
+                    app.total += app.productoId.precio;
+                }
+                app.productoId.stock -= app.stock;
+                console.log(app.carrito);
+            }
         },
         irPago() {
             this.datosPago = true;
@@ -94,9 +110,14 @@ let app = new Vue({
                 })
         },
         comprar(){
-            axios.post("/api/comprar",
-            {"amount": this.amount, "productosTransaccion": this.productos})
-            .then(console.log("Compra realizada"))
+            this.descripcion = "Gracias por su compra";
+            
+            axios.post("http://localhost:8060/api/payments",
+            {"amount": this.total, "productosTransaccion": this.productos, "numberCard": this.pago.tarjeta, "cvv": this.pago.cvv, "description": app.descripcion})
+                .then(response => {
+                    console.log("Compra realizada")
+                    window.location.href = "/web/perfil.html";
+                })
             .catch(error => console.log(error))
         }
     },

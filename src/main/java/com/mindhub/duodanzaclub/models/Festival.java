@@ -23,7 +23,7 @@ public class Festival {
     private String nombre;
     private Double precio;
     private Estilos estilo;
-
+    private String imagen;
 
     @ElementCollection
     @Column(name="horarios")

@@ -55,9 +55,14 @@
                                 <div class="datos-usuario">
                                     <p>Nombre: {{usuario.nombre}} </p>
                                     <p>Apellido/s: {{usuario.apellido}} </p>
+<<<<<<< HEAD
                                     <p>Descripcion: {{usuario.descripcion}} </p>
                                     <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
                                     
+=======
+                                    <p>Fecha de nacimiento: </p>
+                                    <p>Biografía: </p>
+>>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
                                 </div>
                                 <div class="foto-perfil">
                                     <div v-show="noFoto" class="no-foto">
@@ -68,6 +73,7 @@
                             </div>
                             <div>
                                 <button type="button" @click="clickEditar">EDITAR</button>
+                                <button type="button" @click="cerrarSesion()">CERRAR SESIÓN</button>
                             </div>
                         </div>
 
@@ -137,7 +143,7 @@
                 <div class="enlaces ">
                     <a href="# ">CONTACTO</a>
                     <a href="# ">PREGUNTAS FRECUENTES</a>
-                    <a href="# ">BASES Y CONDICIONES</a>
+                    <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer ">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png ">
@@ -163,12 +169,20 @@
                         <div class="modal-editar ">
                             <h2>EDITAR PERFIL</h2>
                             <form>
+<<<<<<< HEAD
                                 <input v-model="cambio.nombre" type="text" placeholder="Nombre">
                                 <input v-model="cambio.apellido" type="text" placeholder="Apellido">
                                 <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
                                 <textarea class="textarea" v-model="cambio.descripcion" rows="4" cols="30" placeholder="Agregar descripción"></textarea>
                                 <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
+=======
+                                <input v-model="cambio.nombre" type="text" placeholder="Nombre" :value="usuario.nombre">
+                                <input v-model="cambio.apellido" type="text" placeholder="Apellido" :value="usuario.apellido">
+                                <input v-model="cambio.nacimiento" type="text" placeholder="Fecha de nacimiento">
+
+                                <input v-model="cambio.email" type="text" placeholder="e-mail">
+>>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
                                 <input v-model="cambio.ciudad" type="text" placeholder="Ciudad">
                                 <input v-model="cambio.telefono" type="number" placeholder="Telefono">
                                 

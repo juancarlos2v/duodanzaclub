@@ -50,6 +50,12 @@ let app = new Vue({
                 console.log(this.usuario.nombre)
             })
         },
+        cerrarSesion() {
+            axios.post("/api/logout")
+                .then(response => {
+                    window.location.href = "/web/index.html"
+                })
+        },
         clickSuelta() {
             s.classList.add('abono-activo');
             m.classList.remove('abono-activo');
