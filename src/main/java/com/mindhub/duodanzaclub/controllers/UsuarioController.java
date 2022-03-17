@@ -86,19 +86,18 @@ public class UsuarioController {
 
         Usuario usuarioActual = usuarioService.findUsuarioByEmail(authentication.getName());
 
-        if(usuario.getNombre().isEmpty() || usuario.getApellido().isEmpty() || usuario.getEmail().isEmpty()
-                || usuario.getFechaNacimiento() == null || usuario.getCiudad().isEmpty() || usuario.getTelefono().isEmpty()
-                || usuario.getPassword().isEmpty()) {
+        if(usuario.getNombre().isEmpty() || usuario.getApellido().isEmpty()
+                || usuario.getFechaNacimiento() == null || usuario.getCiudad().isEmpty() || usuario.getTelefono().isEmpty()) {
             return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
         }
 
         usuarioActual.setNombre(usuario.getNombre());
         usuarioActual.setApellido(usuario.getApellido());
-        usuarioActual.setEmail(usuario.getEmail());
         usuarioActual.setCiudad(usuario.getCiudad());
+        usuarioActual.setDescripcion(usuario.getDescripcion());
+        usuarioActual.setFoto(usuario.getFoto());
         usuarioActual.setTelefono(usuario.getTelefono());
         usuarioActual.setFechaNacimiento(usuario.getFechaNacimiento());
-        usuarioActual.setPassword(usuario.getPassword());
         usuarioService.guardarUsuario(usuario);
 
         return new ResponseEntity<>("Datos agregados", HttpStatus.CREATED);

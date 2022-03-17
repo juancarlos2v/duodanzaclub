@@ -89,10 +89,10 @@
                     <!-- PRODUCTOS -->
                     <!-- <template> -->
                     <!-- v-for="producto in productos" -->
-                    <div class="contenedor-producto">
-                        <div v-for="producto in productos" class="producto-carta">
+                    <div v-for="producto in productos" class="contenedor-producto">
+                        <div class="producto-carta">
                             <div class="img-producto">
-                                <img :src="producto.imagen" alt="Foto producto">
+                                <img v-bind:src="producto.imagen" alt="Imagen producto" >
                             </div>
                             <div>
                                 <p>${{formatoPrecio(producto.precio)}}</p>
@@ -180,10 +180,10 @@
                 <div class="modal" v-show="abrirProducto==true">
                     <div class="contenedor-modal">
                         <div class="modal-producto">
-                            <div class="img-producto-modal">
-                                <img :src="productoId.imagen" alt="Foto de producto" style="width:100%">
+                            <!--<div class="img-producto-modal">-->
+                            <div class="img-producto-modal"> 
+                                <img v-bind:src="productoId.imagen" alt="Imagen producto">
                             </div>
-                            
                             <div class="detalles">
                                 <div>
                                     <h3>{{productoId.titulo}}</h3>

@@ -261,6 +261,11 @@ h3 {
     background-repeat: no-repeat;
     /*height: 10rem;*/
     width: 30%;
+    
+}
+.img-producto-modal img {
+    height: 100%;
+    
 }
 
 
@@ -363,7 +368,10 @@ h3 {
 
 .img-producto {
     /* background-color: black; */
-    height: 10rem;
+    /*height: 10rem;*/
+    width: 100%;
+}
+.img-producto img {
     width: 100%;
 }
 
@@ -372,7 +380,7 @@ h3 {
 }
 
 .producto-carta {
-    width: 15%;
+    width: 250px;
     height: auto;
     border-radius: 0.3rem;
     border: 0.1rem solid rgba(0, 0, 0, 0.616);
