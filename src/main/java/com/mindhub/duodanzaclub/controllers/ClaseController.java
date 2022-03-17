@@ -47,14 +47,14 @@ public class ClaseController {
 
     @PatchMapping("clases/{id}")
     public ResponseEntity<Object> cambiarPrecio(@PathVariable Long id,
-                                                @RequestParam List<Double> horarios){
+                                                @RequestParam String horario){
         Clase clase = claseService.traerClasePorId(id);
 
         if(clase == null) {
             return new ResponseEntity<>("La clase no existe", HttpStatus.FORBIDDEN);
         }
 
-        clase.setHorarios(horarios);
+        clase.setHorario(horario);
         claseService.guardarClase(clase);
         return new ResponseEntity<>("Clase creada", HttpStatus.CREATED);
     }
@@ -63,14 +63,14 @@ public class ClaseController {
     public ResponseEntity<Object> crearClase(@RequestBody ClaseDTO clase){
         Academia academia = academiaService.getAcademiaClass(clase.getId());
 
-        if(clase.getNombre().isEmpty() || clase.getEstilo() == null || clase.getHorarios().isEmpty() ){
+        if(clase.getNombre().isEmpty() || clase.getEstilo() == null || clase.getHorario().isEmpty() ){
             return new ResponseEntity<>("Complete todos los campos", HttpStatus.FORBIDDEN);
         }
         if(academia == null) {
             return new ResponseEntity<>("La academia no existe", HttpStatus.FORBIDDEN);
         }
 
-        Clase claseNueva = new Clase(clase.getNombre(), clase.getEstilo(), clase.getHorarios(), clase.getPrecioClase(), academia);
+        Clase claseNueva = new Clase(clase.getNombre(), clase.getEstilo(), clase.getHorario(), clase.getDireccion(), academia);
         claseService.guardarClase(claseNueva);
 
         return  new ResponseEntity<>("Clase creada", HttpStatus.CREATED);

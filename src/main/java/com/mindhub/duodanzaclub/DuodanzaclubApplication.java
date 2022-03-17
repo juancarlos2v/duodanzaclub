@@ -110,8 +110,8 @@ public class DuodanzaclubApplication {
 			Productos producto6 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/FALDAFELICIAREVERSIBLE.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
 			Productos producto7 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
 
-			Clase clase = claseRepository.save(new Clase("Clase de ballet", new ArrayList<Double>(), academia1));
-			Clase clase2 = claseRepository.save(new Clase("Clase de tango", new ArrayList<Double>(), academia1));
+			Clase clase = claseRepository.save(new Clase("Clase de ballet", Estilos.SALSA ,"21:30 a 23:00", "Ayacucho 2345, San Cristobal", academia1));
+			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila" ,academia1));
 
 			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), 5);
 			suscripcionRepository.save(suscripcion1);

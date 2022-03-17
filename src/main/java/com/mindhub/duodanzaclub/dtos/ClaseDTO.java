@@ -13,35 +13,31 @@ public class ClaseDTO {
     private String nombre;
     private Academia academia;
     private long academiaId;
-    private List<Double> horarios = new ArrayList<>();
     private Estilos estilo;
-    private PrecioClase precioClase;
+    private String horario;
+    private String direccion;
     private Set<SalaClaseDTO> salas = new HashSet<>();
     private Set<ProfesorClaseDTO> profesores = new HashSet<>();
     private List<UsuarioDTO> usuarios = new ArrayList<>();
 
-
-
     public ClaseDTO(){}
-    public ClaseDTO(String nombre, Estilos estilo, long academiaId, List<Double> horarios, PrecioClase precioClase){
+    public ClaseDTO(String nombre, Estilos estilo, long academiaId, String horario, String direccion, PrecioClase precioClase){
         setNombre(nombre);
         setEstilo(estilo);
         setAcademiaId(academiaId);
-        setHorarios(horarios);
-        setPrecioClase(precioClase);
+        setHorario(horario);
+        setDireccion(direccion);
     }
     public ClaseDTO(Clase clase){
         setId(clase.getId());
         setNombre(clase.getNombre());
-        setHorarios(clase.getHorarios());
-        setPrecioClase(clase.getPrecioClase());
-
+        setEstilo(clase.getEstilo());
+        setHorario(clase.getHorario());
+        setDireccion(clase.getDireccion());
         setSalas(clase.getSalaClases().stream().map(SalaClaseDTO::new).collect(Collectors.toSet()));
         setProfesores(clase.getProfesorClases().stream().map(ProfesorClaseDTO::new).collect(Collectors.toSet()));
         setUsuarios(clase.getUsuarios().stream().map(UsuarioDTO::new).collect(Collectors.toList()));
     }
-
-
 
     public long getId() {
         return id;
@@ -64,12 +60,11 @@ public class ClaseDTO {
         this.academia = academia;
     }
 
-    public List<Double> getHorarios() {
-        return horarios;
-    }
-    public void setHorarios(List<Double> horarios) {
-        this.horarios = horarios;
-    }
+    public String getHorario() {return horario;}
+    public void setHorario(String horario) {this.horario = horario;}
+
+    public String getDireccion() {return direccion;}
+    public void setDireccion(String direccion) {this.direccion = direccion;}
 
     public Set<SalaClaseDTO> getSalas() {
         return salas;
@@ -97,13 +92,6 @@ public class ClaseDTO {
     }
     public void setEstilo(Estilos estilo) {
         this.estilo = estilo;
-    }
-
-    public PrecioClase getPrecioClase() {
-        return precioClase;
-    }
-    public void setPrecioClase(PrecioClase precioClase) {
-        this.precioClase = precioClase;
     }
 
     public List<UsuarioDTO> getUsuarios() {return usuarios;}
