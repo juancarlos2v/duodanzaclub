@@ -47,6 +47,27 @@ public class UsuarioController {
         return usuarioService.findByEmail(authentication.getName());
     }
 
+    @PatchMapping("/usuarios/current")
+    public ResponseEntity<Object> agregarDatos(Authentication authentication,
+                                               @RequestParam String descripcion,
+                                               @RequestParam String foto) {
+
+        Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
+
+        if(descripcion.isEmpty() || foto.isEmpty()) {
+            return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
+        }
+
+        usuario.setDescripcion(descripcion);
+        usuario.setFoto(foto);
+        usuarioService.guardarUsuario(usuario);
+
+        return new ResponseEntity<>("Datos agregados", HttpStatus.CREATED);
+    }
+
+
+
+
     @PostMapping("/usuarios")
     public ResponseEntity<Object> register(@RequestBody UsuarioDTO usuarioDTO){
         Usuario usuario = usuarioService.findUsuarioByEmail(usuarioDTO.getEmail());
