@@ -122,12 +122,10 @@ public class Usuario {
 
     @JsonIgnore
     public Set<Usuario> getFollowers() {return followers;}
-
     public void setFollowers(Set<Usuario> followers) {this.followers = followers;}
 
     @JsonIgnore
     public Set<Usuario> getFollowing() {return following;}
-
     public void setFollowing(Set<Usuario> following) {this.following = following;}
 
     @JsonIgnore
@@ -141,7 +139,7 @@ public class Usuario {
 
     @JsonIgnore
     public List<Clase> getClases(){
-        return usuarioClases.stream().map(usuarioClase -> usuarioClase.getClase()).collect(toList());
+        return usuarioClases.stream().map(UsuarioClase::getClase).collect(toList());
     }
 
     @JsonIgnore

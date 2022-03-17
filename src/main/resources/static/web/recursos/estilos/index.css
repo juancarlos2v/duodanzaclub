@@ -489,3 +489,58 @@ form>div div+div {
     margin: auto;
     margin-top: 0.4rem;
 }
+
+
+/*****MODAL REGISTRO********/
+
+.modal-registro {
+    max-width: 50%;
+    height: auto;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: auto;
+    background-color: var(--header-color);
+    padding-top: 2rem;
+    box-shadow: 9px 9px 20px 16px #2c2828e0;
+}
+
+.modal-registro h2 {
+    margin-top: 2rem;
+    color: var(--footer-color);
+}
+
+.campos-registro {
+    display: flex;
+    width: 60%;
+}
+
+.campos-registro div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+}
+
+.logo-registro {
+    width: 20%;
+    position: absolute;
+    transform: translateX(18rem);
+}
+
+.botones-registro {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    align-self: flex-end;
+}
+
+.botones-registro button {
+    background-color: var(--footer-color);
+    color: white;
+    width: 9rem;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    margin-top: 3rem;
+}

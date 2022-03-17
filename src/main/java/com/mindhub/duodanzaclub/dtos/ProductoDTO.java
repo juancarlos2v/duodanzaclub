@@ -4,6 +4,8 @@ import com.mindhub.duodanzaclub.models.Estilos;
 import com.mindhub.duodanzaclub.models.Productos;
 import com.mindhub.duodanzaclub.models.TipoProducto;
 
+import java.util.List;
+
 public class ProductoDTO {
 
     private long id;
@@ -12,7 +14,7 @@ public class ProductoDTO {
     private Double precio;
     private String imagen;
     private Estilos estilo;
-    private String talle;
+    private List<String>talle;
     private TipoProducto tipoProducto;
     private int stock;
 
@@ -54,8 +56,8 @@ public class ProductoDTO {
     public Estilos getEstilo() {return estilo;}
     public void setEstilo(Estilos estilo) {this.estilo = estilo;}
 
-    public String getTalle() {return talle;}
-    public void setTalle(String talle) {this.talle = talle;}
+    public List<String> getTalle() {return talle;}
+    public void setTalle(List<String> talle) {this.talle = talle;}
 
     public TipoProducto getTipoProducto() {return tipoProducto;}
     public void setTipoProducto(TipoProducto tipoProducto) {this.tipoProducto = tipoProducto;}

@@ -33,18 +33,14 @@ public class Transaccion {
     public long getId() {return id;}
 
     public double getAmount() {return amount;}
-
     public void setAmount(double amount) {this.amount = amount;}
 
     public LocalDateTime getDate() {return date;}
-
     public void setDate(LocalDateTime date) {this.date = date;}
 
     public Usuario getUsuario() {return usuario;}
-
     public void setUsuario(Usuario usuario) {this.usuario = usuario;}
 
     public List<TransaccionProducto> getTransaccionProductos() {return transaccionProductos;}
-
     public void setTransaccionProductos(List<TransaccionProducto> transaccionProductos) {this.transaccionProductos = transaccionProductos;}
 }
