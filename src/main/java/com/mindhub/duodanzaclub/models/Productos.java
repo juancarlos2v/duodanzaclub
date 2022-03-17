@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Producto {
+public class Productos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -24,6 +24,10 @@ public class Producto {
     private TipoProducto tipoProducto;
     private int stock;
 
+
+
+
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "producto_id")
     private Transaccion transaccion;
@@ -31,8 +35,9 @@ public class Producto {
     @OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
     private List<TransaccionProducto> transaccionProductos = new ArrayList<>();
 
-    public Producto() {}
-    public Producto(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, String talle, TipoProducto tipoProducto, int stock) {
+
+    public Productos() {}
+    public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, String talle, TipoProducto tipoProducto, int stock) {
         setTitulo(titulo);
         setDescripcion(descripcion);
         setPrecio(precio);
@@ -71,4 +76,7 @@ public class Producto {
 
     public Transaccion getTransaccion() {return transaccion;}
     public void setTransaccion(Transaccion transaccion) {this.transaccion = transaccion;}
+
 }
+
+

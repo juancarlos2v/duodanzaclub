@@ -38,7 +38,7 @@ let app = new Vue({
         ingresar() {
             axios.post('/api/login', `email=${this.ingreso.usuario}&password=${this.ingreso.contraseña}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
                 .then(response => {
-                    console.log('ingreso');
+                    window.location.href = "/web/perfil.html"
                 })
                 .catch(response => {
                     console.log(response.data);

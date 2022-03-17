@@ -1,7 +1,7 @@
 package com.mindhub.duodanzaclub.dtos;
 
 import com.mindhub.duodanzaclub.models.Estilos;
-import com.mindhub.duodanzaclub.models.Producto;
+import com.mindhub.duodanzaclub.models.Productos;
 import com.mindhub.duodanzaclub.models.TipoProducto;
 
 public class ProductoDTO {
@@ -17,16 +17,25 @@ public class ProductoDTO {
     private int stock;
 
     public ProductoDTO() {}
-    public ProductoDTO(Producto producto) {
-        this.id = producto.getId();
-        this.titulo = producto.getTitulo();
-        this.descripcion = producto.getDescripcion();
-        this.precio = producto.getPrecio();
-        this.imagen = producto.getImagen();
-        this.estilo = producto.getEstilo();
-        this.tipoProducto = producto.getTipoProducto();
-        this.stock = producto.getStock();
+
+
+
+
+    public ProductoDTO(Productos productos) {
+        this.id = productos.getId();
+        this.titulo = productos.getTitulo();
+        this.descripcion = productos.getDescripcion();
+        this.precio = productos.getPrecio();
+        this.imagen = productos.getImagen();
+        this.estilo = productos.getEstilo();
+        this.talle = productos.getTalle();
+        this.tipoProducto = productos.getTipoProducto();
+        this.stock = productos.getStock();
     }
+
+
+
+
 
     public long getId() {return id;}
 

@@ -17,10 +17,10 @@ public class TransaccionProducto {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "producto_id")
-    private Producto producto;
+    private Productos producto;
 
     public TransaccionProducto(){}
-    public TransaccionProducto(Transaccion transaccion, Producto producto){
+    public TransaccionProducto(Transaccion transaccion, Productos producto){
         setTransaccion(transaccion);
         setProducto(producto);
     }
@@ -31,7 +31,7 @@ public class TransaccionProducto {
 
     public void setTransaccion(Transaccion transaccion) {this.transaccion = transaccion;}
 
-    public Producto getProducto() {return producto;}
+    public Productos getProducto() {return producto;}
 
-    public void setProducto(Producto producto) {this.producto = producto;}
+    public void setProducto(Productos producto) {this.producto = producto;}
 }

@@ -1,7 +1,7 @@
 package com.mindhub.duodanzaclub.services.implementations;
 
 import com.mindhub.duodanzaclub.dtos.ProductoDTO;
-import com.mindhub.duodanzaclub.models.Producto;
+import com.mindhub.duodanzaclub.models.Productos;
 import com.mindhub.duodanzaclub.repositories.ProductoRepository;
 import com.mindhub.duodanzaclub.services.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +22,12 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public Producto productoById(Long id) {
+    public Productos productoById(Long id) {
         return productoRepository.findById(id).orElse(null);
     }
 
     @Override
-    public void guardarProducto(Producto producto) {
+    public void guardarProducto(Productos producto) {
         productoRepository.save(producto);
     }
 }
