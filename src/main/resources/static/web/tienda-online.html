@@ -27,7 +27,7 @@
                         <a href="./index.html">Home</a>
                         <a href="./clases.html">Clases</a>
                         <a href="./festivales.html">Festivales</a>
-                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <a href="#/" @click="abrirCarrito"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <circle cx="6" cy="19" r="2" />
                     <circle cx="17" cy="19" r="2" />
@@ -61,36 +61,44 @@
                         <div class="estilo-salsa">
                             <div class="boton-estilo">
                                 <p>Salsa</p>
-                                <button type="button">Ir ></button>
+                                <button type="button" @click="elegirEstilo('salsa')">Ir ></button>
                             </div>
                         </div>
                         <div class="estilo-bachata estilo-carta">
                             <div class="boton-estilo">
                                 <p>Bachata</p>
-                                <button type="button">Ir ></button>
+                                <button type="button" @click="elegirEstilo('bachata')">Ir ></button>
                             </div>
                         </div>
                         <div class="estilo-tango estilo-carta">
                             <div class="boton-estilo">
                                 <p>Tango</p>
-                                <button type="button">Ir ></button>
+                                <button type="button" @click="elegirEstilo('tango')">Ir ></button>
                             </div>
                         </div>
                     </div>
+                    <!-- <p>{{estilo}} {{tipo}} </p> -->
                     <!-- FILTRO -->
                     <template>
-                <div class="contenedor-tipo">
-                    <button type="button">Indumentaria</button>
-                    <button type="button">Calzado</button>
-                    <button type="button">Accesorios</button>
-                </div>
-                    </template>
-                    <!-- PRODUCTOS -->
-                    <template>
-                        <div class="contenedor-producto">
-
+                        <div class="contenedor-tipo">
+                            <button class="btn-ind" type="button" @click="elegirTipo('indumentaria')">INDUMENTARIA</button>
+                            <button class="btn-calz" type="button" @click="elegirTipo('calzado')">CALZADO</button>
                         </div>
                     </template>
+                    <!-- PRODUCTOS -->
+                    <!-- <template> -->
+                    <!-- v-for="producto in productos" -->
+                    <div class="contenedor-producto">
+                        <div class="producto-carta">
+                            <div class="img-producto"></div>
+                            <div>
+                                <p>$1000</p>
+                                <p>Nombre</p>
+                                <button type="button" @click="verProducto">Ver</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </template> -->
 
                     <div class="contenedor-info">
                         <div class="envios">
@@ -129,8 +137,6 @@
                                 </a>
                             </div>
 
-
-
                             <div class="input-news">
                                 <div class="news">
                                     <h3>NEWSLETTER</h3>
@@ -167,74 +173,94 @@
         </div>
 
         <template>
-            <div class="modal" v-show="abrirProducto==true">
-                <div class="contenedor-modal">
-                    <div class="modal-producto">
-                        <div class="img-producto">
-                            <img src="./recursos/imagenes/calzado-1.jpg" alt="">
-                        </div>
-                        <div class="detalles">
-                            <div>
-                                <h3>PRODUCTO</h3>
-                                <p>$ 10000</p>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, est magnam fugiat possimus, enim quisquam aliquam quia placeat eos earum aperiam quas officiis laboriosam nisi reiciendis.</p>
+            <transition name="fade">
+                <div class="modal" v-show="abrirProducto==true">
+                    <div class="contenedor-modal">
+                        <div class="modal-producto">
+                            <div class="img-producto-modal">
+                                
                             </div>
-                            <div class="datos-compra">
-                                <div class="input-unidad">
-                                    <label for="u">Cant.</label>
-                                    <input id="u" type="number">
+                            <div class="detalles">
+                                <div>
+                                    <h3>PRODUCTO</h3>
+                                    <div style="display: flex;align-items: center;"><p style="margin-right: 2rem
+                                    ;">$ 10000 </p> <p>stock:</p></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, est magnam fugiat possimus, enim quisquam aliquam quia placeat eos earum aperiam quas officiis laboriosam nisi reiciendis.</p>
                                 </div>
-                                <div class="input-talle">
-                                    <label for="talle">Talle</label>
-                                    <input id="talle" type="number">
+                                <div class="datos-compra">  
+                                    <div>
+                                        <div class="input-unidad">
+                                            <label for="u">Cant.</label>
+                                            <input id="u" type="number">
+                                        </div>
+                                        <div class="input-talle">
+                                            <label for="talle">Talle</label>
+                                            <select id="talle">
+                                            <option value="34">34</option>
+                                            <option value="36">36</option>
+                                            <option value="38">38</option>
+                                            <option value="40">40</option>
+                                            <option value="42">42</option> </select>
+                                        </div>
+                                    </div>
+                                    <div class="botones-compra">                     
+                                    <button type="button">Agregar</button>
+                                    <button type="button" @click="abrirCarrito">Ver carrito</button>
+                                    <button type="button" @click="verProducto">Volver</button>
+                                    </div>
+                                    
+                                    <!-- <p>nombre talle precio stock descripcion</p> -->
                                 </div>
-                                <div class="select-color">
-                                    <label for="color">Color</label>
-                                    <select id="color">
-                                <option value="color">color</option>
-                                <option value="color">color</option>
-                                </select>
-                                </div>
-                                <button type="button">Agregar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </transition>
         </template>
-        <!-- <template>
+        <template>
             <transition name="fade">
-                <section class="modal" v-show="modalIngreso==true">
-                    <div class="contenedor-modal">
-                        <div class="modal-ingreso">
-                            <div>
-                                <img class="img-fluid" src="./recursos/imagenes/logo_NEUTRO_light.png" >
-                            </div>
-                            <div>
-                                <form>
-                                    <div>
-                                        <label for="usuario">Usuario</label>
-                                        <input v-model="ingreso.usuario" type="text" id="usuario">
-                                    </div>
-                                    <div>
-                                        <label for="contraseña">Contraseña</label>
-                                        <input v-model="ingreso.contraseña" type="password" id="contraseña">
-                                    </div>
-                                    <button type="button">No tengo usuario</button>
-                                    <button type="button">Olvide mi contraseña</button>
-                                    <button type="button" @click="ingresar">Ingresar</button>
-                                    <button type="button" @click="abrirModal">Volver</button>
-                                </form>
-                            </div>
+                <section class="modal" v-show="modalCarrito==true">
+                    <div class="contenedor-carrito">
+                        <h2>CARRITO DE COMPRAS</h2>
+                        <h4>Productos ({{carrito.length}})</h4>
+                        <table>
+                            <thead>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Talle</th>
+                                <th>Precio</th>
+                            </thead>
+                            <tbody>
+                                <!-- v-for="producto in carrito" -->
+                                <tr>
+                                    <td>{{producto.nombre </td>
+                                    <td>{{producto.descripcion </td>
+                                    <td>{{producto.talle </td>
+                                    <td>{{producto.precio </td>
+                                </tr>
+                                <tr>
+                                    <td>{{producto.nombre </td>
+                                    <td>{{producto.descripcion </td>
+                                    <td>{{producto.talle </td>
+                                    <td>{{producto.precio </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="display: flex; justify-content: flex-end;margin-right: 3rem;">
+                            <p>TOTAL</p>
+                            <p>{{total </p>
                         </div>
-
+                        <div>
+                            <button type="button" @click="abrirCarrito">Volver</button>
+                            <button type="button">Pagar</button>
+                        </div>
                     </div>
                 </section>
             </transition>
-        </template> -->
+        </template>
         <template>
             <transition name="fade">
-                <div class="modal" v-show="modalContacto==true">
+                <section class="modal" v-show="modalContacto==true">
                     <div class="contenedor-manos">
                         <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
                         <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
@@ -261,9 +287,11 @@
 
                             </form>
                         </div>
-                </div>
+                </section>
             </transition>
         </template>
+
+
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
