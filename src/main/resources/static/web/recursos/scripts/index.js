@@ -18,6 +18,7 @@ let app = new Vue({
         },
         modalIngreso: false,
         modalRegistro: false,
+        formEnviado: false,
     },
     mounted() {
         pagina = document.querySelector(".contenedor-total");
@@ -65,6 +66,14 @@ let app = new Vue({
                 .catch(response => {
                     console.log(response.data);
                 })
+        },
+        enviarFormulario() {
+            this.formEnviado = true;
+            pagina.classList.add('desenfocar');
+        },
+        cerrar() {
+            this.formEnviado = false;
+            pagina.classList.remove('desenfocar');
         }
     },
 })
