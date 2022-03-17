@@ -102,8 +102,8 @@ public class DuodanzaclubApplication {
 			Profesor profesor24 = new Profesor("Yamila", "López");
 			Profesor profesor25 = new Profesor("Romeo", "");
 			Profesor profesor26 = new Profesor("Chayanne", "");
-			Productos producto1 = productoRepository.save(new Productos("Zapatos de Salsa", "Zapatos de cuero", 12000.0, "/web/recursos/imagenes/zapatos/MONOCHECKEREDREDPATENT.jpg", Estilos.BACHATA, Arrays.asList("38", "39", "40"), TipoProducto.CALZADOS, 5));
-			Productos producto2 = productoRepository.save(new Productos("Camisa", "Camisa de seda", 3000.0, "Insert path", Estilos.SALSA, Arrays.asList("S", "M", "L"), TipoProducto.PRENDAS, 3));
+			Productos producto1 = productoRepository.save(new Productos("Zapatos AZRAEL", "Zapatos de cuero", 12000.0, "/web/recursos/imagenes/zapatos/MONOAZRAEL.jpg", Estilos.BACHATA, Arrays.asList("38", "39", "40"), TipoProducto.CALZADOS, 5));
+			Productos producto2 = productoRepository.save(new Productos("Zapatos ROMANIA", "Camisa de seda", 3000.0, "/web/recursos/imagenes/zapatos/100ROMANIA.png", Estilos.SALSA, Arrays.asList("S", "M", "L"), TipoProducto.PRENDAS, 3));
 			Productos producto3 = productoRepository.save(new Productos("Mono Checkered Red Patent", "Zapato clásico con motivo estampado tipo collage de colores.", 7000.0, "/web/recursos/imagenes/zapatos/MONOCHECKEREDREDPATENT.jpg", Estilos.BACHATA, Arrays.asList("40", "41", "42"), TipoProducto.CALZADOS, 5));
 			Productos producto4 = productoRepository.save(new Productos("Mono Orient Express", "modelo clásico acordonado con motivos orientales y punta de charol", 12300.0, "/web/recursos/imagenes/zapatos/MONOORIENTEXPRESS.jpg", Estilos.SALSA, Arrays.asList("37", "38", "39", "40", "41", "42"), TipoProducto.CALZADOS, 23));
 			Productos producto5 = productoRepository.save(new Productos("MONO TROILO", "modelo clásico acordonado en cuero", 15000.0, "/web/recursos/imagenes/zapatos/MONO_TROILO.jpg", Estilos.TANGO, Arrays.asList("37", "38", "39", "40", "41", "42", "43"), TipoProducto.CALZADOS, 32));

@@ -95,7 +95,7 @@
                                 <img :src="producto.imagen" alt="Foto producto">
                             </div>
                             <div>
-                                <p>${{producto.precio}}</p>
+                                <p>${{formatoPrecio(producto.precio)}}</p>
                                 <p>{{producto.titulo}}</p>
                                 <button type="button" @click="verProducto(producto.id)">Ver</button>
                             </div>
@@ -188,7 +188,7 @@
                                 <div>
                                     <h3>{{productoId.titulo}}</h3>
                                     <div style="display: flex;align-items: center;"><p style="margin-right: 2rem
-                                    ;">$ {{productoId.precio}} </p> <p>stock:{{productoId.stock}}</p></div>
+                                    ;">$ {{formatoPrecio(productoId.precio)}} </p> <p>stock:{{productoId.stock}}</p></div>
                                     <p>{{productoId.descripcion}}</p>
                                 </div>
                                 <div class="datos-compra">  
@@ -239,14 +239,14 @@
                                     <td>{{producto.titulo}} </td>
                                     <td>{{producto.descripcion}} </td>
                                     <td>{{producto.talle}} </td>
-                                    <td>${{producto.precio}} </td>
+                                    <td>${{ formatoPrecio(producto.precio) }} </td>
                                 </tr>
                                 
                             </tbody>
                         </table>
                         <div style="display: flex; justify-content: flex-end;margin-right: 3rem;">
                             <p>TOTAL</p>
-                            <p>${{total}}</p>
+                            <p>${{ formatoPrecio(total) }}</p>
                         </div>
                         <div>
                             <button type="button" @click="abrirCarrito">Volver</button>

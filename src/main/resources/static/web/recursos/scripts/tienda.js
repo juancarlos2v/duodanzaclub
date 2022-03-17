@@ -32,6 +32,12 @@ let app = new Vue({
             axios.get("/api/productos")
             .then(response => this.productos = response.data)
         },
+        formatoPrecio(number){
+            if(number != undefined){
+                let balance = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return balance;
+            }
+        },
         elegirEstilo(estilo) {
             this.estilo = estilo;
         },
