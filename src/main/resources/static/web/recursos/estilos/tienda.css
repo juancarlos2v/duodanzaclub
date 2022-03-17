@@ -1,6 +1,3 @@
-/***HEADER******/
-
-
 /****MAIN*****/
 
 .contenedor-banner {
@@ -26,16 +23,20 @@
     background-repeat: no-repeat;
 }
 
+.contenedor-banner-descripcion {
+    position: relative;
+    width: 100%;
+}
+
 .contenedor-descripcion {
     background-color: var(--header-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    height: auto;
-    margin: auto;
-    z-index: 99;
+    width: 80%;
+    z-index: 5;
     padding: 1rem;
+    margin-left: 8%;
+    position: absolute;
+    transform: translateY(-3rem);
+    font-size: 1vw;
 }
 
 .contenedor-banner-negro {
@@ -45,8 +46,9 @@
     z-index: 0;
 }
 
-.contenedor-banner-negro div {
+.contenedor-banner-negro>div {
     display: flex;
+    justify-content: space-around;
     background-color: black;
     width: 100%;
 }
@@ -54,6 +56,11 @@
 .contenedor-banner-negro img {
     padding-left: 2vw;
     width: 40%;
+}
+
+.texto-negro {
+    height: 30%;
+    align-self: center;
 }
 
 .cuerpo {
@@ -115,6 +122,10 @@
     justify-content: space-around;
 }
 
+.contenedor-tipo button {
+    width: 12rem;
+}
+
 .contenedor-info {
     display: flex;
     flex-direction: column;
@@ -141,6 +152,10 @@
 
 .envios div {
     width: 40%;
+}
+
+.envios>div:first-child {
+    align-self: center;
 }
 
 .envios div+div {
@@ -219,6 +234,10 @@ h3 {
 
 /***MODAL*****/
 
+.modal {
+    z-index: 99;
+}
+
 .modal p,
 .modal h3 {
     color: black
@@ -226,21 +245,28 @@ h3 {
 
 .modal-producto {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin: auto;
     padding: 1rem;
+    max-width: 60%;
+    background-color: var(--rosa-suave);
+    border-radius: 1rem;
+    box-shadow: 9px 16px 20px 12px #2c2828e0;
 }
 
-.img-producto {
-    /* background-image: url("../imagenes/calzado-1.jpg");
+.img-producto-modal {
+    background-image: url("../imagenes/calzado-1.jpg");
     background-size: contain;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
+    height: 10rem;
     width: 30%;
 }
 
-.img-producto img {
-    width: 100%;
-}
+
+/* .img-producto img {
+    width: 30%;
+} */
 
 .detalles {
     display: flex;
@@ -249,9 +275,18 @@ h3 {
     padding-left: 2rem;
 }
 
+.detalles p {
+    margin-top: 0;
+}
+
 .datos-compra {
     display: flex;
-    width: 100vw;
+    flex-direction: column;
+    width: 100%;
+}
+
+.datos-compra>div:first-child {
+    display: flex;
 }
 
 .input-unidad,
@@ -263,8 +298,9 @@ h3 {
 }
 
 .input-unidad input,
-.input-talle input {
-    width: 3rem;
+.input-talle select {
+    width: 4rem;
+    height: 100%;
 }
 
 .select-color {
@@ -274,115 +310,94 @@ h3 {
 .datos-compra button {
     background-color: #c6aeaf;
     color: white;
+    margin-right: 2rem;
+    width: 6.6rem;
+    padding: 0.5rem;
+}
+
+.botones-compra {
+    display: flex;
+    margin-top: 1.6rem;
 }
 
 
-/***OCULTAR ESTILO INPUT NUMBER****/
+/****MODAL CONTACTO* */
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.modal {
+    position: absolute;
+    position: fixed;
+}
+
+.contenedor-modal {
+    max-width: 90% !important;
+    background: transparent;
+    border: none;
+}
+
+.izquierda-contacto {
+    margin-top: 10rem;
+}
+
+.derecha-contacto {
+    margin-top: 20rem;
+}
+
+.botones {
+    display: flex;
+}
+
+.botones button {
+    margin-right: 1rem;
 }
 
 
-/***MEDIA QUERY***/
+/***PRODUCTO***/
 
-@media only screen and (max-width: 800px) {
-    .contenedor-logo-nav {
-        margin-top: 6vh;
-        width: 100vw;
-    }
-    .contenedor-logo-nav nav {
-        width: 100vw;
-        height: 2vh;
-    }
-    nav a {
-        font-size: small;
-    }
-    .contenedor-banner {
-        width: 100%;
-        height: 9rem;
-        padding: 0;
-        margin-top: 2rem;
-    }
-    .pareja-img {
-        background-image: url("../imagenes/pareja_baile_recorte.png");
-        width: 90%;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .logo-tienda {
-        background-image: url("../imagenes/Tienda.png");
-        width: 100%;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .contenedor-descripcion {
-        padding: 0.6rem;
-    }
-    .contenedor-descripcion p {
-        font-size: 5vw;
-        text-align: center;
-    }
-    .contenedor-banner-negro {
-        width: 100vw;
-        overflow: hidden;
-        height: auto;
-    }
-    .contenedor-banner-negro img {
-        width: 40%;
-    }
-    .contenedor-estilos {
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        margin-top: 1rem;
-    }
-    .contenedor-estilos div {
-        margin-bottom: 1.5rem;
-    }
-    .contenedor-info {
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 100%;
-        margin: 0 !important;
-    }
-    .envios {
-        height: 5rem;
-    }
-    .envios div+div>h1 {
-        font-size: 2.5vh;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    .promociones-ayuda-news {
-        flex-direction: column;
-        margin-top: 0.6rem;
-        margin: auto !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        font-size: small;
-    }
-    .promociones-ayuda-news div {
-        width: 100vw;
-        padding: 0.5rem;
-    }
-    footer {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        padding: 0 !important;
-        font-size: small;
-        width: 100vw;
-    }
-    footer .enlaces {
-        align-items: center !important;
-        width: 100%;
-        text-align: center;
-    }
-    .enlaces a {
-        text-align: center;
-    }
+.contenedor-producto {
+    height: auto;
+    margin-top: 4rem;
+}
+
+.img-producto {
+    /* background-color: black; */
+    height: 10rem;
+    width: 100%;
+}
+
+.producto-carta {
+    width: 15%;
+    height: auto;
+    border-radius: 0.3rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.616);
+}
+
+.producto-carta>div+div {
+    padding: 0.5rem;
+}
+
+
+/****MODAL CARRITO***/
+
+.contenedor-carrito {
+    max-width: 70%;
+    border: 0.1rem solid rgba(0, 0, 0, 0.349);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--rosa-suave);
+}
+
+.contenedor-carrito tr {
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.349);
+}
+
+.contenedor-carrito th,
+.contenedor-carrito td {
+    text-align: left;
+}
+
+
+/*****/
+
+.linea-seleccion {
+    border-bottom: 0.1rem solid var(--footer-color);
 }

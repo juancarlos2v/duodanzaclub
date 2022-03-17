@@ -4,25 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
-    <link rel="stylesheet" href="./recursos/estilos/nav-tienda.css">
     <link rel="stylesheet" href="./recursos/estilos/footer.css">
     <link rel="stylesheet" href="./recursos/estilos/clases.css">
+    <link rel="stylesheet" href="./recursos/estilos/clases-movil.css">
+    <link rel="stylesheet" href="./recursos/estilos/nav-tienda.css">
     <title>Clases | Duo Danza Club</title>
 </head>
 
 <body>
     <div id="app">
-        <div class="contenedor-canal">
+        <div class="contenedor-total">
             <header>
                 <div class="contenedor-logo-nav">
-                    <img src="./recursos/imagenes/logo_light.png">
+                    <img class="img-fluid" src="./recursos/imagenes/logo_light.png">
                     <nav>
                         <a href="./index.html">Home</a>
-                        <a href="#">Festivales</a>
+                        <a href="./festivales.html">Festivales</a>
                         <a href="./tienda-online.html">Tienda</a>
                         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -37,13 +38,13 @@
             <main>
                 <div class="banner-titulo ">
                     <div>
-                        <img class="img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="img-fluid izquierda-banner" src="./recursos/imagenes/home/mano_1.png">
                     </div>
                     <div>
-                        <img src="./recursos/imagenes/home/clases_titulo_azul_y_beige.png">
+                        <img class="img-fluid" src="./recursos/imagenes/home/clases_titulo_azul_y_beige.png">
                     </div>
                     <div>
-                        <img class="img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                        <img class="img-fluid derecha-banner" src="./recursos/imagenes/home/mano_2.png">
                     </div>
                 </div>
 
@@ -65,9 +66,9 @@
                             <div>
                                 <label for="rol">ROL</label>
                                 <select id="rol">
-                                <option value="Lider">Lider</option>
-                                <option value="-"">-</option>
-                                <option value="-">-</option>
+                                <option value="lider">Lider</option>
+                                <option value="follower">Follower</option>
+                                <option value="ambos">Ambos</option>
                             </select>
                             </div>
                             <div>
@@ -89,41 +90,57 @@
                             <div>
                                 <label for="dia">DIA</label>
                                 <select id="dia">
-                                <option value="lunes">Rosario</option>
-                                <option value="martes"">Cordoba</option>
-                                <option value="miercoles">Buenos Aires</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <select id="personas">
-                                <option value="1">1</option>
-                                <option value="2"">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            </div>
-                            <div>
-                                <select id="acompañante">
-                                <option value="-">AAAAAAA</option>
-                                <option value="-"">BBBBBBB</option>
-                                <option value="-">CCCCCCC</option>
-                            </select>
-
+                                <option value="lunes">Lunes</option>
+                                <option value="martes"">Martes</option>
+                                <option value="miercoles">Miercoles</option>
+                                <option value="jueves">Jueves</option>
+                                <option value="viernes">Viernes</option>
+                                <option value="sabado">Sabado</option>
+                                <option value="domingo">Domingo</option>
+                                </select>
                             </div>
                         </div>
                         <button type="button" id="buscar-clase">Buscar</button>
                     </div>
 
-                    <div class="info-abonos">
-                        <div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis debitis ut corrupti saepe consequatur reprehenderit assumenda tempora rem, eaque sint harum optio vel ducimus dolore maiores nostrum magnam id neque.</p>
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="./recursos/imagenes/home/bachata_recorte.png">
-                        </div>
-                    </div>
                 </div>
+                <!-- <template> -->
+                <div class="contenedor-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CODIGO</th>
+                                <th>CLASE</th>
+                                <th>PROFESOR</th>
+                                <th>HORARIO</th>
+                                <th>CUPO</th>
+                                <th>Ordenar por</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{codigo}}</td>
+                                <td>{{clase}} </td>
+                                <td>{{profesor}} </td>
+                                <td> {{horario}} </td>
+                                <td>{{cupo}} </td>
+                                <td><button class="ultimo" type="button">+</button> </td>
+                            </tr>
+                            <tr>
+                                <td>0001 </td>
+                                <td>Tecnica II</td>
+                                <td>Fernando Obaos</td>
+                                <td>19 - 20:30hs</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="ultimo" type="button">v</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- </template> -->
+
                 <div class="contenedor-profesores">
                     <h3>PROFESORES</h3>
                     <div>
@@ -133,12 +150,15 @@
                         <div></div>
                     </div>
                 </div>
+
+
+
             </main>
             <footer>
                 <div class="enlaces ">
-                    <a href="#">CONTACTO</a>
-                    <a href="#">PREGUNTAS FRECUENTES</a>
-                    <a href="#">BASES Y CONDICIONES</a>
+                    <a href="#/" @click="abrirContacto">CONTACTO</a>
+                    <a href="#/">PREGUNTAS FRECUENTES</a>
+                    <a href="#/">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer ">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png ">
@@ -153,8 +173,44 @@
                 </div>
             </footer>
         </div>
+        <template>
+            <transition name="fade">
+                <div class="modal" v-show="modalContacto==true">
+                    <div class="contenedor-manos">
+                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                    </div>
+                        <div class="contenedor-modal">
+                            <form>
+                                <div>
+                                    <p>CONTACTO</p>
+                                </div>
+                                <div class="contenedor-form">
+                                    <div class="logo-form"></div>
+                                    <div>
+                                        <div>
+                                            <input type="text" placeholder="nombre">
+                                            <input type="text" placeholder="e-mail">
+                                        </div>
+                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                        <div class="botones">
+                                            <button type="button">ENVIAR</button>
+                                            <button type="button" @click="abrirContacto">VOLVER</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                </div>
+            </transition>
+        </template>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./recursos/scripts/clases.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -1,12 +1,14 @@
 package com.mindhub.duodanzaclub.controllers;
 
+
 import com.mindhub.duodanzaclub.dtos.TransaccionDTO;
-import com.mindhub.duodanzaclub.models.Producto;
+import com.mindhub.duodanzaclub.models.Productos;
 import com.mindhub.duodanzaclub.models.Transaccion;
 import com.mindhub.duodanzaclub.models.TransaccionProducto;
 import com.mindhub.duodanzaclub.models.Usuario;
 import com.mindhub.duodanzaclub.repositories.TransaccionProductoRepository;
 import com.mindhub.duodanzaclub.repositories.TransaccionRepository;
+import com.mindhub.duodanzaclub.services.EmailService;
 import com.mindhub.duodanzaclub.services.ProductoService;
 import com.mindhub.duodanzaclub.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,8 @@ public class TransaccionController {
     ProductoService productoService;
     @Autowired
     TransaccionProductoRepository transaccionProductoRepository;
+    @Autowired
+    EmailService emailService;
 
     @GetMapping("/transacciones")
     public List<TransaccionDTO> getTransacciones(){
@@ -43,7 +47,7 @@ public class TransaccionController {
     @PostMapping("/comprar")
     public ResponseEntity<Object> nuevaTransaccion(Authentication authentication, @RequestBody TransaccionDTO transaccionDTO){
         Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
-        List<Producto> productos = new ArrayList<>();
+        List<Productos> productos = new ArrayList<>();
 
         if(transaccionDTO.getAmount() <= 0 || transaccionDTO.getProductosTransaccion().size() <= 0){
             return new ResponseEntity<>("No ha seleccionado ningún producto", HttpStatus.FORBIDDEN);
@@ -53,13 +57,14 @@ public class TransaccionController {
         transaccionRepository.save(transaccion);
 
         transaccionDTO.getProductosTransaccion().stream().forEach(productoTransaccion -> {
-            Producto producto = productoService.productoById(productoTransaccion);
+            Productos producto = productoService.productoById(productoTransaccion);
             productos.add(producto);
             producto.setStock(producto.getStock() - 1);
             productoService.guardarProducto(producto);
             TransaccionProducto transaccionProducto = transaccionProductoRepository.save(new TransaccionProducto(transaccion, producto));
         });
 
+        emailService.sendEmail("ignaciomolina.95@hotmail.com", "Gracias por tu compra", "El contenido de tu compra es:");
         usuario.addTransaccion(transaccion);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

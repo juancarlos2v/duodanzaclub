@@ -5,14 +5,26 @@ let app = new Vue({
             usuario: "",
             contraseña: ""
         },
-        modalIngreso: false
+        registro: {
+            nombre: "",
+            apellido: "",
+            telefono: "",
+            email: "",
+            contraseña: "",
+            fecha: "",
+            ciudad: "",
+            nivel: "",
+            rol: "",
+        },
+        modalIngreso: false,
+        modalRegistro: false,
     },
     mounted() {
         pagina = document.querySelector(".contenedor-total");
     },
     methods: {
         abrirModal() {
-            if (!this.modalIngreso) {
+            if (this.modalIngreso == false) {
                 this.modalIngreso = true;
                 pagina.classList.add('desenfocar');
             } else {
@@ -26,7 +38,29 @@ let app = new Vue({
         ingresar() {
             axios.post('/api/login', `email=${this.ingreso.usuario}&password=${this.ingreso.contraseña}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
                 .then(response => {
-                    console.log('ingreso');
+                    window.location.href = "/web/perfil.html"
+                })
+                .catch(response => {
+                    console.log(response.data);
+                })
+        },
+        abrirRegistro() {
+            if (this.modalRegistro == false) {
+                pagina.classList.add('desenfocar');
+                this.modalRegistro = true;
+                this.modalIngreso = false;
+
+            } else {
+                pagina.classList.remove('desenfocar');
+                this.modalRegistro = false;
+                this.modalIngreso = true;
+
+            }
+        },
+        registrarme() {
+            axios.post('/api/..', `nombre=${this.registro.nombre}&apellido=${this.registro.apellido}&telefono=${this.registro.telefono}&email=${this.registro.email}&password=${this.registro.contraseña}&fechaNacimiento=${this.registro.fecha}&ciudad=${this.registro.ciudad}&nivel=${this.registro.nivel}&rol=${this.registro.rol}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
+                .then(response => {
+
                 })
                 .catch(response => {
                     console.log(response.data);

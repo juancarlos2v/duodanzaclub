@@ -1,0 +1,127 @@
+@media(max-width: 800px) {
+    .div-Video {
+        height: 15rem !important;
+    }
+    .contenedor-texto {
+        padding: 0;
+        width: 90%;
+        align-items: center;
+        height: auto;
+        transform: translateY(2rem);
+    }
+    .contenedor-texto p {
+        text-align: center;
+        margin: 0;
+    }
+    .contenedor-banner-clases {
+        margin-top: 5rem;
+    }
+    .clasesLogo {
+        height: 5rem;
+        transform: translateY(-1.5rem);
+    }
+    .contenedor-texto2 {
+        text-align: center;
+        padding: 0;
+        height: auto;
+        margin: 0;
+        padding-top: 2rem;
+    }
+    .contenedor-estilos {
+        margin-top: 3rem;
+    }
+    .contenedor-tienda {
+        height: auto;
+        width: 100%;
+    }
+    .tiendaLogo {
+        height: auto;
+    }
+    .tienda-info {
+        padding: 0;
+        text-align: center;
+        width: 90%;
+        height: auto;
+        padding: 0.6rem;
+        margin-top: 2rem;
+    }
+    .tienda-info div+div {
+        padding: 0;
+    }
+    .tienda-texto {
+        padding: 0;
+        width: 100% !important;
+    }
+    form>div:first-child {
+        width: 80%;
+    }
+    form>div:first-child>p {
+        font-size: 2vh;
+        padding: 0;
+        padding-left: 0.8rem;
+        width: 40%;
+    }
+    .contenedor-form {
+        overflow: hidden;
+        width: 80%;
+        padding: 2rem;
+        flex-direction: column;
+    }
+    .logo-form {
+        display: none;
+    }
+    form>div div+div {
+        width: 100%;
+        padding: 0;
+    }
+    .contenedor-form>div input {
+        width: 100%;
+    }
+    textarea {
+        height: 8rem;
+    }
+    .seccion-festival {
+        height: 20rem;
+    }
+    .contenido-festival {
+        margin: 0;
+        padding: 0;
+    }
+    .contenido-festival p {
+        width: 150%;
+        height: auto;
+    }
+    .logos-tango {
+        flex-direction: column;
+    }
+    .contenedor-bachata img {
+        margin-left: 0 !important;
+    }
+    .logos-tango {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .seccion-milongas {
+        height: 20rem;
+    }
+    .contenedor-texto-milongas {
+        padding: 0;
+        height: 100%;
+    }
+    .formulario-contacto {
+        margin-top: 4rem;
+    }
+    .contenedor-modal {
+        max-width: 20rem;
+    }
+    .mano-izquierda {
+        position: absolute;
+    }
+    .mano-derecha {
+        display: none;
+    }
+    .contenedor-texto {
+        padding: 0.5rem;
+    }
+}

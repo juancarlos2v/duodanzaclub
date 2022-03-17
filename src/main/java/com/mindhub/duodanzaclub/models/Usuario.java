@@ -1,6 +1,7 @@
 package com.mindhub.duodanzaclub.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mindhub.duodanzaclub.dtos.SuscripcionDTO;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -48,9 +49,15 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
     private List<Transaccion> transacciones = new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "suscripcion_id")
+    private Suscripcion suscripcion;
+
     @ElementCollection
     @Column(name = "contactos")
     private List<Long> contactos = new ArrayList<Long>();
+
+
 
 
 
@@ -67,7 +74,7 @@ public class Usuario {
         setPassword(password);
         setFechaNacimiento(fechaNacimiento);
     }
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, String ciudad, Nivel nivel, Rol rol, Abono abono) {
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, String ciudad, Nivel nivel, Rol rol) {
         setNombre(nombre);
         setApellido(apellido);
         setTelefono(telefono);
@@ -77,7 +84,7 @@ public class Usuario {
         setCiudad(ciudad);
         setNivel(nivel);
         setRol(rol);
-        setAbono(abono);
+
     }
 
 
@@ -144,6 +151,10 @@ public class Usuario {
     @JsonIgnore
     public List<Transaccion> getTransacciones() {return transacciones;}
     public void setTransacciones(List<Transaccion> transaccions) {this.transacciones = transaccions;}
+
+    public Suscripcion getSuscripcion() {return suscripcion;}
+
+    public void setSuscripcion(Suscripcion suscripcion) {this.suscripcion = suscripcion;}
 
     public void addTransaccion(Transaccion transaccion){
         transaccion.setUsuario(this);
