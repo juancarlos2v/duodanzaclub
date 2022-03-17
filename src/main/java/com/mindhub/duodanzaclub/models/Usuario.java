@@ -84,7 +84,6 @@ public class Usuario {
         setCiudad(ciudad);
         setNivel(nivel);
         setRol(rol);
-
     }
 
 

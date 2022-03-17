@@ -22,16 +22,11 @@ public class Profesor {
     @OneToMany(mappedBy = "profesor", fetch = FetchType.EAGER)
     private Set<ProfesorClase> profesorClases = new HashSet<>();
 
-
-
     public Profesor(){}
     public Profesor(String nombre, String apellido) {
         setNombre(nombre);
         setApellido(apellido);
-
     }
-
-
 
     @JsonIgnore
     public List<Clase> getClases(){
