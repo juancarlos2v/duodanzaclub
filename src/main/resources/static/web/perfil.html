@@ -55,11 +55,15 @@
                                 <div class="datos-usuario">
                                     <p>Nombre: {{usuario.nombre}} </p>
                                     <p>Apellido/s: {{usuario.apellido}} </p>
-                                    <p>Fecha de nacimiento: </p>
-                                    <p> Descripcion: </p>
+                                    <p>Descripcion: {{usuario.descripcion}} </p>
+                                    <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
+                                    
                                 </div>
                                 <div class="foto-perfil">
+                                    <div v-show="noFoto" class="no-foto">
 
+                                    </div>
+                                    <img v-show="fotoPerfil" v-bind:src="usuario.foto" alt="Foto de perfil">
                                 </div>
                             </div>
                             <div>
@@ -161,17 +165,18 @@
                             <form>
                                 <input v-model="cambio.nombre" type="text" placeholder="Nombre">
                                 <input v-model="cambio.apellido" type="text" placeholder="Apellido">
-                                <input v-model="cambio.nacimiento" type="text" placeholder="Fecha de nacimiento">
-
-                                <input v-model="cambio.email" type="text" placeholder="e-mail">
+                                <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
+                                <textarea class="textarea" v-model="cambio.descripcion" rows="4" cols="30" placeholder="Agregar descripción"></textarea>
+                                <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
+                                <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
                                 <input v-model="cambio.ciudad" type="text" placeholder="Ciudad">
                                 <input v-model="cambio.telefono" type="number" placeholder="Telefono">
-
-                                <input v-model="cambio.contraseña" type="password" placeholder="Contraseña">
+                                
+                                <!--<input v-model="cambio.contraseña" type="password" placeholder="Contraseña">-->
                             </form>
                             <div class="contenedor-botones">
                                 <button type="button" @click="clickEditar">VOLVER</button>
-                                <button type="button" @click="confirmarCambios" >CONFIRMAR</button>
+                                <button type="button" @click="editarInfo" >CONFIRMAR</button>
                             </div>
                         </div>
                         

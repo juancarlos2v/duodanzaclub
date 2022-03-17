@@ -2,6 +2,8 @@ let app = new Vue({
     el: '#app',
     data: {
         usuario: {},
+        fotoPerfil: false,
+        noFoto: true,
         cambio: {
             nombre: "",
             apellido: "",
@@ -9,7 +11,9 @@ let app = new Vue({
             email: "",
             ciudad: "",
             telefono: "",
-            contraseña: ""
+            contraseña: "",
+            descripcion: "",
+            foto: ""
         },
         clase: {
             cantidadClases: 0,
@@ -33,6 +37,16 @@ let app = new Vue({
             .then(response => {
                 console.log(response.data);
                 this.usuario = response.data
+
+                if(this.usuario.foto != ""){
+                    this.noFoto = false
+                    this.fotoPerfil = true
+                }
+                if(this.usuario.foto == ""){
+                    this.noFoto = true
+                    this.fotoPerfil = false
+                }
+
                 console.log(this.usuario.nombre)
             })
         },
@@ -65,6 +79,19 @@ let app = new Vue({
         },
         confirmarCambios() {
 
+        },
+        editarInfo(){
+            axios.patch("/api/usuarios/current",
+            {"nombre": this.cambio.nombre, "apellido": this.cambio.apellido, 
+            "fechaNacimiento": this.cambio.nacimiento, "descripcion": this.cambio.descripcion,
+            "foto": this.cambio.foto, "ciudad": this.cambio.ciudad,
+            "telefono": this.cambio.telefono})
+            .then(()=> {
+                console.log("Cambios realizados")
+                
+                window.location.reload()
+            })
+            .catch(error => console.log(error))
         }
     },
 })

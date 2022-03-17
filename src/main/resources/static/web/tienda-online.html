@@ -90,7 +90,9 @@
                     <!-- v-for="producto in productos" -->
                     <div v-for="producto in productos" class="contenedor-producto">
                         <div class="producto-carta">
-                            <div class="img-producto"></div>
+                            <div class="img-producto">
+                                <img v-bind:src="producto.imagen" alt="Imagen producto" >
+                            </div>
                             <div>
                                 <p>${{producto.precio}}</p>
                                 <p>{{producto.titulo}}</p>
@@ -177,8 +179,10 @@
                 <div class="modal" v-show="abrirProducto==true">
                     <div class="contenedor-modal">
                         <div class="modal-producto">
-                            <div class="img-producto-modal">
-                            
+                            <!--<div class="img-producto-modal">-->
+                            <div class="img-producto-modal"> 
+                                <img v-bind:src="productoId.imagen" alt="Imagen producto">
+                                </div>
                             <div class="detalles">
                                 <div>
                                     <h3>{{productoId.titulo}}</h3>
