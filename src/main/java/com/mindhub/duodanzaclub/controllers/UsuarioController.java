@@ -47,6 +47,20 @@ public class UsuarioController {
         return usuarioService.findByEmail(authentication.getName());
     }
 
+    @PatchMapping("/usuarios/current/deletephoto")
+    public ResponseEntity<Object> borrarFoto(Authentication authentication){
+        Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
+
+        if(usuario.getFoto().isEmpty()) {
+            return new ResponseEntity<>("No hay foto para eliminar", HttpStatus.FORBIDDEN);
+        }
+
+        usuario.setFoto(null);
+        usuarioService.guardarUsuario(usuario);
+
+        return new ResponseEntity<>("Foto eliminada", HttpStatus.CREATED);
+    }
+
     @PatchMapping("/usuarios/current")
     public ResponseEntity<Object> agregarDatos(Authentication authentication,
                                                @RequestParam String descripcion,
