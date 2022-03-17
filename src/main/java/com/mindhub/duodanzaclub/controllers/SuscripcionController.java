@@ -93,7 +93,7 @@ public class SuscripcionController {
     @PostMapping("/suscripciones")
     public ResponseEntity<Object> crearTipoSuscripcion(@RequestBody Suscripcion suscripcion){
 
-        if(suscripcion.getNombre().isEmpty() || suscripcion.getClases().isEmpty() || suscripcion.getPrecios().isEmpty()) {
+        if(suscripcion.getNombre().isEmpty() || suscripcion.getClases() <= 0 || suscripcion.getPrecios().isEmpty()) {
             return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
         }
 

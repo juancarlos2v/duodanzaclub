@@ -18,8 +18,8 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
-                //.antMatchers("/").hasAuthority("USER")
-                .antMatchers("/").permitAll();
+                .antMatchers("/web/perfil.html").hasAuthority("USER")
+                .antMatchers("/", "/web/festivales.html").permitAll();
 
         http.formLogin()
                 .usernameParameter("email")

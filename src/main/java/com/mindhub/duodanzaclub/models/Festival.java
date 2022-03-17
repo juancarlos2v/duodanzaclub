@@ -23,6 +23,7 @@ public class Festival {
     private String nombre;
     private Double precio;
     private Estilos estilo;
+    private String imagen;
 
     @ElementCollection
     @Column(name="horarios")
@@ -40,7 +41,7 @@ public class Festival {
     }
 
     @JsonIgnore
-    public List<Sala> getSalas() {return  salaFestival.stream().map(salaFestival -> salaFestival.getSala()).collect(toList());}
+    public List<Sala> getSalas() {return  salaFestival.stream().map(SalaFestival::getSala).collect(toList());}
 
     public long getId() {return id;}
 

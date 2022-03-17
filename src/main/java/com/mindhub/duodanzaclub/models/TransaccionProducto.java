@@ -28,10 +28,8 @@ public class TransaccionProducto {
     public long getId() {return id;}
 
     public Transaccion getTransaccion() {return transaccion;}
-
     public void setTransaccion(Transaccion transaccion) {this.transaccion = transaccion;}
 
     public Productos getProducto() {return producto;}
-
     public void setProducto(Productos producto) {this.producto = producto;}
 }

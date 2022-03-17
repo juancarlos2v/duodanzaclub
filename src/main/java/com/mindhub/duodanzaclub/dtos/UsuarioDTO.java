@@ -26,6 +26,8 @@ public class UsuarioDTO {
     private Academia academia;
     private LocalDate fechaNacimiento;
     private String ciudad;
+    private String descripcion;
+    private String foto;
     private Set<Usuario> followers = new HashSet<Usuario>();
     private Set<Usuario> following = new HashSet<Usuario>();
     private List<Long> contactos = new ArrayList<Long>();
@@ -67,6 +69,8 @@ public class UsuarioDTO {
         setTelefono(usuario.getTelefono());
         setEmail(usuario.getEmail());
         setFechaNacimiento(usuario.getFechaNacimiento());
+        setDescripcion(usuario.getDescripcion());
+        setFoto(usuario.getFoto());
         setCiudad(usuario.getCiudad());
         setNivel(usuario.getNivel());
         setRol(usuario.getRol());
@@ -78,7 +82,6 @@ public class UsuarioDTO {
         setClases(usuario.getUsuarioClases().stream().map(UsuarioClaseDTO::new).collect(Collectors.toList()));
         setTransacciones(usuario.getTransacciones().stream().map(TransaccionDTO::new).collect(Collectors.toList()));
         setSuscripcion(usuario.getSuscripcion());
-
     }
 
     public long getId() {return id;}
@@ -125,6 +128,12 @@ public class UsuarioDTO {
 
     public int getAnio() {return anio;}
     public void setAnio(int anio) {this.anio = anio;}
+
+    public String getDescripcion() {return descripcion;}
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
+
+    public String getFoto() {return foto;}
+    public void setFoto(String foto) {this.foto = foto;}
 
     public Set<Usuario> getFollowers() {return followers;}
     public void setFollowers(Set<Usuario> followers) {this.followers = followers;}

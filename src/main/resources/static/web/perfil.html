@@ -56,7 +56,7 @@
                                     <p>Nombre: {{usuario.nombre}} </p>
                                     <p>Apellido/s: {{usuario.apellido}} </p>
                                     <p>Fecha de nacimiento: </p>
-                                    <p> Descripcion: </p>
+                                    <p>Biografía: </p>
                                 </div>
                                 <div class="foto-perfil">
 
@@ -64,6 +64,7 @@
                             </div>
                             <div>
                                 <button type="button" @click="clickEditar">EDITAR</button>
+                                <button type="button" @click="cerrarSesion()">CERRAR SESIÓN</button>
                             </div>
                         </div>
 
@@ -133,7 +134,7 @@
                 <div class="enlaces ">
                     <a href="# ">CONTACTO</a>
                     <a href="# ">PREGUNTAS FRECUENTES</a>
-                    <a href="# ">BASES Y CONDICIONES</a>
+                    <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer ">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png ">
@@ -144,7 +145,7 @@
                         <a href="https://www.instagram.com "> <img src="./recursos/imagenes/instagram.png "></a>
                         <a href="https://twitter.com "> <img src="./recursos/imagenes/twitter.png "></a>
                     </div>
-                    <a href="# ">duodanza@club.com</a>
+                    <a href="# ">duodanzaclub@gmail.com</a>
                 </div>
             </footer>
         </div>
@@ -159,8 +160,8 @@
                         <div class="modal-editar ">
                             <h2>EDITAR PERFIL</h2>
                             <form>
-                                <input v-model="cambio.nombre" type="text" placeholder="Nombre">
-                                <input v-model="cambio.apellido" type="text" placeholder="Apellido">
+                                <input v-model="cambio.nombre" type="text" placeholder="Nombre" :value="usuario.nombre">
+                                <input v-model="cambio.apellido" type="text" placeholder="Apellido" :value="usuario.apellido">
                                 <input v-model="cambio.nacimiento" type="text" placeholder="Fecha de nacimiento">
 
                                 <input v-model="cambio.email" type="text" placeholder="e-mail">

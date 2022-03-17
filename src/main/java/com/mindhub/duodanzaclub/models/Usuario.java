@@ -31,6 +31,8 @@ public class Usuario {
     private Nivel nivel;
     private Rol rol;
     private Abono abono;
+    private String foto;
+    private String descripcion;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="academia_id")
@@ -58,9 +60,6 @@ public class Usuario {
     private List<Long> contactos = new ArrayList<Long>();
 
 
-
-
-
     public Usuario() {}
     public Usuario(String email, String password){
         this.email = email;
@@ -84,10 +83,7 @@ public class Usuario {
         setCiudad(ciudad);
         setNivel(nivel);
         setRol(rol);
-
     }
-
-
 
     public long getId() {return id;}
 
@@ -126,12 +122,10 @@ public class Usuario {
 
     @JsonIgnore
     public Set<Usuario> getFollowers() {return followers;}
-
     public void setFollowers(Set<Usuario> followers) {this.followers = followers;}
 
     @JsonIgnore
     public Set<Usuario> getFollowing() {return following;}
-
     public void setFollowing(Set<Usuario> following) {this.following = following;}
 
     @JsonIgnore
@@ -145,7 +139,7 @@ public class Usuario {
 
     @JsonIgnore
     public List<Clase> getClases(){
-        return usuarioClases.stream().map(usuarioClase -> usuarioClase.getClase()).collect(toList());
+        return usuarioClases.stream().map(UsuarioClase::getClase).collect(toList());
     }
 
     @JsonIgnore
@@ -160,4 +154,10 @@ public class Usuario {
         transaccion.setUsuario(this);
         transacciones.add(transaccion);
     }
+
+    public String getFoto() {return foto;}
+    public void setFoto(String foto) {this.foto = foto;}
+
+    public String getDescripcion() {return descripcion;}
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 }

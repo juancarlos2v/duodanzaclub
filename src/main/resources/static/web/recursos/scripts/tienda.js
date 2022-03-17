@@ -4,11 +4,23 @@ let app = new Vue({
         estilo: "",
         tipo: "",
         productos: [],
+        productoId: 0,
         filtroProductos: [],
         carrito: [],
+        stock: 0,
+        total: 0,
         abrirProducto: false,
         modalCarrito: false,
         modalContacto: false,
+        datosPago: false,
+        descripcion: "",
+        pago: {
+            tarjeta: "",
+            cvv: 0
+        }
+    },
+    created(){
+        this.loadProductos()
     },
     mounted() {
         pagina = document.querySelector(".contenedor-total");
@@ -16,14 +28,44 @@ let app = new Vue({
         calz = document.querySelector(".btn-calz");
     },
     methods: {
-        verProducto() {
-            if (this.abrirProducto == false) {
+        loadProductos(){
+            axios.get("/api/productos")
+            .then(response => this.productos = response.data)
+        },
+        formatoPrecio(number){
+            if(number != undefined){
+                let balance = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return balance;
+            }
+        },
+        elegirEstilo(estilo) {
+            this.estilo = estilo;
+        },
+        elegirTipo(tipo) {
+            this.tipo = tipo;
+            if (tipo == 'indumentaria') {
+                indu.classList.add('linea-seleccion');
+                calz.classList.remove('linea-seleccion');
+            }
+            if (tipo == 'calzado') {
+                indu.classList.remove('linea-seleccion');
+                calz.classList.add('linea-seleccion');
+            }
+
+        },
+        verProducto(id) {
+            
                 pagina.classList.add('desenfocar');
                 this.abrirProducto = true;
-            } else {
+            
+            this.productoId = this.productos.filter(producto => producto.id == id)
+            this.productoId = this.productoId[0]
+        },
+        volver(){
+            
                 pagina.classList.remove('desenfocar');
                 this.abrirProducto = false;
-            }
+            
         },
         abrirContacto() {
             if (this.modalContacto == false) {
@@ -45,21 +87,46 @@ let app = new Vue({
                 pagina.classList.remove('desenfocar');
             }
         },
-        elegirEstilo(estilo) {
-            this.estilo = estilo;
+        agregarProducto() {
+            if(app.stock <= app.productoId.stock){
+                for(let i = 0; i < app.stock ; i++){
+                    app.carrito.push(app.productoId);
+                    app.total += app.productoId.precio;
+                }
+                app.productoId.stock -= app.stock;
+                console.log(app.carrito);
+            }
         },
-        elegirTipo(tipo) {
-            this.tipo = tipo;
-            if (tipo == 'indumentaria') {
-                indu.classList.add('linea-seleccion');
-                calz.classList.remove('linea-seleccion');
-            }
-            if (tipo == 'calzado') {
-                indu.classList.remove('linea-seleccion');
-                calz.classList.add('linea-seleccion');
-            }
+        irPago() {
+            this.datosPago = true;
+        },
+        pagar() {
+            axios.post('/api/..', `nombre=${this.pago.tarjeta}&apellido=${this.pago.cvv}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
+                .then(response => {
 
+                })
+                .catch(error => {
+                    console.log(error.data);
+                })
+        },
+        comprar(){
+            this.descripcion = "Gracias por su compra";
+            
+            axios.post("http://localhost:8060/api/payments",
+            {"amount": this.total, "productosTransaccion": this.productos, "numberCard": this.pago.tarjeta, "cvv": this.pago.cvv, "description": app.descripcion})
+                .then(response => {
+                    console.log("Compra realizada")
+                    window.location.href = "/web/perfil.html";
+                })
+            .catch(error => console.log(error))
         }
-
     },
+
+})
+
+/**RESTRINGIR CVV A 3 DIGITOS*****/
+var input = document.getElementById('cvv');
+input.addEventListener('input', function() {
+    if (this.value.length > 3)
+        this.value = this.value.slice(0, 3);
 })

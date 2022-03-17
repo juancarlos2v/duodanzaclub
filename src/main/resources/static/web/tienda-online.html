@@ -66,19 +66,19 @@
                         <div class="estilo-salsa">
                             <div class="boton-estilo">
                                 <p>Salsa</p>
-                                <button type="button" @click="elegirEstilo('salsa')">Ir ></button>
+                                <button type="button" @click="elegirEstilo('SALSA')">Ir ></button>
                             </div>
                         </div>
                         <div class="estilo-bachata estilo-carta">
                             <div class="boton-estilo">
                                 <p>Bachata</p>
-                                <button type="button" @click="elegirEstilo('bachata')">Ir ></button>
+                                <button type="button" @click="elegirEstilo('BACHATA')">Ir ></button>
                             </div>
                         </div>
                         <div class="estilo-tango estilo-carta">
                             <div class="boton-estilo">
                                 <p>Tango</p>
-                                <button type="button" @click="elegirEstilo('tango')">Ir ></button>
+                                <button type="button" @click="elegirEstilo('TANGO')">Ir ></button>
                             </div>
                         </div>
                     </div>
@@ -86,21 +86,22 @@
                     <!-- FILTRO -->
                     <template>
                         <div class="contenedor-tipo">
-                            <button class="btn-ind" type="button"
-                                @click="elegirTipo('indumentaria')">INDUMENTARIA</button>
-                            <button class="btn-calz" type="button" @click="elegirTipo('calzado')">CALZADO</button>
+                            <button class="btn-ind" type="button" @click="elegirTipo('INDUMENTARIA')">INDUMENTARIA</button>
+                            <button class="btn-calz" type="button" @click="elegirTipo('CALZADO')">CALZADO</button>
                         </div>
                     </template>
                     <!-- PRODUCTOS -->
                     <!-- <template> -->
                     <!-- v-for="producto in productos" -->
                     <div class="contenedor-producto">
-                        <div class="producto-carta">
-                            <div class="img-producto"></div>
+                        <div v-for="producto in productos" class="producto-carta">
+                            <div class="img-producto">
+                                <img :src="producto.imagen" alt="Foto producto">
+                            </div>
                             <div>
-                                <p>$1000</p>
-                                <p>Nombre</p>
-                                <button type="button" @click="verProducto">Ver</button>
+                                <p>${{formatoPrecio(producto.precio)}}</p>
+                                <p>{{producto.titulo}}</p>
+                                <button type="button" @click="verProducto(producto.id)">Ver</button>
                             </div>
                         </div>
                     </div>
@@ -167,7 +168,7 @@
                 <div class="enlaces">
                     <a href="#/" @click="abrirContacto">CONTACTO</a>
                     <a href="#/">PREGUNTAS FRECUENTES</a>
-                    <a href="#/">BASES Y CONDICIONES</a>
+                    <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png">
@@ -189,41 +190,34 @@
                     <div class="contenedor-modal">
                         <div class="modal-producto">
                             <div class="img-producto-modal">
-
+                                <img :src="productoId.imagen" alt="Foto de producto" style="width:100%">
                             </div>
+                            
                             <div class="detalles">
                                 <div>
-                                    <h3>PRODUCTO</h3>
-                                    <div style="display: flex;align-items: center;">
-                                        <p style="margin-right: 2rem
-                                    ;">$ 10000 </p>
-                                        <p>stock:</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, est magnam fugiat
-                                        possimus, enim quisquam aliquam quia placeat eos earum aperiam quas officiis
-                                        laboriosam nisi reiciendis.</p>
+                                    <h3>{{productoId.titulo}}</h3>
+                                    <div style="display: flex;align-items: center;"><p style="margin-right: 2rem
+                                    ;">$ {{formatoPrecio(productoId.precio)}} </p> <p>stock:{{productoId.stock}}</p></div>
+                                    <p>{{productoId.descripcion}}</p>
                                 </div>
                                 <div class="datos-compra">
                                     <div>
+                                        
                                         <div class="input-unidad">
                                             <label for="u">Cant.</label>
-                                            <input id="u" type="number">
+                                            <input id="u" type="number" v-model="stock">
                                         </div>
                                         <div class="input-talle">
                                             <label for="talle">Talle</label>
                                             <select id="talle">
-                                                <option value="34">34</option>
-                                                <option value="36">36</option>
-                                                <option value="38">38</option>
-                                                <option value="40">40</option>
-                                                <option value="42">42</option>
-                                            </select>
+                                            <option v-for="talle in productoId.talle">{{talle}}</option>
+                                             </select>
                                         </div>
                                     </div>
-                                    <div class="botones-compra">
-                                        <button type="button">Agregar</button>
-                                        <button type="button" @click="abrirCarrito">Ver carrito</button>
-                                        <button type="button" @click="verProducto">Volver</button>
+                                    <div class="botones-compra">                     
+                                    <button type="button" @click="agregarProducto()">Agregar</button>
+                                    <button type="button" @click="abrirCarrito">Ver carrito</button>
+                                    <button type="button" @click="volver()">Volver</button>
                                     </div>
 
                                     <!-- <p>nombre talle precio stock descripcion</p> -->
@@ -234,6 +228,7 @@
                 </div>
             </transition>
         </template>
+       
         <template>
             <transition name="fade">
                 <section class="modal" v-show="modalCarrito==true">
@@ -248,29 +243,41 @@
                                 <th>Precio</th>
                             </thead>
                             <tbody>
-                                <!-- v-for="producto in carrito" -->
-                                <tr>
-                                    <td>{{producto.nombre </td>
-                                    <td>{{producto.descripcion </td>
-                                    <td>{{producto.talle </td>
-                                    <td>{{producto.precio </td>
+                                
+                                <tr v-for="producto in carrito">
+                                    <td>{{producto.titulo}} </td>
+                                    <td>{{producto.descripcion}} </td>
+                                    <td>{{producto.talle}} </td>
+                                    <td>${{ formatoPrecio(producto.precio) }} </td>
                                 </tr>
-                                <tr>
-                                    <td>{{producto.nombre </td>
-                                    <td>{{producto.descripcion </td>
-                                    <td>{{producto.talle </td>
-                                    <td>{{producto.precio </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                         <div style="display: flex; justify-content: flex-end;margin-right: 3rem;">
                             <p>TOTAL</p>
-                            <p>{{total </p>
+                            <p>${{ formatoPrecio(total) }}</p>
                         </div>
                         <div>
                             <button type="button" @click="abrirCarrito">Volver</button>
-                            <button type="button">Pagar</button>
+                            <button type="button" @click="irPago">Pagar</button>
                         </div>
+
+                        <div class="datos-tarjeta" v-show="datosPago==true">
+                            <h4>Datos de pago</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="3" y="5" width="18" height="14" rx="3" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                                <line x1="7" y1="15" x2="7.01" y2="15" />
+                                <line x1="11" y1="15" x2="13" y2="15" />
+                              </svg>
+                            <input type="text" placeholder="N° de tarjeta" v-model="pago.tarjeta">
+                            <label for="cvv">CVV</label>
+                            <input  id="cvv" type="number" min="111" max="999" v-model="pago.cvv">
+                            <button type="button" @click="comprar" id="boton-pagar">PAGAR</button>
+                        </div>
+
+                        
                     </div>
                 </section>
             </transition>

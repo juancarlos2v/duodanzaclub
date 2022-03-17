@@ -41,7 +41,7 @@ public class Clase {
     @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
     private Set<ProfesorClase> profesorClases = new HashSet<>();
 
-
+    //nivel y cambiar horarios
 
     public Clase() {}
     public Clase(String nombre, List<Double> horarios, Academia academia) {
@@ -62,17 +62,17 @@ public class Clase {
 
     @JsonIgnore
     public List<Sala> getSalas() {
-        return  salaClases.stream().map(salaClase -> salaClase.getSala()).collect(toList());
+        return  salaClases.stream().map(SalaClase::getSala).collect(toList());
     }
 
     @JsonIgnore
     public List<Profesor> getProfesores(){
-        return profesorClases.stream().map(profesorClase -> profesorClase.getProfesor()).collect(toList());
+        return profesorClases.stream().map(ProfesorClase::getProfesor).collect(toList());
     }
 
     @JsonIgnore
     public List<Usuario> getUsuarios(){
-        return usuarioClases.stream().map(usuarioClase -> usuarioClase.getUsuario()).collect(toList());
+        return usuarioClases.stream().map(UsuarioClase::getUsuario).collect(toList());
     }
 
     public long getId() {return id;}

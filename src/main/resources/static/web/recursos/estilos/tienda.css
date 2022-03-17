@@ -257,11 +257,19 @@ h3 {
 }
 
 .img-producto-modal {
+<<<<<<< HEAD
     background-image : url("../imagenes/calzado-1.jpg");
     background-size  : contain;
     background-repeat: no-repeat;
     height           : 10rem;
     width            : 30%;
+=======
+    /*background-image: url("../imagenes/calzado-1.jpg");*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*height: 10rem;*/
+    width: 30%;
+>>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
 }
 
 
@@ -357,6 +365,9 @@ h3 {
 .contenedor-producto {
     height    : auto;
     margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .img-producto {
@@ -365,11 +376,20 @@ h3 {
     width : 100%;
 }
 
+.img-producto img{
+    width: 100%;
+}
+
 .producto-carta {
     width        : 15%;
     height       : auto;
     border-radius: 0.3rem;
+<<<<<<< HEAD
     border       : 0.1rem solid rgba(0, 0, 0, 0.616);
+=======
+    border: 0.1rem solid rgba(0, 0, 0, 0.616);
+    margin-bottom: 2rem;
+>>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
 }
 
 .producto-carta>div+div {
@@ -385,6 +405,12 @@ h3 {
     padding         : 2rem;
     border-radius   : 0.5rem;
     background-color: var(--rosa-suave);
+    height: fit-content;
+    width: 100%;
+}
+
+.contenedor-carrito table{
+    width: 80%
 }
 
 .contenedor-carrito tr {
@@ -394,6 +420,20 @@ h3 {
 .contenedor-carrito th,
 .contenedor-carrito td {
     text-align: left;
+}
+
+
+/****input pago*****/
+
+.datos-tarjeta {
+    margin-top: 2rem;
+}
+
+#boton-pagar {
+    background-color: var(--footer-color);
+    color: white;
+    margin-left: 2rem;
+    padding: 0.3rem;
 }
 
 
