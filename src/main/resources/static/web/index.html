@@ -70,10 +70,8 @@
                     <div class="contenedor-texto">
                         <h2>CARIOCA</h2>
                         <p>
-                            Bienvenidos al primer portal de Danza en pareja, donde reunimos a personas de todo el país
-                            que disfrutan la vida bailando.
-                            Formamos una comunidad en contínuo crecimiento reforzando nuestras raices y aportando un sin
-                            fin de beneficios para quienes quieran formar parte.
+                            Bienvenidos al primer portal de Danza en pareja, donde reunimos a personas de todo el país que disfrutan la vida bailando. Formamos una comunidad en contínuo crecimiento reforzando nuestras raices y aportando un sin fin de beneficios para quienes quieran
+                            formar parte.
                         </p>
                     </div>
                 </div>
@@ -84,11 +82,8 @@
                         <div class="mano-izquierda"></div>
                         <div class="contenedor-texto2">
                             <p>
-                                Buscador ideal para tener toda la información
-                                que precisas en un solo lugar y de una manera simple y eficaz. Contamos con los
-                                profesores más dinámicos y con academias tanto pequeñas como grandes, así encuentras tu
-                                clase ideal a la carta y solo disfrutas de hacer lo que más te gusta, nosotros nos
-                                encargamos del resto.
+                                Buscador ideal para tener toda la información que precisas en un solo lugar y de una manera simple y eficaz. Contamos con los profesores más dinámicos y con academias tanto pequeñas como grandes, así encuentras tu clase ideal a la carta y solo disfrutas
+                                de hacer lo que más te gusta, nosotros nos encargamos del resto.
                             </p>
                         </div>
                         <div class="mano-derecha"></div>
@@ -131,9 +126,7 @@
                     </div>
                     <div class="tienda-texto">
                         <p>
-                            Sección de compra especializada en zapatos e indumentaria para practicar en tus clases,
-                            contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de
-                            escenario.
+                            Sección de compra especializada en zapatos e indumentaria para practicar en tus clases, contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de escenario.
                         </p>
                     </div>
                 </div>
@@ -155,8 +148,7 @@
                         <img class="img-fluid" src="./recursos/imagenes/home/Festivales1.png">
 
                         <p>
-                            Cartelera de espectáculos y eventos de baile en tu zona. Toda la información que necesitas y
-                            con opción de compra online. Las mejores salas y lugares para pasar la noche/día bailando.
+                            Cartelera de espectáculos y eventos de baile en tu zona. Toda la información que necesitas y con opción de compra online. Las mejores salas y lugares para pasar la noche/día bailando.
                         </p>
 
                         <div class="logos-tango">
@@ -172,9 +164,7 @@
                 <div class="seccion-milongas container-fluid">
                     <div class="contenedor-texto-milongas">
                         <h2>MILONGAS</h2>
-                        <p>Formando parte de la comunidad Dúo Danza Club estarás contínuamente informado de primera mano
-                            de las milongas de tu ciudad. Contamos con una grilla semanal y packs de clases con entradas
-                            de descuento para los usuarios abonados.
+                        <p>Formando parte de la comunidad Dúo Danza Club estarás contínuamente informado de primera mano de las milongas de tu ciudad. Contamos con una grilla semanal y packs de clases con entradas de descuento para los usuarios abonados.
                         </p>
                     </div>
                 </div>
@@ -198,7 +188,7 @@
                                         <input type="text" placeholder="e-mail">
                                     </div>
                                     <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                    <button type="button ">Enviar</button>
+                                    <button type="button" @click="enviarFormulario">Enviar</button>
                                 </div>
                             </div>
 
@@ -286,8 +276,8 @@
                                 <input id="fecha" v-model="registro.telefono" type="text">
                                 </div>
                                 <div>
-                                <label for="fecha">Ciudad</label>
-                                <input id="fecha" v-model="registro.ciudad" type="text">
+                                <label>Ciudad</label>
+                                <input  v-model="registro.ciudad" type="text">
                                 </div>
                             </div>
 
@@ -300,17 +290,17 @@
                                 <option value="avanzado">Avanzado</option></select>
                                 </div>
                                 <div>
-                                <label for="rol" v-model="registro.rol">Rol</label>
-                                <select id="rol"> 
+                                <label for="rol" >Rol</label>
+                                <select id="rol" v-model="registro.rol"> 
                                 <option value="lider">Lider</option>
                                 <option value="follower">Follower</option>
                                 <option value="ambos">Ambos</option></select>
                                 </div>
                                 <div>
-                                <label for="email" >E-mail</label>
-                                <input v-model="registro.email" type="text" id="email">
-                                <label for="contraseña">Crea una contraseña</label>
-                                <input v-model="registro.contraseña" type="password" id="contraseña">
+                                <label >E-mail</label>
+                                <input v-model="registro.email" type="text" >
+                                <label >Crea una contraseña</label>
+                                <input v-model="registro.contraseña" type="password" >
                                 </div>
                             </div>
                         </div>
@@ -322,7 +312,17 @@
                 </section>
             </transition>
         </template>
-
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="formEnviado==true">  
+                    <div class="envio-formulario" >
+                        <h2>Mensaje enviado</h2>
+                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                       <button type="button" @click="cerrar">VOLVER</button>
+                    </div>
+                </section>
+            </transition>
+        </template>
 
     </div>
 
@@ -332,5 +332,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
+
+</html>
 
 </html>

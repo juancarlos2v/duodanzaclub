@@ -19,6 +19,7 @@ let app = new Vue({
         logueado: false,
         modalIngreso: false,
         modalRegistro: false,
+        formEnviado: false,
     },
     created() {
         app.cargarUsuario();
@@ -81,6 +82,14 @@ let app = new Vue({
                 .catch(response => {
                     console.log(response.data);
                 })
+        },
+        enviarFormulario() {
+            this.formEnviado = true;
+            pagina.classList.add('desenfocar');
+        },
+        cerrar() {
+            this.formEnviado = false;
+            pagina.classList.remove('desenfocar');
         }
     },
 })
