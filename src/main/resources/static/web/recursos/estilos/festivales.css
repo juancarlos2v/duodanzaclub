@@ -771,7 +771,6 @@ form>div div+div {
 }
 
 .contenedor-modal {
-    height          : 25rem;
     width           : 20rem;
     background-color: var(--footer-color);
 }

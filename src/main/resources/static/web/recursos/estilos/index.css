@@ -464,7 +464,6 @@ form>div div+div {
 /*MODAL*/
 
 .contenedor-modal {
-    height: 25rem;
     width: 20rem;
     background-color: var(--footer-color);
 }
