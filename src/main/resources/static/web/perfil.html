@@ -55,9 +55,8 @@
                                 <div class="datos-usuario">
                                     <p>Nombre: {{usuario.nombre}} </p>
                                     <p>Apellido/s: {{usuario.apellido}} </p>
-                                    <p>Descripcion: {{usuario.descripcion}} </p>
                                     <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
-                                    
+                                    <p>Biografía: {{usuario.descripcion}} </p>
                                 </div>
                                 <div class="foto-perfil">
                                     <div v-show="noFoto" class="no-foto">
@@ -68,6 +67,7 @@
                             </div>
                             <div>
                                 <button type="button" @click="clickEditar">EDITAR</button>
+                                <button type="button" @click="cerrarSesion()">CERRAR SESIÓN</button>
                             </div>
                         </div>
 
@@ -137,7 +137,7 @@
                 <div class="enlaces ">
                     <a href="# ">CONTACTO</a>
                     <a href="# ">PREGUNTAS FRECUENTES</a>
-                    <a href="# ">BASES Y CONDICIONES</a>
+                    <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer ">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png ">

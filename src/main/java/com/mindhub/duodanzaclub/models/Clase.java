@@ -41,6 +41,8 @@ public class Clase {
     @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
     private Set<ProfesorClase> profesorClases = new HashSet<>();
 
+    //nivel y cambiar horarios
+
     public Clase() {}
     public Clase(String nombre, List<Double> horarios, Academia academia) {
         setNombre(nombre);
