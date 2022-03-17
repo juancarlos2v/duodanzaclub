@@ -60,9 +60,6 @@ public class Usuario {
     private List<Long> contactos = new ArrayList<Long>();
 
 
-
-
-
     public Usuario() {}
     public Usuario(String email, String password){
         this.email = email;
@@ -87,8 +84,6 @@ public class Usuario {
         setNivel(nivel);
         setRol(rol);
     }
-
-
 
     public long getId() {return id;}
 

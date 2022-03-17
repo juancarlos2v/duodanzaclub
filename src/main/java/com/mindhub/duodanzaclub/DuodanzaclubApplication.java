@@ -76,11 +76,34 @@ public class DuodanzaclubApplication {
 			Festival festivalBachata8 = new Festival("Yira Yira", Estilos.BACHATA, 500.0, List.of(19.00, 20.30));
 			Festival festivalBachata9 = new Festival("Camello de Rio", Estilos.BACHATA, 350.0, List.of(19.00, 20.30));
 			Festival festivalBachata10 = new Festival("A todo Ritmo", Estilos.BACHATA, 400.0, List.of(19.00, 20.30));
+			Profesor profesor1 = new Profesor("Fernando", "Obanos");
+			Profesor profesor2 = new Profesor("Romina", "Gasper");
+			Profesor profesor3 = new Profesor("María", "Muñoz");
+			Profesor profesor4 = new Profesor("Guillermo", "Ruiz");
+			Profesor profesor5 = new Profesor("Gio", "De Bellonia");
+			Profesor profesor6 = new Profesor("Lucia", "Be");
+			Profesor profesor7 = new Profesor("El Peque", "");
+			Profesor profesor8 = new Profesor("Rocío", "Lequio");
+			Profesor profesor9 = new Profesor("Bruno", "Tombari");
+			Profesor profesor10 = new Profesor("El Duende", "");
+			Profesor profesor11 = new Profesor("Marisa", "Talamoni");
+			Profesor profesor12 = new Profesor("Ricardo", "Calvo");
+			Profesor profesor13 = new Profesor("Soledad", "Cantarini");
+			Profesor profesor14 = new Profesor("Diego", "López");
+			Profesor profesor15 = new Profesor("Rosana", "Romero");
+			Profesor profesor16 = new Profesor("El colo", "Benítez");
+			Profesor profesor17 = new Profesor("Fernando", "Obanos");
+			Profesor profesor18 = new Profesor("Romi", "Gasperi");
+			Profesor profesor19 = new Profesor("Ani", "Badalyan");
+			Profesor profesor20 = new Profesor("Roberlito", "");
+			Profesor profesor21 = new Profesor("Tamara", "Bornia");
+			Profesor profesor22 = new Profesor("El Tano", "");
+			Profesor profesor23 = new Profesor("Los Tolis", "");
+			Profesor profesor24 = new Profesor("Yamila", "López");
+			Profesor profesor25 = new Profesor("Romeo", "");
+			Profesor profesor26 = new Profesor("Chayanne", "");
 			Productos producto1 = productoRepository.save(new Productos("Zapatos de Salsa", "Zapatos de cuero", 12000.0, "Insert path", Estilos.BACHATA, "39", TipoProducto.CALZADOS, 5));
 			Productos producto2 = productoRepository.save(new Productos("Camisa", "Camisa de seda", 3000.0, "Insert path", Estilos.SALSA, "39", TipoProducto.PRENDAS, 3));
-
-
-
 
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", new ArrayList<Double>(), academia1));
 			Clase clase2 = claseRepository.save(new Clase("Clase de tango", new ArrayList<Double>(), academia1));

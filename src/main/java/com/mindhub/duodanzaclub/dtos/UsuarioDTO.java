@@ -82,7 +82,6 @@ public class UsuarioDTO {
         setClases(usuario.getUsuarioClases().stream().map(UsuarioClaseDTO::new).collect(Collectors.toList()));
         setTransacciones(usuario.getTransacciones().stream().map(TransaccionDTO::new).collect(Collectors.toList()));
         setSuscripcion(usuario.getSuscripcion());
-
     }
 
     public long getId() {return id;}
