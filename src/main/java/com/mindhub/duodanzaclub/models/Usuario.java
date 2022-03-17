@@ -31,6 +31,8 @@ public class Usuario {
     private Nivel nivel;
     private Rol rol;
     private Abono abono;
+    private String foto;
+    private String descripcion;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="academia_id")
@@ -159,4 +161,10 @@ public class Usuario {
         transaccion.setUsuario(this);
         transacciones.add(transaccion);
     }
+
+    public String getFoto() {return foto;}
+    public void setFoto(String foto) {this.foto = foto;}
+
+    public String getDescripcion() {return descripcion;}
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 }

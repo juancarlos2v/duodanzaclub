@@ -23,9 +23,8 @@ public class Suscripcion {
     @Column(name = "precio")
     private List<Double> precios = new ArrayList<>();
 
-    @ElementCollection
-    @Column(name = "clases")
-    private List<Integer> clases = new ArrayList<>();
+
+    private int clases;
 
     @OneToMany(mappedBy = "suscripcion", fetch = FetchType.EAGER)
     private Set<Usuario> usuarios = new HashSet<>();
@@ -34,7 +33,7 @@ public class Suscripcion {
     public Suscripcion() {
     }
 
-    public Suscripcion(String nombre, List<Double> precios, List<Integer> clases) {
+    public Suscripcion(String nombre, List<Double> precios, int clases) {
         setNombre(nombre);
         setPrecios(precios);
         setClases(clases);
@@ -49,8 +48,8 @@ public class Suscripcion {
     public List<Double> getPrecios() {return precios;}
     public void setPrecios(List<Double> precios) {this.precios = precios;}
 
-    public List<Integer> getClases() {return clases;}
-    public void setClases(List<Integer> clases) {this.clases = clases;}
+    public int getClases() {return clases;}
+    public void setClases(int clases) {this.clases = clases;}
 
     @JsonIgnore
     public Set<Usuario> getUsuarios() {return usuarios;}

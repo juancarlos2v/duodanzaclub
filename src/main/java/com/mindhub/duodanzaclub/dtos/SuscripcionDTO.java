@@ -16,7 +16,7 @@ public class SuscripcionDTO {
     private long id;
     private String nombre;
     private List<Double> precios = new ArrayList<>();
-    private List<Integer> clases = new ArrayList<>();
+    private int clases;
     private Set<UsuarioDTO> usuarios = new HashSet<>();
 
 
@@ -41,8 +41,8 @@ public class SuscripcionDTO {
     public List<Double> getPrecios() {return precios;}
     public void setPrecios(List<Double> precios) {this.precios = precios;}
 
-    public List<Integer> getClases() {return clases;}
-    public void setClases(List<Integer> clases) {this.clases = clases;}
+    public int getClases() {return clases;}
+    public void setClases(int clases) {this.clases = clases;}
 
     @JsonIgnore
     public Set<UsuarioDTO> getUsuarios() {return usuarios;}

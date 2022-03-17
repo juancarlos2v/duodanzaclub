@@ -24,6 +24,7 @@ public class Festival {
     private Double precio;
     private Estilos estilo;
 
+
     @ElementCollection
     @Column(name="horarios")
     private List<Double> horarios = new ArrayList<>();
