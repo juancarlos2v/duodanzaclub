@@ -1,16 +1,16 @@
 body,
 html {
     font-family: 'Montserrat', sans-serif;
-    height: 100%;
-    width: 100%;
+    height     : 100%;
+    width      : 100%;
 }
 
 :root {
     --header-color: #dbc6b1;
     --footer-color: #5a7892;
-    --gray-color: #C4C4C4;
-    --rosa-suave: #fef8f8;
-    --light: #ffffff;
+    --gray-color  : #C4C4C4;
+    --rosa-suave  : #fef8f8;
+    --light       : #ffffff;
 }
 
 a {
@@ -19,7 +19,7 @@ a {
 
 button {
     background: transparent;
-    border: none;
+    border    : none;
 }
 
 button:hover {
@@ -36,11 +36,11 @@ textarea {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0;
+    margin            : 0;
 }
 
 select {
-    -moz-appearance: none;
+    -moz-appearance   : none;
     -webkit-appearance: none;
 }
 
@@ -50,64 +50,64 @@ option {
 
 .modal {
     /* position: fixed; */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    margin: auto;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    bottom         : 0;
+    display        : flex;
+    margin         : auto;
     justify-content: center;
-    align-items: center;
+    align-items    : center;
     /* overflow    : hidden; */
 }
 
 .contenedor-modal {
-    margin: auto;
-    width: 90%;
-    max-width: 50vw;
-    max-height: 90%;
+    margin          : auto;
+    width           : 90%;
+    max-width       : 50vw;
+    max-height      : 90%;
     background-color: #fef8f8;
-    border-radius: 0.5rem 1rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.26);
+    border-radius   : 0.5rem 1rem;
+    border          : 0.1rem solid rgba(0, 0, 0, 0.26);
 }
 
 .contenedor-manos {
-    display: flex;
+    display        : flex;
     justify-content: space-between;
-    position: absolute;
-    width: 100%;
+    position       : absolute;
+    width          : 100%;
 }
 
 .mano-izquierda {
-    background-image: url("../imagenes/home/mano_1.png");
-    height: 100%;
-    width: 22%;
-    background-size: contain;
+    background-image : url("../imagenes/home/mano_1.png");
+    height           : 100%;
+    width            : 22%;
+    background-size  : contain;
     background-repeat: no-repeat;
 }
 
 .mano-derecha {
-    background-image: url("../imagenes/home/mano_2.png");
-    height: 100%;
-    width: 22%;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image   : url("../imagenes/home/mano_2.png");
+    height             : 100%;
+    width              : 22%;
+    background-size    : contain;
+    background-repeat  : no-repeat;
     background-position: 100%;
 }
 
 .desenfocar {
     -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
+    -moz-filter   : blur(2px);
+    -o-filter     : blur(2px);
+    -ms-filter    : blur(2px);
+    filter        : blur(2px);
 }
 
 
 /*****SECCION-CONTACTO******/
 
 .contenedor-contacto {
-    margin-top: 6rem;
+    margin-top   : 6rem;
     margin-bottom: 3rem;
 }
 
@@ -117,64 +117,64 @@ option {
 
 .contenedor-contacto input,
 textarea {
-    border: 0.2rem solid var(--light);
+    border       : 0.2rem solid var(--light);
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 form>div:first-child {
-    width: 80%;
-    margin: auto;
-    display: flex;
+    width          : 80%;
+    margin         : auto;
+    display        : flex;
     justify-content: flex-end;
-    text-align: right;
+    text-align     : right;
 }
 
 form>div:first-child>p {
-    display: flex;
+    display         : flex;
     background-color: var(--header-color);
-    width: 20%;
-    padding: 0.5rem;
-    color: white;
-    margin: 0;
-    border-radius: 0.5rem 0.5rem 0 0;
-    font-weight: 500;
-    font-size: 3vh;
-    text-align: right;
-    padding-left: 3vw;
+    width           : 20%;
+    padding         : 0.5rem;
+    color           : white;
+    margin          : 0;
+    border-radius   : 0.5rem 0.5rem 0 0;
+    font-weight     : 500;
+    font-size       : 3vh;
+    text-align      : right;
+    padding-left    : 3vw;
 }
 
 .contenedor-form {
-    display: flex;
-    justify-content: space-between;
+    display         : flex;
+    justify-content : space-between;
     background-color: var(--header-color);
-    width: 80%;
-    margin: auto;
-    height: 19rem;
-    padding: 2rem;
-    border-radius: 0.5rem 0 0.5rem 0.5rem;
+    width           : 80%;
+    margin          : auto;
+    height          : 19rem;
+    padding         : 2rem;
+    border-radius   : 0.5rem 0 0.5rem 0.5rem;
 }
 
 .contenedor-form button {
     background-color: var(--gray-color);
-    width: 8rem;
-    padding: 0.4rem;
-    align-self: flex-end;
-    margin-top: 1rem;
-    border-radius: 0.3rem;
+    width           : 8rem;
+    padding         : 0.4rem;
+    align-self      : flex-end;
+    margin-top      : 1rem;
+    border-radius   : 0.3rem;
 }
 
 form>div div+div {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    padding-right: 14rem;
-    z-index: 9;
+    padding-right : 14rem;
+    z-index       : 9;
 }
 
 .logo-form {
-    background-image: url("../imagenes/logo_light.png");
-    width: 30%;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-image   : url("../imagenes/logo_light.png");
+    width              : 30%;
+    background-repeat  : no-repeat;
+    background-size    : contain;
     background-position: 50%;
 }
 
@@ -194,21 +194,21 @@ form>div div+div {
 .fade-leave-to
 /* .fade-leave-active below version 2.1.8 */
 
-{
+    {
     transition: opacity .4s;
-    opacity: 0
+    opacity   : 0
 }
 
 
 /***CONFIRMACION DE CONTACTO***/
 
 .envio-formulario {
-    height: auto;
-    width: 50%;
-    padding: 1rem;
+    height          : auto;
+    width           : 50%;
+    padding         : 1rem;
     background-color: var(--footer-color);
-    border-radius: 1rem;
-    color: var(--light)
+    border-radius   : 1rem;
+    color           : var(--light)
 }
 
 .envio-formulario button {
@@ -219,18 +219,29 @@ form>div div+div {
     p {
         font-size: 1.6vh !important;
     }
+
     h2 {
         font-size: 5vh !important;
     }
+
     h5 {
         font-size: 3vh !important;
     }
+
     th {
-        font-size: 1.5vh;
+        font-size : 1.5vh;
         text-align: center;
     }
+
     td {
-        font-size: 2vh;
+        font-size : 2vh;
         text-align: center;
     }
+}
+
+.img-ig {
+    display        : flex;
+    justify-content: center;
+    width          : 100%;
+    margin         : 0;
 }
