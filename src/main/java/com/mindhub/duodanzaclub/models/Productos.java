@@ -25,9 +25,6 @@ public class Productos {
     private int stock;
 
 
-
-
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "producto_id")
     private Transaccion transaccion;

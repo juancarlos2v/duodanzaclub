@@ -41,8 +41,6 @@ public class Clase {
     @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
     private Set<ProfesorClase> profesorClases = new HashSet<>();
 
-
-
     public Clase() {}
     public Clase(String nombre, List<Double> horarios, Academia academia) {
         setNombre(nombre);
