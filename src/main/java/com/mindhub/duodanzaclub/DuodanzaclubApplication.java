@@ -47,7 +47,7 @@ public class DuodanzaclubApplication {
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", new ArrayList<Double>(), academia1));
 			Clase clase2 = claseRepository.save(new Clase("Clase de tango", new ArrayList<Double>(), academia1));
 
-			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), Arrays.asList(1, 2));
+			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), 5);
 			suscripcionRepository.save(suscripcion1);
 		};
 	}
