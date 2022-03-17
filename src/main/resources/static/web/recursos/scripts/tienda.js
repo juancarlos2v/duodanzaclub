@@ -31,7 +31,8 @@ let app = new Vue({
                 this.modalContacto = true;
             } else {
                 pagina.classList.remove('desenfocar');
-                this.modalContacto = false;
+                this.modalContacto = false
+
 
             }
         },
