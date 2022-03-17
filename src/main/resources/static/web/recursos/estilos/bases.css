@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 section {
     margin         : 5rem;
     display        : flex;
     justify-content: center;
     margin-bottom  : 10rem;
+=======
+section {
+    margin         : 5rem;
+    display        : flex;
+    justify-content: center;
+    margin-bottom  : 10rem;
+>>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
 }
