@@ -61,14 +61,14 @@ public class UsuarioController {
         return new ResponseEntity<>("Foto eliminada", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/usuarios/current")
+    @PatchMapping("/usuarios/current/")
     public ResponseEntity<Object> agregarDatos(Authentication authentication,
-                                               @RequestParam String descripcion,
+                                              @RequestParam String descripcion,
                                                @RequestParam String foto) {
 
         Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
 
-        if(descripcion.isEmpty() || foto.isEmpty()) {
+        if(foto.isEmpty()  || descripcion.isEmpty() ) {
             return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
         }
 
@@ -79,6 +79,30 @@ public class UsuarioController {
         return new ResponseEntity<>("Datos agregados", HttpStatus.CREATED);
     }
 
+    @PatchMapping("/usuarios/current")
+    public ResponseEntity<Object> agregarDatos(Authentication authentication,
+
+                                               @RequestBody Usuario usuario) {
+
+        Usuario usuarioActual = usuarioService.findUsuarioByEmail(authentication.getName());
+
+        if(usuario.getNombre().isEmpty() || usuario.getApellido().isEmpty() || usuario.getEmail().isEmpty()
+                || usuario.getFechaNacimiento() == null || usuario.getCiudad().isEmpty() || usuario.getTelefono().isEmpty()
+                || usuario.getPassword().isEmpty()) {
+            return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
+        }
+
+        usuarioActual.setNombre(usuario.getNombre());
+        usuarioActual.setApellido(usuario.getApellido());
+        usuarioActual.setEmail(usuario.getEmail());
+        usuarioActual.setCiudad(usuario.getCiudad());
+        usuarioActual.setTelefono(usuario.getTelefono());
+        usuarioActual.setFechaNacimiento(usuario.getFechaNacimiento());
+        usuarioActual.setPassword(usuario.getPassword());
+        usuarioService.guardarUsuario(usuario);
+
+        return new ResponseEntity<>("Datos agregados", HttpStatus.CREATED);
+    }
 
 
 
