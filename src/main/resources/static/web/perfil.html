@@ -159,8 +159,8 @@
                         <div class="modal-editar ">
                             <h2>EDITAR PERFIL</h2>
                             <form>
-                                <input v-model="cambio.nombre" type="text" placeholder="Nombre">
-                                <input v-model="cambio.apellido" type="text" placeholder="Apellido">
+                                <input v-model="cambio.nombre" type="text" placeholder="Nombre" :value="usuario.nombre">
+                                <input v-model="cambio.apellido" type="text" placeholder="Apellido" :value="usuario.apellido">
                                 <input v-model="cambio.nacimiento" type="text" placeholder="Fecha de nacimiento">
 
                                 <input v-model="cambio.email" type="text" placeholder="e-mail">

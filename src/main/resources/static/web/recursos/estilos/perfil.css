@@ -179,6 +179,7 @@
     height: 20rem;
     position: relative;
     background-color: var(--gray-color);
+    background-color: #111111;
 }
 
 .match-info {
@@ -193,6 +194,7 @@
 
 .match-info p {
     padding-top: 5rem;
+    color: white;
 }
 
 .telas {
@@ -215,7 +217,7 @@
     height: 100%;
     margin-right: 0;
     position: absolute;
-    transform: translateX(67rem);
+    transform: translateX(77rem);
 }
 
 

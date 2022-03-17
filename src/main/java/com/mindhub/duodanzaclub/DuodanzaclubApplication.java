@@ -102,8 +102,8 @@ public class DuodanzaclubApplication {
 			Profesor profesor24 = new Profesor("Yamila", "López");
 			Profesor profesor25 = new Profesor("Romeo", "");
 			Profesor profesor26 = new Profesor("Chayanne", "");
-			Productos producto1 = productoRepository.save(new Productos("Zapatos de Salsa", "Zapatos de cuero", 12000.0, "Insert path", Estilos.BACHATA, "39", TipoProducto.CALZADOS, 5));
-			Productos producto2 = productoRepository.save(new Productos("Camisa", "Camisa de seda", 3000.0, "Insert path", Estilos.SALSA, "39", TipoProducto.PRENDAS, 3));
+			Productos producto1 = productoRepository.save(new Productos("Mono Troilo", "Zapatos de tango", 12000.0, "./recursos/imagenes/zapatos/mono_troilo.jpg", Estilos.BACHATA, "39", TipoProducto.CALZADOS, 5));
+			Productos producto2 = productoRepository.save(new Productos("Vestido Pugliese", "Vestido de seda", 3000.0, "./recursos/imagenes/zapatos/vestido_pugliese.jpg", Estilos.SALSA, "39", TipoProducto.PRENDAS, 3));
 
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", new ArrayList<Double>(), academia1));
 			Clase clase2 = claseRepository.save(new Clase("Clase de tango", new ArrayList<Double>(), academia1));

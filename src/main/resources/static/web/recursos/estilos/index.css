@@ -452,6 +452,10 @@ form>div div+div {
     margin-bottom: 1rem;
 }
 
+.formulario-contacto{
+    margin-top: 7rem;
+}
+
 .usuario{
     width: 100%!important;
 }

@@ -30,6 +30,13 @@
                         <div>
                             <a href="#">Contacto</a>
                             <a href="./tienda-online.html">Tienda</a>
+                            <a href="#/" @click="abrirCarrito"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <circle cx="6" cy="19" r="2" />
+                                <circle cx="17" cy="19" r="2" />
+                                <path d="M17 17h-11v-14h-2" />
+                                <path d="M6 5l14 1l-1 7h-13" />
+                              </svg></a>
                             <button type="button" @click="abrirModal"><svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-user-circle" width="32" height="32"
                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none"
@@ -39,6 +46,7 @@
                                     <circle cx="12" cy="10" r="3" />
                                     <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
                                 </svg></button>
+
                         </div>
                     </nav>
                     <img src="./recursos/imagenes/logoOKlight.png">
@@ -69,10 +77,8 @@
                     <div class="manos">
 
                         <div class="contenedor-texto3">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores neque optio itaque vero,
-                                voluptatibus mollitia dolorem, harum quos minima numquam doloremque qui veritatis
-                                doloribus totam, molestias inventore iure consequuntur
-                                aliquam!
+                            <p>Buscador de espectáculos y eventos de baile en tu zona. Toda la información que necesitas y con opción
+                                de compra online. Las mejores salas y lugares para pasar la noche/día bailando.
                             </p>
                         </div>
 
@@ -81,11 +87,11 @@
                 <!-- <div class="mano-izquierda"></div> -->
                 <div class="seccion-milongas">
                     <div class="contenedor-texto-milongas">
-                        <h2>MILONGAS</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At a iusto consequatur dignissimos
-                            quibusdam. Voluptatem veritatis possimus perspiciatis et fuga reiciendis culpa dolorum
-                            mollitia assumenda amet earum, exercitationem, quos
-                            necessitatibus?
+                        <h2>CARTELERA</h2>
+                        <p>
+                            En tres sencillos pasos vas a poder filtrar la lista de eventos y festivales por estilo y ubicación.
+                            Luego sencillamente escoges cual prefieres, seleccionas la cantidad de entradas y las compartes con quien
+                            más te guste compartir en pista.
                         </p>
                     </div>
                 </div>
@@ -135,56 +141,12 @@
                         <img src="./recursos/imagenes/festivales/festi1.png" alt="">
                     </div>
                     <div class="texto-evento">
-                        <h2>CLUB GRICEL</h2>
-                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
-                            ofrece lecciones.
-                        </p>
+                        <h2>PERCANTA TANGO</h2>
+                        <p>Salón de baile tradicional de milonga y tango con en pleno centro de la ciudad de Rosario piso de madera que
+                             también ofrece lecciones en sus tres salas polivalentes.</p>
 
-                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
-                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
-                        </p>
-                        <div class="botones-evento">
-                            <button>1</button>
-                            <a href="">SELECCIONAR</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="contenedor-evento-gris">
-
-                    <div class="texto-evento-gris">
-                        <h2>CLUB GRICEL</h2>
-                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
-                            ofrece lecciones.
-                        </p>
-
-                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
-                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
-                        </p>
-                        <div class="botones-evento-gris">
-                            <button> 1</button>
-                            <a href="">SELECCIONAR</a>
-                        </div>
-                    </div>
-                    <div class="circulo-imagen">
-                        <img src="./recursos/imagenes/festivales/festi1.png" alt="">
-                    </div>
-
-                </div>
-
-                <div class="contenedor-evento">
-                    <div class="circulo-imagen">
-                        <img src="./recursos/imagenes/festivales/festi1.png" alt="">
-                    </div>
-                    <div class="texto-evento">
-                        <h2>CLUB GRICEL</h2>
-                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
-                            ofrece lecciones.
-                        </p>
-
-                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
-                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
+                        <p> Salta 1568 PA, S2000 Rosario, Santa Fe, Argentina - Horas:
+                            Cerrado ⋅ Abre a las 20:00 - Teléfono: +54 9 11 4102-7810
                         </p>
                         <div class="botones-evento">
                             <button>1</button>
@@ -211,14 +173,10 @@
                         </div>
                     </div>
                     <div class="circulo-imagen">
-                        <img src="./recursos/imagenes/festivales/festi1.png" alt="">
+                        <img src="./recursos/imagenes/festivales/6.png" alt="">
                     </div>
 
                 </div>
-
-
-
-
 
                 <div class="sponsors">
                     <div></div>
