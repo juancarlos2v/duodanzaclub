@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./recursos/estilos/tienda-movil.css">
     <link rel="stylesheet" href="./recursos/estilos/nav-tienda.css">
     <link rel="stylesheet" href="./recursos/estilos/footer.css">
+    <link rel="shortcut icon" href="./recursos/imagenes/favIcon.png">
     <title>Tienda Online | Duo Danza Club</title>
 </head>
 
@@ -27,13 +28,16 @@
                         <a href="./index.html">Home</a>
                         <a href="./clases.html">Clases</a>
                         <a href="./festivales.html">Festivales</a>
-                        <a href="#/" @click="abrirCarrito"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l14 1l-1 7h-13" />
-                  </svg></a>
+                        <a href="#/" @click="abrirCarrito"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="6" cy="19" r="2" />
+                                <circle cx="17" cy="19" r="2" />
+                                <path d="M17 17h-11v-14h-2" />
+                                <path d="M6 5l14 1l-1 7h-13" />
+                            </svg></a>
                     </nav>
 
                 </div>
@@ -45,8 +49,9 @@
                         <div class="pareja-img"></div>
                     </div>
                     <div class="contenedor-descripcion contain">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nisi facilis temporibus aliquam pariatur nostrum itaque modi, quaerat qui culpa magni eveniet rem hic, esse excepturi deserunt architecto nemo optio. Lorem ipsum, dolor
-                            sit amet consectetur adipisicing elit. Aut nisi facilis.
+                        <p>Sección de compra especializada en zapatos e indumentaria para practicar en tus clases,
+                            contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de
+                            escenario.
                         </p>
                     </div>
                 </div>
@@ -81,7 +86,8 @@
                     <!-- FILTRO -->
                     <template>
                         <div class="contenedor-tipo">
-                            <button class="btn-ind" type="button" @click="elegirTipo('indumentaria')">INDUMENTARIA</button>
+                            <button class="btn-ind" type="button"
+                                @click="elegirTipo('indumentaria')">INDUMENTARIA</button>
                             <button class="btn-calz" type="button" @click="elegirTipo('calzado')">CALZADO</button>
                         </div>
                     </template>
@@ -103,12 +109,14 @@
                     <div class="contenedor-info">
                         <div class="envios">
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="150" height="150" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck"
+                                    width="150" height="150" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="7" cy="17" r="2" />
                                     <circle cx="17" cy="17" r="2" />
                                     <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
-                                  </svg>
+                                </svg>
                             </div>
                             <div>
                                 <h5>ENVIOS GRATIS 24 HS HABILES</h5>
@@ -126,11 +134,14 @@
 
                             <div class="mas-info">
                                 <a href="#/">
-                                    <svg style="margin-bottom: 0.5rem;" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <circle cx="12" cy="12" r="9" />
-                                    <line x1="12" y1="17" x2="12" y2="17.01" />
-                                    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+                                    <svg style="margin-bottom: 0.5rem;" xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-help" width="50" height="50"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="12" r="9" />
+                                        <line x1="12" y1="17" x2="12" y2="17.01" />
+                                        <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
                                     </svg>
                                     <h3>AYUDA</h3>
                                     <p>Resolve tu duda o consulta</p>
@@ -178,16 +189,21 @@
                     <div class="contenedor-modal">
                         <div class="modal-producto">
                             <div class="img-producto-modal">
-                                
+
                             </div>
                             <div class="detalles">
                                 <div>
                                     <h3>PRODUCTO</h3>
-                                    <div style="display: flex;align-items: center;"><p style="margin-right: 2rem
-                                    ;">$ 10000 </p> <p>stock:</p></div>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, est magnam fugiat possimus, enim quisquam aliquam quia placeat eos earum aperiam quas officiis laboriosam nisi reiciendis.</p>
+                                    <div style="display: flex;align-items: center;">
+                                        <p style="margin-right: 2rem
+                                    ;">$ 10000 </p>
+                                        <p>stock:</p>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, est magnam fugiat
+                                        possimus, enim quisquam aliquam quia placeat eos earum aperiam quas officiis
+                                        laboriosam nisi reiciendis.</p>
                                 </div>
-                                <div class="datos-compra">  
+                                <div class="datos-compra">
                                     <div>
                                         <div class="input-unidad">
                                             <label for="u">Cant.</label>
@@ -196,19 +212,20 @@
                                         <div class="input-talle">
                                             <label for="talle">Talle</label>
                                             <select id="talle">
-                                            <option value="34">34</option>
-                                            <option value="36">36</option>
-                                            <option value="38">38</option>
-                                            <option value="40">40</option>
-                                            <option value="42">42</option> </select>
+                                                <option value="34">34</option>
+                                                <option value="36">36</option>
+                                                <option value="38">38</option>
+                                                <option value="40">40</option>
+                                                <option value="42">42</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="botones-compra">                     
-                                    <button type="button">Agregar</button>
-                                    <button type="button" @click="abrirCarrito">Ver carrito</button>
-                                    <button type="button" @click="verProducto">Volver</button>
+                                    <div class="botones-compra">
+                                        <button type="button">Agregar</button>
+                                        <button type="button" @click="abrirCarrito">Ver carrito</button>
+                                        <button type="button" @click="verProducto">Volver</button>
                                     </div>
-                                    
+
                                     <!-- <p>nombre talle precio stock descripcion</p> -->
                                 </div>
                             </div>
@@ -262,31 +279,32 @@
             <transition name="fade">
                 <section class="modal" v-show="modalContacto==true">
                     <div class="contenedor-manos">
-                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-izquierda izquierda-contacto img-fluid"
+                            src="./recursos/imagenes/home/mano_1.png">
                         <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
                     </div>
-                        <div class="contenedor-modal">
-                            <form>
+                    <div class="contenedor-modal">
+                        <form>
+                            <div>
+                                <p>CONTACTO</p>
+                            </div>
+                            <div class="contenedor-form">
+                                <div class="logo-form"></div>
                                 <div>
-                                    <p>CONTACTO</p>
-                                </div>
-                                <div class="contenedor-form">
-                                    <div class="logo-form"></div>
                                     <div>
-                                        <div>
-                                            <input type="text" placeholder="nombre">
-                                            <input type="text" placeholder="e-mail">
-                                        </div>
-                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                        <div class="botones">
-                                            <button type="button">ENVIAR</button>
-                                            <button type="button" @click="abrirContacto">VOLVER</button>
-                                        </div>
+                                        <input type="text" placeholder="nombre">
+                                        <input type="text" placeholder="e-mail">
+                                    </div>
+                                    <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                    <div class="botones">
+                                        <button type="button">ENVIAR</button>
+                                        <button type="button" @click="abrirContacto">VOLVER</button>
                                     </div>
                                 </div>
+                            </div>
 
-                            </form>
-                        </div>
+                        </form>
+                    </div>
                 </section>
             </transition>
         </template>
@@ -296,7 +314,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
     <script src="./recursos/scripts/tienda.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p "
+        crossorigin="anonymous "></script>
 </body>
 
 </html>
