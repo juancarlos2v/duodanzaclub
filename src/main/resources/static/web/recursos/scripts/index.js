@@ -24,7 +24,7 @@ let app = new Vue({
             this.modalIngreso = false;
         },
         ingresar() {
-            axios.post('/api/login', `email=${this.ingreso.usuario}&password=${this.ingreso.contraseña}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
+            axios.post('http://localhost:8090/api/login', `email=${this.ingreso.usuario}&password=${this.ingreso.contraseña}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
                 .then(response => {
                     window.location.href = "/web/perfil.html"
                 })

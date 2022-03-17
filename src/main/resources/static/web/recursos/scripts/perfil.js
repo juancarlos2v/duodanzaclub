@@ -1,7 +1,7 @@
 let app = new Vue({
     el: '#app',
     data: {
-        usuario: [],
+        usuario: {},
         cambio: {
             nombre: "",
             apellido: "",
@@ -18,6 +18,9 @@ let app = new Vue({
         },
         editarPerfil: false,
     },
+    created(){
+        this.loadData()
+    },
     mounted() {
         pagina = document.querySelector(".contenedor-total");
         s = document.querySelector(".suelta");
@@ -25,6 +28,14 @@ let app = new Vue({
         t = document.querySelector(".trimestral");
     },
     methods: {
+        loadData(){
+            axios.get("/api/usuarios/current")
+            .then(response => {
+                console.log(response.data);
+                this.usuario = response.data
+                console.log(this.usuario.nombre)
+            })
+        },
         clickSuelta() {
             s.classList.add('abono-activo');
             m.classList.remove('abono-activo');
