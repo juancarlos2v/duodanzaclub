@@ -47,6 +47,65 @@ public class UsuarioController {
         return usuarioService.findByEmail(authentication.getName());
     }
 
+    @PatchMapping("/usuarios/current/deletephoto")
+    public ResponseEntity<Object> borrarFoto(Authentication authentication){
+        Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
+
+        if(usuario.getFoto().isEmpty()) {
+            return new ResponseEntity<>("No hay foto para eliminar", HttpStatus.FORBIDDEN);
+        }
+
+        usuario.setFoto(null);
+        usuarioService.guardarUsuario(usuario);
+
+        return new ResponseEntity<>("Foto eliminada", HttpStatus.CREATED);
+    }
+
+    @PatchMapping("/usuarios/current/")
+    public ResponseEntity<Object> agregarDatos(Authentication authentication,
+                                              @RequestParam String descripcion,
+                                               @RequestParam String foto) {
+
+        Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
+
+        if(foto.isEmpty()  || descripcion.isEmpty() ) {
+            return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
+        }
+
+        usuario.setDescripcion(descripcion);
+        usuario.setFoto(foto);
+        usuarioService.guardarUsuario(usuario);
+
+        return new ResponseEntity<>("Datos agregados", HttpStatus.CREATED);
+    }
+
+    @PatchMapping("/usuarios/current")
+    public ResponseEntity<Object> agregarDatos(Authentication authentication,
+
+                                               @RequestBody Usuario usuario) {
+
+        Usuario usuarioActual = usuarioService.findUsuarioByEmail(authentication.getName());
+
+        if(usuario.getNombre().isEmpty() || usuario.getApellido().isEmpty() || usuario.getEmail().isEmpty()
+                || usuario.getFechaNacimiento() == null || usuario.getCiudad().isEmpty() || usuario.getTelefono().isEmpty()
+                || usuario.getPassword().isEmpty()) {
+            return new ResponseEntity<>("Complete los campos", HttpStatus.FORBIDDEN);
+        }
+
+        usuarioActual.setNombre(usuario.getNombre());
+        usuarioActual.setApellido(usuario.getApellido());
+        usuarioActual.setEmail(usuario.getEmail());
+        usuarioActual.setCiudad(usuario.getCiudad());
+        usuarioActual.setTelefono(usuario.getTelefono());
+        usuarioActual.setFechaNacimiento(usuario.getFechaNacimiento());
+        usuarioActual.setPassword(usuario.getPassword());
+        usuarioService.guardarUsuario(usuario);
+
+        return new ResponseEntity<>("Datos agregados", HttpStatus.CREATED);
+    }
+
+
+
     @PostMapping("/usuarios")
     public ResponseEntity<Object> register(@RequestBody UsuarioDTO usuarioDTO){
         Usuario usuario = usuarioService.findUsuarioByEmail(usuarioDTO.getEmail());

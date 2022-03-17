@@ -35,7 +35,7 @@ public class ClaseDTO {
         setNombre(clase.getNombre());
         setHorarios(clase.getHorarios());
         setPrecioClase(clase.getPrecioClase());
-        setHorarios(clase.getHorarios());
+
         setSalas(clase.getSalaClases().stream().map(SalaClaseDTO::new).collect(Collectors.toSet()));
         setProfesores(clase.getProfesorClases().stream().map(ProfesorClaseDTO::new).collect(Collectors.toSet()));
         setUsuarios(clase.getUsuarios().stream().map(UsuarioDTO::new).collect(Collectors.toList()));

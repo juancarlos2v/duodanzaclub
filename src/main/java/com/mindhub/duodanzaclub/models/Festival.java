@@ -24,6 +24,7 @@ public class Festival {
     private Double precio;
     private Estilos estilo;
 
+
     @ElementCollection
     @Column(name="horarios")
     private List<Double> horarios = new ArrayList<>();
@@ -40,7 +41,7 @@ public class Festival {
     }
 
     @JsonIgnore
-    public List<Sala> getSalas() {return  salaFestival.stream().map(salaFestival -> salaFestival.getSala()).collect(toList());}
+    public List<Sala> getSalas() {return  salaFestival.stream().map(SalaFestival::getSala).collect(toList());}
 
     public long getId() {return id;}
 

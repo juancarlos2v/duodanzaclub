@@ -20,12 +20,13 @@ public class Productos {
     private Double precio;
     private String imagen;
     private Estilos estilo;
-    private String talle;
+
+    @ElementCollection
+    @Column(name="talles")
+    private List<String> talle = new ArrayList<>();
+
     private TipoProducto tipoProducto;
     private int stock;
-
-
-
 
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -37,7 +38,7 @@ public class Productos {
 
 
     public Productos() {}
-    public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, String talle, TipoProducto tipoProducto, int stock) {
+    public Productos(String titulo, String descripcion, Double precio, String imagen, Estilos estilo, List<String> talle, TipoProducto tipoProducto, int stock) {
         setTitulo(titulo);
         setDescripcion(descripcion);
         setPrecio(precio);
@@ -65,8 +66,8 @@ public class Productos {
     public Estilos getEstilo() {return estilo;}
     public void setEstilo(Estilos estilo) {this.estilo = estilo;}
 
-    public String getTalle() {return talle;}
-    public void setTalle(String talle) {this.talle = talle;}
+    public List<String> getTalle() {return talle;}
+    public void setTalle(List<String> talle) {this.talle = talle;}
 
     public TipoProducto getTipoProducto() {return tipoProducto;}
     public void setTipoProducto(TipoProducto tipoProducto) {this.tipoProducto = tipoProducto;}

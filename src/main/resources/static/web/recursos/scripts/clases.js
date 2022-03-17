@@ -1,6 +1,7 @@
 let app = new Vue({
     el: '#app',
     data: {
+        clases: [],
         ciudades: [],
         modalContacto: false,
     },
@@ -13,6 +14,7 @@ let app = new Vue({
         //     .then(response => {
         //         console.log(response.data);
         //     })
+        app.cargarClases();
         pagina = document.querySelector(".contenedor-total");
     },
     methods: {
@@ -25,6 +27,12 @@ let app = new Vue({
                 this.modalContacto = false;
 
             }
+        },
+        cargarClases() {
+            axios.get("/api/clases")
+                .then(response => {
+                    console.log(response);
+                })
         }
     },
 })

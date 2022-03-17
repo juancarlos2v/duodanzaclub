@@ -1,9 +1,9 @@
 package com.mindhub.duodanzaclub.models;
 
 public enum PrecioClase {
-    ESTANDAR(300.0),
-    DESCUENTO(220.0),
-    USUARIO(270.0);
+    ESTANDAR(600.0),
+    DESCUENTO(500.0),
+    USUARIO(400.0);
 
     private Double precio;
 
