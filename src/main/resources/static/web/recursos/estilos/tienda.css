@@ -29,9 +29,9 @@
     display        : flex;
     justify-content: right;
     position       : absolute;
-    margin-top     : -50rem;
+    margin-top     : 90rem;
     width          : 100%;
-    z-index        : 0 !important;
+    z-index        : 5 !important;
 }
 
 .contenedor-manos2 {
@@ -46,11 +46,17 @@
 .mano-izquierda {
     background-image : url("../imagenes/home/mano_1.png");
     height           : 100%;
-    width            : 100%;
+    
     background-size  : contain;
     background-repeat: no-repeat;
 }
-
+.mano-izquierda1 {
+    background-image : url("../imagenes/home/mano_1.png");
+    height           : 100%;
+    width: 100%;
+    background-size  : contain;
+    background-repeat: no-repeat;
+}
 .mano-derecha {
     background-image   : url("../imagenes/home/mano_2.png");
     height             : 100%;
