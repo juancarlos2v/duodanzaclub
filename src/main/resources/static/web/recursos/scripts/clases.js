@@ -8,8 +8,10 @@ let app = new Vue({
         ciudades: [],
         alumnos: [],
         formulario: {
-            usuario: 0
+            usuario: 0,
+            usuario2: 0
         },
+        seleccionado: {},
         modalContacto: false,
         modalContacto: false,
         formEnviado: false,
@@ -82,7 +84,7 @@ let app = new Vue({
             app.formulario.usuario = clase;
         },
         anotarEnClase() {
-            axios.post("/api/usuarios/clases", { "usuario": `${app.formulario.usuario}` })
+            axios.post("/api/usuarios/clases", { "usuario": `${app.formulario.usuario}`, "usuario2": `${app.formulario.usuario2}`})
                 .then(response => {
                     window.location.href = "/web/index.html"
                 })

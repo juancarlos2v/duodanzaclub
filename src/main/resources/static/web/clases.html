@@ -225,7 +225,7 @@
                     <div>
                         <h4>ALUMNOS</h4>
                         <div class="nombres">
-                            <p class="alumno" v-for="alumno in alumnos">{{ alumno.nombre }} {{ alumno.apellido }} <input type="radio" name="alumnoId" id=""></p>
+                            <p class="alumno" v-for="alumno in alumnos">{{ alumno.nombre }} {{ alumno.apellido }} <input type="radio" name="alumnoId" v-model="formulario.usuario2" :value="alumno.id"></p>
                         </div>
                         <div class="detalle-clase">
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium itaque consectetur in accusantium laboriosam aut quaerat odit quasi, molestiae quae. Necessitatibus amet voluptas sequi vel assumenda corporis dolor nam itaque!
@@ -252,10 +252,10 @@
                         <img class="logo-usuario img-fluid" src="./recursos/imagenes/perfil_usuario.png">
                         <div>
                             <div class="datos-usuario">
-                                <p>Nombre: {{usuario.nombre </p>
-                                <p>Apellido/s: {{usuario.apellido </p>
-                                <p>Fecha de nacimiento: {{usuario.fechaNacimiento</p>
-                                <p>Biografía: {{usuario.descripcion </p>
+                                <p>Nombre: {{seleccionado.nombre}}</p>
+                                <p>Apellido/s: {{seleccionado.apellido}}</p>
+                                <p>Fecha de nacimiento: {{seleccionado.fechaNacimiento}}</p>
+                                <p>Biografía: {{seleccionado.descripcion}}</p>
                             </div>
                             <div class="foto-perfil">
                                 <!-- <div v-show="noFoto" class="no-foto">
