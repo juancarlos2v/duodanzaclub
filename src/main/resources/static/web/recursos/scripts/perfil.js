@@ -118,13 +118,13 @@ let app = new Vue({
         },
         editarInfo() {
             axios.patch("/api/usuarios/current", {
-                    "nombre": this.cambio.nombre,
-                    "apellido": this.cambio.apellido,
-                    "fechaNacimiento": this.cambio.nacimiento,
-                    "descripcion": this.cambio.descripcion,
-                    "foto": this.cambio.foto,
-                    "ciudad": this.cambio.ciudad,
-                    "telefono": this.cambio.telefono
+                    "nombre": this.usuario.nombre,
+                    "apellido": this.usuario.apellido,
+                    "fechaNacimiento": this.usuario.nacimiento,
+                    "descripcion": this.usuario.descripcion,
+                    "foto": this.usuario.foto,
+                    "ciudad": this.usuario.ciudad,
+                    "telefono": this.usuario.telefono
                 })
                 .then(() => {
                     console.log("Cambios realizados")

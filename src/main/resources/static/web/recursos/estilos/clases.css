@@ -226,6 +226,7 @@ div>h3 {
 .tabla-clase tbody td {
     font-size: 1.2rem;
     font-weight: 600;
+    color: #555555;
 }
 
 .reservar {
@@ -275,7 +276,22 @@ div>h3 {
     height: 10rem;
 }
 
+.boton-volver{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
 
+.nombres{
+    text-align: right;
+    width: 50%;
+}
+
+.alumno{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555555;
+}
 /*****MODAL****/
 
 .contenedor-modal {

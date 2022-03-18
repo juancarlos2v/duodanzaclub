@@ -1,9 +1,15 @@
 let app = new Vue({
     el: '#app',
     data: {
+        academias: [],
+        academia: {},
         clase: {},
         clases: [],
         ciudades: [],
+        alumnos: [],
+        formulario: {
+            usuario: 0
+        },
         modalContacto: false,
         modalContacto: false,
         formEnviado: false,
@@ -20,6 +26,7 @@ let app = new Vue({
         //         console.log(response.data);
         //     })
         this.cargarClases();
+        this.cargarAcademias();
 
     },
     methods: {
@@ -34,10 +41,15 @@ let app = new Vue({
 
             }
         },
+        cargarAcademias() {
+            axios.get("/api/academias")
+                .then(response => {
+                    app.academias = response.data;
+                })
+        },
         cargarClases() {
             axios.get("/api/clases")
                 .then(response => {
-                    console.log(response);
                     app.clases = response.data;
                 })
         },
@@ -64,7 +76,16 @@ let app = new Vue({
             this.detalleClase = false;
         },
         elegirClase(clase) {
-            app.clase = app.clases[clase];
+            app.clase = app.clases[clase - 1];
+            app.alumnos = app.clase.usuarios;
+            app.academia = app.academias[app.clase.academiaId - 1];
+            app.formulario.usuario = clase;
+        },
+        anotarEnClase() {
+            axios.post("/api/usuarios/clases", { "usuario": `${app.formulario.usuario}` })
+                .then(response => {
+                    window.location.href = "/web/index.html"
+                })
         },
         abrirPerfil() {
             this.perfil = true;
@@ -73,6 +94,6 @@ let app = new Vue({
         cerrarPerfil() {
             this.perfil = false;
             this.detalleClase = true;
-        }
-    },
+        },
+    }
 })
