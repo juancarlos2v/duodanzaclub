@@ -142,8 +142,8 @@
 
             <footer>
                 <div class="enlaces ">
-                    <a href="# ">CONTACTO</a>
-                    <a href="# ">PREGUNTAS FRECUENTES</a>
+                    <a href="#/" @click="abrirContacto">CONTACTO</a>
+                    <a href="#/">PREGUNTAS FRECUENTES</a>
                     <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer ">
@@ -170,14 +170,14 @@
                         <div class="modal-editar ">
                             <h2>EDITAR PERFIL</h2>
                             <form>
-                                <input v-model="cambio.nombre" type="text" placeholder="Nombre">
-                                <input v-model="cambio.apellido" type="text" placeholder="Apellido">
-                                <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
-                                <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
+                                <input v-model="usuario.nombre" type="text" placeholder="Nombre">
+                                <input v-model="usuario.apellido" type="text" placeholder="Apellido">
+                                <input v-model="usuario.nacimiento" type="date" placeholder="Fecha de nacimiento">
+                                <input v-model="usuario.foto" type="text" placeholder="Agregar foto">
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
-                                <input v-model="cambio.ciudad" type="text" placeholder="Ciudad">
-                                <input v-model="cambio.telefono" type="number" placeholder="Telefono">
-                                <textarea class="textarea" v-model="cambio.descripcion" rows="4" cols="30" placeholder="Agregar biografía"></textarea>
+                                <input v-model="usuario.ciudad" type="text" placeholder="Ciudad">
+                                <input v-model="usuario.telefono" type="number" placeholder="Telefono">
+                                <textarea class="textarea" v-model="usuario.descripcion" rows="4" cols="30" placeholder="Agregar biografía"></textarea>
                                 
                                 <!--<input v-model="cambio.contraseña" type="password" placeholder="Contraseña">-->
                             </form>
@@ -187,6 +187,49 @@
                             </div>
                         </div>
 
+                    </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="modalContacto==true">
+                    <div class="contenedor-manos">
+                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                    </div>
+                        <div class="contenedor-modal modal-contacto">
+                            <form>
+                                <div>
+                                    <p>CONTACTO</p>
+                                </div>
+                                <div class="contenedor-form">
+                                    <div class="logo-form"></div>
+                                    <div>
+                                        <div>
+                                            <input type="text" placeholder="nombre">
+                                            <input type="text" placeholder="e-mail">
+                                        </div>
+                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                        <div class="botones">
+                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
+                                            <button type="button" @click="abrirContacto">VOLVER</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="formEnviado==true">  
+                    <div class="envio-formulario" >
+                        <h2>Mensaje enviado</h2>
+                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                       <button type="button" @click="cerrar">VOLVER</button>
                     </div>
                 </section>
             </transition>

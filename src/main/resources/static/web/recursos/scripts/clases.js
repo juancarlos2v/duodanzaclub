@@ -1,12 +1,19 @@
 let app = new Vue({
     el: '#app',
     data: {
+        academias: [],
+        academia: {},
         clase: {},
         clases: [],
         ciudades: [],
-        modalContacto: false
-    },
-    created(){
+        alumnos: [],
+        formulario: {
+            usuario: 0
+        },
+        modalContacto: false,
+        modalContacto: false,
+        formEnviado: false,
+        detalleClase: false,
     },
     mounted() {
         // axios.get('https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.3/download/departamentos.json', headers: {
@@ -18,10 +25,12 @@ let app = new Vue({
         //         console.log(response.data);
         //     })
         this.cargarClases();
-        pagina = document.querySelector(".contenedor-total");
+        this.cargarAcademias();
+
     },
     methods: {
         abrirContacto() {
+            pagina = document.querySelector(".contenedor-total");
             if (this.modalContacto == false) {
                 pagina.classList.add('desenfocar');
                 this.modalContacto = true;
@@ -31,11 +40,50 @@ let app = new Vue({
 
             }
         },
+        cargarAcademias() {
+            axios.get("/api/academias")
+                .then(response => {
+                    app.academias = response.data;
+                })
+        },
         cargarClases() {
             axios.get("/api/clases")
                 .then(response => {
-                    console.log(response);
                     app.clases = response.data;
+                })
+        },
+        enviarFormulario() {
+            pagina = document.querySelector(".contenedor-total");
+            this.formEnviado = true;
+            this.modalContacto = false;
+            pagina.classList.add('desenfocar');
+        },
+        cerrar() {
+            pagina = document.querySelector(".contenedor-total");
+            this.formEnviado = false;
+            pagina.classList.remove('desenfocar');
+        },
+        abrirClase() {
+            pagina = document.querySelector(".contenedor-total");
+            pagina.classList.add('desenfocar');
+            this.detalleClase = true;
+            console.log("entro clase");
+        },
+        cerrarClase() {
+            pagina = document.querySelector(".contenedor-total");
+            pagina.classList.remove('desenfocar');
+            this.detalleClase = false;
+        },
+        elegirClase(clase) {
+            app.clase = app.clases[clase - 1];
+            app.alumnos = app.clase.usuarios;
+            app.academia = app.academias[app.clase.academiaId - 1];
+            app.formulario.usuario = clase;
+        },
+        anotarEnClase() {
+            axios.post("/api/usuarios/clases", {"usuario":`${app.formulario.usuario}`})
+                .then(response => {
+                    window.location.href = "/web/index.html"
                 })
         }
     },

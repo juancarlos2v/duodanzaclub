@@ -25,6 +25,8 @@
         z-index: 0;
         text-transform: uppercase;
         padding-left: 30vw;
+        box-shadow: -2px 11px 8px 9px rgb(0 0 0 / 20%);
+        z-index: 5;
     }
     
     nav a {

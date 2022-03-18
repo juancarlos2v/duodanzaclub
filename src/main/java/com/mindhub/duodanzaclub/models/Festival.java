@@ -24,20 +24,30 @@ public class Festival {
     private Double precio;
     private Estilos estilo;
     private String imagen;
+    private String ciudad;
+    private String descripcion;
+
 
     @ElementCollection
-    @Column(name="horarios")
-    private List<Double> horarios = new ArrayList<>();
+    @Column(name="días")
+    private List<Dias> dias = new ArrayList<>();
+
+
+    private String horarios;
 
     @OneToMany(mappedBy = "festival", fetch = FetchType.EAGER)
     private Set<SalaFestival> salaFestival = new HashSet<>();
 
     public Festival() {}
-    public Festival(String nombre, Estilos estilo, Double precio, List<Double> horarios) {
+    public Festival(String nombre, String imagen, String descripcion, Estilos estilo, Double precio, List<Dias> dias) {
         this.nombre = nombre;
-        this.precio = precio;
+        this.imagen = imagen;
+        this.descripcion = descripcion;
         this.estilo = estilo;
-        this.horarios = horarios;
+        this.precio = precio;
+
+        this.dias = dias;
+
     }
 
     @JsonIgnore
@@ -54,10 +64,21 @@ public class Festival {
     public Estilos getEstilo() {return estilo;}
     public void setEstilo(Estilos estilo) {this.estilo = estilo;}
 
-    public List<Double> getHorarios() {return horarios;}
-    public void setHorarios(List<Double> horarios) {this.horarios = horarios;}
+    public String getHorarios() {return horarios;}
+    public void setHorarios(String horarios) {this.horarios = horarios;}
 
     public Set<SalaFestival> getSalaFestival() {return salaFestival;}
     public void setSalaFestival(Set<SalaFestival> salaFestival) {this.salaFestival = salaFestival;}
 
+    public String getImagen() {return imagen;}
+    public void setImagen(String imagen) {this.imagen = imagen;}
+
+    public String getCiudad() {return ciudad;}
+    public void setCiudad(String ciudad) {this.ciudad = ciudad;}
+
+    public String getDescripcion() {return descripcion;}
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
+
+    public List<Dias> getDias() {return dias;}
+    public void setDias(List<Dias> dias) {this.dias = dias;}
 }

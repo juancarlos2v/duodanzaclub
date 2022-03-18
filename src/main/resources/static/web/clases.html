@@ -76,7 +76,7 @@
                                 <label for="nivel">NIVEL</label>
                                 <select id="nivel">
                                 <option value="principiante">Principiante</option>
-                                <option value="intermedio"">Intermedio</option>
+                                <option value="intermedio">Intermedio</option>
                                 <option value="avanzando">Avanzado</option>
                             </select>
                             </div>
@@ -84,7 +84,7 @@
                                 <label for="ubicacion">UBICACION</label>
                                 <select id="estilo">
                                 <option value="rosario">Rosario</option>
-                                <option value="cordoba"">Cordoba</option>
+                                <option value="cordoba">Cordoba</option>
                                 <option value="baires">Buenos Aires</option>
                             </select>
                             </div>
@@ -92,7 +92,7 @@
                                 <label for="dia">DIA</label>
                                 <select id="dia">
                                 <option value="lunes">Lunes</option>
-                                <option value="martes"">Martes</option>
+                                <option value="martes">Martes</option>
                                 <option value="miercoles">Miercoles</option>
                                 <option value="jueves">Jueves</option>
                                 <option value="viernes">Viernes</option>
@@ -119,59 +119,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="claseId in clases"v-if="clases.length > 0">
+                            <tr v-for="claseId in clases" v-if="clases.length > 0">
                                 <td>{{claseId.id}}</td>
                                 <td>{{claseId.nombre}} </td>
                                 <td>{{claseId.profesores}} </td>
                                 <td>{{claseId.horario}} </td>
                                 <td>{{claseId.cupo}} </td>
-                                <td><button class="ultimo" type="button">+</button> </td>
-                            </tr>
-                            <tr>
-                                <td>0001 </td>
-                                <td>Tecnica II</td>
-                                <td>Fernando Obaos</td>
-                                <td>19 - 20:30hs</td>
-                                <td>2</td>
-                                <td>
-                                    <button class="ultimo" type="button">v</button>
-                                </td>
+                                <td><button class="ultimo" type="button" @click="elegirClase(claseId.id), abrirClase(claseId.id)">+</button> </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div v-if="clase.nombre != ''" class="info-clase">
-                    <div class="tabla-clase">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ACADEMIA</th>
-                                    <th>DIRECCIÓN</th>
-                                    <th>SALA</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ clase.academia }}</td>
-                                    <td>{{ clase.direccion }}</td>
-                                    <td>{{ clase.estilo }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button class="reservar">RESERVAR</button>
-                    </div>
-                    <div>
-                        <h4>ALUMNOS</h4>
-                        <div class="detalle-clase">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium itaque consectetur in accusantium laboriosam aut quaerat odit quasi, molestiae quae. Necessitatibus amet voluptas sequi vel assumenda corporis dolor nam itaque!
-                            Laudantium deserunt aliquid quos quae ad dolores a, voluptas quibusdam, dolor, facilis dignissimos asperiores quas iusto quam unde minima temporibus eius doloremque rem laboriosam veritatis ipsam. Beatae repellat nemo ipsam!</p>
-                            <div>
-                                <img src="./recursos/imagenes/eventos/rosarioBachata.png" alt="">
-                            </div>
-                            <!--<div class="detalle-imagen"></div>-->
-                        </div>
-                    </div>
-                </div>
+
                 <!-- </template> -->
 
                 <div class="contenedor-profesores">
@@ -227,7 +186,7 @@
                                         </div>
                                         <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
                                         <div class="botones">
-                                            <button type="button">ENVIAR</button>
+                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
                                             <button type="button" @click="abrirContacto">VOLVER</button>
                                         </div>
                                     </div>
@@ -236,6 +195,52 @@
                             </form>
                         </div>
                 </div>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="detalleClase==true">
+                    <div class="clase-detallada">
+                        <div class="info-clase">
+                    <div class="tabla-clase">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ACADEMIA</th>
+                                    <th>DIRECCIÓN</th>
+                                    <th>SALA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ academia.nombre }}</td>
+                                    <td>{{ clase.direccion }}</td>
+                                    <td>{{ clase.estilo }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="reservar" @click="anotarEnClase()">RESERVAR</button>
+                    </div>
+                    <div>
+                        <h4>ALUMNOS</h4>
+                        <div class="nombres">
+                            <p class="alumno" v-for="alumno in alumnos">{{ alumno.nombre }} {{ alumno.apellido }} <input type="radio" name="alumnoId" id=""></p>
+                        </div>
+                        <div class="detalle-clase">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium itaque consectetur in accusantium laboriosam aut quaerat odit quasi, molestiae quae. Necessitatibus amet voluptas sequi vel assumenda corporis dolor nam itaque!
+                                Laudantium deserunt aliquid quos quae ad dolores a, voluptas quibusdam, dolor, facilis dignissimos asperiores quas iusto quam unde minima temporibus eius doloremque rem laboriosam veritatis ipsam. Beatae repellat nemo ipsam!</p>
+                            <div>
+                                <img src="./recursos/imagenes/eventos/rosarioBachata.png">
+                            </div>
+                            <!--<div class="detalle-imagen"></div>-->
+                        </div>
+                        <div class="boton-volver">
+                            <button type="button" @click="cerrarClase">VOLVER</button>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </section>
             </transition>
         </template>
     </div>
