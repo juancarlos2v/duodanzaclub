@@ -11,17 +11,28 @@ let app = new Vue({
             usuario: "",
             contraseña: ""
         },
-        modalIngreso: false
+        modalIngreso: false,
+        modalContacto: false,
+        formEnviado: false,
+        festivales: "",
+        festivalesActuales: ""
+        
+
+
 
     },
     created() {
         this.loadData()
+        this.loadAcademia()
     },
-    // mounted() {
-    //     pagina = document.querySelector(".contenedor-total");
+    mounted() {
+        pagina = document.querySelector(".contenedor-total");
 
-    // },
+    },
     methods: {
+        abrirCarrito() {
+
+        },
         abrirContacto() {
             if (this.modalContacto == false) {
                 pagina.classList.add('desenfocar');
@@ -50,7 +61,7 @@ let app = new Vue({
                 pagina.classList.remove('desenfocar');
             }
         },
-        loadData() {
+        loadAcademia() {
             axios.get("http://localhost:8090/api/academias")
                 .then(response => {
                     console.log(response.data)
@@ -58,6 +69,40 @@ let app = new Vue({
                 })
                 .catch(error => console.log(error))
         },
+        loadData() {
+            axios.get("http://localhost:8090/api/festivales")
+                .then(response => {
+                    console.log(response.data)
+                    
+                    this.festivales = response.data
+                    this.festivalesActuales = response.data
+                    
+                    console.log(this.festivales);
+                })
+                
+                .catch(error => console.log(error))
+        },
+        filtrar(){
+            console.log("CLICK");
+            if(this.academia != "") {
+                this.festivales = this.festivales.map(festival => {
+                    festival.academia == this.academia
+                })
+            }
+            if(this.estilo != "") {
+               this.festivalesActuales = this.festivales.filter(festival => {
+                   return festival.estilo == this.estilo
+                })
+            }
+            
+        },
+        mostrar(){
+           return this.festivalesActuales = this.festivales
+        },
+        /*comprar(id){
+            axios.post()
+        },*/
+        
 
         ingresar() {
             axios.post('/api/login', `email=${this.ingreso.usuario}&password=${this.ingreso.contraseña}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
@@ -80,10 +125,25 @@ let app = new Vue({
         cerrarModal() {
             this.modalIngreso = false;
         },
-        filtrarFestival(){
-            
+        
+        abrirContacto() {
+            if (this.modalContacto == false) {
+                pagina.classList.add('desenfocar');
+                this.modalContacto = true;
+            } else {
+                pagina.classList.remove('desenfocar');
+                this.modalContacto = false
+            }
+        },
+        enviarFormulario() {
+            this.formEnviado = true;
+            this.modalContacto = false;
+            pagina.classList.add('desenfocar');
+        },
+        cerrar() {
+            this.formEnviado = false;
+            pagina.classList.remove('desenfocar');
         }
     }
 
-}
-)
+})

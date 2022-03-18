@@ -75,7 +75,6 @@ public class UsuarioDTO {
         setNivel(usuario.getNivel());
         setRol(usuario.getRol());
         setAbono(usuario.getAbono());
-        setAcademia(usuario.getAcademia());
         setFollowers(usuario.getFollowers());
         setFollowing(usuario.getFollowing());
         setContactos(usuario.getContactos());

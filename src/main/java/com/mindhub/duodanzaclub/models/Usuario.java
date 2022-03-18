@@ -65,15 +65,16 @@ public class Usuario {
         this.email = email;
         this.password = password;
     }
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento) {
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, Academia academia) {
         setNombre(nombre);
         setApellido(apellido);
         setTelefono(telefono);
         setEmail(email);
         setPassword(password);
         setFechaNacimiento(fechaNacimiento);
+        setAcademia(academia);
     }
-    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, String ciudad, Nivel nivel, Rol rol) {
+    public Usuario(String nombre, String apellido, String telefono, String email, String password, LocalDate fechaNacimiento, String ciudad, Nivel nivel, Rol rol, Academia academia) {
         setNombre(nombre);
         setApellido(apellido);
         setTelefono(telefono);
@@ -83,6 +84,7 @@ public class Usuario {
         setCiudad(ciudad);
         setNivel(nivel);
         setRol(rol);
+        setAcademia(academia);
     }
 
     public long getId() {return id;}

@@ -119,12 +119,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-if="clases.length > 5">
-                                <td>{{codigo}}</td>
-                                <td>{{clase}} </td>
-                                <td>{{profesor}} </td>
-                                <td> {{horario}} </td>
-                                <td>{{cupo}} </td>
+                            <tr v-for="claseId in clases" v-if="clases.length > 0">
+                                <td>{{claseId.id}}</td>
+                                <td>{{claseId.nombre}} </td>
+                                <td>{{claseId.profesores}} </td>
+                                <td>{{claseId.horario}} </td>
+                                <td>{{claseId.cupo}} </td>
                                 <td><button class="ultimo" type="button">+</button> </td>
                             </tr>
                             <tr>
@@ -134,31 +134,13 @@
                                 <td>19 - 20:30hs</td>
                                 <td>2</td>
                                 <td>
-                                    <button class="ultimo" type="button">v</button>
+                                    <button class="ultimo" type="button" @click="elegirClase(1)">v</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div v-if="clase.nombre != ''">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ACADEMIA</th>
-                                <th>DIRECCIÓN</th>
-                                <th>SALA</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{ clase.academia }}</td>
-                                <td>{{ clase.direccion }}</td>
-                                <td>{{ clase.estilo }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button>Reservar</button>
-                </div>
+
                 <!-- </template> -->
 
                 <div class="contenedor-profesores">
@@ -214,7 +196,7 @@
                                         </div>
                                         <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
                                         <div class="botones">
-                                            <button type="button">ENVIAR</button>
+                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
                                             <button type="button" @click="abrirContacto">VOLVER</button>
                                         </div>
                                     </div>
@@ -223,6 +205,47 @@
                             </form>
                         </div>
                 </div>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="detalleClase==true">
+                    <div class="clase-detallada">
+                        <div v-if="clase.nombre != ''" class="info-clase">
+                    <div class="tabla-clase">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ACADEMIA</th>
+                                    <th>DIRECCIÓN</th>
+                                    <th>SALA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ clase.academia }}</td>
+                                    <td>{{ clase.direccion }}</td>
+                                    <td>{{ clase.estilo }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="reservar">RESERVAR</button>
+                    </div>
+                    <div>
+                        <h4>ALUMNOS</h4>
+                        <div class="detalle-clase">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium itaque consectetur in accusantium laboriosam aut quaerat odit quasi, molestiae quae. Necessitatibus amet voluptas sequi vel assumenda corporis dolor nam itaque!
+                                Laudantium deserunt aliquid quos quae ad dolores a, voluptas quibusdam, dolor, facilis dignissimos asperiores quas iusto quam unde minima temporibus eius doloremque rem laboriosam veritatis ipsam. Beatae repellat nemo ipsam!</p>
+                            <div>
+                                <img src="./recursos/imagenes/eventos/rosarioBachata.png">
+                            </div>
+                            <!--<div class="detalle-imagen"></div>-->
+                        </div>
+                        <button type="button" @click="cerrarClase">VOLVER</button>
+                    </div>
+                </div>
+                    </div>
+                </section>
             </transition>
         </template>
     </div>

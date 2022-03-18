@@ -9,32 +9,32 @@
 } */
 
 .cajita-banner {
-    display        : flex;
+    display: flex;
     justify-content: center;
-    flex-wrap      : wrap;
+    flex-wrap: wrap;
 }
 
 .contenedor-manos-festivales {
-    margin         : auto;
-    margin-top     : 4rem;
-    display        : flex;
-    flex-wrap      : wrap;
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: left;
-    width          : 95%;
-    height         : 20vh;
-    margin-bottom  : 4rem;
+    width: 95%;
+    height: 20vh;
+    margin-bottom: 4rem;
 }
 
 .contenedor-botones-festivales {
-    margin         : auto;
-    margin-top     : 4rem;
-    display        : flex;
-    flex-wrap      : wrap;
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: right;
-    width          : 95%;
-    height         : 20vh;
-    margin-bottom  : 5rem;
-    z-index        : 1 !important;
+    width: 95%;
+    height: 20vh;
+    margin-bottom: 5rem;
+    z-index: 1 !important;
 }
 
 .formulario-festivales {
@@ -42,21 +42,20 @@
 }
 
 .inputs-festivales {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
-    width          : 100%;
-    align-items    : center;
-
+    width: 100%;
+    align-items: center;
 }
 
-#buscar-clase {
-    color           : white;
+.buscar-clase {
+    color: white;
     background-color: var(--header-color);
-    padding         : 0.5rem;
-    width           : 12rem;
-    border-radius   : 1rem;
-
+    padding: 0.5rem;
+    width: 12rem;
+    border-radius: 1rem;
 }
+
 
 /* .fila-botones {
     display        : flex;
@@ -65,51 +64,51 @@
 } */
 
 .manos {
-    height          : 100%;
-    width           : 65%;
-    display         : flex;
-    flex-direction  : row;
-    z-index         : -1;
-    justify-content : left;
+    height: 100%;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    z-index: -1;
+    justify-content: left;
     background-color: black;
-    color           : var(--light);
-    text-align      : end;
-    align-self      : center;
-    align-items     : center;
-    min-height      : 10rem;
-    max-height      : fit-content;
+    color: var(--light);
+    text-align: end;
+    align-self: center;
+    align-items: center;
+    min-height: 10rem;
+    max-height: fit-content;
 }
 
 .contenedor-texto3 {
-    display           : flex;
-    align-items       : center;
-    justify-content   : center;
-    margin-left       : 4rem;
-    margin-right      : 3rem;
-    margin-top        : 1rem;
-    margin-bottom     : 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     /* height         : fit-content; */
 }
 
 .seccion-festivales-banner {
-    background-image   : url("../imagenes/festivales/FestivalesOK.png");
-    height             : 30rem;
-    width              : 100%;
-    background-size    : cover;
-    background-repeat  : no-repeat;
+    background-image: url("../imagenes/festivales/FestivalesOK.png");
+    height: 30rem;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: 50%;
-    overflow           : hidden;
-    display            : flex;
-    align-items        : center;
-    justify-content    : center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .botones-festivales {
-    height             : 100%;
-    width              : 65%;
-    display            : flex;
-    flex-direction     : row;
-    flex-wrap          : wrap;
+    height: 100%;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     /* z-index         : -1;
     justify-content    : left;
     background-color   : var(--light);
@@ -120,70 +119,70 @@
 }
 
 .contenedor-texto-festivales {
-    display        : flex;
-    align-items    : center;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .contenedor-texto {
-    left            : 0;
-    right           : 0;
-    bottom          : 0;
-    display         : flex;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
     /* margin       : auto; */
-    margin-top      : -5rem;
-    justify-content : center;
-    width           : 65%;
-    text-align      : center;
+    margin-top: -5rem;
+    justify-content: center;
+    width: 65%;
+    text-align: center;
     background-color: var(--header-color);
-    color           : var(--light);
-    text-align      : end;
-    z-index         : 1;
-    padding         : 3rem;
-    padding-left    : 5rem;
+    color: var(--light);
+    text-align: end;
+    z-index: 1;
+    padding: 3rem;
+    padding-left: 5rem;
 }
 
 .contenedor-evento {
-    display         : flex;
-    flex-direction  : row;
-    flex-wrap       : wrap;
-    align-items     : center;
-    justify-content : space-evenly;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
     background-color: black;
-    height          : fit-content;
-    margin          : auto;
-    align-content   : center;
+    height: fit-content;
+    margin: auto;
+    align-content: center;
 }
 
 .contenedor-evento-gris {
-    display         : flex;
-    flex-direction  : row;
-    flex-wrap       : wrap;
-    align-items     : center;
-    justify-content : space-evenly;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
     background-color: var(--gray-color);
-    height          : fit-content;
-    margin          : auto;
-    align-content   : center;
+    height: fit-content;
+    margin: auto;
+    align-content: center;
 }
 
 .texto-evento {
-    text-align   : right;
-    width        : 50%;
-    color        : var(--light);
-    margin-right : 10rem;
-    margin-left  : 10rem;
-    margin-top   : 5rem;
+    text-align: right;
+    width: 50%;
+    color: var(--light);
+    margin-right: 10rem;
+    margin-left: 10rem;
+    margin-top: 5rem;
     margin-bottom: 5rem;
 }
 
 .texto-evento-gris {
-    text-align   : right;
-    width        : 50%;
-    margin-right : 10rem;
-    margin-left  : 10rem;
-    margin-top   : 5rem;
-    color        : black;
+    text-align: right;
+    width: 50%;
+    margin-right: 10rem;
+    margin-left: 10rem;
+    margin-top: 5rem;
+    color: black;
     margin-bottom: 5rem;
 }
 
@@ -201,51 +200,49 @@
 }
 
 .botones-evento {
-    display        : flex;
-    flex-direction : row;
-    flex-wrap      : wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-end;
 }
 
 .botones-evento button,
 .botones-evento a {
-    padding      : 0.5rem;
-    padding-left : 3rem;
+    padding: 0.5rem;
+    padding-left: 3rem;
     padding-right: 3rem;
-    border       : 2px solid;
-    border-width : 0.1rem;
-    border-color : var(--light);
+    border: 2px solid;
+    border-width: 0.1rem;
+    border-color: var(--light);
     border-radius: 0.5rem;
-    margin-left  : 2rem;
-    margin-top   : 1rem;
-    color        : var(--light);
-
+    margin-left: 2rem;
+    margin-top: 1rem;
+    color: var(--light);
 }
-
 
 .botones-evento-gris button,
 .botones-evento-gris a {
-    padding      : 0.5rem;
-    padding-left : 3rem;
+    padding: 0.5rem;
+    padding-left: 3rem;
     padding-right: 3rem;
-    border       : 2px solid;
-    border-width : 0.1rem;
-    border-color : #c02638;
+    border: 2px solid;
+    border-width: 0.1rem;
+    border-color: #c02638;
     border-radius: 0.5rem;
-    margin-left  : 2rem;
-    margin-top   : 1rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
 }
 
 .botones-evento :hover {
-    color           : black;
-    font-weight     : 500;
+    color: black;
+    font-weight: 500;
     background-color: var(--light);
-    border-color    : var(--gray-color);
+    border-color: var(--gray-color);
 }
 
 .botones-evento-gris :hover {
-    color           : black;
-    font-weight     : 500;
+    color: black;
+    font-weight: 500;
     background-color: #c02638;
 }
 
@@ -258,13 +255,13 @@
 }
 
 .contenedor-banner-clases {
-    margin         : auto;
-    margin-top     : 2vw;
-    display        : flex;
-    flex-wrap      : wrap;
+    margin: auto;
+    margin-top: 2vw;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width          : 95%;
-    height         : 20vh;
+    width: 95%;
+    height: 20vh;
 }
 
 
@@ -280,55 +277,53 @@
 } */
 
 .clasesLogo {
-    height         : 10rem;
-    margin-bottom  : -3.8rem;
+    height: 10rem;
+    margin-bottom: -3.8rem;
     justify-content: center;
 }
 
-
-
 .contenedor-texto2 {
-    display     : flex;
-    align-items : center;
-    margin-top  : 1rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
     margin-right: 0.5rem;
-    margin-left : 2rem;
+    margin-left: 2rem;
 }
 
 .mano-izquierda {
-    background-image : url("../imagenes/home/mano_1.png");
-    height           : 100%;
-    width            : 22%;
-    background-size  : contain;
+    background-image: url("../imagenes/home/mano_1.png");
+    height: 100%;
+    width: 22%;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
 .mano-derecha {
-    background-image   : url("../imagenes/home/mano_2.png");
-    height             : 100%;
-    width              : 22%;
-    background-size    : contain;
-    background-repeat  : no-repeat;
+    background-image: url("../imagenes/home/mano_2.png");
+    height: 100%;
+    width: 22%;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: 100%;
 }
 
 .contenedor-estilos {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
-    flex-wrap      : wrap;
-    margin-top     : 10rem;
-    margin-bottom  : 2rem;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
 }
 
 .contenedor-estilos div {
-    background-color   : var(--footer-color);
-    height             : 3rem;
-    width              : 14rem;
-    margin-bottom      : 3rem;
-    background-size    : contain;
-    background-repeat  : no-repeat;
+    background-color: var(--footer-color);
+    height: 3rem;
+    width: 14rem;
+    margin-bottom: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: 50%;
-    padding            : 2rem;
+    padding: 2rem;
 }
 
 .contenedor-estilos div {
@@ -345,32 +340,32 @@
 
 .seccion-profesores {
     background-color: var(--gray-color);
-    padding         : 2rem;
-    padding-bottom  : 5rem;
-    display         : inline-flex;
-    align-items     : center;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    display: inline-flex;
+    align-items: center;
 }
 
 .seccion-profesores h3 {
-    color     : var(--light);
-    width     : 100%;
-    font-size : 25px;
+    color: var(--light);
+    width: 100%;
+    font-size: 25px;
     text-align: center;
 }
 
 .contenedor-profesores>div {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
-    flex-wrap      : wrap;
+    flex-wrap: wrap;
 }
 
 .contenedor-profesores>div div {
-    height             : 10rem;
-    width              : 15rem;
-    background-size    : contain;
-    background-repeat  : no-repeat;
+    height: 10rem;
+    width: 15rem;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: 50%;
-    margin             : 1rem;
+    margin: 1rem;
 }
 
 .contenedor-profesores>div div {
@@ -390,27 +385,27 @@
 }
 
 .contenedor-tienda {
-    margin         : auto;
-    margin-top     : 2vw;
-    display        : flex;
-    flex-wrap      : wrap;
+    margin: auto;
+    margin-top: 2vw;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width          : 95%;
-    height         : 5rem;
+    width: 95%;
+    height: 5rem;
 }
 
 .seccion-tienda {
-    background-color   : var(--header-color);
-    height             : 5rem;
-    width              : 30%;
+    background-color: var(--header-color);
+    height: 5rem;
+    width: 30%;
     /* margin          : auto; */
-    left               : 0;
-    right              : 0;
-    height             : 5vw;
-    width              : 50%;
-    display            : flex;
-    flex-direction     : row;
-    z-index            : -1;
+    left: 0;
+    right: 0;
+    height: 5vw;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    z-index: -1;
 }
 
 
@@ -426,113 +421,108 @@
 } */
 
 .tiendaLogo {
-    height         : 13rem;
-    margin-top     : -10rem;
-    margin-bottom  : -2.8rem;
+    height: 13rem;
+    margin-top: -10rem;
+    margin-bottom: -2.8rem;
     justify-content: center;
 }
 
 .tienda-info {
     background-color: var(--footer-color);
-    color           : var(--light);
-    text-align      : end;
-    height          : 18rem;
-    width           : 80%;
-    margin          : auto;
-    display         : flex;
-    justify-content : center;
-    padding-top     : 3rem;
-    padding-bottom  : 3rem;
+    color: var(--light);
+    text-align: end;
+    height: 18rem;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .tienda-texto {
-    display    : flex;
+    display: flex;
     align-items: center;
 }
 
 .tienda-info>div {
     background-color: var(--light);
-    width           : 30%;
+    width: 30%;
 }
 
 .tienda-info>div div {
-    background-image   : url("../imagenes/home/piernasSHOP.png");
-    background-repeat  : no-repeat;
-    background-size    : contain;
-    height             : 120%;
+    background-image: url("../imagenes/home/piernasSHOP.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 120%;
     background-position: initial;
 }
 
 .tienda-info div+div {
     background-color: transparent;
-    padding-left    : 3rem;
-    width           : 50%;
+    padding-left: 3rem;
+    width: 50%;
 }
 
 .buscador-botones {
-    display           : flex;
-    justify-content   : space-around;
-    flex-wrap         : wrap;
-    width             : 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
     /* margin         : 2rem; */
-    padding-bottom    : 3rem;
+    padding-bottom: 3rem;
 }
 
 .buscador-botones button {
     background-color: var(--gray-color);
-    padding         : 0.5rem;
-    padding-left    : 3rem;
-    padding-right   : 3rem;
-    border          : 2px solid;
-    border-width    : 0.1rem;
-    border-color    : var(--light);
-    border-radius   : 0.5rem;
-    margin-left     : 2rem;
-    margin-top      : 1rem;
+    padding: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border: 2px solid;
+    border-width: 0.1rem;
+    border-color: var(--light);
+    border-radius: 0.5rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
 }
 
 .buscar {
     background-color: var(--light) !important;
-    padding         : 0.5rem;
-    padding-left    : 3rem;
-    padding-right   : 3rem;
-    border          : 2px solid;
-    border-width    : 0.1rem;
-    border-color    : black !important;
-    border-radius   : 0.5rem;
-    margin-left     : 2rem;
-    margin-top      : 1rem;
+    padding: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border: 2px solid;
+    border-width: 0.1rem;
+    border-color: black !important;
+    border-radius: 0.5rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
 }
-
-
 
 .productos-destacados {
-    display           : flex;
-    justify-content   : space-around;
-    flex-wrap         : wrap;
-    width             : 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
     /* margin         : 2rem; */
-    padding-bottom    : 3rem;
+    padding-bottom: 3rem;
 }
 
-
-
 .buscador-botones a {
-    color      : var(--light);
+    color: var(--light);
     font-weight: 500;
-
 }
 
 .buscar a {
-    color      : black;
+    color: black;
     font-weight: 500;
 }
 
 .titulo-productos {
-    display        : flex;
+    display: flex;
     justify-content: center;
-    color          : var(--footer-color);
-    padding-top    : 3rem;
+    color: var(--footer-color);
+    padding-top: 3rem;
 }
 
 .titulo-productos h3 {
@@ -541,12 +531,12 @@
 
 .productos-destacados div {
     background-position: 50%;
-    background-repeat  : no-repeat;
-    background-size    : contain;
-    height             : 10rem;
-    width              : 20rem;
-    margin-bottom      : 3rem;
-    margin-top         : 3rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10rem;
+    width: 20rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
 .productos-destacados div {
@@ -566,78 +556,78 @@
 }
 
 .info-abonos {
-    display        : flex;
+    display: flex;
     justify-content: space-between;
-    width          : 100%;
-    height         : 22rem;
-    overflow       : hidden;
-    z-index        : 0;
+    width: 100%;
+    height: 22rem;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .parrafo-bonos {
-    text-align      : center;
-    position        : relative;
-    z-index         : 0;
-    height          : 10rem;
-    margin-top      : 7rem;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    height: 10rem;
+    margin-top: 7rem;
     background-color: var(--gray-color);
 }
 
 .parrafo-bonos p {
-    width       : 55%;
+    width: 55%;
     padding-left: 2rem;
-    padding-top : 2rem;
+    padding-top: 2rem;
 }
 
 .info-abonos>div+div {
-    position       : absolute;
-    display        : flex;
+    position: absolute;
+    display: flex;
     justify-content: flex-end;
-    width          : 100%;
-    margin-left    : 18%;
+    width: 100%;
+    margin-left: 18%;
 }
 
 .info-abonos img {
-    width   : 45%;
-    z-index : 10;
+    width: 45%;
+    z-index: 10;
     overflow: hidden;
 }
 
 .seccion-festival {
-    display         : flex;
-    justify-content : space-between;
+    display: flex;
+    justify-content: space-between;
     background-color: black;
-    height          : 35rem;
-    width           : 100%;
-    margin          : auto;
-    overflow        : hidden;
+    height: 35rem;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
 }
 
 .contenido-festival {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    color         : white;
-    align-items   : center;
-    width         : 60%;
-    height        : 10rem;
-    padding       : 1rem;
-    margin-left   : 10rem;
+    color: white;
+    align-items: center;
+    width: 60%;
+    height: 10rem;
+    padding: 1rem;
+    margin-left: 10rem;
 }
 
 .contenido-festival>img {
-    width : 50%;
+    width: 50%;
     margin: auto;
 }
 
 .logos-tango {
-    display        : flex;
+    display: flex;
     justify-content: space-between;
-    height         : 100%;
-    width          : 60%;
+    height: 100%;
+    width: 60%;
 }
 
 .seccion-festival div+div {
-    width   : 30%;
+    width: 30%;
     overflow: hidden;
 }
 
@@ -646,33 +636,33 @@
 }
 
 .seccion-festival div+div>img {
-    height     : 100%;
-    overflow   : hidden;
+    height: 100%;
+    overflow: hidden;
     align-items: flex-end;
     margin-left: 10rem;
 }
 
 .seccion-milongas {
-    background-image     : url("../imagenes/festivales/milongas.jpg");
-    height               : 30rem;
-    width                : 100%;
-    background-size      : cover;
-    background-repeat    : no-repeat;
+    background-image: url("../imagenes/festivales/milongas.jpg");
+    height: 30rem;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position-y: 30%;
-    overflow             : hidden;
-    display              : flex;
-    align-items          : center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .contenedor-texto-milongas {
-    text-align  : start;
-    color       : white;
-    width       : 50%;
+    text-align: start;
+    color: white;
+    width: 50%;
     padding-left: 10%;
 }
 
 .contenedor-texto-milongas h2 {
-    font-size      : 6rem;
+    font-size: 6rem;
     /*text-align   : center;
     padding-right  : 5rem;
     padding-left   : 40rem; */
@@ -687,46 +677,47 @@
 }*/
 
 .contenedor-contacto {
-    height       : 10rem;
-    margin-top   : 6rem;
+    height: 32rem;
+    width: 85% !important;
+    margin-top: 6rem;
     margin-bottom: 3rem;
 }
 
 .formulario-contacto {
-    display : block;
+    display: block;
     position: relative;
 }
 
 .contenedor-form {
-    display         : flex;
-    justify-content : space-between;
+    display: flex;
+    justify-content: space-between;
     background-color: var(--header-color);
-    width           : 80%;
-    margin          : auto;
-    height          : 13rem;
-    padding         : 1rem;
+    width: 80%;
+    margin: auto;
+    height: 20rem;
+    padding: 1rem;
 }
 
 .contenedor-form button {
     background-color: var(--gray-color);
-    width           : 8rem;
-    padding         : 0.3rem;
-    align-self      : flex-end;
-    margin-top      : 1rem;
+    width: 8rem;
+    padding: 0.3rem;
+    align-self: flex-end;
+    margin-top: 1rem;
 }
 
 form>div div+div {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    padding-right : 14rem;
+    padding-right: 14rem;
 }
 
 .logo-form {
-    background-image   : url("../imagenes/logo_light.png");
-    height             : 10rem;
-    width              : 30%;
-    background-repeat  : no-repeat;
-    background-size    : contain;
+    background-image: url("../imagenes/logo_light.png");
+    height: 10rem;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-size: contain;
     background-position: 50%;
 }
 
@@ -735,22 +726,22 @@ form>div div+div {
 }
 
 .sponsors {
-    display         : flex;
-    flex-wrap       : wrap;
-    justify-content : space-around;
-    align-items     : center;
-    height          : 10rem;
-    margin          : auto;
-    margin-top      : 8rem;
-    width           : 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 10rem;
+    margin: auto;
+    margin-top: 8rem;
+    width: 100%;
     background-color: var(--gray-color);
 }
 
 .sponsors div {
-    background-repeat  : no-repeat;
-    background-size    : contain;
-    height             : 60%;
-    width              : 17%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60%;
+    width: 17%;
     background-position: 50%;
 }
 
@@ -771,60 +762,87 @@ form>div div+div {
 }
 
 .contenedor-modal {
-    width           : 20rem;
+    height: 25rem;
+    width: 20rem;
     background-color: var(--footer-color);
 }
 
 .modal-ingreso {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    padding       : 2rem;
+    padding: 2rem;
 }
 
 .modal-ingreso form>div {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    text-align    : center;
-    color         : white;
-    margin-top    : 1rem;
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
 }
 
 .modal-ingreso form>button {
-    display   : flex;
-    color     : white;
-    margin    : auto;
+    display: flex;
+    color: white;
+    margin: auto;
     margin-top: 0.4rem;
 }
 
 .contenedor-manos1 {
-    display        : flex;
+    display: flex;
     justify-content: right;
-    position       : absolute;
-    width          : 100%;
+    position: absolute;
+    width: 100%;
 }
 
 .contenedor-manos2 {
-    display        : flex;
+    display: flex;
     justify-content: space-between;
-    position       : absolute;
-    width          : 20%;
-    
-    z-index        : 0 !important;
+    position: absolute;
+    width: 20%;
+    z-index: 0 !important;
 }
 
 .mano-izquierda {
-    background-image : url("../imagenes/home/mano_1.png");
-    height           : 100%;
-    width            : 100%;
-    background-size  : contain;
+    background-image: url("../imagenes/home/mano_1.png");
+    height: 100%;
+    width: 100%;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
 .mano-derecha {
-    background-image   : url("../imagenes/home/mano_2.png");
-    height             : 100%;
-    width              : 22%;
-    background-size    : contain;
-    background-repeat  : no-repeat;
+    background-image: url("../imagenes/home/mano_2.png");
+    height: 100%;
+    width: 22%;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: 100%;
+}
+
+.izquierda-contacto {
+    width: 20%;
+}
+
+.modal-contacto {
+    width: 29rem;
+}
+
+.contenedor-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: auto;
+    width: 100%;
+}
+
+.card {
+    width: 300px;
+    margin: 3rem 1rem;
+    background-color: var(--gray-color);
+    float: left;
+}
+
+.card-img-top {
+    width: 80%;
+    margin: 7px auto;
 }
