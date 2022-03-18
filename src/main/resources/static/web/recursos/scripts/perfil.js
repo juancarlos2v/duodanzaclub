@@ -23,6 +23,8 @@ let app = new Vue({
         editarPerfil: false,
         modalContacto: false,
         formEnviado: false,
+        modalIngreso: false,
+        modalRegistro: false,
 
     },
     created() {
@@ -37,29 +39,26 @@ let app = new Vue({
     methods: {
         loadData() {
             axios.get("/api/usuarios/current")
-<<<<<<< HEAD
                 .then(response => {
                     console.log(response.data);
                     this.usuario = response.data
                     console.log(this.usuario.nombre)
                 })
-=======
-            .then(response => {
-                console.log(response.data);
-                this.usuario = response.data
+                .then(response => {
+                    console.log(response.data);
+                    this.usuario = response.data
 
-                if(this.usuario.foto != ""){
-                    this.noFoto = false
-                    this.fotoPerfil = true
-                }
-                if(this.usuario.foto == ""){
-                    this.noFoto = true
-                    this.fotoPerfil = false
-                }
+                    if (this.usuario.foto != "") {
+                        this.noFoto = false
+                        this.fotoPerfil = true
+                    }
+                    if (this.usuario.foto == "") {
+                        this.noFoto = true
+                        this.fotoPerfil = false
+                    }
 
-                console.log(this.usuario.nombre)
-            })
->>>>>>> 3186f2f1308cf52b2f2d85a015d8977946859ff0
+                    console.log(this.usuario.nombre)
+                })
         },
         cerrarSesion() {
             axios.post("/api/logout")
@@ -97,7 +96,6 @@ let app = new Vue({
         confirmarCambios() {
 
         },
-<<<<<<< HEAD
         abrirContacto() {
             if (this.modalContacto == false) {
                 pagina.classList.add('desenfocar');
@@ -117,20 +115,26 @@ let app = new Vue({
         cerrar() {
             this.formEnviado = false;
             pagina.classList.remove('desenfocar');
-=======
-        editarInfo(){
-            axios.patch("/api/usuarios/current",
-            {"nombre": this.cambio.nombre, "apellido": this.cambio.apellido, 
-            "fechaNacimiento": this.cambio.nacimiento, "descripcion": this.cambio.descripcion,
-            "foto": this.cambio.foto, "ciudad": this.cambio.ciudad,
-            "telefono": this.cambio.telefono})
-            .then(()=> {
-                console.log("Cambios realizados")
-                
-                window.location.reload()
-            })
-            .catch(error => console.log(error))
->>>>>>> 3186f2f1308cf52b2f2d85a015d8977946859ff0
+        },
+        editarInfo() {
+            axios.patch("/api/usuarios/current", {
+                    "nombre": this.usuario.nombre,
+                    "apellido": this.usuario.apellido,
+                    "fechaNacimiento": this.usuario.nacimiento,
+                    "descripcion": this.usuario.descripcion,
+                    "foto": this.usuario.foto,
+                    "ciudad": this.usuario.ciudad,
+                    "telefono": this.usuario.telefono
+                })
+                .then(() => {
+                    console.log("Cambios realizados")
+
+                    window.location.reload()
+                })
+                .catch(error => console.log(error))
+        },
+        abrirRegistro() {
+            this.modalRegistro = true;
         }
     },
 })

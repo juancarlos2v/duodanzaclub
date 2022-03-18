@@ -2,7 +2,7 @@
 
 .contenedor-banner {
     display        : flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top     : 3%;
     height         : 30vw;
     z-index        : 0;
@@ -11,9 +11,10 @@
 
 .logo-tienda {
     background-image : url("../imagenes/Tienda.png");
-    width            : 190%;
+    width            : 100%;
     background-size  : contain;
     background-repeat: no-repeat;
+    margin-left      : 12rem;
 }
 
 .pareja-img {
@@ -21,42 +22,116 @@
     width            : 100%;
     background-size  : contain;
     background-repeat: no-repeat;
+ 
 }
 
+.contenedor-manos1 {
+    display        : flex;
+    justify-content: right;
+    position       : absolute;
+    /* margin-top     : 100rem; */
+    width          : 100%;
+    z-index        : 5 !important;
+}
+
+.contenedor-manos2 {
+    display        : flex;
+    justify-content: space-between;
+    position       : absolute;
+    width          : 20%;
+    margin-top     : 48rem;
+    z-index        : 1 !important;
+}
+
+.mano-izquierda {
+    background-image : url("../imagenes/home/mano_1.png");
+    height           : 100%;
+    
+    background-size  : contain;
+    background-repeat: no-repeat;
+}
+.mano-izquierda1 {
+    background-image : url("../imagenes/home/mano_1.png");
+    height           : 100%;
+    width: 100%;
+    background-size  : contain;
+    background-repeat: no-repeat;
+    margin-top: 50;
+}
+.mano-derecha {
+    background-image   : url("../imagenes/home/mano_2.png");
+    height             : 100%;
+    width              : 22%;
+    background-size    : contain;
+    background-repeat  : no-repeat;
+    background-position: 100%;
+    z-index        : 0 !important;
+}
+.mano-derecha1 {
+    background-image   : url("../imagenes/home/mano_2.png");
+    height             : 100%;
+    width              : 22%;
+    background-size    : contain;
+    background-repeat  : no-repeat;
+    background-position: 80%;
+    z-index        : 0 !important;
+}
 .contenedor-banner-descripcion {
-    position: relative;
-    width   : 100%;
+    /* position       : relative; */
+    display        : flex;
+    flex-direction : column;
+    width          : 100%;
+    justify-content: center;
+    margin-bottom  : -2rem;
+}
+
+.contenedor-contenedor-descripcion {
+    display        : flex;
+    justify-content: center;
 }
 
 .contenedor-descripcion {
     background-color: var(--header-color);
-    width           : 80%;
+    width           : 60%;
     z-index         : 5;
-    padding         : 1rem;
-    margin-left     : 8%;
+    padding         : 0.5rem;
+    padding-left    : 2rem;
+    padding-right   : 2rem;
+    padding-bottom  : 1rem;
+    justify-content : center;
     position        : absolute;
     transform       : translateY(-3rem);
     font-size       : 1vw;
-    
+    text-align      : end;
+    color           : var(--light);
+    z-index        : 2 !important;
+
+}
+
+.contenedor-descripcion p {
+    padding-left: 6rem;
 }
 
 .contenedor-banner-negro {
     /* background-image: url("../imagenes/banner_negro.png");
     background-position: center; */
-    width  : 100%;
-    z-index: 0;
+    width     : 100%;
+    z-index   : 0;
+    margin-top: 2rem;
 }
 
 .contenedor-banner-negro>div {
     display         : flex;
     justify-content : space-around;
     background-color: black;
-    width           : 100%;
+
+    height          : 40%;
+    /* margin-bottom: -5rem; */
 }
 
 .contenedor-banner-negro img {
     padding-left: 2vw;
-    width       : 40%;
+    width       : 35%;
 }
 
 .texto-negro {
@@ -77,28 +152,31 @@
 }
 
 .contenedor-estilos>div {
-    border       : solid 0.1rem black;
+    /* border       : solid 0.1rem black; */
     border-radius: 0.3rem;
-    width        : 18rem;
+    width        : 25rem;
     height       : 9rem;
 }
 
 .estilo-salsa {
     background-image   : url("../imagenes/salsa.png");
     background-size    : cover;
-    background-position: 0rem -0.4rem;
+    background-repeat  : no-repeat;
+    background-position: 0rem -3.5rem;
 }
 
 .estilo-bachata {
     background-image   : url("../imagenes/bachata.png");
     background-size    : cover;
-    background-position: -1rem -0.1rem;
+    background-repeat  : no-repeat;
+    background-position: 0rem -7rem;
 }
 
 .estilo-tango {
-    background-image   : url("../imagenes/tnago.png");
+    background-image   : url("../imagenes/tnagoOK.png");
     background-size    : cover;
-    background-position: 0rem -6rem;
+    background-repeat  : no-repeat;
+    background-position: 0rem -12rem;
 }
 
 .boton-estilo {
@@ -109,22 +187,62 @@
     height        : 100%;
     padding-right : 1rem;
     padding-top   : 2rem;
+
+}
+
+.boton-estilo p,
+.boton-estilo a {
+    font-family: 'Scriptina', arial;
+    font-size  : 3.5rem;
+    margin     : 0%;
+    z-index    : 1;
+}
+
+.boton-estilo a:hover {
+    color: black;
 }
 
 .contenedor-estilos button {
     background-color: #b5c7cb;
     padding         : 0.5rem;
-    width           : 4rem;
+    width           : 11rem;
+    border-radius   : 0.5rem;
+    text-align      : left;
+    padding-left    : 1rem;
+    color           : var(--light);
+}
+
+.contenedor-estilos button:hover {
+    background-color: black;
+    color           : white;
+}
+
+.contenedor-padre-tipo {
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
 }
 
 .contenedor-tipo {
-    margin-top     : 3rem;
-    display        : flex;
-    justify-content: space-around;
+    margin-top      : 5rem;
+    display         : flex;
+    justify-content : space-around;
+    background-color: var(--header-color);
+    width           : 60%;
+    height          : 5rem;
+
 }
 
 .contenedor-tipo button {
-    width: 12rem;
+    width : 100%;
+    border: solid 0.3rem var(--light);
+    color : var(--light);
+}
+
+.contenedor-tipo button:hover {
+    background-color: black;
+    color           : white;
 }
 
 .contenedor-info {
@@ -140,6 +258,10 @@
 .contenedor-info p {
     color : white;
     margin: 0;
+}
+
+.h5 {
+    size: 50% !important;
 }
 
 .envios {
@@ -256,30 +378,16 @@ h3 {
     box-shadow      : 9px 16px 20px 12px #2c2828e0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-.img-producto-modal  {
-    /*background-image: url("../imagenes/calzado-1.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;*/
-    height: 15rem;
-=======
-=======
->>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
 .img-producto-modal {
     /*background-image: url("../imagenes/calzado-1.jpg");*/
-    background-size: contain;
+    background-size  : contain;
     background-repeat: no-repeat;
-    /*height: 10rem;*/
-<<<<<<< HEAD
->>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
-=======
->>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
-    width: 30%;
+    /*height         : 10rem;*/
+    width            : 30%;
 }
+
 .img-producto-modal img {
-    width: 100%;
+    width : 100%;
     height: 100%;
 }
 
@@ -328,11 +436,37 @@ h3 {
 }
 
 .datos-compra button {
-    background-color: #c6aeaf;
+    background-color: var(--header-color);
     color           : white;
     margin-right    : 2rem;
-    width           : 6.6rem;
+    width           : 15rem;
     padding         : 0.5rem;
+    border-radius   : 0.3rem;
+
+}
+
+.boton-compra {
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+
+
+}
+
+
+.boton-combra button {
+    width: 100% !important;
+
+}
+
+.boton-compra button:hover {
+    background-color: black;
+}
+
+.boton-volver {
+    background-color: #b5c7cb !important;
+    width           : 8rem !important;
+
 }
 
 .botones-compra {
@@ -374,10 +508,10 @@ h3 {
 /***PRODUCTO***/
 
 .contenedor-producto {
-    height    : auto;
-    margin-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
+    height         : auto;
+    margin-top     : 4rem;
+    display        : flex;
+    flex-wrap      : wrap;
     justify-content: space-around;
 }
 
@@ -386,6 +520,7 @@ h3 {
     /*height: 10rem;*/
     width: 100%;
 }
+
 .img-producto img {
     width: 100%;
 }
@@ -394,7 +529,8 @@ h3 {
     width        : 15%;
     height       : auto;
     border-radius: 0.3rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.616);
+    border       : 0.1rem solid rgba(0, 0, 0, 0.616);
+    box-shadow   : #b5c7cb;
     margin-bottom: 2rem;
 }
 
@@ -402,6 +538,17 @@ h3 {
     padding: 0.5rem;
 }
 
+.producto-carta button {
+    background-color: var(--header-color);
+    color           : var(--light);
+    width           : 100%;
+    height          : 2rem;
+    border-radius   : 0.2rem;
+}
+
+.producto-carta button:hover {
+    background-color: black;
+}
 
 /****MODAL CARRITO***/
 
@@ -411,11 +558,11 @@ h3 {
     padding         : 2rem;
     border-radius   : 0.5rem;
     background-color: var(--rosa-suave);
-    height: fit-content;
-    width: 100%;
+    height          : fit-content;
+    width           : 100%;
 }
 
-.contenedor-carrito table{
+.contenedor-carrito table {
     width: 80%
 }
 
@@ -437,9 +584,9 @@ h3 {
 
 #boton-pagar {
     background-color: var(--footer-color);
-    color: white;
-    margin-left: 2rem;
-    padding: 0.3rem;
+    color           : white;
+    margin-left     : 2rem;
+    padding         : 0.3rem;
 }
 
 
