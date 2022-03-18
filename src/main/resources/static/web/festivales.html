@@ -116,7 +116,7 @@
                                 </select>
                             </div>
 
-                            <div>
+                            <!--<div>
                                 <label for="ubicacion">ACADEMIA</label>
                                 <select id="ubicacion" v-model="academia">
                                     <option value="" readonly>Seleccione academia</option>
@@ -124,7 +124,7 @@
 
                                 </select>
                                 
-                            </div>
+                            </div>-->
                             
                             <button type="button" @click="filtrar()" class="buscar-clase">Filtrar</button>
                             <button type="button" @click="mostrar()" class="buscar-clase">Mostrar todo</button>
@@ -142,11 +142,11 @@
                           <h5 class="card-title">{{festival.nombre}}</h5>
                           <p>Estilo: {{festival.estilo}}</p>
                           <p class="card-text">Descripción: {{festival.descripcion}}</p>
-                          <p class="card-text">Precio: {{festival.precio}}</p>
-                          <p>Días:</p>
+                          <p class="card-text">Precio: ${{festival.precio}}</p>
+                          <label>Días:</label>
                           <p v-for="dias in festival.dias">{{festival.dias[0]}}</p>
                           
-                          <button @click="comprar(festival.id)" class="btn btn-primary">Comprar</button>
+                          <!--<button @click="comprar(festival.id)" class="btn btn-primary">Comprar</button>-->
                           
                         </div>
                       </div>

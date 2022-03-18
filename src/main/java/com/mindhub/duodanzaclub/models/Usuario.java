@@ -31,7 +31,7 @@ public class Usuario {
     private Nivel nivel;
     private Rol rol;
     private Abono abono;
-    private String foto;
+    private String foto = "/web/recursos/imagenes/home/foto-perfil.png";
     private String descripcion;
 
     @ManyToOne(fetch = FetchType.EAGER)

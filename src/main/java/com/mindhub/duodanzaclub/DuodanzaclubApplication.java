@@ -69,11 +69,11 @@ public class DuodanzaclubApplication {
 					"\n" +
 					"Belgrano 970, Avellaneda, Buenos Aires, Argentina - Horas: Cerrado ⋅ Abre a las 20:00 - Teléfono: +54 9 11 4711-1932", Estilos.TANGO, 500.0, List.of(Dias.MARTES));
 
-			Festival festival6 = new Festival("Viva la Pepa", "/web/recursos/imagenes/eventos/vivaLaPepa", "Lorem ipsum dolor site obcaecati rerum. Hic eos placeat provident.\n" +
+			Festival festival6 = new Festival("Viva la Pepa", "/web/recursos/imagenes/eventos/vivaLaPepa.png", "Lorem ipsum dolor site obcaecati rerum. Hic eos placeat provident.\n" +
 					"\n" +
 					"Corriente 772, Rosario, Santa Fe, Argentina - Horas: Cerrado ⋅ Abre a las 22:00 - Teléfono: +54 9 11 4332-0041", Estilos.TANGO, 400.0, List.of(Dias.MIÉRCOLES));
 
-			Festival festival7 = new Festival("La Chamuyera", "/web/recursos/imagenes/eventos/laChamuyera", "Lorem ipsum dolor, sit amet conse culpa illo repellat ex veritatis eaque saficia dolore nemo illum!\n" +
+			Festival festival7 = new Festival("La Chamuyera", "/web/recursos/imagenes/eventos/laChamuyera.png", "Lorem ipsum dolor, sit amet conse culpa illo repellat ex veritatis eaque saficia dolore nemo illum!\n" +
 					"\n" +
 					"Balcarce 2375, Rosario, Santa Fe, Argentina - Horas: Cerrado ⋅ Abre a las 20:00 - Teléfono: +54 9 11 4990-3683", Estilos.TANGO, 550.0, List.of(Dias.JUEVES));
 
@@ -246,8 +246,16 @@ public class DuodanzaclubApplication {
 			ProfesorClase profesorClase3 = profesorClaseRepository.save(new ProfesorClase(profesor3, clase2));
 
 
-			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), 5);
+			Suscripcion suscripcion1 = new Suscripcion("Clase suelta", List.of(1000.0), 1);
 			suscripcionRepository.save(suscripcion1);
+
+			Suscripcion suscripcion2 = new Suscripcion("Mensual", List.of(2500.0), 3);
+			suscripcionRepository.save(suscripcion2);
+
+			Suscripcion suscripcion3 = new Suscripcion("Trimestral", List.of(6000.0), 5);
+			suscripcionRepository.save(suscripcion3);
+
+
 		};
 	}
 }

@@ -147,18 +147,24 @@
 .tipos-clases {
     display        : flex;
     flex-wrap      : wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top     : 2rem;
     margin-bottom  : 3rem;
 }
+.tipos-clases h2 {
+    width: 100%;
+    text-align: center;
+}
 
 .tipos-clases button {
-    background-color: var(--gray-color);
+  
+
     height          : 3rem;
     width           : 15rem;
     font-size       : 3vh;
     color           : white;
 }
+
 
 .abono-activo {
     background-color: var(--footer-color) !important;
@@ -180,33 +186,49 @@
 
 .contenedor-seleccion-clases {
     display        : flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items    : center;
     width          : 100%;
 }
 
+[v-cloak] {
+  display: none;
+}
+.ul {
+    display: flex;
+    width: 100%;
+}
 .selector-clases {
-    width          : 25rem;
+
+    width: 55rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.selector-clases div {
+    display: flex;
+    justify-content: space-around;
+    font-size: 3.5vh;
+    margin: 3rem;
+
+    width          : 15rem;
     align-items    : center;
     display        : flex;
     justify-content: space-between;
     flex-direction : column;
 }
 
-.selector-clases div {
-    display        : flex;
-    justify-content: space-between;
-    font-size      : 3.5vh;
-    align-items    : center;
-}
-
 .contenedor-seleccion-clases>div+div {
     margin-left: 10rem;
 }
 
-.selector-clases select {
+
+
+.selector-clases select, select {
     width           : 10rem;
-    height          : fit-content;
+    height          : 3rem;
+
     background-color: var(--footer-color);
     border          : 0.1rem solid var(--light);
     border-radius   : 0.3rem;
@@ -232,6 +254,7 @@
 .match-info {
     position       : relative;
     display        : flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width          : 100%;
     height         : 100%;
@@ -242,6 +265,10 @@
 .match-info p {
     padding-top: 5rem;
     color      : white;
+    width: 50%;
+    display: inline;
+    margin:  auto;
+    margin-bottom: 0rem;
 
 }
 
@@ -253,6 +280,7 @@
 
 .logo-match {
     transform: translateY(3rem);
+    width: 25%;
 }
 
 .texto-bachata {
@@ -265,7 +293,8 @@
     height      : 100%;
     margin-right: 0;
     position    : absolute;
-    transform   : translateX(77rem);
+    transform   : translateX(60rem);
+    width: fit-content;
 }
 
 
@@ -321,6 +350,13 @@
     color: var(--light);
 }
 
+
+.susc {
+    background-color: var(--gray-color);
+    margin: auto;
+    padding: 1rem;
+    color: white;
+}
 .contenedor-invitaciones {
     width: 80%;
     margin: auto;
