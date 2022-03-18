@@ -203,7 +203,92 @@ div>h3 {
     background-image: url("../imagenes/home/kizomba.png");
 }
 
+.info-clase {
+    padding: 3rem 6rem;
+}
+.info-clase table{
+    width: 82%;
+    margin: inherit;
+}
 
+.info-clase table thead {
+    border-bottom: 2px solid var(--header-color);
+    color: var(--header-color);
+    font-size: 1.4rem;
+}
+
+.tabla-clase {
+    display: flex;
+}
+
+.tabla-clase tbody td{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555555;
+}
+.reservar{
+    padding: 1rem 2.5rem;
+    font-size: 1.4rem;
+    background: var(--header-color);
+    color: white;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.info-clase h4 {
+    color: var(--header-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--header-color);
+    width: 50%;
+}
+
+.info-clase img {
+    width: 100%;
+}
+
+.detalle-clase {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detalle-clase p{
+    width: 70%;
+    color: #999999;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+.detalle-clase div {
+    width: 20%;
+}
+
+.detalle-imagen {
+    background-image: url("../imagenes/eventos/rosarioBachata.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 10rem;
+}
+
+.boton-volver{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nombres{
+    text-align: right;
+    width: 50%;
+}
+
+.alumno{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555555;
+}
 /*****MODAL****/
 
 .contenedor-modal {
@@ -226,4 +311,14 @@ div>h3 {
 
 .botones button {
     margin-right: 1rem;
+}
+
+
+/***MODAL CLASE DEATLLADA*****/
+
+.clase-detallada {
+    border: 0.1rem solid rgba(0, 0, 0, 0.562);
+    background-color: var(--rosa-suave);
+    height: auto;
+    width: 80%;
 }

@@ -125,7 +125,7 @@ public class UsuarioController {
         }
 
         Usuario nuevoUsuario = new Usuario(usuarioDTO.getNombre(), usuarioDTO.getApellido(), usuarioDTO.getTelefono(),
-                usuarioDTO.getEmail(), passwordEncoder.encode(usuarioDTO.getPassword()), fechaNacimiento);
+                usuarioDTO.getEmail(), passwordEncoder.encode(usuarioDTO.getPassword()), fechaNacimiento, usuarioDTO.getAcademia());
         usuarioService.guardarUsuario(usuario);
 
         return new ResponseEntity<>(HttpStatus.CREATED);

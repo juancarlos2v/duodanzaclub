@@ -27,13 +27,9 @@ public class DuodanzaclubApplication {
 	@Bean
 	public CommandLineRunner initData(UsuarioService usuarioService, AcademiaRepository academiaRepository,
 									  ProductoRepository productoRepository, SalaFestivalRepository salaFestivalRepository, ClaseRepository claseRepository,
-									  SuscripcionRepository suscripcionRepository, FestivalRepository festivalRepository){
+									  SuscripcionRepository suscripcionRepository, FestivalRepository festivalRepository, UsuarioClaseRepository usuarioClaseRepository){
 
 		return (args) -> {
-			Usuario nacho = usuarioService.saveUsuario(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
-			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
-			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
-			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
 			Usuario admin = usuarioService.saveUsuario(new Usuario("admin@admin.com", passwordEncoder.encode("123456")));
 			Academia academia1 = academiaRepository.save(new Academia("Percanta", "Rosario"));
 			Academia academia2 = academiaRepository.save(new Academia("La casa del tango", "Rosario"));
@@ -159,6 +155,11 @@ public class DuodanzaclubApplication {
 			festivalRepository.save(festivalBachata6);
 			festivalRepository.save(festivalBachata7);
 
+			Usuario nacho = usuarioService.saveUsuario(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			
 			Profesor profesor1 = new Profesor("Fernando", "Obanos");
 			Profesor profesor2 = new Profesor("Romina", "Gasper");
 			Profesor profesor3 = new Profesor("María", "Muñoz");
@@ -193,16 +194,21 @@ public class DuodanzaclubApplication {
 			Productos producto5 = productoRepository.save(new Productos("MONO TROILO", "modelo clásico acordonado en cuero", 15000.0, "/web/recursos/imagenes/zapatos/MONO_TROILO.jpg", Estilos.TANGO, Arrays.asList("37", "38", "39", "40", "41", "42", "43"), TipoProducto.CALZADOS, 32));
 			Productos producto6 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/FALDAFELICIAREVERSIBLE.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
 			Productos producto7 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
-      Productos producto8 = productoRepository.save(new Productos("Mono Checkered Red Patent", "Zapato clásico con motivo estampado tipo collage de colores.", 7000.0, "/web/recursos/imagenes/zapatos/MONOCHECKEREDREDPATENT.jpg", Estilos.BACHATA, Arrays.asList("40", "41", "42"), TipoProducto.CALZADOS, 5));
-      Productos producto9 = productoRepository.save(new Productos("Mono Orient Express", "modelo clásico acordonado con motivos orientales y punta de charol", 12300.0, "/web/recursos/imagenes/zapatos/MONOORIENTEXPRESS.jpg", Estilos.SALSA, Arrays.asList("37", "38", "39", "40", "41", "42"), TipoProducto.CALZADOS, 23));
-      Productos producto10 = productoRepository.save(new Productos("MONO TROILO", "modelo clásico acordonado en cuero", 15000.0, "/web/recursos/imagenes/zapatos/MONO_TROILO.jpg", Estilos.TANGO, Arrays.asList("37", "38", "39", "40", "41", "42", "43"), TipoProducto.CALZADOS, 32));
-      Productos producto11 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/FALDAFELICIAREVERSIBLE.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
-      Productos producto12 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
+			Productos producto8 = productoRepository.save(new Productos("Mono Checkered Red Patent", "Zapato clásico con motivo estampado tipo collage de colores.", 7000.0, "/web/recursos/imagenes/zapatos/MONOCHECKEREDREDPATENT.jpg", Estilos.BACHATA, Arrays.asList("40", "41", "42"), TipoProducto.CALZADOS, 5));
+			Productos producto9 = productoRepository.save(new Productos("Mono Orient Express", "modelo clásico acordonado con motivos orientales y punta de charol", 12300.0, "/web/recursos/imagenes/zapatos/MONOORIENTEXPRESS.jpg", Estilos.SALSA, Arrays.asList("37", "38", "39", "40", "41", "42"), TipoProducto.CALZADOS, 23));
+			Productos producto10 = productoRepository.save(new Productos("MONO TROILO", "modelo clásico acordonado en cuero", 15000.0, "/web/recursos/imagenes/zapatos/MONO_TROILO.jpg", Estilos.TANGO, Arrays.asList("37", "38", "39", "40", "41", "42", "43"), TipoProducto.CALZADOS, 32));
+			Productos producto11 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/FALDAFELICIAREVERSIBLE.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
+			Productos producto12 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
 
 
 
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", Estilos.SALSA ,"21:30 a 23:00", "Ayacucho 2345, San Cristobal", academia1));
-			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila" ,academia1));
+			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila", academia1));
+
+			UsuarioClase usuarioClase1 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase));
+			//UsuarioClase usuarioClase2 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase2));
+			UsuarioClase usuarioClase3 = usuarioClaseRepository.save(new UsuarioClase(lauti, clase));
+			UsuarioClase usuarioClase4 = usuarioClaseRepository.save(new UsuarioClase(tomi, clase));
 
 
 			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), 5);

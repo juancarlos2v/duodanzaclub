@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class ClaseDTO {
     private long id;
     private String nombre;
-    private Academia academia;
+    private AcademiaDTO academia;
     private long academiaId;
     private Estilos estilo;
     private String horario;
@@ -32,6 +32,7 @@ public class ClaseDTO {
         setId(clase.getId());
         setNombre(clase.getNombre());
         setEstilo(clase.getEstilo());
+        setAcademiaId(clase.getAcademia().getId());
         setHorario(clase.getHorario());
         setDireccion(clase.getDireccion());
         setSalas(clase.getSalaClases().stream().map(SalaClaseDTO::new).collect(Collectors.toSet()));
@@ -53,10 +54,10 @@ public class ClaseDTO {
         this.nombre = nombre;
     }
 
-    public Academia getAcademia() {
+    public AcademiaDTO getAcademia() {
         return academia;
     }
-    public void setAcademia(Academia academia) {
+    public void setAcademia(AcademiaDTO academia) {
         this.academia = academia;
     }
 
