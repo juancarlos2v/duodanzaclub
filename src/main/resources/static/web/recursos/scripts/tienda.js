@@ -33,6 +33,12 @@ let app = new Vue({
             axios.get("/api/productos")
                 .then(response => this.productos = response.data)
         },
+        formatoPrecio(number){
+            if(number != undefined){
+                let balance = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return balance;
+            }
+        },
         elegirEstilo(estilo) {
             this.estilo = estilo;
         },
@@ -83,8 +89,13 @@ let app = new Vue({
             }
         },
         agregarProducto() {
+<<<<<<< HEAD
             if (app.stock <= app.productoId.stock) {
                 for (let i = 0; i < app.stock; i++) {
+=======
+            if(app.stock <= app.productoId.stock && app.stock > 0){
+                for(let i = 0; i < app.stock ; i++){
+>>>>>>> 3186f2f1308cf52b2f2d85a015d8977946859ff0
                     app.carrito.push(app.productoId);
                     app.total += app.productoId.precio;
                 }

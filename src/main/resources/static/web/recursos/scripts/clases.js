@@ -1,11 +1,13 @@
 let app = new Vue({
     el: '#app',
     data: {
+        clase: {},
         clases: [],
         ciudades: [],
         modalContacto: false,
         modalContacto: false,
         formEnviado: false,
+        detalleClase: false,
     },
     mounted() {
         // axios.get('https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.3/download/departamentos.json', headers: {
@@ -16,7 +18,7 @@ let app = new Vue({
         //     .then(response => {
         //         console.log(response.data);
         //     })
-        app.cargarClases();
+        this.cargarClases();
 
     },
     methods: {
@@ -35,6 +37,7 @@ let app = new Vue({
             axios.get("/api/clases")
                 .then(response => {
                     console.log(response);
+                    app.clases = response.data;
                 })
         },
         enviarFormulario() {
@@ -47,6 +50,17 @@ let app = new Vue({
             pagina = document.querySelector(".contenedor-total");
             this.formEnviado = false;
             pagina.classList.remove('desenfocar');
+        },
+        abrirClase() {
+            pagina = document.querySelector(".contenedor-total");
+            pagina.classList.add('desenfocar');
+            this.detalleClase = true;
+            console.log("entro clase");
+        },
+        cerrarClase() {
+            pagina = document.querySelector(".contenedor-total");
+            pagina.classList.remove('desenfocar');
+            this.detalleClase = false;
         }
     },
 })

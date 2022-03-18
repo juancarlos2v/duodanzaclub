@@ -22,11 +22,8 @@ public class Clase {
 
     private String nombre;
     private Estilos estilo;
-    private PrecioClase precioClase;
-
-    @ElementCollection
-    @Column(name="horarios")
-    private List<Double> horarios = new ArrayList<>();
+    private String direccion;
+    private String horario;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Academia_Id")
@@ -44,21 +41,20 @@ public class Clase {
     //nivel y cambiar horarios
 
     public Clase() {}
-    public Clase(String nombre, List<Double> horarios, Academia academia) {
+    public Clase(String nombre, String horario, Academia academia) {
         setNombre(nombre);
-        setHorarios(horarios);
+        setHorario(horario);
         setAcademia(academia);
     }
 
-    public Clase(String nombre, Estilos estilo, List<Double> horarios, PrecioClase precioClase, Academia academia) {
-        this.nombre = nombre;
-        this.estilo = estilo;
-        this.horarios = horarios;
-        this.precioClase = precioClase;
-        this.academia = academia;
+    public Clase(String nombre, Estilos estilo, String horario, String direccion, Academia academia) {
+        setNombre(nombre);
+        setEstilo(estilo);
+        setHorario(horario);
+        setDireccion(direccion);
+        setAcademia(academia);
+        //setProfesorClases(profesores);
     }
-
-
 
     @JsonIgnore
     public List<Sala> getSalas() {
@@ -83,11 +79,11 @@ public class Clase {
     public Estilos getEstilo() {return estilo;}
     public void setEstilo(Estilos estilo) {this.estilo = estilo;}
 
-    public List<Double> getHorarios() {return horarios;}
-    public void setHorarios(List<Double> horarios) {this.horarios = horarios;}
+    public String getHorario() {return horario;}
+    public void setHorario(String horario) {this.horario = horario;}
 
-    public PrecioClase getPrecioClase() {return precioClase;}
-    public void setPrecioClase(PrecioClase precioClase) {this.precioClase = precioClase;}
+    public String getDireccion() {return direccion;}
+    public void setDireccion(String direccion) {this.direccion = direccion;}
 
     public Academia getAcademia() {return academia;}
     public void setAcademia(Academia academia) {this.academia = academia;}

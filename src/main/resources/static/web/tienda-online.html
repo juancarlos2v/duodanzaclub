@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./recursos/estilos/tienda-movil.css">
     <link rel="stylesheet" href="./recursos/estilos/nav-tienda.css">
     <link rel="stylesheet" href="./recursos/estilos/footer.css">
+    <link rel="shortcut icon" href="./recursos/imagenes/favIcon.png">
     <title>Tienda Online | Duo Danza Club</title>
 </head>
 
@@ -27,13 +28,16 @@
                         <a href="./index.html">Home</a>
                         <a href="./clases.html">Clases</a>
                         <a href="./festivales.html">Festivales</a>
-                        <a href="#/" @click="abrirCarrito"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l14 1l-1 7h-13" />
-                  </svg></a>
+                        <a href="#/" @click="abrirCarrito"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="6" cy="19" r="2" />
+                                <circle cx="17" cy="19" r="2" />
+                                <path d="M17 17h-11v-14h-2" />
+                                <path d="M6 5l14 1l-1 7h-13" />
+                            </svg></a>
                     </nav>
 
                 </div>
@@ -90,10 +94,10 @@
                     <div class="contenedor-producto">
                         <div v-for="producto in productos" class="producto-carta">
                             <div class="img-producto">
-                                <img :src="producto.imagen" alt="Foto producto">
+                                <img v-bind:src="producto.imagen" alt="Imagen producto">
                             </div>
                             <div>
-                                <p>${{producto.precio}}</p>
+                                <p>${{formatoPrecio(producto.precio)}}</p>
                                 <p>{{producto.titulo}}</p>
                                 <button type="button" @click="verProducto(producto.id)">Ver</button>
                             </div>
@@ -105,11 +109,11 @@
                         <div class="envios">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="150" height="150" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="7" cy="17" r="2" />
                                     <circle cx="17" cy="17" r="2" />
                                     <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
-                                  </svg>
+                                </svg>
                             </div>
                             <div>
                                 <h5>ENVIOS GRATIS 24 HS HABILES</h5>
@@ -128,10 +132,10 @@
                             <div class="mas-info">
                                 <a href="#/">
                                     <svg style="margin-bottom: 0.5rem;" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <circle cx="12" cy="12" r="9" />
-                                    <line x1="12" y1="17" x2="12" y2="17.01" />
-                                    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="12" r="9" />
+                                        <line x1="12" y1="17" x2="12" y2="17.01" />
+                                        <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
                                     </svg>
                                     <h3>AYUDA</h3>
                                     <p>Resolve tu duda o consulta</p>
@@ -157,7 +161,7 @@
                 <div class="enlaces">
                     <a href="#/" @click="abrirContacto">CONTACTO</a>
                     <a href="#/">PREGUNTAS FRECUENTES</a>
-                    <a href="#/">BASES Y CONDICIONES</a>
+                    <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
                 </div>
                 <div class="logo-footer">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png">
@@ -178,18 +182,18 @@
                 <div class="modal" v-show="abrirProducto==true">
                     <div class="contenedor-modal">
                         <div class="modal-producto">
-                            <div class="img-producto-modal">
-                                <img :src="productoId.imagen" alt="Foto de producto" style="width:100%">
+                            <!--<div class="img-producto-modal">-->
+                            <div class="img-producto-modal"> 
+                                <img v-bind:src="productoId.imagen" alt="Imagen producto">
                             </div>
-                            
                             <div class="detalles">
                                 <div>
                                     <h3>{{productoId.titulo}}</h3>
                                     <div style="display: flex;align-items: center;"><p style="margin-right: 2rem
-                                    ;">$ {{productoId.precio}} </p> <p>stock:{{productoId.stock}}</p></div>
+                                    ;">$ {{formatoPrecio(productoId.precio)}} </p> <p>stock:{{productoId.stock}}</p></div>
                                     <p>{{productoId.descripcion}}</p>
                                 </div>
-                                <div class="datos-compra">  
+                                <div class="datos-compra">
                                     <div>
                                         
                                         <div class="input-unidad">
@@ -208,7 +212,7 @@
                                     <button type="button" @click="abrirCarrito">Ver carrito</button>
                                     <button type="button" @click="volver()">Volver</button>
                                     </div>
-                                    
+
                                     <!-- <p>nombre talle precio stock descripcion</p> -->
                                 </div>
                             </div>
@@ -237,14 +241,14 @@
                                     <td>{{producto.titulo}} </td>
                                     <td>{{producto.descripcion}} </td>
                                     <td>{{producto.talle}} </td>
-                                    <td>${{producto.precio}} </td>
+                                    <td>${{ formatoPrecio(producto.precio) }} </td>
                                 </tr>
                                 
                             </tbody>
                         </table>
                         <div style="display: flex; justify-content: flex-end;margin-right: 3rem;">
                             <p>TOTAL</p>
-                            <p>${{total}}</p>
+                            <p>${{ formatoPrecio(total) }}</p>
                         </div>
                         <div>
                             <button type="button" @click="abrirCarrito">Volver</button>
@@ -275,16 +279,18 @@
             <transition name="fade">
                 <section class="modal" v-show="modalContacto==true">
                     <div class="contenedor-manos">
-                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-izquierda izquierda-contacto img-fluid"
+                            src="./recursos/imagenes/home/mano_1.png">
                         <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
                     </div>
-                        <div class="contenedor-modal">
-                            <form>
+                    <div class="contenedor-modal">
+                        <form>
+                            <div>
+                                <p>CONTACTO</p>
+                            </div>
+                            <div class="contenedor-form">
+                                <div class="logo-form"></div>
                                 <div>
-                                    <p>CONTACTO</p>
-                                </div>
-                                <div class="contenedor-form">
-                                    <div class="logo-form"></div>
                                     <div>
                                         <div>
                                             <input type="text" placeholder="nombre">
@@ -297,9 +303,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                            </form>
-                        </div>
+                        </form>
+                    </div>
                 </section>
             </transition>
         </template>

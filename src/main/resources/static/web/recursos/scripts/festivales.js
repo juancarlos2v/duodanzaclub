@@ -6,6 +6,7 @@ let app = new Vue({
         estilo: "",
         academias: "",
         academia: "",
+        logueado: false,
         ingreso: {
             usuario: "",
             contraseña: ""
@@ -36,6 +37,24 @@ let app = new Vue({
                 pagina.classList.remove('desenfocar');
                 this.modalContacto = false;
 
+            }
+        },
+        abrirModal() {
+            if(app.logueado == false){
+                axios.get("/api/usuarios/current")
+                .then(response => {
+                    if(response.data != null){
+                        app.logueado = true;
+                        window.location.href = "/web/perfil.html";
+                    }
+                })
+            }
+            if (this.modalIngreso == false) {
+                this.modalIngreso = true;
+                pagina.classList.add('desenfocar');
+            } else {
+                this.modalIngreso = false;
+                pagina.classList.remove('desenfocar');
             }
         },
         loadData() {
