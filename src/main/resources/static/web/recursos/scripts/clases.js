@@ -61,6 +61,8 @@ let app = new Vue({
             pagina = document.querySelector(".contenedor-total");
             pagina.classList.remove('desenfocar');
             this.detalleClase = false;
+        elegirClase(clase) {
+            app.clase = app.clases[clase];
         }
     },
 })

@@ -30,10 +30,6 @@ public class DuodanzaclubApplication {
 									  SuscripcionRepository suscripcionRepository){
 
 		return (args) -> {
-			Usuario nacho = usuarioService.saveUsuario(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
-			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
-			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
-			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now()));
 			Usuario admin = usuarioService.saveUsuario(new Usuario("admin@admin.com", passwordEncoder.encode("123456")));
 			Academia academia1 = academiaRepository.save(new Academia("Percanta", "Rosario"));
 			Academia academia2 = academiaRepository.save(new Academia("La casa del tango", "Rosario"));
@@ -46,6 +42,10 @@ public class DuodanzaclubApplication {
 			Academia academia9 = academiaRepository.save(new Academia("Chamuyera", "Rosario"));
 			Academia academia10 = academiaRepository.save(new Academia("Moef Ga-ga", "Rosario"));
 			Academia academia11 = academiaRepository.save(new Academia("Fábrica de artes", "Rosario"));
+			Usuario nacho = usuarioService.saveUsuario(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
 			Festival festival1 = new Festival("Milonga Roja", Estilos.TANGO, 400.0, List.of(19.00, 20.30));
 			Festival festival2 = new Festival("Percanta", Estilos.TANGO, 500.0, List.of(19.00, 20.30));
 			Festival festival3 = new Festival("El Faro", Estilos.TANGO, 350.0, List.of(19.00, 20.30));
@@ -117,7 +117,7 @@ public class DuodanzaclubApplication {
 			Productos producto12 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
 
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", Estilos.SALSA ,"21:30 a 23:00", "Ayacucho 2345, San Cristobal", academia1));
-			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila" ,academia1));
+			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila", academia1));
 
 			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), 5);
 			suscripcionRepository.save(suscripcion1);
