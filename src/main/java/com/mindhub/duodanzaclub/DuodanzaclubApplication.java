@@ -248,8 +248,16 @@ public class DuodanzaclubApplication {
 			ProfesorClase profesorClase3 = profesorClaseRepository.save(new ProfesorClase(profesor3, clase2));
 
 
-			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), 5);
+			Suscripcion suscripcion1 = new Suscripcion("Clase suelta", List.of(1000.0), 1);
 			suscripcionRepository.save(suscripcion1);
+
+			Suscripcion suscripcion2 = new Suscripcion("Mensual", List.of(2500.0), 3);
+			suscripcionRepository.save(suscripcion2);
+
+			Suscripcion suscripcion3 = new Suscripcion("Trimestral", List.of(6000.0), 5);
+			suscripcionRepository.save(suscripcion3);
+
+
 		};
 	}
 }

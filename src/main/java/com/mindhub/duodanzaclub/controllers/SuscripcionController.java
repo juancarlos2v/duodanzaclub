@@ -62,7 +62,7 @@ public class SuscripcionController {
 
 
 
-    @PostMapping("/usuarios/current/suscripciones/")
+    @PatchMapping("/usuarios/current/suscripciones/")
     public ResponseEntity<Object> suscribirse(Authentication authentication, @RequestParam Long id){
         Usuario usuario = usuarioService.findUsuarioByEmail(authentication.getName());
         Suscripcion suscripcion = suscripcionService.getSuscripcion(id);
@@ -88,6 +88,7 @@ public class SuscripcionController {
         return new ResponseEntity<>("Se suscribió", HttpStatus.CREATED);
 
     }
+
 
 
     @PostMapping("/suscripciones")

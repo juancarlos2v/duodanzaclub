@@ -131,13 +131,13 @@
     margin-bottom: 3rem;
 }
 
-.tipos-clases button {
+/*.tipos-clases button {
     background-color: var(--gray-color);
     height: 3rem;
     width: 15rem;
     font-size: 3vh;
     color: white;
-}
+}*/
 
 .abono-activo {
     background-color: var(--footer-color) !important;
@@ -165,20 +165,23 @@
 }
 
 .selector-clases {
-    width: 25rem;
+    width: 55rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 .selector-clases div {
     display: flex;
     justify-content: space-around;
     font-size: 3.5vh;
+    margin: 3rem;
 }
 
 .contenedor-seleccion-clases>div+div {
     margin-left: 10rem;
 }
 
-.selector-clases select {
+.selector-clases select, select {
     width: 10rem;
     height: fit-content;
     background-color: var(--footer-color);
@@ -284,4 +287,11 @@
     padding: 0.5rem;
     margin-left: 1.5rem;
     color: var(--light);
+}
+
+.susc {
+    background-color: var(--gray-color);
+    margin: auto;
+    padding: 1rem;
+    color: white;
 }

@@ -1,6 +1,9 @@
 let app = new Vue({
     el: '#app',
     data: {
+        suscripciones: "",
+        suscriptions: "",
+        suscripcionSelected: "",
         usuario: {},
         fotoPerfil: false,
         noFoto: true,
@@ -25,11 +28,15 @@ let app = new Vue({
         formEnviado: false,
         modalIngreso: false,
         modalRegistro: false,
+        id: ""
 
     },
     created() {
         this.loadData()
+        this.getSuscripciones()
+        
     },
+    
     mounted() {
         pagina = document.querySelector(".contenedor-total");
         s = document.querySelector(".suelta");
@@ -39,11 +46,7 @@ let app = new Vue({
     methods: {
         loadData() {
             axios.get("/api/usuarios/current")
-                .then(response => {
-                    console.log(response.data);
-                    this.usuario = response.data
-                    console.log(this.usuario.nombre)
-                })
+                
                 .then(response => {
                     console.log(response.data);
                     this.usuario = response.data
@@ -59,6 +62,13 @@ let app = new Vue({
 
                     console.log(this.usuario.nombre)
                 })
+        },
+        getSuscripciones(){
+            axios.get("/api/suscripciones")
+            .then(response => {
+                this.suscripciones = response.data
+            })
+            .catch(error => console.log(error))
         },
         cerrarSesion() {
             axios.post("/api/logout")
@@ -107,6 +117,11 @@ let app = new Vue({
 
             }
         },
+        mostrarSuscripcion(){
+            this.suscripcionSelected = this.suscripciones.filter(suscripcion => {
+               return suscripcion.id = this.suscriptions
+            })
+        },
         enviarFormulario() {
             this.formEnviado = true;
             this.modalContacto = false;
@@ -135,6 +150,12 @@ let app = new Vue({
         },
         abrirRegistro() {
             this.modalRegistro = true;
+        },
+        suscribirse(){
+            
+            axios.patch("/api/usuarios/current/suscripciones/", `id=${this.id}`)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
         }
-    },
+    }
 })

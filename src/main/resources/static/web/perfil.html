@@ -59,24 +59,15 @@
                             <div>
                                 <div class="datos-usuario">
                                     <p>Nombre: {{usuario.nombre}} </p>
-                                    <p>Apellido/s: {{usuario.apellido}} </p>
-<<<<<<< HEAD
+                                    <p>Apellido/s: {{usuario.apellido}}</p>
 
-                                    <p>Descripcion: {{usuario.descripcion}} </p>
-                                    <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
+                                    <p>Descripcion: {{usuario.descripcion}} </p>                             
                                     
 
-                                    <p>Fecha de nacimiento: </p>
-                                    <p>Biografía: </p>
-
 
                                     <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
                                     <p>Biografía: {{usuario.descripcion}} </p>
 
-=======
-                                    <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
-                                    <p>Biografía: {{usuario.descripcion}} </p>
->>>>>>> 93bdc60e6d56e5bce2c8d46a7fc9ac2b529460bd
                                 </div>
                                 <div class="foto-perfil">
                                     <div v-show="noFoto" class="no-foto">
@@ -97,37 +88,72 @@
                     <img class="logo-abonos" src="./recursos/imagenes/clases/abonos.png">
                 </div>
                 <div class="tipos-clases">
-                    <button class="suelta" type="button" @click="clickSuelta">CLASE SUELTA</button>
-                    <button class="mensual" type="button" @click="clickMensual">MENSUAL</button>
-                    <button class="trimestral" type="button" @click="clickTrimestral">TRIMESTRAL</button>
+                   <select class="select" name="" id="" v-model="id">
+                       <option value="" disabled>Tipos de suscripción</option>
+                       <option v-bind:value="suscripcion.id" v-for="suscripcion in suscripciones">{{suscripcion.nombre}}</option>
+                   </select>
+                    
                 </div>
 
                 <div class="precio-abonos">
                     <img class="piernas" src="./recursos/imagenes/silueta_zapatos.png">
                     <div class="contenedor-seleccion-clases ">
                         <div class="selector-clases">
+                           
                             <div>
-                                <select v-model="clase.cantidadClases ">
-                                    <option value="1 ">1 Clases</option>
-                                    <option value="2 ">2 Clases</option>
-                                    <option value="3 ">3 Clases</option>
-                                    <option value="4 ">4 Clases</option>
-                                    <option value="5 ">5 Clases</option>
-                                </select>
-                                <p>por semana</p>
+                                <ul>
+                                    <li>
+                                        Clase suelta: 
+                                        <ul>
+                                            <li>
+                                                Clases: 1
+                                            </li>
+                                            <li>
+                                                Precio: $1000
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        Mensual: 
+                                        <ul>
+                                            <li>
+                                                Clases por semana: 3
+                                            </li>
+                                            <li>
+                                                Precio: $2500
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        Trimestral: 
+                                        <ul>
+                                            <li>
+                                                Clases por semana: 5
+                                            </li>
+                                            <li>
+                                                Precio: $6000
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                </ul>
 
                             </div>
-                            <div>
+                            <button @click="suscribirse()" class="susc">Suscribirse</button>
+                            <!--<div>
                                 <p>modo de pago</p>
                                 <select v-model="clase.modoPago ">
                                     <option value="debito ">DEBITO</option>
                                     <option value="credito ">CREDITO</option>
                                 </select>
-                            </div>
+                            </div>-->
                         </div>
-                        <div>
-                            <h2>$1200/mes </h2>
-                        </div>
+                        <!--<div>
+                            <h2>${{suscripcionSelected.precio}}/mes </h2>
+                        </div>-->
 
                     </div>
                     <!-- <button type="button">SELECCIONAR</button> -->
@@ -185,18 +211,20 @@
                         <div class="modal-editar ">
                             <h2>EDITAR PERFIL</h2>
                             <form>
-<<<<<<< HEAD
+
 
                                 <input v-model="cambio.nombre" type="text" placeholder="Nombre">
                                 <input v-model="cambio.apellido" type="text" placeholder="Apellido">
                                 <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
                                 <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
-=======
+
                                 <input v-model="usuario.nombre" type="text" placeholder="Nombre">
                                 <input v-model="usuario.apellido" type="text" placeholder="Apellido">
                                 <input v-model="usuario.nacimiento" type="date" placeholder="Fecha de nacimiento">
                                 <input v-model="usuario.foto" type="text" placeholder="Agregar foto">
->>>>>>> 93bdc60e6d56e5bce2c8d46a7fc9ac2b529460bd
+
+
+
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
                                 <input v-model="usuario.ciudad" type="text" placeholder="Ciudad">
                                 <input v-model="usuario.telefono" type="number" placeholder="Telefono">
