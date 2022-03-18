@@ -21,8 +21,11 @@ let app = new Vue({
             precioFinal: 0,
         },
         editarPerfil: false,
+        modalContacto: false,
+        formEnviado: false,
+
     },
-    created(){
+    created() {
         this.loadData()
     },
     mounted() {
@@ -32,7 +35,7 @@ let app = new Vue({
         t = document.querySelector(".trimestral");
     },
     methods: {
-        loadData(){
+        loadData() {
             axios.get("/api/usuarios/current")
             .then(response => {
                 console.log(response.data);
@@ -49,6 +52,7 @@ let app = new Vue({
 
                 console.log(this.usuario.nombre)
             })
+
         },
         cerrarSesion() {
             axios.post("/api/logout")
@@ -86,6 +90,7 @@ let app = new Vue({
         confirmarCambios() {
 
         },
+
         editarInfo(){
             axios.patch("/api/usuarios/current",
             {"nombre": this.cambio.nombre, "apellido": this.cambio.apellido, 
@@ -98,6 +103,26 @@ let app = new Vue({
                 window.location.reload()
             })
             .catch(error => console.log(error))
+},
+        abrirContacto() {
+            if (this.modalContacto == false) {
+                pagina.classList.add('desenfocar');
+                this.modalContacto = true;
+            } else {
+                pagina.classList.remove('desenfocar');
+                this.modalContacto = false
+
+
+            }
+        },
+        enviarFormulario() {
+            this.formEnviado = true;
+            this.modalContacto = false;
+            pagina.classList.add('desenfocar');
+        },
+        cerrar() {
+            this.formEnviado = false;
+            pagina.classList.remove('desenfocar');
         }
     },
 })

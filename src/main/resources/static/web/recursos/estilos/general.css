@@ -211,6 +211,10 @@ form>div div+div {
     color: var(--light)
 }
 
+.envio-formulario>p {
+    color: var(--light) !important;
+}
+
 .envio-formulario button {
     color: white;
 }

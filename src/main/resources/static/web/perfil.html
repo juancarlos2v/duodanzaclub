@@ -135,18 +135,19 @@
 
             <footer>
                 <div class="enlaces ">
-                    <a href="# ">CONTACTO</a>
-                    <a href="# ">PREGUNTAS FRECUENTES</a>
+                    <a href="#/" @click="abrirContacto">CONTACTO</a>
+                    <a href="#/">PREGUNTAS FRECUENTES</a>
                     <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
+
                 </div>
                 <div class="logo-footer ">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png ">
                 </div>
                 <div class="redes-correo ">
                     <div class="contenedor-redes ">
-                        <a href="https://www.facebook.com "><img src="./recursos/imagenes/facebook.png "></a>
-                        <a href="https://www.instagram.com "> <img src="./recursos/imagenes/instagram.png "></a>
-                        <a href="https://twitter.com "> <img src="./recursos/imagenes/twitter.png "></a>
+                        <a href="https://www.facebook.com " target="_blank"><img src="./recursos/imagenes/facebook.png "></a>
+                        <a href="https://www.instagram.com " target="_blank"> <img src="./recursos/imagenes/instagram.png "></a>
+                        <a href="https://twitter.com " target="_blank"> <img src="./recursos/imagenes/twitter.png "></a>
                     </div>
                     <a href="# ">duodanzaclub@gmail.com</a>
                 </div>
@@ -180,6 +181,49 @@
                             </div>
                         </div>
                         
+                    </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="modalContacto==true">
+                    <div class="contenedor-manos">
+                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                    </div>
+                        <div class="contenedor-modal modal-contacto">
+                            <form>
+                                <div>
+                                    <p>CONTACTO</p>
+                                </div>
+                                <div class="contenedor-form">
+                                    <div class="logo-form"></div>
+                                    <div>
+                                        <div>
+                                            <input type="text" placeholder="nombre">
+                                            <input type="text" placeholder="e-mail">
+                                        </div>
+                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                        <div class="botones">
+                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
+                                            <button type="button" @click="abrirContacto">VOLVER</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="formEnviado==true">  
+                    <div class="envio-formulario" >
+                        <h2>Mensaje enviado</h2>
+                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                       <button type="button" @click="cerrar">VOLVER</button>
                     </div>
                 </section>
             </transition>

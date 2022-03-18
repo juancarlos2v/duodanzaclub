@@ -49,9 +49,7 @@
                         <div class="pareja-img"></div>
                     </div>
                     <div class="contenedor-descripcion contain">
-                        <p>Sección de compra especializada en zapatos e indumentaria para practicar en tus clases,
-                            contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de
-                            escenario.
+                        <p>Sección de compra especializada en zapatos e indumentaria para practicar en tus clases, contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de escenario.
                         </p>
                     </div>
                 </div>
@@ -175,9 +173,9 @@
                 </div>
                 <div class="redes-correo">
                     <div class="contenedor-redes">
-                        <a href="https://www.facebook.com"><img src="./recursos/imagenes/facebook.png"></a>
-                        <a href="https://www.instagram.com"> <img src="./recursos/imagenes/instagram.png"></a>
-                        <a href="https://twitter.com"> <img src="./recursos/imagenes/twitter.png"></a>
+                        <a href="https://www.facebook.com" target="_blank"><img src="./recursos/imagenes/facebook.png"></a>
+                        <a href="https://www.instagram.com" target="_blank"> <img src="./recursos/imagenes/instagram.png"></a>
+                        <a href="https://twitter.com" target="_blank"> <img src="./recursos/imagenes/twitter.png"></a>
                     </div>
                     <a href="#">duodanza@club.com</a>
                 </div>
@@ -228,7 +226,7 @@
                 </div>
             </transition>
         </template>
-       
+
         <template>
             <transition name="fade">
                 <section class="modal" v-show="modalCarrito==true">
@@ -298,19 +296,32 @@
                             <div class="contenedor-form">
                                 <div class="logo-form"></div>
                                 <div>
-                                    <div>
-                                        <input type="text" placeholder="nombre">
-                                        <input type="text" placeholder="e-mail">
-                                    </div>
-                                    <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                    <div class="botones">
-                                        <button type="button">ENVIAR</button>
-                                        <button type="button" @click="abrirContacto">VOLVER</button>
+                                        <div>
+                                            <input type="text" placeholder="nombre">
+                                            <input type="text" placeholder="e-mail">
+                                        </div>
+                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                        <div class="botones">
+                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
+                                            <button type="button" @click="abrirContacto">VOLVER</button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
 
                         </form>
+                    </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="formEnviado==true">  
+                    <div class="envio-formulario" >
+                        <h2>Mensaje enviado</h2>
+                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                       <button type="button" @click="cerrar">VOLVER</button>
                     </div>
                 </section>
             </transition>

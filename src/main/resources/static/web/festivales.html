@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
+
     <link rel="stylesheet" href="./recursos/estilos/festivales.css">
     <link rel="stylesheet" href="./recursos/estilos/nav-home.css">
     <link rel="stylesheet" href="./recursos/estilos/footer.css">
@@ -29,7 +29,7 @@
                             <a href="./clases.html">Clases</a>
                         </div>
                         <div>
-                            <a href="#">Contacto</a>
+                            <a href="#/" @click="abrirContacto">Contacto</a>
                             <a href="./tienda-online.html">Tienda</a>
                             <a href="#/" @click="abrirCarrito"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -62,8 +62,7 @@
             <main>
                 <div class="cajita-banner">
                     <div class="seccion-festivales-banner">
-                        <div class="contenedor-texto-festivales"><img
-                                src="./recursos/imagenes/festivales/FestivalesBlanco.png" alt=""></div>
+                        <div class="contenedor-texto-festivales"><img src="./recursos/imagenes/festivales/FestivalesBlanco.png" alt=""></div>
 
                     </div>
                 </div>
@@ -78,8 +77,7 @@
                     <div class="manos">
 
                         <div class="contenedor-texto3">
-                            <p>Buscador de espectáculos y eventos de baile en tu zona. Toda la información que necesitas y con opción
-                                de compra online. Las mejores salas y lugares para pasar la noche/día bailando.
+                            <p>Buscador de espectáculos y eventos de baile en tu zona. Toda la información que necesitas y con opción de compra online. Las mejores salas y lugares para pasar la noche/día bailando.
                             </p>
                         </div>
 
@@ -90,9 +88,7 @@
                     <div class="contenedor-texto-milongas">
                         <h2>CARTELERA</h2>
                         <p>
-                            En tres sencillos pasos vas a poder filtrar la lista de eventos y festivales por estilo y ubicación.
-                            Luego sencillamente escoges cual prefieres, seleccionas la cantidad de entradas y las compartes con quien
-                            más te guste compartir en pista.
+                            En tres sencillos pasos vas a poder filtrar la lista de eventos y festivales por estilo y ubicación. Luego sencillamente escoges cual prefieres, seleccionas la cantidad de entradas y las compartes con quien más te guste compartir en pista.
                         </p>
                     </div>
                 </div>
@@ -143,11 +139,9 @@
                     </div>
                     <div class="texto-evento">
                         <h2>PERCANTA TANGO</h2>
-                        <p>Salón de baile tradicional de milonga y tango con en pleno centro de la ciudad de Rosario piso de madera que
-                             también ofrece lecciones en sus tres salas polivalentes.</p>
+                        <p>Salón de baile tradicional de milonga y tango con en pleno centro de la ciudad de Rosario piso de madera que también ofrece lecciones en sus tres salas polivalentes.</p>
 
-                        <p> Salta 1568 PA, S2000 Rosario, Santa Fe, Argentina - Horas:
-                            Cerrado ⋅ Abre a las 20:00 - Teléfono: +54 9 11 4102-7810
+                        <p> Salta 1568 PA, S2000 Rosario, Santa Fe, Argentina - Horas: Cerrado ⋅ Abre a las 20:00 - Teléfono: +54 9 11 4102-7810
                         </p>
                         <div class="botones-evento">
                             <button>1</button>
@@ -161,12 +155,10 @@
 
                     <div class="texto-evento-gris">
                         <h2>CLUB GRICEL</h2>
-                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también
-                            ofrece lecciones.
+                        <p>Salón de baile tradicional de milonga y tango con techos altos y piso de madera que también ofrece lecciones.
                         </p>
 
-                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas:
-                            Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
+                        <p> Dirección: La Rioja 1184, C1221 ACN, Buenos Aires, Argentina - Horas: Cerrado ⋅ Abre a las 18:00 - Teléfono: +54 9 11 5515-4650
                         </p>
                         <div class="botones-evento-gris">
                             <button> 1</button>
@@ -187,18 +179,20 @@
             </main>
             <footer>
                 <div class="enlaces ">
-                    <a href="# ">CONTACTO</a>
-                    <a href="# ">PREGUNTAS FRECUENTES</a>
+
+                    <a href="#/" @click="abrirContacto">CONTACTO</a>
+                    <a href="#/">PREGUNTAS FRECUENTES</a>
                     <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
+
                 </div>
                 <div class="logo-footer ">
                     <img src="./recursos/imagenes/logoFOOTER .png ">
                 </div>
                 <div class="redes-correo ">
                     <div class="contenedor-redes ">
-                        <a href="https://www.facebook.com "><img src="./recursos/imagenes/facebook.png "></a>
-                        <a href="https://www.instagram.com "> <img src="./recursos/imagenes/instagram.png "></a>
-                        <a href="https://twitter.com "> <img src="./recursos/imagenes/twitter.png "></a>
+                        <a href="https://www.facebook.com" target="_blank"><img src="./recursos/imagenes/facebook.png "></a>
+                        <a href="https://www.instagram.com " target="_blank"> <img src="./recursos/imagenes/instagram.png "></a>
+                        <a href="https://twitter.com " target="_blank"> <img src="./recursos/imagenes/twitter.png "></a>
                     </div>
                     <a href="#">duodanzaclub@gmail.com</a>
                 </div>
@@ -208,7 +202,7 @@
         <template>
             <transition name="fade">
                 <section class="modal" v-show="modalIngreso==true">
-                    <div class="contenedor-modal">
+                    <div class="contenedor-modal" >
                         <div class="modal-ingreso">
                             <div>
                                 <img class="img-fluid" src="./recursos/imagenes/logo_NEUTRO_light.png">
@@ -230,17 +224,58 @@
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </section>
             </transition>
         </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="modalContacto==true">
+                    <div class="contenedor-manos">
+                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                    </div>
+                        <div class="contenedor-contacto">
+                            <form>
+                                <div>
+                                    <p>CONTACTO</p>
+                                </div>
+                                <div class="contenedor-form">
+                                    <div class="logo-form"></div>
+                                    <div>
+                                        <div>
+                                            <input type="text" placeholder="nombre">
+                                            <input type="text" placeholder="e-mail">
+                                        </div>
+                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                        <div class="botones">
+                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
+                                            <button type="button" @click="abrirContacto">VOLVER</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="formEnviado==true">  
+                    <div class="envio-formulario" >
+                        <h2>Mensaje enviado</h2>
+                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                       <button type="button" @click="cerrar">VOLVER</button>
+                    </div>
+                </section>
+            </transition>
+        </template>
+
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
