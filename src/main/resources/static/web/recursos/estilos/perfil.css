@@ -251,6 +251,11 @@
     margin: 0.4em;
 }
 
+.modal-contacto {
+    background: transparent;
+    border: none;
+}
+
 .contenedor-botones {
     margin-top: 3rem;
     position: relative;
