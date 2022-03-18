@@ -37,6 +37,9 @@ let app = new Vue({
                     console.log(response);
                     app.clases = response.data;
                 })
+        },
+        elegirClase(clase) {
+            app.clase = app.clases[clase];
         }
     },
 })

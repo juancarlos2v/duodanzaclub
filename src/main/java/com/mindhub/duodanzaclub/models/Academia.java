@@ -53,4 +53,9 @@ public class Academia {
     public Set<Sala> getSalas() {return salas;}
     public void setSalas(Set<Sala> salas) {this.salas = salas;}
 
+    public void addClase(Clase clase) {
+        clase.setAcademia(this);
+        clases.add(clase);
+    }
+
 }
