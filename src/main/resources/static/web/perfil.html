@@ -71,7 +71,7 @@
                                     <img v-show="fotoPerfil" :src="usuario.foto" alt="Foto de perfil">
                                 </div>
                             </div>
-                            <div>
+                            <div class="botones-usuario">
                                 <button type="button" @click="clickEditar">EDITAR</button>
                                 <button type="button" @click="cerrarSesion()">CERRAR SESIÓN</button>
                             </div>
@@ -103,17 +103,19 @@
                 <div class="contenedor-abonos" data-aos="fade-up">
                     <img class="logo-abonos" src="./recursos/imagenes/clases/abonos.png">
                 </div>
-                <div class="tipos-clases">
-                    <button class="suelta" type="button" @click="clickSuelta" data-aos="zoom-in">CLASE SUELTA</button>
-                    <button class="mensual" type="button" @click="clickMensual" data-aos="zoom-in">MENSUAL</button>
-                    <button class="trimestral" type="button" @click="clickTrimestral" data-aos="zoom-in">TRIMESTRAL</button>
-                </div>
+
+                <!-- <div class="tipos-clases">
+                    <button class="suelta" type="button" @click="clickSuelta">CLASE SUELTA</button>
+                    <button class="mensual" type="button" @click="clickMensual">MENSUAL</button>
+                    <button class="trimestral" type="button" @click="clickTrimestral">TRIMESTRAL</button>
+                </div> -->
+
 
                 <div class="precio-abonos">
                     <img data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="piernas" src="./recursos/imagenes/silueta_zapatos.png">
                     <div class="contenedor-seleccion-clases ">
                         <div class="selector-clases">
-                            <div>
+                            <div class="fila-select">
                                 <select v-model="clase.cantidadClases ">
                                     <option value="1 ">1 Clases</option>
                                     <option value="2 ">2 Clases</option>
@@ -121,16 +123,20 @@
                                     <option value="4 ">4 Clases</option>
                                     <option value="5 ">5 Clases</option>
                                 </select>
-                                <p>por semana</p>
+                                
+                                    <p>por semana</p>
+                                
+
 
                             </div>
-                            <div>
+                             <div>
                                 <p>modo de pago</p>
                                 <select v-model="clase.modoPago ">
-                                    <option value="debito ">DEBITO</option>
-                                    <option value="credito ">CREDITO</option>
+                                    <option value="debito ">CLASE SUELTA</option>
+                                    <option value="credito ">MENSUAL</option>
+                                    <option value="credito ">TRIMESTRAL</option>
                                 </select>
-                            </div>
+                            </div> 
                         </div>
                         <div>
                             <h2>$1200/mes </h2>
@@ -146,8 +152,15 @@
                             <img class=" img-fluid " src="./recursos/imagenes/home/match_ok.png ">
                         </div>
                         <div class="texto-bachata">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus cupiditate ab neque eius mollitia perferendis dolorem, corrupti excepturi, sint temporibus, exercitationem labore deleniti. Et alias in incidunt impedit fugiat
-                                vitae?
+
+                            <p>¿Cuál es tu manera de sentir la danza? ¿Qué tipo de bailarín eres? Cuéntalo en tu
+                                descripción y conoce a toda una comunidad con la que vas a poder intercambiar y aprender
+                                contínuamente.
+                                Habilitamos la opción de vista de perfil dentro de cada clase, así sabemos con quien
+                                compartiremos la sala.
+                                En el caso de encontrar un compañero afín y libre que quieras que sea tu acompañante se
+                                le enviará una notificación, y de estar de acuerdo: Match Bailando!
+
                             </p>
                         </div>
                         <img class="pareja img-fluid " src="./recursos/imagenes/home/bachata_recorte.png">
@@ -197,13 +210,14 @@
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
                                 <input v-model="usuario.ciudad" type="text" placeholder="Ciudad">
                                 <input v-model="usuario.telefono" type="number" placeholder="Telefono">
-                                <textarea class="textarea" v-model="usuario.descripcion" rows="4" cols="30" placeholder="Agregar biografía"></textarea>
-                                
+                                <textarea class="textarea" v-model="usuario.descripcion" rows="4" cols="30"
+                                    placeholder="Agregar biografía"></textarea>
+
                                 <!--<input v-model="cambio.contraseña" type="password" placeholder="Contraseña">-->
                             </form>
                             <div class="contenedor-botones">
                                 <button type="button" @click="clickEditar">VOLVER</button>
-                                <button type="button" @click="editarInfo" >CONFIRMAR</button>
+                                <button type="button" @click="editarInfo">CONFIRMAR</button>
                             </div>
                         </div>
 
@@ -215,41 +229,42 @@
             <transition name="fade">
                 <section class="modal" v-show="modalContacto==true">
                     <div class="contenedor-manos">
-                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-izquierda izquierda-contacto img-fluid"
+                            src="./recursos/imagenes/home/mano_1.png">
                         <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
                     </div>
-                        <div class="contenedor-modal modal-contacto">
-                            <form>
+                    <div class="contenedor-modal modal-contacto">
+                        <form>
+                            <div>
+                                <p>CONTACTO</p>
+                            </div>
+                            <div class="contenedor-form">
+                                <div class="logo-form"></div>
                                 <div>
-                                    <p>CONTACTO</p>
-                                </div>
-                                <div class="contenedor-form">
-                                    <div class="logo-form"></div>
                                     <div>
-                                        <div>
-                                            <input type="text" placeholder="nombre">
-                                            <input type="text" placeholder="e-mail">
-                                        </div>
-                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                        <div class="botones">
-                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
-                                            <button type="button" @click="abrirContacto">VOLVER</button>
-                                        </div>
+                                        <input type="text" placeholder="nombre">
+                                        <input type="text" placeholder="e-mail">
+                                    </div>
+                                    <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                    <div class="botones">
+                                        <button type="button" @click="enviarFormulario">ENVIAR</button>
+                                        <button type="button" @click="abrirContacto">VOLVER</button>
                                     </div>
                                 </div>
+                            </div>
 
-                            </form>
-                        </div>
+                        </form>
+                    </div>
                 </section>
             </transition>
         </template>
         <template>
             <transition name="fade">
-                <section class="modal" v-show="formEnviado==true">  
-                    <div class="envio-formulario" >
+                <section class="modal" v-show="formEnviado==true">
+                    <div class="envio-formulario">
                         <h2>Mensaje enviado</h2>
-                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
-                       <button type="button" @click="cerrar">VOLVER</button>
+                        <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                        <button type="button" @click="cerrar">VOLVER</button>
                     </div>
                 </section>
             </transition>
