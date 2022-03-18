@@ -1,5 +1,7 @@
 package com.mindhub.duodanzaclub.dtos;
 
+import com.mindhub.duodanzaclub.models.Dias;
+import com.mindhub.duodanzaclub.models.Estilos;
 import com.mindhub.duodanzaclub.models.Festival;
 
 import java.util.ArrayList;
@@ -12,7 +14,11 @@ public class FestivalDTO {
     private long id;
     private String nombre;
     private Double precio;
-    private List<Double> horarios = new ArrayList<>();
+    private String horarios;
+    private String imagen;
+    private String descripcion;
+    private Estilos estilo;
+    private List<Dias> dias = new ArrayList<>();
     private Set<SalaFestivalDTO> salas = new HashSet<>();
 
 
@@ -22,7 +28,10 @@ public class FestivalDTO {
         setId(festival.getId());
         setNombre(festival.getNombre());
         setPrecio(festival.getPrecio());
-        setHorarios(festival.getHorarios());
+        setImagen(festival.getImagen());
+        setDescripcion(festival.getDescripcion());
+        setEstilo(festival.getEstilo());
+        setDias(festival.getDias());
         setSalas(festival.getSalaFestival().stream().map(SalaFestivalDTO::new).collect(Collectors.toSet()));
     }
 
@@ -49,10 +58,10 @@ public class FestivalDTO {
         this.precio = precio;
     }
 
-    public List<Double> getHorarios() {
+    public String getHorarios() {
         return horarios;
     }
-    public void setHorarios(List<Double> horarios) {
+    public void setHorarios(String horarios) {
         this.horarios = horarios;
     }
 
@@ -62,4 +71,17 @@ public class FestivalDTO {
     public void setSalas(Set<SalaFestivalDTO> salas) {
         this.salas = salas;
     }
+
+    public String getImagen() {return imagen;}
+    public void setImagen(String imagen) {this.imagen = imagen;}
+
+    public String getDescripcion() {return descripcion;}
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
+
+    public Estilos getEstilo() {return estilo;}
+    public void setEstilo(Estilos estilo) {this.estilo = estilo;}
+
+    public List<Dias> getDias() {return dias;}
+    public void setDias(List<Dias> dias) {this.dias = dias;}
+
 }
