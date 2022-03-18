@@ -256,11 +256,26 @@ h3 {
     box-shadow: 9px 16px 20px 12px #2c2828e0;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+.img-producto-modal  {
+    /*background-image: url("../imagenes/calzado-1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;*/
+    height: 15rem;
+=======
+=======
+>>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
 .img-producto-modal {
     /*background-image: url("../imagenes/calzado-1.jpg");*/
     background-size: contain;
     background-repeat: no-repeat;
     /*height: 10rem;*/
+<<<<<<< HEAD
+>>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
+=======
+>>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
     width: 30%;
 }
 

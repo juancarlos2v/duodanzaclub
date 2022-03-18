@@ -93,10 +93,11 @@
                     <!-- PRODUCTOS -->
                     <!-- <template> -->
                     <!-- v-for="producto in productos" -->
+
                     <div class="contenedor-producto">
                         <div v-for="producto in productos" class="producto-carta" data-aos="zoom-out">
                             <div class="img-producto">
-                                <img v-bind:src="producto.imagen" alt="Imagen producto">
+                                <img :src="producto.imagen" alt="Imagen producto">
                             </div>
                             <div>
                                 <p>${{formatoPrecio(producto.precio)}}</p>
@@ -175,6 +176,7 @@
                         <a href="https://twitter.com" target="_blank"> <img src="./recursos/imagenes/twitter.png"></a>
                     </div>
                     <a href="#">duodanza@club.com</a>
+                   
                 </div>
             </footer>
         </div>
@@ -184,10 +186,11 @@
                 <div class="modal" v-show="abrirProducto==true">
                     <div class="contenedor-modal">
                         <div class="modal-producto">
-                            <!--<div class="img-producto-modal">-->
-                            <div class="img-producto-modal"> 
-                                <img v-bind:src="productoId.imagen" alt="Imagen producto">
+
+                            <div class="img-producto-modal">
+                                <img :src="productoId.imagen" alt="Foto de producto" style="width:100%">
                             </div>
+                            
                             <div class="detalles">
                                 <div>
                                     <h3>{{productoId.titulo}}</h3>
@@ -312,6 +315,7 @@
                 </section>
             </transition>
         </template>
+
         <template>
             <transition name="fade">
                 <section class="modal" v-show="formEnviado==true">  
@@ -323,7 +327,6 @@
                 </section>
             </transition>
         </template>
-
 
     </div>
 
