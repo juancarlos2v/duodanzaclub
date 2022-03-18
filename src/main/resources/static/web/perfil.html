@@ -135,15 +135,9 @@
 
             <footer>
                 <div class="enlaces ">
-<<<<<<< HEAD
                     <a href="#/" @click="abrirContacto">CONTACTO</a>
                     <a href="#/">PREGUNTAS FRECUENTES</a>
-                    <a href="#/">BASES Y CONDICIONES</a>
-=======
-                    <a href="# ">CONTACTO</a>
-                    <a href="# ">PREGUNTAS FRECUENTES</a>
                     <a href="./bases-condiciones.html">BASES Y CONDICIONES</a>
->>>>>>> 3186f2f1308cf52b2f2d85a015d8977946859ff0
                 </div>
                 <div class="logo-footer ">
                     <img src="./recursos/imagenes/logo_NEUTRO_light.png ">
@@ -169,14 +163,14 @@
                         <div class="modal-editar ">
                             <h2>EDITAR PERFIL</h2>
                             <form>
-                                <input v-model="cambio.nombre" type="text" placeholder="Nombre">
-                                <input v-model="cambio.apellido" type="text" placeholder="Apellido">
-                                <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
-                                <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
+                                <input v-model="usuario.nombre" type="text" placeholder="Nombre">
+                                <input v-model="usuario.apellido" type="text" placeholder="Apellido">
+                                <input v-model="usuario.nacimiento" type="date" placeholder="Fecha de nacimiento">
+                                <input v-model="usuario.foto" type="text" placeholder="Agregar foto">
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
-                                <input v-model="cambio.ciudad" type="text" placeholder="Ciudad">
-                                <input v-model="cambio.telefono" type="number" placeholder="Telefono">
-                                <textarea class="textarea" v-model="cambio.descripcion" rows="4" cols="30" placeholder="Agregar biografía"></textarea>
+                                <input v-model="usuario.ciudad" type="text" placeholder="Ciudad">
+                                <input v-model="usuario.telefono" type="number" placeholder="Telefono">
+                                <textarea class="textarea" v-model="usuario.descripcion" rows="4" cols="30" placeholder="Agregar biografía"></textarea>
                                 
                                 <!--<input v-model="cambio.contraseña" type="password" placeholder="Contraseña">-->
                             </form>
