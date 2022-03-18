@@ -24,9 +24,10 @@ public class Clase {
     private Estilos estilo;
     private String direccion;
     private String horario;
+    private long academiaId;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "Academia_Id")
+    @JoinColumn(name = "academias_id")
     private Academia academia;
 
     @OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
@@ -53,6 +54,7 @@ public class Clase {
         setHorario(horario);
         setDireccion(direccion);
         setAcademia(academia);
+        setAcademiaId(academia.getId());
         //setProfesorClases(profesores);
     }
 
@@ -96,4 +98,7 @@ public class Clase {
 
     public Set<UsuarioClase> getUsuarioClases() {return usuarioClases;}
     public void setUsuarioClases(Set<UsuarioClase> usuarioClases) {this.usuarioClases = usuarioClases;}
+
+    public long getAcademiaId() {return academiaId;}
+    public void setAcademiaId(long academiaId) {this.academiaId = academiaId;}
 }

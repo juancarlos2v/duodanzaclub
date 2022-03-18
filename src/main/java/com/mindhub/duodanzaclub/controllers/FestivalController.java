@@ -37,7 +37,8 @@ public class FestivalController {
             return new ResponseEntity<>("Complete los campos requeridos", HttpStatus.FORBIDDEN);
         }
 
-        Festival festivalNuevo = new Festival(festival.getNombre(), festival.getEstilo(), festival.getPrecio(), festival.getHorarios());
+        Festival festivalNuevo = new Festival(festival.getNombre(), festival.getImagen(), festival.getDescripcion()
+                , festival.getEstilo(), festival.getPrecio() , festival.getDias());
         festivalService.guardarFestival(festivalNuevo);
         return new ResponseEntity<>("Festival creado", HttpStatus.CREATED);
     }
