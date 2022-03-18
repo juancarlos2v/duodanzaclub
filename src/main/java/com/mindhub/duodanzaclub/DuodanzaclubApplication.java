@@ -43,6 +43,13 @@ public class DuodanzaclubApplication {
 			Academia academia9 = academiaRepository.save(new Academia("Chamuyera", "Rosario"));
 			Academia academia10 = academiaRepository.save(new Academia("Moef Ga-ga", "Rosario"));
 			Academia academia11 = academiaRepository.save(new Academia("Fábrica de artes", "Rosario"));
+
+
+
+
+
+
+
 			Festival festival1 = new Festival("Milonga Roja", "/web/recursos/imagenes/eventos/milongaRoja.png", "Lorem ipsu quibusdam sequi numquam dolor sit amet cone nesciunt mquam.  inventore, porro impedit non.\n" +
 					"\n" +
 					"España 320, Rosario, Santa Fe, Argentina - Horas: Cerrado ⋅ Abre a las 18:30 - Teléfono: +54 9 11 5674-2345", Estilos.TANGO, 400.0, List.of(Dias.VIERNES));
@@ -156,38 +163,62 @@ public class DuodanzaclubApplication {
 			festivalRepository.save(festivalBachata6);
 			festivalRepository.save(festivalBachata7);
 
+
+
+
 			Usuario nacho = usuarioService.saveUsuario(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
-			nacho.setFoto("https://images.ole.com.ar/2022/03/10/l4Y9hlUSZ_340x340__1.jpg");
 			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
 			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
 			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
-			
-			Profesor profesor1 = profesorRepository.save(new Profesor("Fernando", "Obanos"));
-			Profesor profesor2 = profesorRepository.save(new Profesor("Romina", "Gasper"));
-			Profesor profesor3 = profesorRepository.save(new Profesor("María", "Muñoz"));
-			Profesor profesor4 = profesorRepository.save(new Profesor("Guillermo", "Ruiz"));
-			Profesor profesor5 = profesorRepository.save(new Profesor("Gio", "De Bellonia"));
-			Profesor profesor6 = profesorRepository.save(new Profesor("Lucia", "Be"));
-			Profesor profesor7 = profesorRepository.save(new Profesor("El Peque", ""));
-			Profesor profesor8 = profesorRepository.save(new Profesor("Rocío", "Lequio"));
-			Profesor profesor9 = profesorRepository.save(new Profesor("Bruno", "Tombari"));
-			Profesor profesor10 = profesorRepository.save(new Profesor("El Duende", ""));
-			Profesor profesor11 = profesorRepository.save(new Profesor("Marisa", "Talamoni"));
-			Profesor profesor12 = profesorRepository.save(new Profesor("Ricardo", "Calvo"));
-			Profesor profesor13 = profesorRepository.save(new Profesor("Soledad", "Cantarini"));
-			Profesor profesor14 = profesorRepository.save(new Profesor("Diego", "López"));
-			Profesor profesor15 = profesorRepository.save(new Profesor("Rosana", "Romero"));
-			Profesor profesor16 = profesorRepository.save(new Profesor("El colo", "Benítez"));
-			Profesor profesor17 = profesorRepository.save(new Profesor("Fernando", "Obanos"));
-			Profesor profesor18 = profesorRepository.save(new Profesor("Romi", "Gasperi"));
-			Profesor profesor19 = profesorRepository.save(new Profesor("Ani", "Badalyan"));
-			Profesor profesor20 = profesorRepository.save(new Profesor("Roberlito", ""));
-			Profesor profesor21 = profesorRepository.save(new Profesor("Tamara", "Bornia"));
-			Profesor profesor22 = profesorRepository.save(new Profesor("El Tano", ""));
-			Profesor profesor23 = profesorRepository.save(new Profesor("Los Tolis", ""));
-			Profesor profesor24 = profesorRepository.save(new Profesor("Yamila", "López"));
-			Profesor profesor25 = profesorRepository.save(new Profesor("Romeo", ""));
-			Profesor profesor26 = profesorRepository.save(new Profesor("Chayanne", ""));
+
+      
+
+			Profesor profesor1 = new Profesor("Fernando", "Obanos");
+			Profesor profesor2 = new Profesor("Romina", "Gasper");
+			Profesor profesor3 = new Profesor("María", "Muñoz");
+			Profesor profesor4 = new Profesor("Guillermo", "Ruiz");
+			Profesor profesor5 = new Profesor("Gio", "De Bellonia");
+			Profesor profesor6 = new Profesor("Lucia", "Be");
+			Profesor profesor7 = new Profesor("El Peque", "");
+			Profesor profesor8 = new Profesor("Rocío", "Lequio");
+			Profesor profesor9 = new Profesor("Bruno", "Tombari");
+			Profesor profesor10 = new Profesor("El Duende", "");
+			Profesor profesor11 = new Profesor("Marisa", "Talamoni");
+			Profesor profesor12 = new Profesor("Ricardo", "Calvo");
+			Profesor profesor13 = new Profesor("Soledad", "Cantarini");
+			Profesor profesor14 = new Profesor("Diego", "López");
+			Profesor profesor15 = new Profesor("Rosana", "Romero");
+			Profesor profesor16 = new Profesor("El colo", "Benítez");
+			Profesor profesor17 = new Profesor("Fernando", "Obanos");
+			Profesor profesor18 = new Profesor("Romi", "Gasperi");
+			Profesor profesor19 = new Profesor("Ani", "Badalyan");
+			Profesor profesor20 = new Profesor("Roberlito", "");
+			Profesor profesor21 = new Profesor("Tamara", "Bornia");
+			Profesor profesor22 = new Profesor("El Tano", "");
+			Profesor profesor23 = new Profesor("Los Tolis", "");
+			Profesor profesor24 = new Profesor("Yamila", "López");
+			Profesor profesor25 = new Profesor("Romeo", "");
+			Profesor profesor26 = new Profesor("Chayanne", "");
+
+
+			profesorRepository.save(profesor1);
+			profesorRepository.save(profesor2);
+			profesorRepository.save(profesor3);
+			profesorRepository.save(profesor4);
+			profesorRepository.save(profesor5);
+			profesorRepository.save(profesor6);
+			profesorRepository.save(profesor7);
+			profesorRepository.save(profesor8);
+			profesorRepository.save(profesor9);
+			profesorRepository.save(profesor10);
+			profesorRepository.save(profesor11);
+			profesorRepository.save(profesor12);
+			profesorRepository.save(profesor13);
+			profesorRepository.save(profesor14);
+			profesorRepository.save(profesor15);
+
+
+
 			Productos producto1 = productoRepository.save(new Productos("Zapatos AZRAEL", "Zapatos de cuero", 12000.0, "/web/recursos/imagenes/zapatos/MONOAZRAEL.jpg", Estilos.BACHATA, Arrays.asList("38", "39", "40"), TipoProducto.CALZADOS, 5));
 			Productos producto2 = productoRepository.save(new Productos("Zapatos ROMANIA", "Camisa de seda", 3000.0, "/web/recursos/imagenes/zapatos/100ROMANIA.png", Estilos.SALSA, Arrays.asList("S", "M", "L"), TipoProducto.PRENDAS, 3));
 			Productos producto11 = productoRepository.save(new Productos("Vestido SILVINA Negro", "vestido elegante espalda descubierta, disponible en 4 tonos", 5800.0, "/web/recursos/imagenes/indumentaria/SILVINANEGRO.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));

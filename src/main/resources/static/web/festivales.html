@@ -119,20 +119,38 @@
                             <div>
                                 <label for="ubicacion">ACADEMIA</label>
                                 <select id="ubicacion" v-model="academia">
+                                    <option value="" readonly>Seleccione academia</option>
                                     <option v-for="academia in academias">{{academia.nombre}}</option>
 
                                 </select>
+                                
                             </div>
-
-                            <button type="button" id="buscar-clase">Buscar</button>
-
+                            
+                            <button type="button" @click="filtrar()" class="buscar-clase">Filtrar</button>
+                            <button type="button" @click="mostrar()" class="buscar-clase">Mostrar todo</button>
                         </div>
-                        <!-- </form> -->
+                       
 
                     </div>
+                    
                 </div>
 
-
+                <div class="contenedor-card">
+                    <div class="card" v-for="festival in festivalesActuales">
+                        <img v-bind:src="festival.imagen" class="card-img-top" alt="Festival">
+                        <div class="card-body">
+                          <h5 class="card-title">{{festival.nombre}}</h5>
+                          <p>Estilo: {{festival.estilo}}</p>
+                          <p class="card-text">Descripción: {{festival.descripcion}}</p>
+                          <p class="card-text">Precio: {{festival.precio}}</p>
+                          <p>Días:</p>
+                          <p v-for="dias in festival.dias">{{festival.dias[0]}}</p>
+                          
+                          <button @click="comprar(festival.id)" class="btn btn-primary">Comprar</button>
+                          
+                        </div>
+                      </div>
+                </div>
                 <div class="contenedor-evento">
                     <div class="circulo-imagen">
                         <img src="./recursos/imagenes/festivales/festi1.png" alt="">

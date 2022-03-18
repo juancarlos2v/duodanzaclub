@@ -60,8 +60,23 @@
                                 <div class="datos-usuario">
                                     <p>Nombre: {{usuario.nombre}} </p>
                                     <p>Apellido/s: {{usuario.apellido}} </p>
+<<<<<<< HEAD
+
+                                    <p>Descripcion: {{usuario.descripcion}} </p>
+                                    <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
+                                    
+
+                                    <p>Fecha de nacimiento: </p>
+                                    <p>Biografía: </p>
+
+
                                     <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
                                     <p>Biografía: {{usuario.descripcion}} </p>
+
+=======
+                                    <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
+                                    <p>Biografía: {{usuario.descripcion}} </p>
+>>>>>>> 93bdc60e6d56e5bce2c8d46a7fc9ac2b529460bd
                                 </div>
                                 <div class="foto-perfil">
                                     <div v-show="noFoto" class="no-foto">
@@ -170,10 +185,18 @@
                         <div class="modal-editar ">
                             <h2>EDITAR PERFIL</h2>
                             <form>
+<<<<<<< HEAD
+
+                                <input v-model="cambio.nombre" type="text" placeholder="Nombre">
+                                <input v-model="cambio.apellido" type="text" placeholder="Apellido">
+                                <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
+                                <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
+=======
                                 <input v-model="usuario.nombre" type="text" placeholder="Nombre">
                                 <input v-model="usuario.apellido" type="text" placeholder="Apellido">
                                 <input v-model="usuario.nacimiento" type="date" placeholder="Fecha de nacimiento">
                                 <input v-model="usuario.foto" type="text" placeholder="Agregar foto">
+>>>>>>> 93bdc60e6d56e5bce2c8d46a7fc9ac2b529460bd
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
                                 <input v-model="usuario.ciudad" type="text" placeholder="Ciudad">
                                 <input v-model="usuario.telefono" type="number" placeholder="Telefono">
