@@ -56,6 +56,7 @@
                                     <p>Nombre: {{usuario.nombre}} </p>
                                     <p>Apellido/s: {{usuario.apellido}} </p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <p>Descripcion: {{usuario.descripcion}} </p>
                                     <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
                                     
@@ -63,6 +64,10 @@
                                     <p>Fecha de nacimiento: </p>
                                     <p>Biografía: </p>
 >>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
+=======
+                                    <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
+                                    <p>Biografía: {{usuario.descripcion}} </p>
+>>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
                                 </div>
                                 <div class="foto-perfil">
                                     <div v-show="noFoto" class="no-foto">
@@ -170,12 +175,16 @@
                             <h2>EDITAR PERFIL</h2>
                             <form>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
                                 <input v-model="cambio.nombre" type="text" placeholder="Nombre">
                                 <input v-model="cambio.apellido" type="text" placeholder="Apellido">
                                 <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
                                 <textarea class="textarea" v-model="cambio.descripcion" rows="4" cols="30" placeholder="Agregar descripción"></textarea>
                                 <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
+<<<<<<< HEAD
 =======
                                 <input v-model="cambio.nombre" type="text" placeholder="Nombre" :value="usuario.nombre">
                                 <input v-model="cambio.apellido" type="text" placeholder="Apellido" :value="usuario.apellido">
@@ -183,6 +192,8 @@
 
                                 <input v-model="cambio.email" type="text" placeholder="e-mail">
 >>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
+=======
+>>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
                                 <input v-model="cambio.ciudad" type="text" placeholder="Ciudad">
                                 <input v-model="cambio.telefono" type="number" placeholder="Telefono">
                                 
