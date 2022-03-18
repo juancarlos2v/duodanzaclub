@@ -171,7 +171,7 @@
                         <a href="https://www.instagram.com "> <img src="./recursos/imagenes/instagram.png "></a>
                         <a href="https://twitter.com "> <img src="./recursos/imagenes/twitter.png "></a>
                     </div>
-                    <a href="#">duodanzaclub@gmail.com</a>
+                    <a href="#/">duodanzaclub@gmail.com</a>
                 </div>
             </footer>
         </div>
@@ -233,6 +233,7 @@
                     </div>
                     <div>
                         <h4>ALUMNOS</h4>
+                        <button type="button" @click="abrirPerfil">{{alumno</button>
                         <div class="detalle-clase">
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium itaque consectetur in accusantium laboriosam aut quaerat odit quasi, molestiae quae. Necessitatibus amet voluptas sequi vel assumenda corporis dolor nam itaque!
                                 Laudantium deserunt aliquid quos quae ad dolores a, voluptas quibusdam, dolor, facilis dignissimos asperiores quas iusto quam unde minima temporibus eius doloremque rem laboriosam veritatis ipsam. Beatae repellat nemo ipsam!</p>
@@ -244,6 +245,31 @@
                         <button type="button" @click="cerrarClase">VOLVER</button>
                     </div>
                 </div>
+                    </div>
+                </section>
+            </transition>
+        </template>
+
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="perfil==true">
+                    <div class="info-usuario">
+                        <img class="logo-usuario img-fluid" src="./recursos/imagenes/perfil_usuario.png">
+                        <div>
+                            <div class="datos-usuario">
+                                <p>Nombre: {{usuario.nombre </p>
+                                <p>Apellido/s: {{usuario.apellido </p>
+                                <p>Fecha de nacimiento: {{usuario.fechaNacimiento</p>
+                                <p>Biografía: {{usuario.descripcion </p>
+                            </div>
+                            <div class="foto-perfil">
+                                <!-- <div v-show="noFoto" class="no-foto">
+
+                                </div>
+                                <img v-show="fotoPerfil" v-bind:src="usuario.foto" alt="Foto de perfil"> -->
+                            </div>
+                        </div>
+                        <button type="button" @click="cerrarPerfil">VOLVER</button>
                     </div>
                 </section>
             </transition>
