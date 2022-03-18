@@ -3,109 +3,120 @@
 }
 
 .id-usuario {
-    width: 80%;
-    margin: auto;
-    display: flex;
+    width          : 80%;
+    margin         : auto;
+    display        : flex;
     justify-content: flex-end;
 }
 
 .id-usuario>div {
-    display: flex;
+    display         : flex;
     background-color: var(--header-color);
-    width: 20%;
-    padding: 0.5rem;
-    color: white;
-    border-radius: 0.5rem 0.5rem 0 0;
+    width           : 20%;
+    padding         : 0.5rem;
+    color           : white;
+    border-radius   : 0.5rem 0.5rem 0 0;
 }
 
 .info-usuario {
-    display: flex;
-    flex-direction: column;
+    display         : flex;
+    flex-direction  : column;
     background-color: var(--header-color);
-    height: 20rem;
-    width: 80%;
-    margin: auto;
-    padding: 5%;
-    padding-top: 0;
-    padding-left: 9%;
-    position: relative;
-    border-radius: 0.5rem 0 0.5rem 0.5rem;
+    height          : 20rem;
+    width           : 80%;
+    margin          : auto;
+    padding         : 5%;
+    padding-top     : 0;
+    padding-left    : 9%;
+    position        : relative;
+    border-radius   : 0.5rem 0 0.5rem 0.5rem;
 }
 
 .foto-perfil {
-    width: 10rem;
+    width : 10rem;
     height: 10rem;
-    
+
 }
+
 .no-foto {
     background-color: black;
-    width: 100%;
-    height: 100%;
+    width           : 100%;
+    height          : 100%;
 }
+
 .foto-perfil img {
-    width: 100%;
-    height: 100%;
+    width        : 100%;
+    height       : 100%;
     border-radius: 50%;
 }
+
+.botones-usuario {
+    width          : 100%;
+    display        : flex;
+    justify-content: space-evenly;
+    margin-bottom  : 1rem;
+}
+
 .textarea {
     border: 2px groove grey;
 }
 
 .info-usuario>div:first-child {
-    display: flex;
+    display        : flex;
     justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-    width: 100%;
-    padding-top: 9%;
+    flex-wrap      : wrap;
+    margin-bottom  : 1.5rem;
+    width          : 100%;
+    padding-top    : 9%;
 }
 
-.info-usuario>div+div {
-    width: 100%;
-    justify-content: flex-end;
-}
+/* .info-usuario>div+div {
+    width          : 50%;
+    justify-content: space-between;
+} */
 
 .datos-usuario {
-    display: flex;
+    display       : flex;
     flex-direction: column;
 }
 
 .logo-usuario {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 28%;
+    position : absolute;
+    left     : 0;
+    right    : 0;
+    margin   : auto;
+    width    : 28%;
     transform: translateY(-4rem);
-    z-index: 3;
+    z-index  : 3;
 }
 
 .contenedor-abonos {
     /* position: relative; */
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
+    display      : flex;
+    flex-wrap    : wrap;
+    margin       : auto;
     margin-bottom: 5rem;
-    margin-top: 5rem;
-    height: 10rem;
-    width: 80%;
+    margin-top   : 5rem;
+    height       : 10rem;
+    width        : 80%;
 }
 
 .contenedor-abonos {
     background-color: var(--gray-color);
-    height: 10rem;
+    height          : 5rem;
+    margin-top      : 8rem;
 }
 
 .logo-abonos {
     /* position: absolute; */
-    width: 30%;
-    margin: auto;
-    transform: translateY(-5rem);
+    width    : 30%;
+    margin   : auto;
+    transform: translateY(-6rem);
 }
 
 .mano-izquierda,
 .mano-derecha {
-    width: 20%;
+    width  : 20%;
     z-index: 5;
 }
 
@@ -119,24 +130,27 @@
 
 .info-usuario button {
     background-color: var(--gray-color);
-    color: white;
-    padding: 0.5rem;
+    color           : white;
+    padding         : 0.5rem;
+    padding-left    : 3rem;
+    padding-right   : 3rem;
+    margin-bottom   : 2rem;
 }
 
 .tipos-clases {
-    display: flex;
-    flex-wrap: wrap;
+    display        : flex;
+    flex-wrap      : wrap;
     justify-content: space-between;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-top     : 2rem;
+    margin-bottom  : 3rem;
 }
 
 .tipos-clases button {
     background-color: var(--gray-color);
-    height: 3rem;
-    width: 15rem;
-    font-size: 3vh;
-    color: white;
+    height          : 3rem;
+    width           : 15rem;
+    font-size       : 3vh;
+    color           : white;
 }
 
 .abono-activo {
@@ -145,33 +159,38 @@
 
 .precio-abonos {
     background-color: var(--footer-color);
-    color: white;
-    position: relative;
-    display: flex;
-    height: 18rem;
-    margin-bottom: 17rem;
+    color           : white;
+    position        : relative;
+    display         : flex;
+    height          : 18rem;
+    margin-bottom   : 22rem;
 }
 
 .piernas {
     position: absolute;
-    width: 20%;
+    width   : 20%;
 }
 
 .contenedor-seleccion-clases {
-    display: flex;
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    align-items    : center;
+    width          : 100%;
 }
 
 .selector-clases {
-    width: 25rem;
+    width          : 25rem;
+    align-items    : center;
+    display        : flex;
+    justify-content: space-between;
+    flex-direction : column;
 }
 
 .selector-clases div {
-    display: flex;
-    justify-content: space-around;
-    font-size: 3.5vh;
+    display        : flex;
+    justify-content: space-between;
+    font-size      : 3.5vh;
+    align-items    : center;
 }
 
 .contenedor-seleccion-clases>div+div {
@@ -179,40 +198,49 @@
 }
 
 .selector-clases select {
-    width: 10rem;
-    height: fit-content;
+    width           : 10rem;
+    height          : fit-content;
     background-color: var(--footer-color);
-    border: 0.1rem solid var(--light);
-    border-radius: 0.3rem;
-    color: var(--light);
+    border          : 0.1rem solid var(--light);
+    border-radius   : 0.3rem;
+    color           : var(--light);
+}
+
+
+
+.selector-clases p {
+    margin-left : 1rem;
+    margin-right: 1rem;
 }
 
 .contenedor-match {
-    width: 100%;
-    height: 20rem;
-    position: relative;
+    width           : 100%;
+    height          : 20rem;
+    position        : relative;
     background-color: var(--gray-color);
     background-color: #111111;
+    margin-top      : 5rem;
 }
 
 .match-info {
-    position: relative;
-    display: flex;
+    position       : relative;
+    display        : flex;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    padding-left: 5%;
-    overflow: hidden;
+    width          : 100%;
+    height         : 100%;
+    padding-left   : 5%;
+    overflow       : hidden;
 }
 
 .match-info p {
     padding-top: 5rem;
-    color: white;
+    color      : white;
+
 }
 
 .telas {
-    position: absolute;
-    width: 25%;
+    position : absolute;
+    width    : 25%;
     transform: translateY(-10rem);
 }
 
@@ -221,16 +249,16 @@
 }
 
 .texto-bachata {
-    position: relative;
-    margin-right: 10%;
-    width: 80%;
+    position    : relative;
+    margin-right: 25%;
+    width       : 80%;
 }
 
 .pareja {
-    height: 100%;
+    height      : 100%;
     margin-right: 0;
-    position: absolute;
-    transform: translateX(77rem);
+    position    : absolute;
+    transform   : translateX(77rem);
 }
 
 
@@ -245,15 +273,15 @@
 }
 
 .modal-editar {
-    display: flex;
-    flex-direction: column;
-    height: 25rem;
-    width: 100%;
+    display         : flex;
+    flex-direction  : column;
+    height          : 25rem;
+    width           : 100%;
     background-color: var(--rosa-suave);
-    padding: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding         : 5%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
 }
 
 .modal-editar form {
@@ -266,22 +294,22 @@
 
 .modal-contacto {
     background: transparent;
-    border: none;
+    border    : none;
 }
 
 .contenedor-botones {
-    margin-top: 3rem;
-    position: relative;
-    width: 100%;
-    display: flex;
+    margin-top     : 3rem;
+    position       : relative;
+    width          : 100%;
+    display        : flex;
     justify-content: flex-end;
-    padding-right: 5rem;
-    padding-top: 2rem;
+    padding-right  : 5rem;
+    padding-top    : 2rem;
 }
 
 .contenedor-botones button {
     background-color: var(--footer-color);
-    padding: 0.5rem;
-    margin-left: 1.5rem;
-    color: var(--light);
+    padding         : 0.5rem;
+    margin-left     : 1.5rem;
+    color           : var(--light);
 }
