@@ -115,8 +115,7 @@ let app = new Vue({
 
             axios.post("http://localhost:8060/api/payments", { "amount": this.total, "productosTransaccion": this.productos, "numberCard": this.pago.tarjeta, "cvv": this.pago.cvv, "description": app.descripcion })
                 .then(response => {
-                    console.log("Compra realizada")
-                    window.location.href = "/web/perfil.html";
+                    window.location.href = "/web/index.html";
                 })
                 .catch(error => console.log(error))
         },

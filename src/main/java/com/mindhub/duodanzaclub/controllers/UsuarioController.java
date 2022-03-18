@@ -150,17 +150,14 @@ public class UsuarioController {
             }
         }
 
-        usuario1.getFollowing().add(usuario2);
-        usuario2.getFollowers().add(usuario1);
-        if(usuario1.getFollowing().contains(usuario2) && usuario1.getFollowers().contains(usuario2)){
-            usuario1.getContactos().add(usuario2.getId());
-            usuario2.getContactos().add(usuario1.getId());
-        }
+        UsuarioUtils.actualizarFollow(usuario1, usuario2);
         usuarioService.guardarUsuario(usuario1);
         usuarioService.guardarUsuario(usuario2);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+
 
     @PatchMapping("/usuarios/borrar")
     public ResponseEntity<Object> borrarContacto(Authentication authentication, @RequestBody SolicitudDTO solicitudDTO){

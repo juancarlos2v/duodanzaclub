@@ -147,8 +147,9 @@
 .contenedor-estilos {
     display        : flex;
     flex-wrap      : wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top     : 4%;
+    
 }
 
 .contenedor-estilos>div {
@@ -156,7 +157,9 @@
     border-radius: 0.3rem;
     width        : 25rem;
     height       : 9rem;
+    margin-top: 2rem;
 }
+
 
 .estilo-salsa {
     background-image   : url("../imagenes/salsa.png");
@@ -365,14 +368,16 @@ h3 {
 .modal h3 {
     color: black
 }
-
+[v-cloak] {
+    display: none;
+  }
 .modal-producto {
     display         : flex;
     justify-content : center;
     align-items     : center;
     margin          : auto;
     padding         : 1rem;
-    max-width       : 60%;
+    max-width       : 72%;
     background-color: var(--rosa-suave);
     border-radius   : 1rem;
     box-shadow      : 9px 16px 20px 12px #2c2828e0;

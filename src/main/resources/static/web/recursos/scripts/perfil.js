@@ -23,6 +23,7 @@ let app = new Vue({
             modoPago: "",
             precioFinal: 0,
         },
+        invitaciones: [],
         editarPerfil: false,
         modalContacto: false,
         formEnviado: false,
@@ -46,7 +47,7 @@ let app = new Vue({
     methods: {
         loadData() {
             axios.get("/api/usuarios/current")
-                
+
                 .then(response => {
                     console.log(response.data);
                     this.usuario = response.data
@@ -151,6 +152,7 @@ let app = new Vue({
         abrirRegistro() {
             this.modalRegistro = true;
         },
+
         suscribirse(){
             
             axios.patch("/api/usuarios/current/suscripciones/", `id=${this.id}`)
@@ -158,4 +160,5 @@ let app = new Vue({
             .catch(error => console.log(error))
         }
     }
+
 })

@@ -8,12 +8,15 @@ let app = new Vue({
         ciudades: [],
         alumnos: [],
         formulario: {
-            usuario: 0
+            usuario: 0,
+            usuario2: 0
         },
+        seleccionado: {},
         modalContacto: false,
         modalContacto: false,
         formEnviado: false,
         detalleClase: false,
+        perfil: false,
     },
     mounted() {
         // axios.get('https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.3/download/departamentos.json', headers: {
@@ -81,10 +84,18 @@ let app = new Vue({
             app.formulario.usuario = clase;
         },
         anotarEnClase() {
-            axios.post("/api/usuarios/clases", {"usuario":`${app.formulario.usuario}`})
+            axios.post("/api/usuarios/clases", { "usuario": `${app.formulario.usuario}`, "usuario2": `${app.formulario.usuario2}`})
                 .then(response => {
                     window.location.href = "/web/index.html"
                 })
-        }
-    },
+        },
+        abrirPerfil() {
+            this.perfil = true;
+            this.detalleClase = false;
+        },
+        cerrarPerfil() {
+            this.perfil = false;
+            this.detalleClase = true;
+        },
+    }
 })

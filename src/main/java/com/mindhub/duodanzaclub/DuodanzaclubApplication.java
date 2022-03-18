@@ -69,11 +69,11 @@ public class DuodanzaclubApplication {
 					"\n" +
 					"Belgrano 970, Avellaneda, Buenos Aires, Argentina - Horas: Cerrado ⋅ Abre a las 20:00 - Teléfono: +54 9 11 4711-1932", Estilos.TANGO, 500.0, List.of(Dias.MARTES));
 
-			Festival festival6 = new Festival("Viva la Pepa", "/web/recursos/imagenes/eventos/vivaLaPepa", "Lorem ipsum dolor site obcaecati rerum. Hic eos placeat provident.\n" +
+			Festival festival6 = new Festival("Viva la Pepa", "/web/recursos/imagenes/eventos/vivaLaPepa.png", "Lorem ipsum dolor site obcaecati rerum. Hic eos placeat provident.\n" +
 					"\n" +
 					"Corriente 772, Rosario, Santa Fe, Argentina - Horas: Cerrado ⋅ Abre a las 22:00 - Teléfono: +54 9 11 4332-0041", Estilos.TANGO, 400.0, List.of(Dias.MIÉRCOLES));
 
-			Festival festival7 = new Festival("La Chamuyera", "/web/recursos/imagenes/eventos/laChamuyera", "Lorem ipsum dolor, sit amet conse culpa illo repellat ex veritatis eaque saficia dolore nemo illum!\n" +
+			Festival festival7 = new Festival("La Chamuyera", "/web/recursos/imagenes/eventos/laChamuyera.png", "Lorem ipsum dolor, sit amet conse culpa illo repellat ex veritatis eaque saficia dolore nemo illum!\n" +
 					"\n" +
 					"Balcarce 2375, Rosario, Santa Fe, Argentina - Horas: Cerrado ⋅ Abre a las 20:00 - Teléfono: +54 9 11 4990-3683", Estilos.TANGO, 550.0, List.of(Dias.JUEVES));
 
@@ -233,13 +233,11 @@ public class DuodanzaclubApplication {
 			Productos producto9 = productoRepository.save(new Productos("Mono Orient Express", "modelo clásico acordonado con motivos orientales y punta de charol", 12300.0, "/web/recursos/imagenes/zapatos/MONOORIENTEXPRESS.jpg", Estilos.SALSA, Arrays.asList("37", "38", "39", "40", "41", "42"), TipoProducto.CALZADOS, 23));
 
 
-
-
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", Estilos.SALSA ,"21:30 a 23:00", "Ayacucho 2345, San Cristobal", academia1));
 			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila", academia1));
 
-			UsuarioClase usuarioClase1 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase));
-			//UsuarioClase usuarioClase2 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase2));
+			UsuarioClase usuarioClase1 = usuarioClaseRepository.save(new UsuarioClase(mati, clase));
+			UsuarioClase usuarioClase2 = usuarioClaseRepository.save(new UsuarioClase(lauti, clase2));
 			UsuarioClase usuarioClase3 = usuarioClaseRepository.save(new UsuarioClase(lauti, clase));
 			UsuarioClase usuarioClase4 = usuarioClaseRepository.save(new UsuarioClase(tomi, clase));
 

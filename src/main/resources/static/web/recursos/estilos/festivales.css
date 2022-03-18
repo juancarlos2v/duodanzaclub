@@ -47,6 +47,9 @@
     width: 100%;
     align-items: center;
 }
+[v-cloak] {
+    display: none;
+  }
 
 .buscar-clase {
     color: white;

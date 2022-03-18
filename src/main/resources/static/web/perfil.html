@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
     <link rel="stylesheet" href="./recursos/estilos/nav-tienda.css">
@@ -19,7 +19,7 @@
 
 <body>
     <div id="app">
-        <div class="contenedor-total">
+        <div class="contenedor-total" v-cloak>
             <header>
                 <div class="contenedor-logo-nav">
                     <img src="./recursos/imagenes/logo_light.png">
@@ -43,7 +43,7 @@
             <main>
                 <div class="contenedor-usuario">
 
-                    <img class="logo-usuario" src="./recursos/imagenes/perfil_usuario.png" alt="">
+                    <img class="logo-usuario" src="./recursos/imagenes/perfil_usuario.png">
 
                     <div class="id-usuario">
                         <div>
@@ -52,18 +52,22 @@
                     </div>
                     <div>
                         <div class="contenedor-manos">
-                            <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
-                            <img class="mano-derecha img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                            <img class="mano-izquierda img-fluid" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" src="./recursos/imagenes/home/mano_1.png">
+                            <img class="mano-derecha img-fluid" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" src="./recursos/imagenes/home/mano_2.png">
                         </div>
                         <div class="info-usuario">
                             <div>
                                 <div class="datos-usuario">
                                     <p>Nombre: {{usuario.nombre}} </p>
-                                    <p>Apellido/s: {{usuario.apellido}}</p>
+
+                                    <p>Apellido/s: {{usuario.apellido}} </p>
 
                                     <p>Descripcion: {{usuario.descripcion}} </p>                             
                                     
 
+
+
+                                    
 
                                     <p>Fecha de nacimiento: {{usuario.fechaNacimiento}}</p>
                                     <p>Biografía: {{usuario.descripcion}} </p>
@@ -73,10 +77,10 @@
                                     <div v-show="noFoto" class="no-foto">
 
                                     </div>
-                                    <img v-show="fotoPerfil" v-bind:src="usuario.foto" alt="Foto de perfil">
+                                    <img v-show="fotoPerfil" :src="usuario.foto" alt="Foto de perfil">
                                 </div>
                             </div>
-                            <div>
+                            <div class="botones-usuario">
                                 <button type="button" @click="clickEditar">EDITAR</button>
                                 <button type="button" @click="cerrarSesion()">CERRAR SESIÓN</button>
                             </div>
@@ -84,23 +88,48 @@
 
                     </div>
                 </div>
-                <div class="contenedor-abonos">
+                <div class="contenedor-invitaciones">
+                    <h2>INVITACIONES</h2>
+                   
+                    <div v-if="invitaciones.length>0">
+                        <div class="invitacion" v-for="invitacion in invitaciones">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                        <path d="M16 11h6m-3 -3v6" />
+                        </svg>
+                            <p>{{invitacion.nombre}} </p>
+                            <p>{{invitacion.descripcion}}</p>
+                            <button type="button" @click="aceptarInvitacion">ACEPTAR</button>
+                            <button type="button" @click="rechazarInvitacion">RECHAZAR</button>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <p>Sin invitaciones pendientes.</p>
+                    </div>
+                </div>
+                <div class="contenedor-abonos" >
                     <img class="logo-abonos" src="./recursos/imagenes/clases/abonos.png">
                 </div>
+
                 <div class="tipos-clases">
+                    
                    <select class="select" name="" id="" v-model="id">
                        <option value="" disabled>Tipos de suscripción</option>
                        <option v-bind:value="suscripcion.id" v-for="suscripcion in suscripciones">{{suscripcion.nombre}}</option>
                    </select>
                     
                 </div>
+    
 
                 <div class="precio-abonos">
-                    <img class="piernas" src="./recursos/imagenes/silueta_zapatos.png">
+                    <img  class="piernas" src="./recursos/imagenes/silueta_zapatos.png">
                     <div class="contenedor-seleccion-clases ">
                         <div class="selector-clases">
+
                            
-                            <div>
+                            
                                 <ul>
                                     <li>
                                         Clase suelta: 
@@ -141,34 +170,30 @@
                                     </li>
                                 </ul>
 
-                            </div>
+                            
                             <button @click="suscribirse()" class="susc">Suscribirse</button>
-                            <!--<div>
-                                <p>modo de pago</p>
-                                <select v-model="clase.modoPago ">
-                                    <option value="debito ">DEBITO</option>
-                                    <option value="credito ">CREDITO</option>
-                                </select>
-                            </div>-->
-                        </div>
-                        <!--<div>
-                            <h2>${{suscripcionSelected.precio}}/mes </h2>
-                        </div>-->
+                            
 
                     </div>
-                    <!-- <button type="button">SELECCIONAR</button> -->
+                   
+                </div>
                 </div>
                 <div class="contenedor-match">
                     <img class="telas img-fluid" src="./recursos/imagenes/telas.png">
                     <div class="match-info">
-                        <div class="logo-match">
+                        <div class="logo-match" >
                             <img class=" img-fluid " src="./recursos/imagenes/home/match_ok.png ">
                         </div>
                         <div class="texto-bachata">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus cupiditate ab neque
-                                eius mollitia perferendis dolorem, corrupti excepturi, sint temporibus, exercitationem
-                                labore deleniti. Et alias in incidunt impedit fugiat
-                                vitae?
+
+                            <p>¿Cuál es tu manera de sentir la danza? ¿Qué tipo de bailarín eres? Cuéntalo en tu
+                                descripción y conoce a toda una comunidad con la que vas a poder intercambiar y aprender
+                                contínuamente.
+                                Habilitamos la opción de vista de perfil dentro de cada clase, así sabemos con quien
+                                compartiremos la sala.
+                                En el caso de encontrar un compañero afín y libre que quieras que sea tu acompañante se
+                                le enviará una notificación, y de estar de acuerdo: Match Bailando!
+
                             </p>
                         </div>
                         <img class="pareja img-fluid " src="./recursos/imagenes/home/bachata_recorte.png">
@@ -213,10 +238,10 @@
                             <form>
 
 
-                                <input v-model="cambio.nombre" type="text" placeholder="Nombre">
-                                <input v-model="cambio.apellido" type="text" placeholder="Apellido">
-                                <input v-model="cambio.nacimiento" type="date" placeholder="Fecha de nacimiento">
-                                <input v-model="cambio.foto" type="text" placeholder="Agregar foto">
+
+                                
+
+
 
                                 <input v-model="usuario.nombre" type="text" placeholder="Nombre">
                                 <input v-model="usuario.apellido" type="text" placeholder="Apellido">
@@ -225,16 +250,20 @@
 
 
 
+
+
+
                                 <!--<input v-model="cambio.email" type="text" placeholder="e-mail">-->
                                 <input v-model="usuario.ciudad" type="text" placeholder="Ciudad">
                                 <input v-model="usuario.telefono" type="number" placeholder="Telefono">
-                                <textarea class="textarea" v-model="usuario.descripcion" rows="4" cols="30" placeholder="Agregar biografía"></textarea>
-                                
+                                <textarea class="textarea" v-model="usuario.descripcion" rows="4" cols="30"
+                                    placeholder="Agregar biografía"></textarea>
+
                                 <!--<input v-model="cambio.contraseña" type="password" placeholder="Contraseña">-->
                             </form>
                             <div class="contenedor-botones">
                                 <button type="button" @click="clickEditar">VOLVER</button>
-                                <button type="button" @click="editarInfo" >CONFIRMAR</button>
+                                <button type="button" @click="editarInfo">CONFIRMAR</button>
                             </div>
                         </div>
 
@@ -246,41 +275,42 @@
             <transition name="fade">
                 <section class="modal" v-show="modalContacto==true">
                     <div class="contenedor-manos">
-                        <img class="mano-izquierda izquierda-contacto img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                        <img class="mano-izquierda izquierda-contacto img-fluid"
+                            src="./recursos/imagenes/home/mano_1.png">
                         <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
                     </div>
-                        <div class="contenedor-modal modal-contacto">
-                            <form>
+                    <div class="contenedor-modal modal-contacto">
+                        <form>
+                            <div>
+                                <p>CONTACTO</p>
+                            </div>
+                            <div class="contenedor-form">
+                                <div class="logo-form"></div>
                                 <div>
-                                    <p>CONTACTO</p>
-                                </div>
-                                <div class="contenedor-form">
-                                    <div class="logo-form"></div>
                                     <div>
-                                        <div>
-                                            <input type="text" placeholder="nombre">
-                                            <input type="text" placeholder="e-mail">
-                                        </div>
-                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                        <div class="botones">
-                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
-                                            <button type="button" @click="abrirContacto">VOLVER</button>
-                                        </div>
+                                        <input type="text" placeholder="nombre">
+                                        <input type="text" placeholder="e-mail">
+                                    </div>
+                                    <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                    <div class="botones">
+                                        <button type="button" @click="enviarFormulario">ENVIAR</button>
+                                        <button type="button" @click="abrirContacto">VOLVER</button>
                                     </div>
                                 </div>
+                            </div>
 
-                            </form>
-                        </div>
+                        </form>
+                    </div>
                 </section>
             </transition>
         </template>
         <template>
             <transition name="fade">
-                <section class="modal" v-show="formEnviado==true">  
-                    <div class="envio-formulario" >
+                <section class="modal" v-show="formEnviado==true">
+                    <div class="envio-formulario">
                         <h2>Mensaje enviado</h2>
-                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
-                       <button type="button" @click="cerrar">VOLVER</button>
+                        <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                        <button type="button" @click="cerrar">VOLVER</button>
                     </div>
                 </section>
             </transition>
@@ -288,12 +318,12 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js "></script>
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
     <script src="./recursos/scripts/perfil.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p "
-        crossorigin="anonymous "></script>
 </body>
 
 </html>

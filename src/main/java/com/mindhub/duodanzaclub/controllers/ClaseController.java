@@ -10,12 +10,14 @@ import com.mindhub.duodanzaclub.services.ClaseService;
 import com.mindhub.duodanzaclub.repositories.UsuarioClaseRepository;
 import com.mindhub.duodanzaclub.services.UsuarioService;
 import com.mindhub.duodanzaclub.utils.UsuarioClaseUtils;
+import com.mindhub.duodanzaclub.utils.UsuarioUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -88,12 +90,14 @@ public class ClaseController {
         if(clase == null){
             return new ResponseEntity<>("La clase seleccionada no existe", HttpStatus.FORBIDDEN);
         }
+
         if(usuarioClases.size() > 0){
             Boolean estaAnotado = UsuarioClaseUtils.buscarAnotadoClases(usuario, clase, usuarioClases) != null;
             if(estaAnotado){
                 return new ResponseEntity<>("El usuario ya se encuentra anotado a esta clase", HttpStatus.FORBIDDEN);
             }
         }
+
 
         usuarioClaseRepository.save(new UsuarioClase(usuario, clase));
         return new ResponseEntity<>(HttpStatus.CREATED);

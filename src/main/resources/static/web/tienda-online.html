@@ -21,7 +21,7 @@
 
 <body>
     <div id="app">
-        <div class="contenedor-total">
+        <div class="contenedor-total" v-cloak>
             <header>
                 <div class="contenedor-logo-nav">
                     <img src="./recursos/imagenes/logo_light.png">
@@ -105,6 +105,7 @@
                         </div>
 
                     </div>
+                
                     <!-- <p>{{estilo}} {{tipo}} </p> -->
                     <!-- FILTRO -->
                     <template>
@@ -121,20 +122,12 @@
                     <!-- <template> -->
                     <!-- v-for="producto in productos" -->
 
-                    <div v-for="producto in productos" class="contenedor-producto">
-                        <div class="producto-carta">
-                            <div class="img-producto">
-                                <img v-bind:src="producto.imagen" alt="Imagen producto" >
-
-                    <div class="contenedor-producto">
-                        <div v-for="producto in productos" class="producto-carta">
-                            <div class="img-producto">
-                                <img :src="producto.imagen" alt="Foto producto">
 
                     <div class="contenedor-producto">
                         <div v-for="producto in productos" class="producto-carta">
                             <div class="img-producto">
                                 <img v-bind:src="producto.imagen" alt="Imagen producto">
+
 
                             </div>
                             <div>
@@ -362,6 +355,8 @@
                 </section>
             </transition>
         </template>
+
+
 
 
       
