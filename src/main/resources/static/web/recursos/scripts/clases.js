@@ -4,8 +4,7 @@ let app = new Vue({
         clase: {},
         clases: [],
         ciudades: [],
-        modalContacto: false,
-        verdadero: true
+        modalContacto: false
     },
     created(){
     },
@@ -18,11 +17,8 @@ let app = new Vue({
         //     .then(response => {
         //         console.log(response.data);
         //     })
-        app.cargarClases();
+        this.cargarClases();
         pagina = document.querySelector(".contenedor-total");
-        if(verdadero){
-            app.cargarClases();
-        }
     },
     methods: {
         abrirContacto() {

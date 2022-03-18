@@ -119,12 +119,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-if="clases.length > 5">
-                                <td>{{codigo}}</td>
-                                <td>{{clase}} </td>
-                                <td>{{profesor}} </td>
-                                <td> {{horario}} </td>
-                                <td>{{cupo}} </td>
+                            <tr v-for="claseId in clases"v-if="clases.length > 0">
+                                <td>{{claseId.id}}</td>
+                                <td>{{claseId.nombre}} </td>
+                                <td>{{claseId.profesores}} </td>
+                                <td>{{claseId.horario}} </td>
+                                <td>{{claseId.cupo}} </td>
                                 <td><button class="ultimo" type="button">+</button> </td>
                             </tr>
                             <tr>
@@ -140,24 +140,37 @@
                         </tbody>
                     </table>
                 </div>
-                <div v-if="clase.nombre != ''">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ACADEMIA</th>
-                                <th>DIRECCIÓN</th>
-                                <th>SALA</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{ clase.academia }}</td>
-                                <td>{{ clase.direccion }}</td>
-                                <td>{{ clase.estilo }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button>Reservar</button>
+                <div v-if="clase.nombre != ''" class="info-clase">
+                    <div class="tabla-clase">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ACADEMIA</th>
+                                    <th>DIRECCIÓN</th>
+                                    <th>SALA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ clase.academia }}</td>
+                                    <td>{{ clase.direccion }}</td>
+                                    <td>{{ clase.estilo }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="reservar">RESERVAR</button>
+                    </div>
+                    <div>
+                        <h4>ALUMNOS</h4>
+                        <div class="detalle-clase">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium itaque consectetur in accusantium laboriosam aut quaerat odit quasi, molestiae quae. Necessitatibus amet voluptas sequi vel assumenda corporis dolor nam itaque!
+                            Laudantium deserunt aliquid quos quae ad dolores a, voluptas quibusdam, dolor, facilis dignissimos asperiores quas iusto quam unde minima temporibus eius doloremque rem laboriosam veritatis ipsam. Beatae repellat nemo ipsam!</p>
+                            <div>
+                                <img src="./recursos/imagenes/eventos/rosarioBachata.png" alt="">
+                            </div>
+                            <!--<div class="detalle-imagen"></div>-->
+                        </div>
+                    </div>
                 </div>
                 <!-- </template> -->
 

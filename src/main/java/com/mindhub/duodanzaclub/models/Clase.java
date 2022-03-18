@@ -53,6 +53,7 @@ public class Clase {
         setHorario(horario);
         setDireccion(direccion);
         setAcademia(academia);
+        //setProfesorClases(profesores);
     }
 
     @JsonIgnore
