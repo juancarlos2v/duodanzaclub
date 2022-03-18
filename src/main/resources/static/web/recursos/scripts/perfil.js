@@ -20,6 +20,7 @@ let app = new Vue({
             modoPago: "",
             precioFinal: 0,
         },
+        invitaciones: [],
         editarPerfil: false,
         modalContacto: false,
         formEnviado: false,
@@ -130,6 +131,12 @@ let app = new Vue({
         },
         abrirRegistro() {
             this.modalRegistro = true;
-        }
+        },
+        aceptarInvitacion() {
+
+        },
+        rechazarInvitacion() {
+
+        },
     },
 })
