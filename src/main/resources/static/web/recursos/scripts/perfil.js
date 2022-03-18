@@ -42,11 +42,6 @@ let app = new Vue({
                 .then(response => {
                     console.log(response.data);
                     this.usuario = response.data
-                    console.log(this.usuario.nombre)
-                })
-                .then(response => {
-                    console.log(response.data);
-                    this.usuario = response.data
 
                     if (this.usuario.foto != "") {
                         this.noFoto = false
