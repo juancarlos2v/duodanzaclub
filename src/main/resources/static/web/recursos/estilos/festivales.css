@@ -48,7 +48,7 @@
     align-items: center;
 }
 
-#buscar-clase {
+.buscar-clase {
     color: white;
     background-color: var(--header-color);
     padding: 0.5rem;
@@ -826,4 +826,23 @@ form>div div+div {
 
 .modal-contacto {
     width: 29rem;
+}
+
+.contenedor-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: auto;
+    width: 100%;
+}
+
+.card {
+    width: 300px;
+    margin: 3rem 1rem;
+    background-color: var(--gray-color);
+    float: left;
+}
+
+.card-img-top {
+    width: 80%;
+    margin: 7px auto;
 }

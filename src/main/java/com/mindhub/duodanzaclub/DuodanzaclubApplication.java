@@ -27,7 +27,8 @@ public class DuodanzaclubApplication {
 	@Bean
 	public CommandLineRunner initData(UsuarioService usuarioService, AcademiaRepository academiaRepository,
 									  ProductoRepository productoRepository, SalaFestivalRepository salaFestivalRepository, ClaseRepository claseRepository,
-									  SuscripcionRepository suscripcionRepository, FestivalRepository festivalRepository, UsuarioClaseRepository usuarioClaseRepository){
+									  SuscripcionRepository suscripcionRepository, FestivalRepository festivalRepository, UsuarioClaseRepository usuarioClaseRepository,
+									  ProfesorClaseRepository profesorClaseRepository, ProfesorRepository profesorRepository){
 
 		return (args) -> {
 			Usuario admin = usuarioService.saveUsuario(new Usuario("admin@admin.com", passwordEncoder.encode("123456")));
@@ -42,6 +43,13 @@ public class DuodanzaclubApplication {
 			Academia academia9 = academiaRepository.save(new Academia("Chamuyera", "Rosario"));
 			Academia academia10 = academiaRepository.save(new Academia("Moef Ga-ga", "Rosario"));
 			Academia academia11 = academiaRepository.save(new Academia("Fábrica de artes", "Rosario"));
+
+
+
+
+
+
+
 			Festival festival1 = new Festival("Milonga Roja", "/web/recursos/imagenes/eventos/milongaRoja.png", "Lorem ipsu quibusdam sequi numquam dolor sit amet cone nesciunt mquam.  inventore, porro impedit non.\n" +
 					"\n" +
 					"España 320, Rosario, Santa Fe, Argentina - Horas: Cerrado ⋅ Abre a las 18:30 - Teléfono: +54 9 11 5674-2345", Estilos.TANGO, 400.0, List.of(Dias.VIERNES));
@@ -155,11 +163,16 @@ public class DuodanzaclubApplication {
 			festivalRepository.save(festivalBachata6);
 			festivalRepository.save(festivalBachata7);
 
+
+
+
 			Usuario nacho = usuarioService.saveUsuario(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
 			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
 			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
 			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
-			
+
+      
+
 			Profesor profesor1 = new Profesor("Fernando", "Obanos");
 			Profesor profesor2 = new Profesor("Romina", "Gasper");
 			Profesor profesor3 = new Profesor("María", "Muñoz");
@@ -186,6 +199,26 @@ public class DuodanzaclubApplication {
 			Profesor profesor24 = new Profesor("Yamila", "López");
 			Profesor profesor25 = new Profesor("Romeo", "");
 			Profesor profesor26 = new Profesor("Chayanne", "");
+
+
+			profesorRepository.save(profesor1);
+			profesorRepository.save(profesor2);
+			profesorRepository.save(profesor3);
+			profesorRepository.save(profesor4);
+			profesorRepository.save(profesor5);
+			profesorRepository.save(profesor6);
+			profesorRepository.save(profesor7);
+			profesorRepository.save(profesor8);
+			profesorRepository.save(profesor9);
+			profesorRepository.save(profesor10);
+			profesorRepository.save(profesor11);
+			profesorRepository.save(profesor12);
+			profesorRepository.save(profesor13);
+			profesorRepository.save(profesor14);
+			profesorRepository.save(profesor15);
+
+
+
 			Productos producto1 = productoRepository.save(new Productos("Zapatos AZRAEL", "Zapatos de cuero", 12000.0, "/web/recursos/imagenes/zapatos/MONOAZRAEL.jpg", Estilos.BACHATA, Arrays.asList("38", "39", "40"), TipoProducto.CALZADOS, 5));
 			Productos producto2 = productoRepository.save(new Productos("Zapatos ROMANIA", "Camisa de seda", 3000.0, "/web/recursos/imagenes/zapatos/100ROMANIA.png", Estilos.SALSA, Arrays.asList("S", "M", "L"), TipoProducto.PRENDAS, 3));
 			Productos producto11 = productoRepository.save(new Productos("Vestido SILVINA Negro", "vestido elegante espalda descubierta, disponible en 4 tonos", 5800.0, "/web/recursos/imagenes/indumentaria/SILVINANEGRO.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
@@ -209,6 +242,10 @@ public class DuodanzaclubApplication {
 			//UsuarioClase usuarioClase2 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase2));
 			UsuarioClase usuarioClase3 = usuarioClaseRepository.save(new UsuarioClase(lauti, clase));
 			UsuarioClase usuarioClase4 = usuarioClaseRepository.save(new UsuarioClase(tomi, clase));
+
+			ProfesorClase profesorClase = profesorClaseRepository.save(new ProfesorClase(profesor1, clase));
+			ProfesorClase profesorClase2 = profesorClaseRepository.save(new ProfesorClase(profesor2, clase2));
+			ProfesorClase profesorClase3 = profesorClaseRepository.save(new ProfesorClase(profesor3, clase2));
 
 
 			Suscripcion suscripcion1 = new Suscripcion("Básico", Arrays.asList(100.0,120.0,150.0), 5);

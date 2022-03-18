@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://allfont.es/allfont.css?fonts=scriptina" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
     <link rel="stylesheet" href="./recursos/estilos/tienda.css">
@@ -48,17 +46,17 @@
             <main>
                 <div class="contenedor-banner-descripcion">
                     <div class="contenedor-banner">
-                        <div class="logo-tienda" data-aos="zoom-in-right" data-aos-delay='200'></div>
-                        <div class="pareja-img" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-delay='400'></div>
+                        <div class="logo-tienda"></div>
+                        <div class="pareja-img"></div>
                     </div>
 
                 </div>
                 <div class="contenedor-manos1">
 
-                    <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                    <img class="mano-derecha1 derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
                 </div>
                 <div class="contenedor-manos2">
-                    <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                    <img class="mano-izquierda1 img-fluid" src="./recursos/imagenes/home/mano_1.png">
                     <!-- <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png"> -->
                 </div>
                 <div class="contenedor-contenedor-descripcion">
@@ -73,13 +71,14 @@
 
                 <div class="contenedor-banner-negro">
                     <div>
-                        <img class="img-fluid" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine" src="./recursos/imagenes/banner_negro_pareja.png">
-                        <img class="img-fluid texto-negro" data-aos="zoom-in-left" src="./recursos/imagenes/banner_negro_texto.png">
+                        <img class="img-fluid" src="./recursos/imagenes/banner_negro_pareja.png">
+                        <img class="img-fluid texto-negro" src="./recursos/imagenes/banner_negro_texto.png">
                     </div>
                 </div>
                 <div class="cuerpo">
                     <div class="contenedor-estilos">
-                        <div class="estilo-tango estilo-carta" data-aos="zoom-out" data-aos-delay='300'>
+
+                        <div class="estilo-tango estilo-carta">
                             <div class="boton-estilo">
                                 <a href="">
                                     <p>Tango</p>
@@ -88,7 +87,7 @@
                             </div>
 
                         </div>
-                        <div class="estilo-bachata estilo-carta" data-aos="zoom-out" data-aos-delay='300'>
+                        <div class="estilo-bachata estilo-carta">
                             <div class="boton-estilo">
                                 <a href="">
                                     <p>Bachata</p>
@@ -96,7 +95,7 @@
                                 <button type="button" @click="elegirEstilo('BACHATA')">Ver más</button>
                             </div>
                         </div>
-                        <div class="estilo-salsa" data-aos="zoom-out" data-aos-delay='300'>
+                        <div class="estilo-salsa">
                             <div class="boton-estilo">
                                 <a href="">
                                     <p>Salsa</p>
@@ -121,11 +120,36 @@
                     <!-- PRODUCTOS -->
                     <!-- <template> -->
                     <!-- v-for="producto in productos" -->
-
-                    <div class="contenedor-producto">
-                        <div v-for="producto in productos" class="producto-carta" data-aos="zoom-out">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
+                    <div v-for="producto in productos" class="contenedor-producto">
+                        <div class="producto-carta">
                             <div class="img-producto">
-                                <img :src="producto.imagen" alt="Imagen producto">
+                                <img v-bind:src="producto.imagen" alt="Imagen producto" >
+<<<<<<< HEAD
+=======
+                    <div class="contenedor-producto">
+                        <div v-for="producto in productos" class="producto-carta">
+                            <div class="img-producto">
+                                <img :src="producto.imagen" alt="Foto producto">
+>>>>>>> 042e8a0b50795f8aed8338fce585c0291f9547fe
+=======
+>>>>>>> 3e4feb6d6cfd873dbb3cf35e835fb58491561eec
+=======
+=======
+>>>>>>> 93bdc60e6d56e5bce2c8d46a7fc9ac2b529460bd
+                    <div class="contenedor-producto">
+                        <div v-for="producto in productos" class="producto-carta">
+                            <div class="img-producto">
+                                <img v-bind:src="producto.imagen" alt="Imagen producto">
+<<<<<<< HEAD
+>>>>>>> 695f4282c7a9c50f26d539a7a86780c574891ac8
+=======
+>>>>>>> 93bdc60e6d56e5bce2c8d46a7fc9ac2b529460bd
                             </div>
                             <div>
                                 <p>${{formatoPrecio(producto.precio)}}</p>
@@ -139,7 +163,9 @@
                     <div class="contenedor-info">
                         <div class="envios">
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="150" height="150" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck"
+                                    width="150" height="150" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="7" cy="17" r="2" />
                                     <circle cx="17" cy="17" r="2" />
@@ -147,7 +173,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h1>ENVIOS GRATIS 24 HS HABILES</h1>
+                                <h5>ENVIOS GRATIS 24 HS HABILES</h5>
 
                             </div>
                         </div>
@@ -162,7 +188,10 @@
 
                             <div class="mas-info">
                                 <a href="#/">
-                                    <svg style="margin-bottom: 0.5rem;" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg style="margin-bottom: 0.5rem;" xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-help" width="50" height="50"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <circle cx="12" cy="12" r="9" />
                                         <line x1="12" y1="17" x2="12" y2="17.01" />
@@ -204,7 +233,6 @@
                         <a href="https://twitter.com"> <img src="./recursos/imagenes/twitter.png"></a>
                     </div>
                     <a href="#">duodanza@club.com</a>
-                   
                 </div>
             </footer>
         </div>
@@ -218,7 +246,6 @@
                             <div class="img-producto-modal">
                                 <img v-bind:src="productoId.imagen" alt="Imagen producto">
                             </div>
-                            
                             <div class="detalles">
                                 <div>
                                     <h3>{{productoId.titulo}}</h3>
@@ -234,7 +261,7 @@
 
                                         <div class="input-unidad">
                                             <label for="u">Cant.</label>
-                                            <input id="u" type="number" v-model="stock">
+                                            <input id="u" type="number" v-model="stock" value="1">
                                         </div>
                                         <div class="input-talle">
                                             <label for="talle">Talle</label>
@@ -333,15 +360,13 @@
                                 <div class="logo-form"></div>
                                 <div>
                                     <div>
-                                        <div>
-                                            <input type="text" placeholder="nombre">
-                                            <input type="text" placeholder="e-mail">
-                                        </div>
-                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                        <div class="botones">
-                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
-                                            <button type="button" @click="abrirContacto">VOLVER</button>
-                                        </div>
+                                        <input type="text" placeholder="nombre">
+                                        <input type="text" placeholder="e-mail">
+                                    </div>
+                                    <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                    <div class="botones">
+                                        <button type="button">ENVIAR</button>
+                                        <button type="button" @click="abrirContacto">VOLVER</button>
                                     </div>
                                 </div>
                             </div>
@@ -351,6 +376,9 @@
                 </section>
             </transition>
         </template>
+<<<<<<< HEAD
+
+      
 
         <template>
             <transition name="fade">
@@ -364,16 +392,18 @@
             </transition>
         </template>
 
-    </div>
+>>>>>>> 695f4282c7a9c50f26d539a7a86780c574891ac8
+=======
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+>>>>>>> 93bdc60e6d56e5bce2c8d46a7fc9ac2b529460bd
+
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
     <script src="./recursos/scripts/tienda.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p "
+        crossorigin="anonymous "></script>
 </body>
 
 </html>

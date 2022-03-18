@@ -123,7 +123,7 @@
                             <tr v-for="claseId in clases" v-if="clases.length > 0">
                                 <td>{{claseId.id}}</td>
                                 <td>{{claseId.nombre}} </td>
-                                <td>{{claseId.profesores}} </td>
+                                <td><span v-for="profesor in claseId.profesores" v-if="claseId.profesores">{{ profesor.profesorString }} - </span></td>
                                 <td>{{claseId.horario}} </td>
                                 <td>{{claseId.cupo}} </td>
                                 <td><button class="ultimo" type="button" @click="elegirClase(claseId.id), abrirClase(claseId.id)">+</button> </td>

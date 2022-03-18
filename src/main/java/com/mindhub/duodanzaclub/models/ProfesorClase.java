@@ -23,7 +23,6 @@ public class ProfesorClase {
     public ProfesorClase(Profesor profesor, Clase clase){
         setProfesor(profesor);
         setClase(clase);
-
     }
 
     public long getId() {
