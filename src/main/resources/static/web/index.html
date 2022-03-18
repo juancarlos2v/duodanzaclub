@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
     <link rel="stylesheet" href="./recursos/estilos/index.css">
@@ -59,9 +62,7 @@
                     <div class="div-Video contain">
                         <section class="showcase">
                             <div class="video-container">
-                                <video
-                                    src="https://res.cloudinary.com/dim0xnpqb/video/upload/v1647356055/prueba/VIDEOOK_aigmx5.mp4"
-                                    autoplay muted loop></video>
+                                <video src="https://res.cloudinary.com/dim0xnpqb/video/upload/v1647356055/prueba/VIDEOOK_aigmx5.mp4" autoplay muted loop></video>
                             </div>
                             <!--  <div class="content">
                             <h1>Shoot For The Stars</h1>
@@ -83,23 +84,23 @@
                 <div class="contenedor-banner-clases">
                     <img class="clasesLogo img-fluid" src="./recursos/imagenes/home/clasesOKblanco.png">
                     <div class="manos">
-                        <div class="mano-izquierda"></div>
+                        <div class="mano-izquierda" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine"></div>
                         <div class="contenedor-texto2">
                             <p>
                                 Buscador ideal para tener toda la información que precisas en un solo lugar y de una manera simple y eficaz. Contamos con los profesores más dinámicos y con academias tanto pequeñas como grandes, así encuentras tu clase ideal a la carta y solo disfrutas
                                 de hacer lo que más te gusta, nosotros nos encargamos del resto.
                             </p>
                         </div>
-                        <div class="mano-derecha"></div>
+                        <div class="mano-derecha" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine"></div>
                     </div>
                 </div>
 
                 <div class="contenedor-estilos">
-                    <div>
-                    </div>
-                    <div>
-                    </div>
-                    <div>
+                    <div data-aos="fade-up">
+                    </div data-aos="fade-up">
+                    <div data-aos="fade-up">
+                    </div data-aos="fade-up">
+                    <div data-aos="fade-up">
                     </div>
                 </div>
 
@@ -107,10 +108,10 @@
 
                     <div class="seccion-profesores">
                         <h3>PROFESORES</h3>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div data-aos="zoom-in"></div>
+                        <div data-aos="zoom-in"></div>
+                        <div data-aos="zoom-in"></div>
+                        <div data-aos="zoom-in"></div>
                     </div>
                 </div>
                 <div class="contenedor-tienda">
@@ -124,7 +125,7 @@
 
                 <div class="tienda-info">
                     <div>
-                        <div>
+                        <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
 
                         </div>
                     </div>
@@ -139,10 +140,10 @@
                     <h3>PRODUCTOS DESTACADOS</h3>
                 </div>
                 <div class="productos-destacados">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div data-aos="zoom-in"></div>
+                    <div data-aos="zoom-in"></div>
+                    <div data-aos="zoom-in"></div>
+                    <div data-aos="zoom-in"></div>
                 </div>
 
 
@@ -160,7 +161,7 @@
                             <img class="img-fluid" src="./recursos/imagenes/home/salseras.png">
                         </div>
                     </div>
-                    <div class="contenedor-bachata">
+                    <div class="contenedor-bachata" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
                         <img src="./recursos/imagenes/home/bachata_recorte.png">
                     </div>
                 </div>
@@ -176,9 +177,8 @@
                 <a class="contenedor-contacto" name="contacto">
                     <div class="formulario-contacto">
                         <div class="contenedor-manos">
-                            <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
-                            <img class="mano-derecha derecha-contacto img-fluid"
-                                src="./recursos/imagenes/home/mano_2.png">
+                            <img class="mano-izquierda img-fluid" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine" src="./recursos/imagenes/home/mano_1.png">
+                            <img class="mano-derecha derecha-contacto img-fluid" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" src="./recursos/imagenes/home/mano_2.png">
                         </div>
                         <form>
 
@@ -245,7 +245,7 @@
                                         <input v-model="ingreso.contraseña" type="password" id="contraseña">
                                     </div>
                                     <button type="button" @click="ingresar" style="margin-top:1rem">Ingresar</button>
-                                    <button type="button">No tengo usuario</button>
+                                    <button type="button" @click="abrirRegistro">No tengo usuario</button>
                                     <button type="button">Olvide mi contraseña</button>
                                     <button type="button" @click="abrirModal">Volver</button>
                                 </form>
@@ -331,13 +331,14 @@
         </template>
 
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./recursos/scripts/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
 
 </body>
 
