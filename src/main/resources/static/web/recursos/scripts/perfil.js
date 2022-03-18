@@ -23,6 +23,8 @@ let app = new Vue({
         editarPerfil: false,
         modalContacto: false,
         formEnviado: false,
+        modalIngreso: false,
+        modalRegistro: false,
 
     },
     created() {
@@ -37,21 +39,26 @@ let app = new Vue({
     methods: {
         loadData() {
             axios.get("/api/usuarios/current")
-            .then(response => {
-                console.log(response.data);
-                this.usuario = response.data
+                .then(response => {
+                    console.log(response.data);
+                    this.usuario = response.data
+                    console.log(this.usuario.nombre)
+                })
+                .then(response => {
+                    console.log(response.data);
+                    this.usuario = response.data
 
-                if(this.usuario.foto != ""){
-                    this.noFoto = false
-                    this.fotoPerfil = true
-                }
-                if(this.usuario.foto == ""){
-                    this.noFoto = true
-                    this.fotoPerfil = false
-                }
+                    if (this.usuario.foto != "") {
+                        this.noFoto = false
+                        this.fotoPerfil = true
+                    }
+                    if (this.usuario.foto == "") {
+                        this.noFoto = true
+                        this.fotoPerfil = false
+                    }
 
-                console.log(this.usuario.nombre)
-            })
+                    console.log(this.usuario.nombre)
+                })
         },
         cerrarSesion() {
             axios.post("/api/logout")
@@ -109,18 +116,25 @@ let app = new Vue({
             this.formEnviado = false;
             pagina.classList.remove('desenfocar');
         },
-        editarInfo(){
-            axios.patch("/api/usuarios/current",
-            {"nombre": this.usuario.nombre, "apellido": this.usuario.apellido, 
-            "fechaNacimiento": this.usuario.nacimiento, "descripcion": this.usuario.descripcion,
-            "foto": this.usuario.foto, "ciudad": this.usuario.ciudad,
-            "telefono": this.usuario.telefono})
-            .then(()=> {
-                console.log("Cambios realizados")
-                
-                window.location.reload()
-            })
-            .catch(error => console.log(error))
+        editarInfo() {
+            axios.patch("/api/usuarios/current", {
+                    "nombre": this.usuario.nombre,
+                    "apellido": this.usuario.apellido,
+                    "fechaNacimiento": this.usuario.nacimiento,
+                    "descripcion": this.usuario.descripcion,
+                    "foto": this.usuario.foto,
+                    "ciudad": this.usuario.ciudad,
+                    "telefono": this.usuario.telefono
+                })
+                .then(() => {
+                    console.log("Cambios realizados")
+
+                    window.location.reload()
+                })
+                .catch(error => console.log(error))
+        },
+        abrirRegistro() {
+            this.modalRegistro = true;
         }
     },
 })
