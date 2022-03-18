@@ -120,7 +120,7 @@ public class DuodanzaclubApplication {
 			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila", academia1));
 
 			UsuarioClase usuarioClase1 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase));
-			UsuarioClase usuarioClase2 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase2));
+			//UsuarioClase usuarioClase2 = usuarioClaseRepository.save(new UsuarioClase(nacho, clase2));
 			UsuarioClase usuarioClase3 = usuarioClaseRepository.save(new UsuarioClase(lauti, clase));
 			UsuarioClase usuarioClase4 = usuarioClaseRepository.save(new UsuarioClase(tomi, clase));
 
