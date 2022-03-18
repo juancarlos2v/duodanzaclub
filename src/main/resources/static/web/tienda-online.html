@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://allfont.es/allfont.css?fonts=scriptina" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
     <link rel="stylesheet" href="./recursos/estilos/tienda.css">
@@ -48,13 +49,26 @@
                         <div class="logo-tienda"></div>
                         <div class="pareja-img"></div>
                     </div>
+
+                </div>
+                <div class="contenedor-manos1">
+
+                    <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                </div>
+                <div class="contenedor-manos2">
+                    <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
+                    <!-- <img class="mano-derecha derecha-contacto img-fluid" src="./recursos/imagenes/home/mano_2.png"> -->
+                </div>
+                <div class="contenedor-contenedor-descripcion">
                     <div class="contenedor-descripcion contain">
+                        <h2>CALIDAD Y DETALLE</h2>
                         <p>Sección de compra especializada en zapatos e indumentaria para practicar en tus clases,
                             contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de
                             escenario.
                         </p>
                     </div>
                 </div>
+
                 <div class="contenedor-banner-negro">
                     <div>
                         <img class="img-fluid" src="./recursos/imagenes/banner_negro_pareja.png">
@@ -63,32 +77,45 @@
                 </div>
                 <div class="cuerpo">
                     <div class="contenedor-estilos">
-                        <div class="estilo-salsa">
+
+                        <div class="estilo-tango estilo-carta">
                             <div class="boton-estilo">
-                                <p>Salsa</p>
-                                <button type="button" @click="elegirEstilo('SALSA')">Ir ></button>
+                                <a href="">
+                                    <p>Tango</p>
+                                </a>
+                                <button type="button" @click="elegirEstilo('TANGO')">Ver más</button>
                             </div>
+
                         </div>
                         <div class="estilo-bachata estilo-carta">
                             <div class="boton-estilo">
-                                <p>Bachata</p>
-                                <button type="button" @click="elegirEstilo('BACHATA')">Ir ></button>
+                                <a href="">
+                                    <p>Bachata</p>
+                                </a>
+                                <button type="button" @click="elegirEstilo('BACHATA')">Ver más</button>
                             </div>
                         </div>
-                        <div class="estilo-tango estilo-carta">
+                        <div class="estilo-salsa">
                             <div class="boton-estilo">
-                                <p>Tango</p>
-                                <button type="button" @click="elegirEstilo('TANGO')">Ir ></button>
+                                <a href="">
+                                    <p>Salsa</p>
+                                </a>
+                                <button type="button" @click="elegirEstilo('SALSA')">Ver más</button>
                             </div>
                         </div>
+
                     </div>
                     <!-- <p>{{estilo}} {{tipo}} </p> -->
                     <!-- FILTRO -->
                     <template>
-                        <div class="contenedor-tipo">
-                            <button class="btn-ind" type="button" @click="elegirTipo('INDUMENTARIA')">INDUMENTARIA</button>
-                            <button class="btn-calz" type="button" @click="elegirTipo('CALZADO')">CALZADO</button>
+                        <div class="contenedor-padre-tipo">
+                            <div class="contenedor-tipo">
+                                <button class="btn-ind" type="button"
+                                    @click="elegirTipo('INDUMENTARIA')">INDUMENTARIA</button>
+                                <button class="btn-calz" type="button" @click="elegirTipo('CALZADO')">CALZADO</button>
+                            </div>
                         </div>
+
                     </template>
                     <!-- PRODUCTOS -->
                     <!-- <template> -->
@@ -96,7 +123,7 @@
                     <div class="contenedor-producto">
                         <div v-for="producto in productos" class="producto-carta">
                             <div class="img-producto">
-                                <img v-bind:src="producto.imagen" alt="Imagen producto" >
+                                <img v-bind:src="producto.imagen" alt="Imagen producto">
                             </div>
                             <div>
                                 <p>${{formatoPrecio(producto.precio)}}</p>
@@ -155,7 +182,7 @@
                                     <p>Recibi novedades y promociones</p>
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Ingresa tu e-mail">
+                                    <input type="email" id="email" placeholder="Ingresa tu e-mail">
                                     <button type="button">Suscribite ></button>
                                 </div>
                             </div>
@@ -190,19 +217,22 @@
                     <div class="contenedor-modal">
                         <div class="modal-producto">
                             <!--<div class="img-producto-modal">-->
-                            <div class="img-producto-modal"> 
+                            <div class="img-producto-modal">
                                 <img v-bind:src="productoId.imagen" alt="Imagen producto">
                             </div>
                             <div class="detalles">
                                 <div>
                                     <h3>{{productoId.titulo}}</h3>
-                                    <div style="display: flex;align-items: center;"><p style="margin-right: 2rem
-                                    ;">$ {{formatoPrecio(productoId.precio)}} </p> <p>stock:{{productoId.stock}}</p></div>
+                                    <div style="display: flex;align-items: center;">
+                                        <p style="margin-right: 2rem
+                                    ;">$ {{formatoPrecio(productoId.precio)}} </p>
+                                        <p>stock:{{productoId.stock}}</p>
+                                    </div>
                                     <p>{{productoId.descripcion}}</p>
                                 </div>
                                 <div class="datos-compra">
                                     <div>
-                                        
+
                                         <div class="input-unidad">
                                             <label for="u">Cant.</label>
                                             <input id="u" type="number" v-model="stock">
@@ -210,14 +240,17 @@
                                         <div class="input-talle">
                                             <label for="talle">Talle</label>
                                             <select id="talle">
-                                            <option v-for="talle in productoId.talle">{{talle}}</option>
-                                             </select>
+                                                <option v-for="talle in productoId.talle">{{talle}}</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="botones-compra">                     
-                                    <button type="button" @click="agregarProducto()">Agregar</button>
-                                    <button type="button" @click="abrirCarrito">Ver carrito</button>
-                                    <button type="button" @click="volver()">Volver</button>
+                                    <div class="botones-compra">
+                                        <button class="boton-volver" type="button" @click="volver()">Volver</button>
+                                        <div class="boton-compra"><button type="button" @click="abrirCarrito">Ver
+                                                carrito</button>
+                                            <button type="button" @click="agregarProducto()">Agregar</button>
+                                        </div>
+
                                     </div>
 
                                     <!-- <p>nombre talle precio stock descripcion</p> -->
@@ -228,7 +261,7 @@
                 </div>
             </transition>
         </template>
-       
+
         <template>
             <transition name="fade">
                 <section class="modal" v-show="modalCarrito==true">
@@ -243,14 +276,14 @@
                                 <th>Precio</th>
                             </thead>
                             <tbody>
-                                
+
                                 <tr v-for="producto in carrito">
                                     <td>{{producto.titulo}} </td>
                                     <td>{{producto.descripcion}} </td>
                                     <td>{{producto.talle}} </td>
                                     <td>${{ formatoPrecio(producto.precio) }} </td>
                                 </tr>
-                                
+
                             </tbody>
                         </table>
                         <div style="display: flex; justify-content: flex-end;margin-right: 3rem;">
@@ -264,20 +297,22 @@
 
                         <div class="datos-tarjeta" v-show="datosPago==true">
                             <h4>Datos de pago</h4>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card"
+                                width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <rect x="3" y="5" width="18" height="14" rx="3" />
                                 <line x1="3" y1="10" x2="21" y2="10" />
                                 <line x1="7" y1="15" x2="7.01" y2="15" />
                                 <line x1="11" y1="15" x2="13" y2="15" />
-                              </svg>
+                            </svg>
                             <input type="text" placeholder="N° de tarjeta" v-model="pago.tarjeta">
                             <label for="cvv">CVV</label>
-                            <input  id="cvv" type="number" min="111" max="999" v-model="pago.cvv">
+                            <input id="cvv" type="number" min="111" max="999" v-model="pago.cvv">
                             <button type="button" @click="comprar" id="boton-pagar">PAGAR</button>
                         </div>
 
-                        
+
                     </div>
                 </section>
             </transition>
