@@ -7,7 +7,7 @@
     
     .contenedor-logo-nav img {
         width: 30%;
-        z-index: 2;
+        z-index: 99;
         position: absolute;
         padding-bottom: -1vw;
     }

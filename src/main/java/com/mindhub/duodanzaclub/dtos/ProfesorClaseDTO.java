@@ -8,17 +8,21 @@ public class ProfesorClaseDTO {
     private long id;
     private Profesor profesor;
     private Clase clase;
-
-
+    private String profesorString;
 
     public ProfesorClaseDTO(){}
     public ProfesorClaseDTO(ProfesorClase profesorClase){
         setId(profesorClase.getId());
-        setProfesor(profesorClase.getProfesor());
-        setClase(profesorClase.getClase());
+        this.profesorString = profesorClase.getProfesor().getNombre() + " " + profesorClase.getProfesor().getApellido();
     }
 
+    public String getProfesorString() {
+        return profesorString;
+    }
 
+    public void setProfesorString(String profesorString) {
+        this.profesorString = profesorString;
+    }
 
     public long getId() {
         return id;
