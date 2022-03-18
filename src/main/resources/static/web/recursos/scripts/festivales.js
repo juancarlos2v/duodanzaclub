@@ -11,17 +11,24 @@ let app = new Vue({
             usuario: "",
             contraseña: ""
         },
-        modalIngreso: false
+        modalIngreso: false,
+        modalContacto: false,
+        formEnviado: false,
+
+
 
     },
     created() {
         this.loadData()
     },
-    // mounted() {
-    //     pagina = document.querySelector(".contenedor-total");
+    mounted() {
+        pagina = document.querySelector(".contenedor-total");
 
-    // },
+    },
     methods: {
+        abrirCarrito() {
+
+        },
         abrirContacto() {
             if (this.modalContacto == false) {
                 pagina.classList.add('desenfocar');
@@ -80,10 +87,27 @@ let app = new Vue({
         cerrarModal() {
             this.modalIngreso = false;
         },
-        filtrarFestival(){
-            
+        filtrarFestival() {
+
+        },
+        abrirContacto() {
+            if (this.modalContacto == false) {
+                pagina.classList.add('desenfocar');
+                this.modalContacto = true;
+            } else {
+                pagina.classList.remove('desenfocar');
+                this.modalContacto = false
+            }
+        },
+        enviarFormulario() {
+            this.formEnviado = true;
+            this.modalContacto = false;
+            pagina.classList.add('desenfocar');
+        },
+        cerrar() {
+            this.formEnviado = false;
+            pagina.classList.remove('desenfocar');
         }
     }
 
-}
-)
+})

@@ -49,9 +49,7 @@
                         <div class="pareja-img"></div>
                     </div>
                     <div class="contenedor-descripcion contain">
-                        <p>Sección de compra especializada en zapatos e indumentaria para practicar en tus clases,
-                            contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de
-                            escenario.
+                        <p>Sección de compra especializada en zapatos e indumentaria para practicar en tus clases, contar con variedad de estilos para milonguear y también encontrar tu conjunto ideal de escenario.
                         </p>
                     </div>
                 </div>
@@ -96,7 +94,7 @@
                     <div class="contenedor-producto">
                         <div v-for="producto in productos" class="producto-carta">
                             <div class="img-producto">
-                                <img v-bind:src="producto.imagen" alt="Imagen producto" >
+                                <img v-bind:src="producto.imagen" alt="Imagen producto">
                             </div>
                             <div>
                                 <p>${{formatoPrecio(producto.precio)}}</p>
@@ -110,9 +108,7 @@
                     <div class="contenedor-info">
                         <div class="envios">
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck"
-                                    width="150" height="150" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
-                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="150" height="150" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="7" cy="17" r="2" />
                                     <circle cx="17" cy="17" r="2" />
@@ -135,10 +131,7 @@
 
                             <div class="mas-info">
                                 <a href="#/">
-                                    <svg style="margin-bottom: 0.5rem;" xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-help" width="50" height="50"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
+                                    <svg style="margin-bottom: 0.5rem;" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <circle cx="12" cy="12" r="9" />
                                         <line x1="12" y1="17" x2="12" y2="17.01" />
@@ -175,9 +168,9 @@
                 </div>
                 <div class="redes-correo">
                     <div class="contenedor-redes">
-                        <a href="https://www.facebook.com"><img src="./recursos/imagenes/facebook.png"></a>
-                        <a href="https://www.instagram.com"> <img src="./recursos/imagenes/instagram.png"></a>
-                        <a href="https://twitter.com"> <img src="./recursos/imagenes/twitter.png"></a>
+                        <a href="https://www.facebook.com" target="_blank"><img src="./recursos/imagenes/facebook.png"></a>
+                        <a href="https://www.instagram.com" target="_blank"> <img src="./recursos/imagenes/instagram.png"></a>
+                        <a href="https://twitter.com" target="_blank"> <img src="./recursos/imagenes/twitter.png"></a>
                     </div>
                     <a href="#">duodanza@club.com</a>
                 </div>
@@ -228,7 +221,7 @@
                 </div>
             </transition>
         </template>
-       
+
         <template>
             <transition name="fade">
                 <section class="modal" v-show="modalCarrito==true">
@@ -299,18 +292,31 @@
                                 <div class="logo-form"></div>
                                 <div>
                                     <div>
-                                        <input type="text" placeholder="nombre">
-                                        <input type="text" placeholder="e-mail">
-                                    </div>
-                                    <textarea cols="40" rows="20" placeholder="Mensaje"></textarea>
-                                    <div class="botones">
-                                        <button type="button">ENVIAR</button>
-                                        <button type="button" @click="abrirContacto">VOLVER</button>
+                                        <div>
+                                            <input type="text" placeholder="nombre">
+                                            <input type="text" placeholder="e-mail">
+                                        </div>
+                                        <textarea  cols="40" rows="20" placeholder="Mensaje"></textarea>
+                                        <div class="botones">
+                                            <button type="button" @click="enviarFormulario">ENVIAR</button>
+                                            <button type="button" @click="abrirContacto">VOLVER</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                         </form>
+                    </div>
+                </section>
+            </transition>
+        </template>
+        <template>
+            <transition name="fade">
+                <section class="modal" v-show="formEnviado==true">  
+                    <div class="envio-formulario" >
+                        <h2>Mensaje enviado</h2>
+                       <p>Gracias por su mensaje, nos comunicaremos a la brevedad.</p>
+                       <button type="button" @click="cerrar">VOLVER</button>
                     </div>
                 </section>
             </transition>
@@ -321,9 +327,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
     <script src="./recursos/scripts/tienda.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p "
-        crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
 </body>
 
 </html>

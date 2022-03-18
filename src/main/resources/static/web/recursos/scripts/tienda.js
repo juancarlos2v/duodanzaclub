@@ -12,6 +12,7 @@ let app = new Vue({
         abrirProducto: false,
         modalCarrito: false,
         modalContacto: false,
+        formEnviado: false,
         datosPago: false,
         descripcion: "",
         pago: {
@@ -19,7 +20,7 @@ let app = new Vue({
             cvv: 0
         }
     },
-    created(){
+    created() {
         this.loadProductos()
     },
     mounted() {
@@ -28,9 +29,9 @@ let app = new Vue({
         calz = document.querySelector(".btn-calz");
     },
     methods: {
-        loadProductos(){
+        loadProductos() {
             axios.get("/api/productos")
-            .then(response => this.productos = response.data)
+                .then(response => this.productos = response.data)
         },
         formatoPrecio(number){
             if(number != undefined){
@@ -54,18 +55,18 @@ let app = new Vue({
 
         },
         verProducto(id) {
-            
-                pagina.classList.add('desenfocar');
-                this.abrirProducto = true;
-            
+
+            pagina.classList.add('desenfocar');
+            this.abrirProducto = true;
+
             this.productoId = this.productos.filter(producto => producto.id == id)
             this.productoId = this.productoId[0]
         },
-        volver(){
-            
-                pagina.classList.remove('desenfocar');
-                this.abrirProducto = false;
-            
+        volver() {
+
+            pagina.classList.remove('desenfocar');
+            this.abrirProducto = false;
+
         },
         abrirContacto() {
             if (this.modalContacto == false) {
@@ -88,8 +89,13 @@ let app = new Vue({
             }
         },
         agregarProducto() {
+<<<<<<< HEAD
+            if (app.stock <= app.productoId.stock) {
+                for (let i = 0; i < app.stock; i++) {
+=======
             if(app.stock <= app.productoId.stock && app.stock > 0){
                 for(let i = 0; i < app.stock ; i++){
+>>>>>>> 3186f2f1308cf52b2f2d85a015d8977946859ff0
                     app.carrito.push(app.productoId);
                     app.total += app.productoId.precio;
                 }
@@ -109,16 +115,24 @@ let app = new Vue({
                     console.log(error.data);
                 })
         },
-        comprar(){
+        comprar() {
             this.descripcion = "Gracias por su compra";
-            
-            axios.post("http://localhost:8060/api/payments",
-            {"amount": this.total, "productosTransaccion": this.productos, "numberCard": this.pago.tarjeta, "cvv": this.pago.cvv, "description": app.descripcion})
+
+            axios.post("http://localhost:8060/api/payments", { "amount": this.total, "productosTransaccion": this.productos, "numberCard": this.pago.tarjeta, "cvv": this.pago.cvv, "description": app.descripcion })
                 .then(response => {
                     console.log("Compra realizada")
                     window.location.href = "/web/perfil.html";
                 })
-            .catch(error => console.log(error))
+                .catch(error => console.log(error))
+        },
+        enviarFormulario() {
+            this.formEnviado = true;
+            this.modalContacto = false;
+            pagina.classList.add('desenfocar');
+        },
+        cerrar() {
+            this.formEnviado = false;
+            pagina.classList.remove('desenfocar');
         }
     },
 
