@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./recursos/estilos/normalize.css">
     <link rel="stylesheet" href="./recursos/estilos/general.css">
     <link rel="stylesheet" href="./recursos/estilos/nav-tienda.css">
@@ -52,8 +52,8 @@
                     </div>
                     <div>
                         <div class="contenedor-manos">
-                            <img class="mano-izquierda img-fluid" src="./recursos/imagenes/home/mano_1.png">
-                            <img class="mano-derecha img-fluid" src="./recursos/imagenes/home/mano_2.png">
+                            <img class="mano-izquierda img-fluid" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" src="./recursos/imagenes/home/mano_1.png">
+                            <img class="mano-derecha img-fluid" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" src="./recursos/imagenes/home/mano_2.png">
                         </div>
                         <div class="info-usuario">
                             <div>
@@ -79,17 +79,38 @@
 
                     </div>
                 </div>
-                <div class="contenedor-abonos">
+                <div class="contenedor-invitaciones">
+                    <h2>INVITACIONES</h2>
+                    <!--   -->
+                    <div v-if="invitaciones.length>0">
+                        <div class="invitacion" v-for="invitacion in invitaciones">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#5a7892" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                        <path d="M16 11h6m-3 -3v6" />
+                        </svg>
+                            <p>{{invitacion.nombre}} </p>
+                            <p>{{invitacion.descripcion}}</p>
+                            <button type="button" @click="aceptarInvitacion">ACEPTAR</button>
+                            <button type="button" @click="rechazarInvitacion">RECHAZAR</button>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <p>Sin invitaciones pendientes.</p>
+                    </div>
+                </div>
+                <div class="contenedor-abonos" data-aos="fade-up">
                     <img class="logo-abonos" src="./recursos/imagenes/clases/abonos.png">
                 </div>
                 <div class="tipos-clases">
-                    <button class="suelta" type="button" @click="clickSuelta">CLASE SUELTA</button>
-                    <button class="mensual" type="button" @click="clickMensual">MENSUAL</button>
-                    <button class="trimestral" type="button" @click="clickTrimestral">TRIMESTRAL</button>
+                    <button class="suelta" type="button" @click="clickSuelta" data-aos="zoom-in">CLASE SUELTA</button>
+                    <button class="mensual" type="button" @click="clickMensual" data-aos="zoom-in">MENSUAL</button>
+                    <button class="trimestral" type="button" @click="clickTrimestral" data-aos="zoom-in">TRIMESTRAL</button>
                 </div>
 
                 <div class="precio-abonos">
-                    <img class="piernas" src="./recursos/imagenes/silueta_zapatos.png">
+                    <img data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="piernas" src="./recursos/imagenes/silueta_zapatos.png">
                     <div class="contenedor-seleccion-clases ">
                         <div class="selector-clases">
                             <div>
@@ -121,13 +142,11 @@
                 <div class="contenedor-match">
                     <img class="telas img-fluid" src="./recursos/imagenes/telas.png">
                     <div class="match-info">
-                        <div class="logo-match">
+                        <div class="logo-match" data-aos="zoom-in">
                             <img class=" img-fluid " src="./recursos/imagenes/home/match_ok.png ">
                         </div>
                         <div class="texto-bachata">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus cupiditate ab neque
-                                eius mollitia perferendis dolorem, corrupti excepturi, sint temporibus, exercitationem
-                                labore deleniti. Et alias in incidunt impedit fugiat
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus cupiditate ab neque eius mollitia perferendis dolorem, corrupti excepturi, sint temporibus, exercitationem labore deleniti. Et alias in incidunt impedit fugiat
                                 vitae?
                             </p>
                         </div>
@@ -238,12 +257,14 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js "></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
     <script src="./recursos/scripts/perfil.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p "
-        crossorigin="anonymous "></script>
 </body>
 
 </html>
