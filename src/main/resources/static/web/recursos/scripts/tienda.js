@@ -88,7 +88,7 @@ let app = new Vue({
             }
         },
         agregarProducto() {
-            if(app.stock <= app.productoId.stock){
+            if(app.stock <= app.productoId.stock && app.stock > 0){
                 for(let i = 0; i < app.stock ; i++){
                     app.carrito.push(app.productoId);
                     app.total += app.productoId.precio;
