@@ -76,6 +76,7 @@ public class DuodanzaclubApplication {
 			Festival festivalBachata8 = new Festival("Yira Yira", Estilos.BACHATA, 500.0, List.of(19.00, 20.30));
 			Festival festivalBachata9 = new Festival("Camello de Rio", Estilos.BACHATA, 350.0, List.of(19.00, 20.30));
 			Festival festivalBachata10 = new Festival("A todo Ritmo", Estilos.BACHATA, 400.0, List.of(19.00, 20.30));
+      
 			Profesor profesor1 = new Profesor("Fernando", "Obanos");
 			Profesor profesor2 = new Profesor("Romina", "Gasper");
 			Profesor profesor3 = new Profesor("María", "Muñoz");
@@ -109,6 +110,11 @@ public class DuodanzaclubApplication {
 			Productos producto5 = productoRepository.save(new Productos("MONO TROILO", "modelo clásico acordonado en cuero", 15000.0, "/web/recursos/imagenes/zapatos/MONO_TROILO.jpg", Estilos.TANGO, Arrays.asList("37", "38", "39", "40", "41", "42", "43"), TipoProducto.CALZADOS, 32));
 			Productos producto6 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/FALDAFELICIAREVERSIBLE.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
 			Productos producto7 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
+      Productos producto8 = productoRepository.save(new Productos("Mono Checkered Red Patent", "Zapato clásico con motivo estampado tipo collage de colores.", 7000.0, "/web/recursos/imagenes/zapatos/MONOCHECKEREDREDPATENT.jpg", Estilos.BACHATA, Arrays.asList("40", "41", "42"), TipoProducto.CALZADOS, 5));
+      Productos producto9 = productoRepository.save(new Productos("Mono Orient Express", "modelo clásico acordonado con motivos orientales y punta de charol", 12300.0, "/web/recursos/imagenes/zapatos/MONOORIENTEXPRESS.jpg", Estilos.SALSA, Arrays.asList("37", "38", "39", "40", "41", "42"), TipoProducto.CALZADOS, 23));
+      Productos producto10 = productoRepository.save(new Productos("MONO TROILO", "modelo clásico acordonado en cuero", 15000.0, "/web/recursos/imagenes/zapatos/MONO_TROILO.jpg", Estilos.TANGO, Arrays.asList("37", "38", "39", "40", "41", "42", "43"), TipoProducto.CALZADOS, 32));
+      Productos producto11 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/FALDAFELICIAREVERSIBLE.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
+      Productos producto12 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
 
 			Clase clase = claseRepository.save(new Clase("Clase de ballet", Estilos.SALSA ,"21:30 a 23:00", "Ayacucho 2345, San Cristobal", academia1));
 			Clase clase2 = claseRepository.save(new Clase("Clase de tango", Estilos.BACHATA , "20:00 a 21:30", "Primera Junta 823, La Lucila" ,academia1));
