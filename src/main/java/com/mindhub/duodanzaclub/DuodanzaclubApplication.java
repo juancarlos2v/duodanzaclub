@@ -167,9 +167,9 @@ public class DuodanzaclubApplication {
 
 
 			Usuario nacho = usuarioService.saveUsuario(new Usuario("Nacho", "Molina", "1144332211", "nacho@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
-			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Voro", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
-			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Voro", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
-			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Molina", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario mati = usuarioService.saveUsuario(new Usuario("Mati", "Fernández", "1122993493", "mati@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario tomi = usuarioService.saveUsuario(new Usuario("Tomi", "Fernández", "11442910249", "tomi@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
+			Usuario lauti = usuarioService.saveUsuario(new Usuario("Lauti", "Garnacho", "1157284919", "lauti@gmail.com", passwordEncoder.encode("123456"), LocalDate.now(), academia1));
 
       
 
@@ -224,7 +224,7 @@ public class DuodanzaclubApplication {
 			Productos producto11 = productoRepository.save(new Productos("Vestido SILVINA Negro", "vestido elegante espalda descubierta, disponible en 4 tonos", 5800.0, "/web/recursos/imagenes/indumentaria/SILVINANEGRO.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
 			Productos producto3 = productoRepository.save(new Productos("Mono Checkered Patent", "Zapato clásico con motivo estampado tipo collage de colores.", 7000.0, "/web/recursos/imagenes/zapatos/MONOCHECKEREDREDPATENT.jpg", Estilos.BACHATA, Arrays.asList("40", "41", "42"), TipoProducto.CALZADOS, 5));
 			Productos producto4 = productoRepository.save(new Productos("Mono Orient Express", "modelo clásico acordonado con motivos orientales y punta de charol", 12300.0, "/web/recursos/imagenes/zapatos/MONOORIENTEXPRESS.jpg", Estilos.SALSA, Arrays.asList("37", "38", "39", "40", "41", "42"), TipoProducto.CALZADOS, 23));
-			Productos producto6 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/NINAREVERSIBLE.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
+			Productos producto6 = productoRepository.save(new Productos("Falda FELICIA reversible", "falda media pierna con tajo lateral reversible, disponible en 4 tonos", 1800.0, "/web/recursos/imagenes/indumentaria/NINAReversible.png", Estilos.SALSA, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 18));
 			Productos producto5 = productoRepository.save(new Productos("MONO TROILO", "modelo clásico acordonado en cuero", 15000.0, "/web/recursos/imagenes/zapatos/MONO_TROILO.jpg", Estilos.TANGO, Arrays.asList("37", "38", "39", "40", "41", "42", "43"), TipoProducto.CALZADOS, 32));
 			Productos producto7 = productoRepository.save(new Productos("Top CAMILA", "top manga larga con detalle de volados en los bordes", 3000.0, "/web/recursos/imagenes/indumentaria/TopCAMILA.jpg", Estilos.TANGO, Arrays.asList("XS", "S", "M", "L", "XL", "XXL"), TipoProducto.PRENDAS, 15));
 			Productos producto8 = productoRepository.save(new Productos("Mono Cachirulo ", "Zapato clásico con motivo estampado tipo collage de colores.", 7000.0, "/web/recursos/imagenes/zapatos/MONOCACHIRULO.jpg", Estilos.BACHATA, Arrays.asList("40", "41", "42"), TipoProducto.CALZADOS, 5));
