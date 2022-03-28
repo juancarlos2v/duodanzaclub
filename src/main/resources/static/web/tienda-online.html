@@ -285,7 +285,7 @@
                                 <tr v-for="producto in carrito">
                                     <td>{{producto.titulo}} </td>
                                     <td>{{producto.descripcion}} </td>
-                                    <td>{{producto.talle}} </td>
+                                    <td>{{producto.talle[0]}} </td>
                                     <td>${{ formatoPrecio(producto.precio) }} </td>
                                 </tr>
 

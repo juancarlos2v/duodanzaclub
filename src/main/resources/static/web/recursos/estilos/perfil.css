@@ -18,6 +18,11 @@
     border-radius   : 0.5rem 0.5rem 0 0;
 }
 
+.id-usuario p{
+    width : 100%;
+    text-align: center;
+}
+
 .info-usuario {
     display         : flex;
     flex-direction  : column;
@@ -291,7 +296,7 @@
 
 .pareja {
     height      : 100%;
-    margin-right: 0;
+    margin-left: 7rem;
     position    : absolute;
     transform   : translateX(60rem);
     width: fit-content;

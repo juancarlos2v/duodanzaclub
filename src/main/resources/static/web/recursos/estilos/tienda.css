@@ -537,6 +537,9 @@ h3 {
     border       : 0.1rem solid rgba(0, 0, 0, 0.616);
     box-shadow   : #b5c7cb;
     margin-bottom: 2rem;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .producto-carta>div+div {

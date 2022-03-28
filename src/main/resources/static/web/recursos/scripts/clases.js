@@ -86,7 +86,7 @@ let app = new Vue({
         anotarEnClase() {
             axios.post("/api/usuarios/clases", { "usuario": `${app.formulario.usuario}`, "usuario2": `${app.formulario.usuario2}`})
                 .then(response => {
-                    window.location.href = "/web/index.html"
+                    window.location.href = "/web/clases.html"
                 })
         },
         abrirPerfil() {

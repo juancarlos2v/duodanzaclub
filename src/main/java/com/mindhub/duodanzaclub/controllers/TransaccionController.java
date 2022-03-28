@@ -64,7 +64,7 @@ public class TransaccionController {
             TransaccionProducto transaccionProducto = transaccionProductoRepository.save(new TransaccionProducto(transaccion, producto));
         });
 
-        //emailService.sendEmail("ignaciomolina.95@hotmail.com", "Gracias por tu compra", "El contenido de tu compra es:");
+        emailService.sendEmail("ignaciomolina.95@hotmail.com", "Gracias por tu compra", "El contenido de tu compra es:");
         usuario.addTransaccion(transaccion);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

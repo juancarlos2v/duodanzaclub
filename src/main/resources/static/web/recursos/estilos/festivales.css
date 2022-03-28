@@ -834,6 +834,7 @@ form>div div+div {
 .contenedor-card {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding: auto;
     width: 100%;
 }
