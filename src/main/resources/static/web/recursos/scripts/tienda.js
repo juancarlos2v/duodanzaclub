@@ -16,8 +16,8 @@ let app = new Vue({
         datosPago: false,
         descripcion: "",
         pago: {
-            tarjeta: "",
-            cvv: 0
+            tarjeta: "5434-7849-9856-3245",
+            cvv: 276
         }
     },
     created() {

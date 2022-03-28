@@ -2,8 +2,8 @@ let app = new Vue({
     el: '#app',
     data: {
         ingreso: {
-            usuario: "",
-            contraseña: ""
+            usuario: "nacho@gmail.com",
+            contraseña: "123456"
         },
         registro: {
             nombre: "",
