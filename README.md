@@ -82,4 +82,4 @@ Si deseas contribuir a este proyecto, sigue los siguientes pasos:
 ![Preview DuoDanza](src/main/resources/static/web/recursos/imagenes/preview.png)
 El proyecto se encuentra actualmente desplegado y disponible en la siguiente URL:
 
-### > [DuoDanza ](https://homebanking-mindhub.up.railway.app/web/index.html)
+### > [DuoDanza ](https://duodanzaclub.up.railway.app/web/index.html)
