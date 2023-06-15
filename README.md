@@ -1,4 +1,15 @@
-![Duo Danza](src/main/resources/static/web/recursos/imagenes/logo_light.png)
+<!-- ![Duo Danza](src/main/resources/static/web/recursos/imagenes/logo_light.png) -->
+
+<img src="src/main/resources/static/web/recursos/imagenes/logo_light.png"     alt="Texto alternativo" align="left" width="300">
+
+#
+
+#
+
+#
+
+#
+
 DuoDanza es un sistema de gestión integral diseñado para administrar un club dedicado a la danza. Proporciona una solución completa que abarca desde la organización de clases hasta la difusión de festivales y la gestión de una tienda virtual.
 
 ## Características Principales
