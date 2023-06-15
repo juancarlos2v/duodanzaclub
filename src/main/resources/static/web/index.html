@@ -58,18 +58,18 @@
             <main>
                 <div class="cajita-banner">
                     <!--  <div class="contenedor-reel">
-                    </div> -->
+                    </div>
                     <div class="div-Video contain">
                         <section class="showcase">
-                            <div class="video-container">
-                                <video src="https://res.cloudinary.com/dim0xnpqb/video/upload/v1647356055/prueba/VIDEOOK_aigmx5.mp4" autoplay muted loop></video>
-                            </div>
-                            <!--  <div class="content">
+                            
+                            <div class="content">
+                            autoplay muted loop
                             <h1>Shoot For The Stars</h1>
                             <h3>Full screen video landing page</h3>
-                        </div> -->
+                        </div> 
                         </section>
-                    </div>
+                    </div>-->
+                    <div class="v-container"></div>
 
 
                     <div class="contenedor-texto" style="display: flex; flex-wrap: wrap;">
@@ -277,8 +277,8 @@
                                     <input id="fecha" v-model="registro.fecha" type="date">
                                 </div>
                                 <div>
-                                    <label for="fecha">Telefono</label>
-                                    <input id="fecha" v-model="registro.telefono" type="text">
+                                    <label for="telefono">Telefono</label>
+                                    <input id="telefono" v-model="registro.telefono" type="text">
                                 </div>
                                 <div>
                                 <label>Ciudad</label>
@@ -331,14 +331,16 @@
         </template>
 
     </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./recursos/scripts/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="./recursos/scripts/index.js"></script>
 
 </body>
 

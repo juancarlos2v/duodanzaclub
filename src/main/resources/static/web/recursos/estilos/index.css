@@ -1,174 +1,182 @@
 .cajita-banner {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 [v-cloak] {
-    display: none;
-  }
+  display: none;
+}
+
+.v-container {
+  background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW93YXpxb3NxcDQ5bWhncmFtaHBzbjA1Zm9iamQwaXhwcWthbHdqYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aQjSCEW2YIRT62FgpQ/giphy.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
 
 .contenedor-texto {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    /* margin : auto; */
-    margin-top: -5rem;
-    justify-content: center;
-    width: 65%;
-    text-align: center;
-    background-color: var(--header-color);
-    color: var(--light);
-    text-align: end;
-    z-index: 1;
-    padding: 3rem;
-    padding-left: 5rem;
-    box-shadow: 0px 8px 9px 11px rgb(0 0 0 / 20%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  /* margin : auto; */
+  margin-top: -5rem;
+  justify-content: center;
+  width: 65%;
+  text-align: center;
+  background-color: var(--header-color);
+  color: var(--light);
+  text-align: end;
+  z-index: 1;
+  padding: 3rem;
+  padding-left: 5rem;
+  box-shadow: 0px 8px 9px 11px rgb(0 0 0 / 20%);
 }
 
 .contenedor-banner-clases {
-    margin: auto;
-    margin-top: 2vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 95%;
-    height: 20vh;
+  margin: auto;
+  margin-top: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+  height: 20vh;
 }
 
 .clasesLogo {
-    height: 10rem;
-    margin-bottom: -3.8rem;
-    justify-content: center;
+  height: 10rem;
+  margin-bottom: -3.8rem;
+  justify-content: center;
 }
 
 .manos {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    z-index: -1;
-    justify-content: space-between;
-    background-color: var(--gray-color);
-    color: var(--light);
-    text-align: end;
-    align-self: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
+  justify-content: space-between;
+  background-color: var(--gray-color);
+  color: var(--light);
+  text-align: end;
+  align-self: center;
 }
 
 .derecha-contacto {
-    margin-top: 10rem !important;
+  margin-top: 10rem !important;
 }
 
 .contenedor-texto2 {
-    display: flex;
-    align-items: center;
-    margin-top: 1.5rem;
-    margin-right: 0.5rem;
-    margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-right: 0.5rem;
+  margin-left: 2rem;
 }
 
 .contenedor-estilos {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 10rem;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
 }
 
 .contenedor-estilos div {
-    background-color: var(--footer-color);
-    height: 3rem;
-    width: 14rem;
-    margin-bottom: 3rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    padding: 2rem;
-    box-shadow: 12px 13px 6px 0px rgb(0 0 0 / 20%);
+  background-color: var(--footer-color);
+  height: 3rem;
+  width: 14rem;
+  margin-bottom: 3rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 2rem;
+  box-shadow: 12px 13px 6px 0px rgb(0 0 0 / 20%);
 }
 
 .contenedor-estilos div {
-    background-image: url("../imagenes/home/bachataOK_titulo.png");
+  background-image: url("../imagenes/home/bachataOK_titulo.png");
 }
 
-.contenedor-estilos div+div {
-    background-image: url("../imagenes/home/salsaOK_titulo.png");
+.contenedor-estilos div + div {
+  background-image: url("../imagenes/home/salsaOK_titulo.png");
 }
 
-.contenedor-estilos div+div+div {
-    background-image: url("../imagenes/home/tangoOK_titulo.png");
+.contenedor-estilos div + div + div {
+  background-image: url("../imagenes/home/tangoOK_titulo.png");
 }
 
 .seccion-profesores {
-    background-color: var(--gray-color);
-    padding: 2rem;
-    padding-bottom: 5rem;
-    display: inline-flex;
-    align-items: center;
+  background-color: var(--gray-color);
+  padding: 2rem;
+  padding-bottom: 5rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .seccion-profesores h3 {
-    color: var(--light);
-    width: 100%;
-    font-size: 25px;
-    text-align: center;
+  color: var(--light);
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
 }
 
-.contenedor-profesores>div {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.contenedor-profesores > div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.contenedor-profesores>div div {
-    height: 10rem;
-    width: 15rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    margin: 1rem;
+.contenedor-profesores > div div {
+  height: 10rem;
+  width: 15rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin: 1rem;
 }
 
-.contenedor-profesores>div div {
-    background-image: url("../imagenes/home/Anderson_y_Brenda.png");
+.contenedor-profesores > div div {
+  background-image: url("../imagenes/home/Anderson_y_Brenda.png");
 }
 
-.contenedor-profesores>div div+div {
-    background-image: url("../imagenes/home/fernando_y_leonela.png");
+.contenedor-profesores > div div + div {
+  background-image: url("../imagenes/home/fernando_y_leonela.png");
 }
 
-.contenedor-profesores>div div+div+div {
-    background-image: url("../imagenes/home/maria_y_facu.png");
+.contenedor-profesores > div div + div + div {
+  background-image: url("../imagenes/home/maria_y_facu.png");
 }
 
-.contenedor-profesores>div div+div+div+div {
-    background-image: url("../imagenes/home/kizomba.png");
+.contenedor-profesores > div div + div + div + div {
+  background-image: url("../imagenes/home/kizomba.png");
 }
 
 .contenedor-tienda {
-    margin: auto;
-    margin-top: 2vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 95%;
-    height: 5rem;
+  margin: auto;
+  margin-top: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+  height: 5rem;
 }
 
 .seccion-tienda {
-    background-color: var(--header-color);
-    height: 5rem;
-    width: 30%;
-    /* margin          : auto; */
-    left: 0;
-    right: 0;
-    height: 5vw;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    z-index: -1;
+  background-color: var(--header-color);
+  height: 5rem;
+  width: 30%;
+  /* margin          : auto; */
+  left: 0;
+  right: 0;
+  height: 5vw;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
 }
-
 
 /* .seccion-tienda div {
     background-image   : url("../imagenes/home/Tienda.png");
@@ -182,369 +190,367 @@
 } */
 
 .tiendaLogo {
-    height: 13rem;
-    margin-top: -10rem;
-    margin-bottom: -2.8rem;
-    justify-content: center;
+  height: 13rem;
+  margin-top: -10rem;
+  margin-bottom: -2.8rem;
+  justify-content: center;
 }
 
 .tienda-info {
-    background-color: var(--footer-color);
-    color: var(--light);
-    text-align: end;
-    height: 18rem;
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  background-color: var(--footer-color);
+  color: var(--light);
+  text-align: end;
+  height: 18rem;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .tienda-texto {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.tienda-info>div {
-    background-color: var(--light);
-    width: 30%;
+.tienda-info > div {
+  background-color: var(--light);
+  width: 30%;
 }
 
-.tienda-info>div div {
-    background-image: url("../imagenes/home/piernasSHOP.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 120%;
-    background-position: initial;
+.tienda-info > div div {
+  background-image: url("../imagenes/home/piernasSHOP.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 120%;
+  background-position: initial;
 }
 
-.tienda-info div+div {
-    background-color: transparent;
-    padding-left: 3rem;
-    width: 50%;
+.tienda-info div + div {
+  background-color: transparent;
+  padding-left: 3rem;
+  width: 50%;
 }
 
 .productos-destacados {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    /* margin         : 2rem; */
-    padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  /* margin         : 2rem; */
+  padding-bottom: 3rem;
 }
 
 .titulo-productos {
-    display: flex;
-    justify-content: center;
-    color: var(--footer-color);
-    padding-top: 3rem;
+  display: flex;
+  justify-content: center;
+  color: var(--footer-color);
+  padding-top: 3rem;
 }
 
 .titulo-productos h3 {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .productos-destacados div {
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 10rem;
-    width: 20rem;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 10rem;
+  width: 20rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .productos-destacados div {
-    background-image: url("../imagenes/home/zapato_1.png");
+  background-image: url("../imagenes/home/zapato_1.png");
 }
 
-.productos-destacados div+div {
-    background-image: url("../imagenes/home/ropa_2.png");
+.productos-destacados div + div {
+  background-image: url("../imagenes/home/ropa_2.png");
 }
 
-.productos-destacados div+div+div {
-    background-image: url("../imagenes/home/zapato_2.png");
+.productos-destacados div + div + div {
+  background-image: url("../imagenes/home/zapato_2.png");
 }
 
-.productos-destacados div+div+div+div {
-    background-image: url("../imagenes/home/ropa_1.png");
+.productos-destacados div + div + div + div {
+  background-image: url("../imagenes/home/ropa_1.png");
 }
 
 .info-abonos {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 22rem;
-    overflow: hidden;
-    z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 22rem;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .parrafo-bonos {
-    text-align: center;
-    position: relative;
-    z-index: 0;
-    height: 10rem;
-    margin-top: 7rem;
-    background-color: var(--gray-color);
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  height: 10rem;
+  margin-top: 7rem;
+  background-color: var(--gray-color);
 }
 
 .parrafo-bonos p {
-    width: 55%;
-    padding-left: 2rem;
-    padding-top: 2rem;
+  width: 55%;
+  padding-left: 2rem;
+  padding-top: 2rem;
 }
 
-.info-abonos>div+div {
-    position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    margin-left: 18%;
+.info-abonos > div + div {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-left: 18%;
 }
 
 .info-abonos img {
-    width: 45%;
-    z-index: 10;
-    overflow: hidden;
+  width: 45%;
+  z-index: 10;
+  overflow: hidden;
 }
 
 .seccion-festival {
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-    height: 35rem;
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  height: 35rem;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
 
 .contenido-festival {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    width: 60%;
-    height: 10rem;
-    padding: 1rem;
-    margin-left: 10rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  width: 60%;
+  height: 10rem;
+  padding: 1rem;
+  margin-left: 10rem;
 }
 
-.contenido-festival>img {
-    width: 50%;
-    margin: auto;
+.contenido-festival > img {
+  width: 50%;
+  margin: auto;
 }
 
 .logos-tango {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    width: 60%;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 60%;
 }
 
-.seccion-festival div+div {
-    width: 30%;
-    overflow: hidden;
+.seccion-festival div + div {
+  width: 30%;
+  overflow: hidden;
 }
 
 .contenedor-bachata {
-    justify-content: end;
+  justify-content: end;
 }
 
-.seccion-festival div+div>img {
-    height: 100%;
-    overflow: hidden;
-    align-items: flex-end;
-    margin-left: 10rem;
+.seccion-festival div + div > img {
+  height: 100%;
+  overflow: hidden;
+  align-items: flex-end;
+  margin-left: 10rem;
 }
 
 .seccion-milongas {
-    background-image: url("../imagenes/home/milongas_foto.png");
-    height: 40rem;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+  background-image: url("../imagenes/home/milongas_foto.png");
+  height: 40rem;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .contenedor-texto-milongas {
-    text-align: start;
-    color: white;
-    width: 50%;
-    padding-left: 10%;
+  text-align: start;
+  color: white;
+  width: 50%;
+  padding-left: 10%;
 }
 
 .contenedor-texto-milongas h2 {
-    font-size: 6rem;
+  font-size: 6rem;
 }
 
 .contenedor-contacto {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
 }
 
 .contenedor-contacto form {
-    z-index: 5;
+  z-index: 5;
 }
 
 .contenedor-contacto input,
 textarea {
-    border: 0.2rem solid var(--light);
-    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0.2rem solid var(--light);
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
-form>div:first-child {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
+form > div:first-child {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
 }
 
-form>div:first-child>p {
-    display: flex;
-    background-color: var(--header-color);
-    width: 20%;
-    padding: 0.5rem;
-    color: white;
-    margin: 0;
-    border-radius: 0.5rem 0.5rem 0 0;
-    font-weight: 500;
-    font-size: 3vh;
-    text-align: right;
-    padding-left: 3vw;
+form > div:first-child > p {
+  display: flex;
+  background-color: var(--header-color);
+  width: 20%;
+  padding: 0.5rem;
+  color: white;
+  margin: 0;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-weight: 500;
+  font-size: 3vh;
+  text-align: right;
+  padding-left: 3vw;
 }
 
 .contenedor-form {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--header-color);
-    width: 80%;
-    margin: auto;
-    height: 19rem;
-    padding: 2rem;
-    border-radius: 0.5rem 0 0.5rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--header-color);
+  width: 80%;
+  margin: auto;
+  height: 19rem;
+  padding: 2rem;
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
 }
 
 .contenedor-form button {
-    background-color: var(--gray-color);
-    width: 8rem;
-    padding: 0.4rem;
-    align-self: flex-end;
-    margin-top: 1rem;
-    border-radius: 0.3rem;
+  background-color: var(--gray-color);
+  width: 8rem;
+  padding: 0.4rem;
+  align-self: flex-end;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
 }
 
-form>div div+div {
-    display: flex;
-    flex-direction: column;
-    padding-right: 14rem;
-    z-index: 9;
+form > div div + div {
+  display: flex;
+  flex-direction: column;
+  padding-right: 14rem;
+  z-index: 9;
 }
 
 .logo-form {
-    background-image: url("../imagenes/logo_light.png");
-    width: 30%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50%;
+  background-image: url("../imagenes/logo_light.png");
+  width: 30%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
 }
 
 .contenedor-form input {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .formulario-contacto {
-    margin-top: 7rem;
+  margin-top: 7rem;
 }
 
 .usuario {
-    width: 100%!important;
+  width: 100% !important;
 }
-
 
 /*MODAL*/
 
 .contenedor-modal {
-    width: 20rem;
-    background-color: var(--footer-color);
+  width: 20rem;
+  background-color: var(--footer-color);
 }
 
 .modal-ingreso {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
-.modal-ingreso form>div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-    margin-top: 1rem;
+.modal-ingreso form > div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  margin-top: 1rem;
 }
 
-.modal-ingreso form>button {
-    display: flex;
-    color: white;
-    margin: auto;
-    margin-top: 0.4rem;
+.modal-ingreso form > button {
+  display: flex;
+  color: white;
+  margin: auto;
+  margin-top: 0.4rem;
 }
-
 
 /*****MODAL REGISTRO********/
 
 .modal-registro {
-    max-width: 50%;
-    height: auto;
-    border: 0.1rem solid black;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    margin: auto;
-    background-color: var(--header-color);
-    padding-top: 2rem;
-    box-shadow: 9px 9px 20px 16px #2c2828e0;
+  max-width: 50%;
+  height: auto;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: auto;
+  background-color: var(--header-color);
+  padding-top: 2rem;
+  box-shadow: 9px 9px 20px 16px #2c2828e0;
 }
 
 .modal-registro h2 {
-    margin-top: 2rem;
-    color: var(--footer-color);
+  margin-top: 2rem;
+  color: var(--footer-color);
 }
 
 .campos-registro {
-    display: flex;
-    width: 60%;
+  display: flex;
+  width: 60%;
 }
 
 .campos-registro div {
-    display: flex;
-    flex-direction: column;
-    margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
 }
 
 .logo-registro {
-    width: 20%;
-    position: absolute;
-    transform: translateX(18rem);
+  width: 20%;
+  position: absolute;
+  transform: translateX(18rem);
 }
 
 .botones-registro {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    align-self: flex-end;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  align-self: flex-end;
 }
 
 .botones-registro button {
-    background-color: var(--footer-color);
-    color: white;
-    width: 9rem;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    margin-top: 3rem;
+  background-color: var(--footer-color);
+  color: white;
+  width: 9rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-top: 3rem;
 }
