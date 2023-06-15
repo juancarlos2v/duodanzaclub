@@ -2,7 +2,6 @@
 
 <img src="src/main/resources/static/web/recursos/imagenes/logo_light.png"     alt="Texto alternativo" align="left" width="300">
 
-#
 
 #
 
