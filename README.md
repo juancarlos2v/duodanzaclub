@@ -53,8 +53,8 @@ Detectará automáticamente que se trata de un proyecto Gradle y comenzará a im
 
 El proyecto incluye un usuario para realizar pruebas. Puedes utilizar las siguientes credenciales:
 
-- Usuario: melba@mindhub.com
-- Contraseña: mabel
+- Usuario: nacho@gmail.com
+- Contraseña: 123456
 
 ## Equipo de desarrollo
 
